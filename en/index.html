@@ -952,12 +952,15 @@ a:hover{color:var(--link-hover)}
     <div class="section-label">The AI Gazette</div>
     <h2 style="color:var(--ink-inverse)">Stay Ahead in AI</h2>
     <p class="newsletter-desc">Get the best AI tools, latest releases, and our exclusive analyses delivered weekly. Free, no spam.</p>
-    <form class="newsletter-form" id="newsletterForm" onsubmit="APP.submitNewsletter(event)">
-      <input class="newsletter-input" type="email" placeholder="your@email.com" required>
+    <form class="newsletter-form" id="newsletterForm" name="newsletter-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitNewsletter(event)">
+      <input type="hidden" name="form-name" value="newsletter-en">
+      <p style="display:none"><input name="bot-field"></p>
+      <input class="newsletter-input" type="email" name="email" placeholder="your@email.com" required>
       <button class="newsletter-btn" type="submit">Subscribe</button>
     </form>
     <p class="newsletter-note">Join our community · Free · 1-click unsubscribe</p>
     <p class="newsletter-success" id="newsletterSuccess">✓ Thank you! You'll receive your first newsletter soon.</p>
+    <p class="newsletter-error" id="newsletterError" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
   </div>
 </section>
 
@@ -1939,8 +1942,18 @@ const APP = {
   // --- Newsletter ---
   submitNewsletter(e){
     e.preventDefault();
-    document.getElementById('newsletterForm').style.display='none';
-    document.getElementById('newsletterSuccess').style.display='block';
+    const form=document.getElementById('newsletterForm');
+    const btn=form.querySelector('button');
+    btn.disabled=true;btn.textContent='Sending...';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form)).toString()
+    }).then(r=>{
+      if(r.ok){form.style.display='none';document.getElementById('newsletterSuccess').style.display='block';}
+      else{throw new Error('err');}
+    }).catch(()=>{
+      document.getElementById('newsletterError').style.display='block';
+      btn.disabled=false;btn.textContent='Subscribe';
+    });
   },
 
   // --- Scroll helpers ---
