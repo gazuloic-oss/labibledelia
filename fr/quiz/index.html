@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="La Bible de l'IA">
+<meta name="publisher" content="La Bible de l'IA">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X4YE8TLX0E');</script>
+<title>Quiz IA - Trouvez l'outil IA parfait | La Bible de l'IA</title>
+<meta name="description" content="Repondez a 8 questions et decouvrez les outils d'intelligence artificielle faits pour vous. Quiz personnalise parmi 400+ outils IA.">
+<meta name="keywords" content="quiz IA, trouver outil IA, recommandation IA, quel outil IA choisir, meilleur outil IA pour moi">
+<link rel="canonical" href="https://labibledelia.com/fr/quiz/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/quiz/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/quiz/">
+<link rel="alternate" hreflang="x-default" href="https://labibledelia.com/fr/quiz/">
+<!-- Open Graph -->
+<meta property="og:site_name" content="La Bible de l'IA">
+<meta property="og:title" content="Quiz IA - Trouvez l'outil IA parfait">
+<meta property="og:description" content="8 questions pour decouvrir les outils IA faits pour vous. Recommandations personnalisees parmi 400+ outils.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://labibledelia.com/fr/quiz/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://labibledelia.com/og-image-fr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz IA - Trouvez l'outil IA parfait | La Bible de l'IA">
+<meta name="twitter:description" content="8 questions pour decouvrir les outils IA faits pour vous.">
+<meta name="twitter:image" content="https://labibledelia.com/twitter-image-fr.png">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quiz IA - Trouvez l'outil IA parfait",
+  "description": "Quiz interactif pour trouver les meilleurs outils d'intelligence artificielle selon votre profil.",
+  "url": "https://labibledelia.com/fr/quiz/",
+  "inLanguage": "fr",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "La Bible de l'IA",
+    "url": "https://labibledelia.com"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://labibledelia.com/fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Quiz IA", "item": "https://labibledelia.com/fr/quiz/"}
+    ]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LA BIBLE DE L'IA - QUIZ - DESIGN SYSTEM
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg-page:#faf8f3;--bg-surface:#ffffff;--bg-elevated:#f5f0e8;
+  --bg-infobox:#f8f4eb;--bg-dark:#1a1a2e;--bg-dark-surface:#24243e;
+  --ink:#1a1a2e;--ink-secondary:#4a4a5a;--ink-tertiary:#7a7a8a;--ink-inverse:#faf8f3;
+  --gold:#c9a84c;--gold-light:#e4c76b;--gold-glow:rgba(201,168,76,.15);
+  --link:#2563eb;--link-hover:#1d4ed8;
+  --border-light:#e8e0d0;--border-medium:#d4c9b8;
+  --shadow-sm:0 1px 3px rgba(26,26,46,.06);--shadow-md:0 4px 12px rgba(26,26,46,.08);
+  --shadow-lg:0 12px 32px rgba(26,26,46,.12);
+  --star-filled:#f59e0b;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Lora',Georgia,serif;
+  --font-ui:'DM Sans','Helvetica Neue',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+}
+
+[data-theme="dark"]{
+  --bg-page:#141425;--bg-surface:#1e1e38;--bg-elevated:#252547;
+  --bg-infobox:#1e1e38;
+  --ink:#e8e6e1;--ink-secondary:#b0aec0;--ink-tertiary:#8886a0;
+  --border-light:rgba(255,255,255,.08);--border-medium:rgba(255,255,255,.12);
+  --shadow-sm:0 2px 8px rgba(0,0,0,.3);--shadow-md:0 4px 16px rgba(0,0,0,.4);
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg-page);color:var(--ink);font-family:var(--font-body);line-height:1.7;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:256px}
+
+h1,h2,h3{font-family:var(--font-display);line-height:1.2}
+a{color:var(--link);text-decoration:none;transition:color .2s}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--gold-glow);color:var(--ink)}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4vw;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(26,26,46,.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(244,241,235,.06)}
+[data-theme="dark"] .nav{background:rgba(20,20,37,.95)}
+.nav-left{display:flex;align-items:center;gap:.4rem}
+.lang-switcher{display:flex;gap:.3rem;margin-right:.6rem}
+.lang-btn{background:none;border:1px solid rgba(244,241,235,.12);border-radius:4px;padding:.2rem .35rem;
+  cursor:pointer;line-height:1;transition:all .3s;text-decoration:none;display:flex;align-items:center}
+.lang-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.1)}
+.lang-btn.active{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo svg{width:26px;height:26px}
+.nav-logo span{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--ink-inverse)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-right a{color:rgba(244,241,235,.5);font-family:var(--font-ui);font-size:.8rem;font-weight:500;
+  letter-spacing:.05em;transition:color .3s;text-decoration:none}
+.nav-right a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--bg-dark)!important;font-family:var(--font-ui);font-size:.75rem;
+  font-weight:700;padding:.45rem 1rem;border-radius:6px;border:none;cursor:pointer;
+  letter-spacing:.03em;transition:all .3s;text-decoration:none}
+.nav-cta:hover{background:var(--gold-light);color:var(--bg-dark)!important}
+.theme-toggle{background:none;border:1px solid rgba(244,241,235,.2);border-radius:20px;padding:.35rem .7rem;
+  cursor:pointer;font-size:.8rem;color:rgba(244,241,235,.5);font-family:var(--font-ui);transition:all .3s;display:flex;align-items:center;gap:.3rem}
+.theme-toggle:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb{padding:.8rem 4vw;margin-top:60px;font-family:var(--font-ui);font-size:.8rem;color:var(--ink-tertiary)}
+.breadcrumb a{color:var(--ink-tertiary);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{margin:0 .4rem;opacity:.5}
+
+/* ============================================================
+   QUIZ HERO
+   ============================================================ */
+.quiz-hero{text-align:center;padding:2rem 4vw 3rem;
+  background:linear-gradient(170deg,#0d0d1a 0%,var(--bg-dark) 40%,#1e1e3a 100%);position:relative;overflow:hidden}
+.quiz-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:120px;
+  background:linear-gradient(to top,var(--bg-page),transparent)}
+.quiz-hero-ornament{font-family:var(--font-display);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;
+  opacity:0;animation:fadeUp .8s .2s forwards}
+.quiz-hero-ornament::before,.quiz-hero-ornament::after{content:'';width:60px;height:1px;background:var(--gold);opacity:.4}
+.quiz-hero h1{color:var(--ink-inverse);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;
+  opacity:0;animation:fadeUp .8s .4s forwards}
+.quiz-hero h1 em{font-style:italic;color:var(--gold)}
+.quiz-hero-sub{font-family:var(--font-body);font-size:1.05rem;color:rgba(244,241,235,.45);
+  max-width:550px;margin:.8rem auto 0;font-weight:400;opacity:0;animation:fadeUp .8s .6s forwards}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+.progress-container{position:sticky;top:60px;z-index:999;background:var(--bg-surface);
+  border-bottom:1px solid var(--border-light);padding:.8rem 4vw}
+[data-theme="dark"] .progress-container{background:var(--bg-surface)}
+.progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.progress-label{font-family:var(--font-ui);font-size:.8rem;font-weight:600;color:var(--ink)}
+.progress-step{font-family:var(--font-mono);font-size:.75rem;color:var(--gold)}
+.progress-bar{height:6px;background:var(--bg-elevated);border-radius:3px;overflow:hidden;position:relative}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;
+  transition:width .5s cubic-bezier(.22,1,.36,1);width:0}
+
+/* ============================================================
+   QUIZ CONTAINER
+   ============================================================ */
+.quiz-container{max-width:800px;margin:0 auto;padding:2.5rem 4vw 4rem}
+
+/* Question card */
+.question-card{display:none;animation:slideIn .5s ease}
+.question-card.active{display:block}
+
+@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-30px)}}
+
+.question-number{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.question-title{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.8rem);font-weight:900;
+  margin-bottom:.4rem;color:var(--ink)}
+.question-subtitle{font-family:var(--font-body);font-size:.9rem;color:var(--ink-secondary);margin-bottom:1.8rem}
+
+/* Option cards */
+.options-grid{display:grid;gap:.7rem}
+.options-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.options-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){
+  .options-grid.cols-2,.options-grid.cols-3{grid-template-columns:1fr}
+}
+
+.option-card{background:var(--bg-surface);border:2px solid var(--border-light);border-radius:var(--radius-md);
+  padding:1.1rem 1.3rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.9rem;
+  font-family:var(--font-ui);font-size:.9rem;font-weight:500;color:var(--ink);position:relative;overflow:hidden}
+.option-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-glow),transparent);
+  opacity:0;transition:opacity .3s}
+.option-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.option-card:hover::before{opacity:1}
+.option-card.selected{border-color:var(--gold);background:var(--gold-glow);box-shadow:0 0 20px rgba(201,168,76,.15)}
+.option-card.selected .option-check{background:var(--gold);border-color:var(--gold);color:var(--bg-dark)}
+.option-icon{font-size:1.4rem;flex-shrink:0;position:relative;z-index:1}
+.option-text{position:relative;z-index:1;flex:1}
+.option-check{width:22px;height:22px;border-radius:50%;border:2px solid var(--border-medium);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem;
+  transition:all .3s;position:relative;z-index:1;color:transparent}
+
+/* Navigation buttons */
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;gap:1rem}
+.btn-back{font-family:var(--font-ui);font-size:.85rem;font-weight:600;padding:.7rem 1.5rem;
+  border-radius:25px;border:1px solid var(--border-medium);background:transparent;color:var(--ink-secondary);
+  cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.btn-back:hover{border-color:var(--gold);color:var(--gold)}
+.btn-back:disabled{opacity:.3;cursor:not-allowed}
+.btn-next{font-family:var(--font-ui);font-size:.85rem;font-weight:700;padding:.7rem 2rem;
+  border-radius:25px;border:none;background:var(--gold);color:var(--bg-dark);
+  cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.btn-next:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 15px rgba(201,168,76,.3)}
+.btn-next:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ============================================================
+   RESULTS PAGE
+   ============================================================ */
+.results-container{display:none;max-width:900px;margin:0 auto;padding:2rem 4vw 4rem;
+  animation:fadeUp .8s ease}
+.results-container.active{display:block}
+
+.results-profile{text-align:center;margin-bottom:2.5rem;padding:2rem;
+  background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.02));
+  border:1px solid rgba(201,168,76,.2);border-radius:var(--radius-lg)}
+.results-profile-icon{font-size:3rem;margin-bottom:.5rem}
+.results-profile-title{font-family:var(--font-display);font-size:1.6rem;font-weight:900;margin-bottom:.3rem}
+.results-profile-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:.8rem}
+.profile-tag{font-family:var(--font-mono);font-size:.7rem;padding:.3rem .7rem;border-radius:15px;
+  background:var(--bg-elevated);border:1px solid var(--border-light);color:var(--ink-secondary)}
+
+.results-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:900;margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.5rem}
+
+/* Tool result cards */
+.result-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);
+  padding:1.5rem;margin-bottom:1rem;transition:all .3s;position:relative;overflow:hidden}
+.result-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md)}
+.result-card-rank{position:absolute;top:0;left:0;background:var(--gold);color:var(--bg-dark);
+  font-family:var(--font-display);font-weight:900;font-size:.85rem;
+  padding:.3rem .7rem .3rem .5rem;border-radius:0 0 var(--radius-md) 0}
+.result-card-header{display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;padding-left:2.5rem}
+.result-card-icon{font-size:2rem;flex-shrink:0}
+.result-card-info{flex:1}
+.result-card-name{font-family:var(--font-display);font-weight:900;font-size:1.15rem}
+.result-card-match{font-family:var(--font-mono);font-size:.8rem;color:var(--gold);font-weight:600}
+.result-card-score-bar{height:4px;background:var(--bg-elevated);border-radius:2px;margin-top:.4rem;overflow:hidden}
+.result-card-score-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;
+  transition:width 1s cubic-bezier(.22,1,.36,1)}
+.result-card-reason{font-family:var(--font-body);font-size:.88rem;color:var(--ink-secondary);
+  margin:.8rem 0;line-height:1.5;padding-left:.5rem;border-left:2px solid var(--gold-glow)}
+.result-card-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.result-btn{font-family:var(--font-ui);font-size:.78rem;font-weight:600;padding:.45rem 1rem;
+  border-radius:20px;border:1px solid var(--border-light);background:transparent;
+  color:var(--ink-secondary);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.result-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
+.result-btn.primary{background:var(--gold);color:var(--bg-dark);border-color:var(--gold)}
+.result-btn.primary:hover{background:var(--gold-light)}
+
+/* Budget alternative */
+.budget-box{background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:var(--radius-md);
+  padding:1.2rem 1.5rem;margin:1.5rem 0;display:flex;align-items:center;gap:1rem}
+.budget-box-icon{font-size:1.5rem;flex-shrink:0}
+.budget-box-text{flex:1;font-family:var(--font-ui);font-size:.85rem;color:var(--ink-secondary)}
+.budget-box-text strong{color:var(--ink);font-weight:700}
+
+/* Results actions */
+.results-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid var(--border-light)}
+.results-action-btn{font-family:var(--font-ui);font-size:.85rem;font-weight:600;padding:.7rem 1.5rem;
+  border-radius:25px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.results-action-btn.gold{background:var(--gold);color:var(--bg-dark);border:none}
+.results-action-btn.gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+.results-action-btn.outline{background:transparent;color:var(--ink);border:1px solid var(--border-medium)}
+.results-action-btn.outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--bg-dark);color:var(--ink-inverse);padding:3rem 4vw 1.5rem}
+.footer-inner{max-width:900px;margin:0 auto;text-align:center}
+.footer-brand{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.footer-desc{font-size:.85rem;color:rgba(244,241,235,.4);max-width:500px;margin:0 auto .8rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{color:rgba(244,241,235,.4);font-family:var(--font-ui);font-size:.8rem;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{font-family:var(--font-mono);font-size:.7rem;color:rgba(244,241,235,.2);
+  border-top:1px solid rgba(244,241,235,.06);padding-top:1rem}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);
+  background:var(--bg-dark);color:var(--ink-inverse);font-family:var(--font-ui);font-size:.85rem;
+  padding:.7rem 1.5rem;border-radius:25px;box-shadow:var(--shadow-lg);z-index:10000;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);border:1px solid rgba(201,168,76,.2)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:768px){
+  .nav-right a:not(.nav-cta){display:none}
+  .result-card-header{padding-left:2rem}
+  .results-actions{flex-direction:column;align-items:stretch}
+  .results-action-btn{justify-content:center}
+}
+@media(max-width:480px){
+  .quiz-container{padding:1.5rem 3vw 3rem}
+  .option-card{padding:.9rem 1rem}
+}
+</style>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-left">
+    <div class="lang-switcher">
+      <a class="lang-btn active" href="/fr/quiz/" title="Francais"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Crect width='300' height='600' fill='%23002395'/%3E%3Crect x='300' width='300' height='600' fill='%23fff'/%3E%3Crect x='600' width='300' height='600' fill='%23ED2939'/%3E%3C/svg%3E" alt="FR"></a>
+      <a class="lang-btn" href="/en/quiz/" title="English"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='s'%3E%3Cpath d='M0 0v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath id='t'%3E%3Cpath d='M30 15h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Cpath d='M0 0v30h60V0z' fill='%23012169'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E" alt="EN"></a>
+    </div>
+    <a class="nav-logo" href="/fr/">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="50,4 96,50 50,96 4,50" stroke="#c9a84c" stroke-width="3" fill="none"/><polygon points="50,14 86,50 50,86 14,50" stroke="#c9a84c" stroke-width="1.5" fill="none"/><text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="400" fill="#c9a84c" letter-spacing="2">BI</text></svg>
+      <span>La Bible de l'IA</span>
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/#catalogue">Catalogue</a>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">&#x1F319;</button>
+    <a href="/fr/" class="nav-cta">400+ Outils</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/fr/">Accueil</a><span>&#x203A;</span><strong>Quiz IA</strong>
+</div>
+
+<!-- QUIZ HERO -->
+<section class="quiz-hero">
+  <div class="quiz-hero-ornament">Recommandation personnalisee</div>
+  <h1>Trouvez l'outil <em>IA</em> parfait</h1>
+  <p class="quiz-hero-sub">8 questions pour decouvrir les outils d'intelligence artificielle faits pour vous, parmi 400+ references.</p>
+</section>
+
+<!-- PROGRESS BAR -->
+<div class="progress-container" id="progressContainer" style="display:none">
+  <div class="progress-info">
+    <span class="progress-label" id="progressLabel">Question 1 sur 8</span>
+    <span class="progress-step" id="progressStep">12%</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- QUIZ QUESTIONS -->
+<div class="quiz-container" id="quizContainer">
+
+  <!-- START SCREEN -->
+  <div class="question-card active" id="startScreen" style="text-align:center;padding:2rem 0">
+    <div style="font-size:4rem;margin-bottom:1rem">&#x1F9E0;</div>
+    <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:900;margin-bottom:.5rem">Pret a trouver vos outils IA ideaux ?</h2>
+    <p style="color:var(--ink-secondary);font-size:.95rem;max-width:500px;margin:0 auto 1.5rem">En 8 questions, notre algorithme analyse votre profil et vous recommande les 5 meilleurs outils parmi notre base de 400+.</p>
+    <div style="display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-size:1.5rem;margin-bottom:.3rem">&#x23F1;&#xFE0F;</div><div style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">2 minutes</div></div>
+      <div style="text-align:center"><div style="font-size:1.5rem;margin-bottom:.3rem">&#x1F3AF;</div><div style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">8 questions</div></div>
+      <div style="text-align:center"><div style="font-size:1.5rem;margin-bottom:.3rem">&#x2728;</div><div style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Top 5 personnalise</div></div>
+    </div>
+    <button class="btn-next" onclick="QUIZ.start()" style="margin:0 auto;font-size:1rem;padding:.9rem 2.5rem">
+      Commencer le quiz &#x2192;
+    </button>
+  </div>
+
+  <!-- QUESTIONS (dynamically managed by JS) -->
+  <div class="question-card" id="q1">
+    <div class="question-number">Question 1 / 8</div>
+    <h2 class="question-title">Quel est votre domaine principal ?</h2>
+    <p class="question-subtitle">Selectionnez le domaine qui vous correspond le mieux.</p>
+    <div class="options-grid cols-2" id="q1options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()" disabled>&#x2190; Retour</button>
+      <button class="btn-next" id="q1next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q2">
+    <div class="question-number">Question 2 / 8</div>
+    <h2 class="question-title">Que souhaitez-vous accomplir ?</h2>
+    <p class="question-subtitle">Choisissez l'objectif qui vous correspond le mieux.</p>
+    <div class="options-grid cols-2" id="q2options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q2next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q3">
+    <div class="question-number">Question 3 / 8</div>
+    <h2 class="question-title">Quel est votre niveau technique ?</h2>
+    <p class="question-subtitle">Soyez honnete, cela nous aide a trouver des outils adaptes.</p>
+    <div class="options-grid" id="q3options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q3next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q4">
+    <div class="question-number">Question 4 / 8</div>
+    <h2 class="question-title">Quel est votre budget mensuel ?</h2>
+    <p class="question-subtitle">Pour les outils IA que vous utiliseriez.</p>
+    <div class="options-grid" id="q4options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q4next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q5">
+    <div class="question-number">Question 5 / 8</div>
+    <h2 class="question-title">Vous travaillez comment ?</h2>
+    <p class="question-subtitle">Votre contexte de travail influence les outils recommandes.</p>
+    <div class="options-grid" id="q5options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q5next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q6">
+    <div class="question-number">Question 6 / 8</div>
+    <h2 class="question-title">Quelle est votre priorite n&#xB0;1 ?</h2>
+    <p class="question-subtitle">Ce qui compte le plus pour vous dans un outil IA.</p>
+    <div class="options-grid" id="q6options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q6next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q7">
+    <div class="question-number">Question 7 / 8</div>
+    <h2 class="question-title">Vous preferez ?</h2>
+    <p class="question-subtitle">Votre approche ideale pour les outils.</p>
+    <div class="options-grid cols-2" id="q7options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q7next" onclick="QUIZ.next()" disabled>Suivant &#x2192;</button>
+    </div>
+  </div>
+
+  <div class="question-card" id="q8">
+    <div class="question-number">Question 8 / 8</div>
+    <h2 class="question-title">Vos donnees sont-elles sensibles ?</h2>
+    <p class="question-subtitle">La confidentialite influence nos recommandations.</p>
+    <div class="options-grid cols-2" id="q8options"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" onclick="QUIZ.prev()">&#x2190; Retour</button>
+      <button class="btn-next" id="q8next" onclick="QUIZ.showResults()">Voir mes resultats &#x2728;</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- RESULTS -->
+<div class="results-container" id="resultsContainer"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">&#x1F4D6; La Bible de l'IA</div>
+    <p class="footer-desc">L'encyclopedie de reference des outils d'intelligence artificielle. 400+ outils analyses, compares et notes.</p>
+    <div class="footer-links">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/#catalogue">Catalogue</a>
+      <a href="/fr/#blog">Guides</a>
+      <a href="/en/quiz/">English Version</a>
+    </div>
+    <div class="footer-bottom">La Bible de l'IA &copy; 2026 &mdash; 400+ outils recenses</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   LA BIBLE DE L'IA - QUIZ ENGINE (FR)
+   ============================================================ */
+
+// Theme management
+function toggleTheme(){
+  const d=document.documentElement;
+  const current=d.getAttribute('data-theme');
+  const next=current==='dark'?'light':'dark';
+  d.setAttribute('data-theme',next);
+  document.getElementById('themeToggle').textContent=next==='dark'?'\u2600\uFE0F':'\uD83C\uDF19';
+  try{localStorage.setItem('bible-theme',next)}catch(e){}
+}
+(function(){try{const t=localStorage.getItem('bible-theme');if(t){document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.getElementById('themeToggle').textContent='\u2600\uFE0F'}}catch(e){}})();
+
+// Toast
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+/* ============================================================
+   TOOL DATABASE
+   ============================================================ */
+const TOOLS_DB = {
+  // --- Chatbots / Writing ---
+  'chatgpt':     {name:'ChatGPT',icon:'\uD83E\uDD16',url:'https://chat.openai.com',pricing:'freemium',ease:5,quality:5,speed:5,collab:true,privacy:3,tags:['chatbot','writing','code','data','all-in-one']},
+  'claude':      {name:'Claude',icon:'\uD83E\uDDCA',url:'https://claude.ai',pricing:'freemium',ease:5,quality:5,speed:5,collab:true,privacy:4,tags:['chatbot','writing','code','data','research']},
+  'gemini':      {name:'Gemini',icon:'\u2728',url:'https://gemini.google.com',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['chatbot','writing','research','data']},
+  'perplexity':  {name:'Perplexity AI',icon:'\uD83D\uDD0D',url:'https://perplexity.ai',pricing:'freemium',ease:5,quality:5,speed:5,collab:false,privacy:3,tags:['research','writing','chatbot']},
+  'deepseek':    {name:'DeepSeek',icon:'\uD83D\uDCA0',url:'https://deepseek.com',pricing:'gratuit',ease:4,quality:4,speed:4,collab:false,privacy:2,tags:['chatbot','code','research']},
+
+  // --- Writing specific ---
+  'jasper':      {name:'Jasper',icon:'\u270D\uFE0F',url:'https://jasper.ai',pricing:'payant',ease:4,quality:4,speed:5,collab:true,privacy:3,tags:['writing','marketing','content']},
+  'copy-ai':     {name:'Copy.ai',icon:'\uD83D\uDCDD',url:'https://copy.ai',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['writing','marketing','content']},
+  'writesonic':  {name:'Writesonic',icon:'\u26A1',url:'https://writesonic.com',pricing:'freemium',ease:4,quality:4,speed:5,collab:false,privacy:3,tags:['writing','marketing','content']},
+  'rytr':        {name:'Rytr',icon:'\uD83D\uDCDA',url:'https://rytr.me',pricing:'freemium',ease:5,quality:3,speed:5,collab:false,privacy:3,tags:['writing','content']},
+  'grammarly':   {name:'Grammarly',icon:'\uD83D\uDCCC',url:'https://grammarly.com',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['writing','editing']},
+  'quillbot':    {name:'QuillBot',icon:'\uD83D\uDD04',url:'https://quillbot.com',pricing:'freemium',ease:5,quality:3,speed:5,collab:false,privacy:3,tags:['writing','editing']},
+  'notion-ai':   {name:'Notion AI',icon:'\uD83D\uDDD2\uFE0F',url:'https://notion.so',pricing:'payant',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['writing','productivity','documents','project']},
+
+  // --- Image generation ---
+  'midjourney':  {name:'Midjourney',icon:'\uD83C\uDFA8',url:'https://midjourney.com',pricing:'payant',ease:3,quality:5,speed:4,collab:true,privacy:2,tags:['image','design','creative']},
+  'dall-e':      {name:'DALL-E 3',icon:'\uD83D\uDDBC\uFE0F',url:'https://openai.com/dall-e-3',pricing:'payant',ease:5,quality:5,speed:4,collab:false,privacy:3,tags:['image','design','creative']},
+  'leonardo':    {name:'Leonardo AI',icon:'\uD83C\uDF1F',url:'https://leonardo.ai',pricing:'freemium',ease:4,quality:4,speed:4,collab:false,privacy:3,tags:['image','design','creative']},
+  'ideogram':    {name:'Ideogram',icon:'\uD83D\uDCA1',url:'https://ideogram.ai',pricing:'freemium',ease:4,quality:4,speed:4,collab:false,privacy:3,tags:['image','design','text-in-image']},
+  'flux':        {name:'Flux',icon:'\uD83C\uDF0A',url:'https://flux.ai',pricing:'freemium',ease:3,quality:5,speed:3,collab:false,privacy:3,tags:['image','design','open-source']},
+  'canvaai':     {name:'Canva AI',icon:'\uD83C\uDFAF',url:'https://canva.com',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['image','design','marketing','presentations','all-in-one']},
+  'photoroom':   {name:'PhotoRoom',icon:'\uD83D\uDCF7',url:'https://photoroom.com',pricing:'freemium',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['image','photo-editing','marketing']},
+  'remini':      {name:'Remini',icon:'\uD83D\uDD2E',url:'https://remini.ai',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:2,tags:['image','photo-editing']},
+  'clipdrop':    {name:'Clipdrop',icon:'\u2702\uFE0F',url:'https://clipdrop.co',pricing:'freemium',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['image','photo-editing','design']},
+
+  // --- Video ---
+  'runway-gen3': {name:'Runway Gen-3',icon:'\uD83C\uDFAC',url:'https://runwayml.com',pricing:'payant',ease:4,quality:5,speed:3,collab:true,privacy:3,tags:['video','creative']},
+  'sora':        {name:'Sora',icon:'\uD83C\uDF0C',url:'https://openai.com/sora',pricing:'payant',ease:4,quality:5,speed:3,collab:false,privacy:3,tags:['video','creative']},
+  'kling':       {name:'Kling AI',icon:'\uD83C\uDFAD',url:'https://kling.ai',pricing:'freemium',ease:4,quality:4,speed:3,collab:false,privacy:2,tags:['video','creative']},
+  'pika':        {name:'Pika',icon:'\u26A1',url:'https://pika.art',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:3,tags:['video','creative']},
+  'synthesia':   {name:'Synthesia',icon:'\uD83C\uDFA5',url:'https://synthesia.io',pricing:'payant',ease:5,quality:4,speed:4,collab:true,privacy:4,tags:['video','presentations','marketing','education']},
+  'heygen':      {name:'HeyGen',icon:'\uD83D\uDC64',url:'https://heygen.com',pricing:'payant',ease:4,quality:4,speed:4,collab:true,privacy:3,tags:['video','marketing','presentations']},
+  'descript':    {name:'Descript',icon:'\uD83C\uDFA7',url:'https://descript.com',pricing:'freemium',ease:4,quality:4,speed:4,collab:true,privacy:3,tags:['video','audio','editing','content']},
+
+  // --- Audio ---
+  'elevenlabs':  {name:'ElevenLabs',icon:'\uD83C\uDF99\uFE0F',url:'https://elevenlabs.io',pricing:'freemium',ease:4,quality:5,speed:4,collab:true,privacy:3,tags:['audio','voice','content']},
+  'murf':        {name:'Murf AI',icon:'\uD83D\uDD0A',url:'https://murf.ai',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['audio','voice','content']},
+  'suno':        {name:'Suno',icon:'\uD83C\uDFB5',url:'https://suno.com',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:2,tags:['audio','music','creative']},
+  'udio':        {name:'Udio',icon:'\uD83C\uDFB6',url:'https://udio.com',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:2,tags:['audio','music','creative']},
+
+  // --- Code ---
+  'github-copilot':{name:'GitHub Copilot',icon:'\uD83D\uDC99',url:'https://github.com/features/copilot',pricing:'payant',ease:4,quality:5,speed:5,collab:true,privacy:4,tags:['code','dev','productivity']},
+  'cursor':      {name:'Cursor',icon:'\uD83D\uDDB1\uFE0F',url:'https://cursor.com',pricing:'freemium',ease:4,quality:5,speed:5,collab:false,privacy:3,tags:['code','dev','productivity']},
+  'cody':        {name:'Sourcegraph Cody',icon:'\uD83E\uDD8A',url:'https://sourcegraph.com/cody',pricing:'freemium',ease:3,quality:4,speed:4,collab:true,privacy:4,tags:['code','dev']},
+  'codeium':     {name:'Codeium',icon:'\uD83D\uDE80',url:'https://codeium.com',pricing:'gratuit',ease:4,quality:4,speed:5,collab:false,privacy:3,tags:['code','dev']},
+  'tabnine':     {name:'Tabnine',icon:'\u2328\uFE0F',url:'https://tabnine.com',pricing:'freemium',ease:4,quality:4,speed:5,collab:true,privacy:5,tags:['code','dev']},
+  'phind':       {name:'Phind',icon:'\uD83D\uDCA1',url:'https://phind.com',pricing:'gratuit',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['code','dev','research']},
+
+  // --- UI/Web Design ---
+  'v0-design':   {name:'v0 by Vercel',icon:'\u25B2',url:'https://v0.dev',pricing:'freemium',ease:4,quality:4,speed:5,collab:false,privacy:3,tags:['code','ui','design','dev']},
+  'bolt':        {name:'Bolt.new',icon:'\u26A1',url:'https://bolt.new',pricing:'freemium',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['code','ui','dev']},
+  'lovable':     {name:'Lovable',icon:'\u2764\uFE0F',url:'https://lovable.dev',pricing:'freemium',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['code','ui','dev']},
+  'framer-v2':   {name:'Framer',icon:'\uD83D\uDDA5\uFE0F',url:'https://framer.com',pricing:'freemium',ease:4,quality:5,speed:4,collab:true,privacy:3,tags:['design','web-design','ui']},
+  'webflow-ai':  {name:'Webflow AI',icon:'\uD83C\uDF10',url:'https://webflow.com',pricing:'payant',ease:3,quality:5,speed:3,collab:true,privacy:4,tags:['design','web-design']},
+  'durable':     {name:'Durable',icon:'\uD83C\uDFE0',url:'https://durable.co',pricing:'payant',ease:5,quality:3,speed:5,collab:false,privacy:3,tags:['design','web-design']},
+
+  // --- Presentations ---
+  'gamma-v2':    {name:'Gamma',icon:'\uD83D\uDCCA',url:'https://gamma.app',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['presentations','content','education']},
+  'tome':        {name:'Tome',icon:'\uD83D\uDCD6',url:'https://tome.app',pricing:'freemium',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['presentations','content']},
+  'beautifulai': {name:'Beautiful.ai',icon:'\uD83C\uDF1F',url:'https://beautiful.ai',pricing:'payant',ease:5,quality:4,speed:5,collab:true,privacy:3,tags:['presentations']},
+
+  // --- Automation ---
+  'zapier':      {name:'Zapier',icon:'\u26A1',url:'https://zapier.com',pricing:'freemium',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['automation','productivity','integration']},
+  'make':        {name:'Make',icon:'\u2699\uFE0F',url:'https://make.com',pricing:'freemium',ease:3,quality:5,speed:4,collab:true,privacy:4,tags:['automation','productivity','integration']},
+  'n8n':         {name:'n8n',icon:'\uD83D\uDD17',url:'https://n8n.io',pricing:'freemium',ease:2,quality:5,speed:4,collab:true,privacy:5,tags:['automation','productivity','integration','open-source']},
+  'bardeen':     {name:'Bardeen',icon:'\uD83E\uDD16',url:'https://bardeen.ai',pricing:'freemium',ease:5,quality:3,speed:4,collab:false,privacy:3,tags:['automation','productivity']},
+
+  // --- Data ---
+  'julius':      {name:'Julius AI',icon:'\uD83D\uDCCA',url:'https://julius.ai',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:3,tags:['data','analysis','research']},
+  'pandas-ai':   {name:'PandasAI',icon:'\uD83D\uDC3C',url:'https://pandas-ai.com',pricing:'gratuit',ease:2,quality:4,speed:4,collab:false,privacy:4,tags:['data','code','dev','open-source']},
+  'llamaindex':  {name:'LlamaIndex',icon:'\uD83E\uDD99',url:'https://llamaindex.ai',pricing:'gratuit',ease:2,quality:4,speed:3,collab:false,privacy:5,tags:['data','code','dev','open-source']},
+
+  // --- Research / Education ---
+  'elicit':      {name:'Elicit',icon:'\uD83D\uDD2C',url:'https://elicit.com',pricing:'freemium',ease:4,quality:5,speed:4,collab:false,privacy:3,tags:['research','education','writing']},
+  'scispace':    {name:'SciSpace',icon:'\uD83D\uDCDA',url:'https://scispace.com',pricing:'freemium',ease:4,quality:4,speed:4,collab:false,privacy:3,tags:['research','education']},
+  'consensus':   {name:'Consensus',icon:'\u2705',url:'https://consensus.app',pricing:'freemium',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['research','education']},
+  'notebooklm':  {name:'NotebookLM',icon:'\uD83D\uDCD3',url:'https://notebooklm.google.com',pricing:'gratuit',ease:5,quality:4,speed:4,collab:true,privacy:3,tags:['research','education','learning']},
+  'khanmigo':    {name:'Khanmigo',icon:'\uD83C\uDF93',url:'https://khanacademy.org',pricing:'freemium',ease:5,quality:4,speed:4,collab:false,privacy:4,tags:['education','learning']},
+  'duolingo':    {name:'Duolingo Max',icon:'\uD83E\uDD89',url:'https://duolingo.com',pricing:'payant',ease:5,quality:4,speed:5,collab:false,privacy:3,tags:['education','learning','languages']},
+
+  // --- Social / Publishing ---
+  'buffer':      {name:'Buffer',icon:'\uD83D\uDCE8',url:'https://buffer.com',pricing:'freemium',ease:5,quality:3,speed:4,collab:true,privacy:3,tags:['social-media','marketing','publishing']},
+  'hootsuite':   {name:'Hootsuite',icon:'\uD83E\uDD89',url:'https://hootsuite.com',pricing:'payant',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['social-media','marketing','publishing']},
+  'publer':      {name:'Publer',icon:'\uD83D\uDCC5',url:'https://publer.io',pricing:'freemium',ease:5,quality:3,speed:4,collab:true,privacy:3,tags:['social-media','marketing','publishing']},
+  'later':       {name:'Later',icon:'\u23F0',url:'https://later.com',pricing:'freemium',ease:5,quality:3,speed:4,collab:true,privacy:3,tags:['social-media','marketing','publishing']},
+
+  // --- Business tools ---
+  'hubspot':     {name:'HubSpot AI',icon:'\uD83E\uDDF2',url:'https://hubspot.com',pricing:'freemium',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['marketing','automation','crm']},
+  'clickup':     {name:'ClickUp AI',icon:'\u2705',url:'https://clickup.com',pricing:'freemium',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['project','productivity','documents']},
+  'asana':       {name:'Asana Intelligence',icon:'\uD83D\uDCCB',url:'https://asana.com',pricing:'payant',ease:4,quality:4,speed:4,collab:true,privacy:4,tags:['project','productivity']},
+  'intercom':    {name:'Intercom Fin',icon:'\uD83D\uDCAC',url:'https://intercom.com',pricing:'payant',ease:3,quality:4,speed:5,collab:true,privacy:4,tags:['customer-service','business']},
+  'zendesk':     {name:'Zendesk AI',icon:'\uD83C\uDFAB',url:'https://zendesk.com',pricing:'payant',ease:3,quality:4,speed:4,collab:true,privacy:4,tags:['customer-service','business']},
+  'tidio':       {name:'Tidio',icon:'\uD83D\uDDE8\uFE0F',url:'https://tidio.com',pricing:'freemium',ease:5,quality:3,speed:5,collab:true,privacy:3,tags:['customer-service','business']}
+};
+
+/* ============================================================
+   QUIZ QUESTIONS DATA
+   ============================================================ */
+const QUESTIONS = {
+  q1: {
+    options: [
+      {id:'marketing',icon:'\uD83D\uDCE3',text:'Marketing & Communication'},
+      {id:'dev',icon:'\uD83D\uDCBB',text:'Developpement & Tech'},
+      {id:'design',icon:'\uD83C\uDFA8',text:'Design & Creation'},
+      {id:'business',icon:'\uD83D\uDCBC',text:'Business & Management'},
+      {id:'education',icon:'\uD83C\uDF93',text:'Education & Recherche'},
+      {id:'content',icon:'\uD83C\uDFA5',text:'Creation de contenu'}
+    ]
+  },
+  q2: {
+    marketing: [
+      {id:'writing',icon:'\u270D\uFE0F',text:'Rediger du contenu'},
+      {id:'visuals',icon:'\uD83D\uDDBC\uFE0F',text:'Creer des visuels'},
+      {id:'automation',icon:'\u2699\uFE0F',text:'Automatiser les campagnes'},
+      {id:'analytics',icon:'\uD83D\uDCCA',text:'Analyser les donnees'},
+      {id:'social',icon:'\uD83D\uDCF1',text:'Gerer les reseaux sociaux'}
+    ],
+    dev: [
+      {id:'coding',icon:'\uD83D\uDCBB',text:'Coder plus vite'},
+      {id:'debugging',icon:'\uD83D\uDC1B',text:'Debugger'},
+      {id:'ui',icon:'\uD83D\uDDA5\uFE0F',text:'Creer des interfaces'},
+      {id:'automation',icon:'\u2699\uFE0F',text:'Automatiser des workflows'},
+      {id:'data',icon:'\uD83D\uDCCA',text:'Travailler avec des donnees'}
+    ],
+    design: [
+      {id:'images',icon:'\uD83D\uDDBC\uFE0F',text:'Creer des images'},
+      {id:'videos',icon:'\uD83C\uDFAC',text:'Creer des videos'},
+      {id:'web',icon:'\uD83C\uDF10',text:'Designer des sites web'},
+      {id:'presentations',icon:'\uD83D\uDCCA',text:'Creer des presentations'},
+      {id:'photo-editing',icon:'\uD83D\uDCF7',text:'Editer des photos'}
+    ],
+    business: [
+      {id:'automation',icon:'\u2699\uFE0F',text:'Automatiser les taches'},
+      {id:'analytics',icon:'\uD83D\uDCCA',text:'Analyser des donnees'},
+      {id:'documents',icon:'\uD83D\uDCC4',text:'Rediger des documents'},
+      {id:'project',icon:'\uD83D\uDCCB',text:'Gerer un projet'},
+      {id:'customer-service',icon:'\uD83D\uDCAC',text:'Service client IA'}
+    ],
+    education: [
+      {id:'research',icon:'\uD83D\uDD0D',text:'Rechercher des sources'},
+      {id:'writing',icon:'\u270D\uFE0F',text:'Rediger des textes'},
+      {id:'learning',icon:'\uD83E\uDDE0',text:'Apprendre plus vite'},
+      {id:'courses',icon:'\uD83D\uDCDA',text:'Creer des cours'},
+      {id:'data',icon:'\uD83D\uDCCA',text:'Analyser des donnees'}
+    ],
+    content: [
+      {id:'writing',icon:'\u270D\uFE0F',text:'Ecrire des articles'},
+      {id:'videos',icon:'\uD83C\uDFAC',text:'Creer des videos'},
+      {id:'images',icon:'\uD83D\uDDBC\uFE0F',text:'Creer des images'},
+      {id:'audio',icon:'\uD83C\uDFA7',text:'Creer de l\'audio'},
+      {id:'publishing',icon:'\uD83D\uDCF1',text:'Gerer les publications'}
+    ]
+  },
+  q3: {
+    options: [
+      {id:'beginner',icon:'\uD83C\uDF31',text:'Debutant (je veux du simple)'},
+      {id:'intermediate',icon:'\uD83D\uDE80',text:'Intermediaire (a l\'aise avec la tech)'},
+      {id:'expert',icon:'\u2764\uFE0F\u200D\uD83D\uDD25',text:'Expert (developpeur / power user)'}
+    ]
+  },
+  q4: {
+    options: [
+      {id:'free',icon:'\uD83C\uDD93',text:'Gratuit uniquement'},
+      {id:'low',icon:'\uD83D\uDCB6',text:'Moins de 20\u20AC/mois'},
+      {id:'medium',icon:'\uD83D\uDCB3',text:'20-50\u20AC/mois'},
+      {id:'high',icon:'\uD83D\uDCB0',text:'Plus de 50\u20AC/mois'},
+      {id:'unlimited',icon:'\uD83D\uDC8E',text:'Pas de limite'}
+    ]
+  },
+  q5: {
+    options: [
+      {id:'solo',icon:'\uD83E\uDDD1\u200D\uD83D\uDCBB',text:'Seul(e) / Freelance'},
+      {id:'small-team',icon:'\uD83D\uDC65',text:'Petite equipe (2-10)'},
+      {id:'enterprise',icon:'\uD83C\uDFE2',text:'Entreprise (10+)'}
+    ]
+  },
+  q6: {
+    options: [
+      {id:'ease',icon:'\uD83E\uDEF6',text:'Facilite d\'utilisation'},
+      {id:'quality',icon:'\uD83C\uDFC6',text:'Qualite des resultats'},
+      {id:'speed',icon:'\u26A1',text:'Rapidite'},
+      {id:'price',icon:'\uD83C\uDFF7\uFE0F',text:'Prix le plus bas'},
+      {id:'integrations',icon:'\uD83D\uDD17',text:'Integrations avec mes outils'}
+    ]
+  },
+  q7: {
+    options: [
+      {id:'all-in-one',icon:'\uD83E\uDDF0',text:'Un outil tout-en-un polyvalent'},
+      {id:'specialized',icon:'\uD83C\uDFAF',text:'Des outils specialises pour chaque tache'}
+    ]
+  },
+  q8: {
+    options: [
+      {id:'sensitive',icon:'\uD83D\uDD12',text:'Oui, confidentialite critique'},
+      {id:'not-sensitive',icon:'\uD83D\uDD13',text:'Non, pas particulierement'}
+    ]
+  }
+};
+
+/* ============================================================
+   SCORING PROFILES - Maps domain+goal to tool lists
+   ============================================================ */
+const TOOL_PROFILES = {
+  marketing: {
+    writing: ['jasper','copy-ai','writesonic','rytr','claude','chatgpt'],
+    visuals: ['midjourney','canvaai','dall-e','ideogram','leonardo'],
+    automation: ['zapier','make','hubspot'],
+    analytics: ['chatgpt','claude','julius'],
+    social: ['buffer','hootsuite','publer','later']
+  },
+  dev: {
+    coding: ['github-copilot','cursor','cody','codeium','tabnine'],
+    debugging: ['chatgpt','claude','phind','deepseek'],
+    ui: ['v0-design','bolt','lovable'],
+    automation: ['zapier','make','n8n'],
+    data: ['julius','pandas-ai','llamaindex']
+  },
+  design: {
+    images: ['midjourney','dall-e','leonardo','ideogram','flux'],
+    videos: ['runway-gen3','sora','kling','pika','synthesia'],
+    web: ['framer-v2','webflow-ai','durable'],
+    presentations: ['gamma-v2','tome','beautifulai'],
+    'photo-editing': ['photoroom','remini','clipdrop']
+  },
+  business: {
+    automation: ['zapier','make','bardeen'],
+    analytics: ['julius','chatgpt','claude'],
+    documents: ['notion-ai','claude','chatgpt'],
+    project: ['notion-ai','clickup','asana'],
+    'customer-service': ['intercom','zendesk','tidio']
+  },
+  education: {
+    research: ['perplexity','elicit','scispace','consensus'],
+    writing: ['claude','chatgpt','grammarly','quillbot'],
+    learning: ['notebooklm','khanmigo','duolingo'],
+    courses: ['gamma-v2','tome','synthesia'],
+    data: ['julius','chatgpt','claude']
+  },
+  content: {
+    writing: ['claude','chatgpt','jasper','writesonic'],
+    videos: ['runway-gen3','synthesia','heygen','descript'],
+    images: ['midjourney','dall-e','leonardo','canvaai'],
+    audio: ['elevenlabs','murf','suno','udio'],
+    publishing: ['buffer','publer','later']
+  }
+};
+
+/* ============================================================
+   PROFILE LABELS (FR)
+   ============================================================ */
+const PROFILE_LABELS = {
+  domain: {marketing:'Marketeur',dev:'Developpeur',design:'Designer',business:'Manager',education:'Chercheur',content:'Createur'},
+  goal: {writing:'Redaction',visuals:'Visuels',automation:'Automatisation',analytics:'Analyse',social:'Reseaux sociaux',
+    coding:'Code',debugging:'Debug',ui:'Interfaces',data:'Donnees',images:'Images',videos:'Video',
+    web:'Web design',presentations:'Presentations','photo-editing':'Photo',documents:'Documents',
+    project:'Gestion projet','customer-service':'Service client',research:'Recherche',learning:'Apprentissage',
+    courses:'Formation',audio:'Audio',publishing:'Publications'},
+  level: {beginner:'Debutant',intermediate:'Intermediaire',expert:'Expert'},
+  budget: {free:'Gratuit',low:'Budget leger',medium:'Budget modere',high:'Budget large',unlimited:'Sans limite'},
+  team: {solo:'Solo / Freelance','small-team':'Petite equipe',enterprise:'Entreprise'},
+  priority: {ease:'Simplicite',quality:'Qualite',speed:'Rapidite',price:'Prix bas',integrations:'Integrations'},
+  approach: {'all-in-one':'Tout-en-un',specialized:'Specialise'},
+  privacy: {sensitive:'Donnees sensibles','not-sensitive':'Donnees non sensibles'}
+};
+
+const PROFILE_ICONS = {
+  marketing:'\uD83D\uDCE3',dev:'\uD83D\uDCBB',design:'\uD83C\uDFA8',business:'\uD83D\uDCBC',education:'\uD83C\uDF93',content:'\uD83C\uDFA5'
+};
+
+/* ============================================================
+   REASON TEMPLATES (FR)
+   ============================================================ */
+function getToolReason(toolId, answers){
+  const domain = answers.q1;
+  const goal = answers.q2;
+  const level = answers.q3;
+  const budget = answers.q4;
+
+  const reasons = {
+    'chatgpt':      'Polyvalent et puissant, ChatGPT s\'adapte parfaitement a votre profil et vos objectifs.',
+    'claude':       'Claude excelle en redaction et analyse, ideal pour des resultats nuances et de haute qualite.',
+    'gemini':       'Parfaitement integre a Google, Gemini combine puissance et simplicite pour vos besoins.',
+    'perplexity':   'Le meilleur pour la recherche sourcee et les reponses basees sur des faits verifies.',
+    'deepseek':     'Gratuit et open source, DeepSeek offre un excellent rapport qualite/prix pour le code et la recherche.',
+    'jasper':       'Specialise marketing, Jasper genere du contenu optimise pour la conversion.',
+    'copy-ai':      'Automatise vos workflows de redaction marketing avec des templates puissants.',
+    'writesonic':   'Generez rapidement du contenu marketing optimise SEO.',
+    'rytr':         'Simple et abordable, parfait pour debuter en redaction IA.',
+    'grammarly':    'Ameliorez et peaufinez tous vos textes avec une correction IA avancee.',
+    'quillbot':     'Reformulez et ameliorez vos textes en un clic.',
+    'notion-ai':    'Combinez gestion de projet et IA pour une productivite optimale.',
+    'midjourney':   'La reference en generation d\'images IA de haute qualite artistique.',
+    'dall-e':       'Simple et integre a ChatGPT, creez des images de qualite en quelques mots.',
+    'leonardo':     'Generateur d\'images polyvalent avec un genereux plan gratuit.',
+    'ideogram':     'Excellent pour les images avec du texte integre, ideal pour le marketing.',
+    'flux':         'Open source et haute qualite, pour les utilisateurs qui veulent du controle.',
+    'canvaai':      'Tout-en-un design : images, presentations, videos, tout dans une interface simple.',
+    'photoroom':    'Editez et ameliorez vos photos produit en un instant.',
+    'remini':       'Ameliorez et restaurez vos photos avec l\'IA.',
+    'clipdrop':     'Suite d\'outils photo rapides : suppression de fond, amelioration, edition.',
+    'runway-gen3':  'La pointe de la generation video IA pour des resultats cinematographiques.',
+    'sora':         'La reference OpenAI pour la generation video de haute qualite.',
+    'kling':        'Generation video IA accessible avec un plan gratuit genereux.',
+    'pika':         'Creez des videos IA rapidement avec une interface intuitive.',
+    'synthesia':    'Creez des videos de formation avec des avatars IA realistes.',
+    'heygen':       'Produisez des videos marketing avec des avatars IA personnalises.',
+    'descript':     'Editez video et audio en editant du texte, ideal pour le contenu.',
+    'elevenlabs':   'La meilleure qualite de voix IA, naturelle et expressive.',
+    'murf':         'Generez des voix-off professionnelles rapidement.',
+    'suno':         'Creez des chansons completes avec l\'IA.',
+    'udio':         'Generez de la musique IA de haute qualite dans tous les genres.',
+    'github-copilot':'L\'assistant code IA le plus utilise, integre a votre IDE.',
+    'cursor':       'IDE nouvelle generation avec IA integree pour coder 10x plus vite.',
+    'cody':         'IA code de Sourcegraph, excellente pour les grandes bases de code.',
+    'codeium':      'Assistant code IA gratuit et performant.',
+    'tabnine':      'Completions code IA respectueuses de la vie privee.',
+    'phind':        'Moteur de recherche IA dedie aux developpeurs.',
+    'v0-design':    'Generez des composants UI React en decrivant ce que vous voulez.',
+    'bolt':         'Creez des applications web completes en quelques prompts.',
+    'lovable':      'Generez des applications web IA-powered sans code complexe.',
+    'framer-v2':    'Design web professionnel avec animations avancees.',
+    'webflow-ai':   'La reference du web design no-code avec IA integree.',
+    'durable':      'Creez un site web en 30 secondes avec l\'IA.',
+    'gamma-v2':     'Creez des presentations impactantes avec l\'IA en quelques secondes.',
+    'tome':         'Presentations IA avec storytelling intelligent.',
+    'beautifulai':  'Des presentations au design professionnel, automatiquement.',
+    'zapier':       'Connectez et automatisez 5000+ applications sans coder.',
+    'make':         'Automatisations visuelles puissantes pour les workflows complexes.',
+    'n8n':          'Automatisation open source et auto-hebergeable pour un controle total.',
+    'bardeen':      'Automatisez vos taches repetitives directement dans votre navigateur.',
+    'julius':       'Analysez vos donnees et creez des graphiques avec l\'IA.',
+    'pandas-ai':    'Interrogez vos donnees en langage naturel avec Python.',
+    'llamaindex':   'Framework puissant pour connecter vos donnees aux LLMs.',
+    'elicit':       'Assistant de recherche IA pour analyser des articles scientifiques.',
+    'scispace':     'Lisez et comprenez les publications scientifiques avec l\'IA.',
+    'consensus':    'Trouvez des reponses scientifiques basees sur les publications.',
+    'notebooklm':   'Transformez vos documents en notes interactives et podcasts IA.',
+    'khanmigo':     'Tuteur IA personnalise de Khan Academy.',
+    'duolingo':     'Apprenez les langues avec un tuteur IA ludique et efficace.',
+    'buffer':       'Planifiez et publiez sur tous vos reseaux sociaux simplement.',
+    'hootsuite':    'Gestion avancee des reseaux sociaux pour les equipes.',
+    'publer':       'Planification social media abordable avec IA.',
+    'later':        'Planifiez vos posts Instagram et TikTok visuellement.',
+    'hubspot':      'Suite marketing complete avec CRM et automatisation IA.',
+    'clickup':      'Gestion de projet tout-en-un avec IA integree.',
+    'asana':        'Gestion de projet d\'equipe avec intelligence artificielle.',
+    'intercom':     'Chatbot IA de service client de classe enterprise.',
+    'zendesk':      'Support client IA pour les grandes organisations.',
+    'tidio':        'Chatbot IA simple et efficace pour le service client.'
+  };
+  return reasons[toolId] || 'Un excellent outil IA recommande pour votre profil.';
+}
+
+/* ============================================================
+   QUIZ ENGINE
+   ============================================================ */
+const QUIZ = {
+  currentQ: 0,
+  answers: {},
+
+  start(){
+    document.getElementById('startScreen').classList.remove('active');
+    document.getElementById('progressContainer').style.display='block';
+    this.currentQ = 1;
+    this.renderQuestion(1);
+    this.showQuestion(1);
+    this.updateProgress();
+    // Track quiz start
+    if(typeof gtag==='function') gtag('event','quiz_start',{event_category:'quiz'});
+  },
+
+  renderQuestion(n){
+    const el = document.getElementById('q'+n+'options');
+    if(!el) return;
+    el.innerHTML = '';
+    let opts = [];
+
+    if(n===1) opts = QUESTIONS.q1.options;
+    else if(n===2){
+      const domain = this.answers.q1;
+      opts = QUESTIONS.q2[domain] || QUESTIONS.q2.marketing;
+    }
+    else if(n===3) opts = QUESTIONS.q3.options;
+    else if(n===4) opts = QUESTIONS.q4.options;
+    else if(n===5) opts = QUESTIONS.q5.options;
+    else if(n===6) opts = QUESTIONS.q6.options;
+    else if(n===7) opts = QUESTIONS.q7.options;
+    else if(n===8) opts = QUESTIONS.q8.options;
+
+    opts.forEach(opt => {
+      const card = document.createElement('div');
+      card.className = 'option-card';
+      if(this.answers['q'+n] === opt.id) card.classList.add('selected');
+      card.innerHTML = `<span class="option-icon">${opt.icon}</span><span class="option-text">${opt.text}</span><span class="option-check">\u2713</span>`;
+      card.onclick = () => this.selectOption(n, opt.id, card);
+      el.appendChild(card);
+    });
+  },
+
+  selectOption(qNum, optId, cardEl){
+    // Remove previous selection
+    const container = cardEl.parentElement;
+    container.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+    cardEl.classList.add('selected');
+    this.answers['q'+qNum] = optId;
+    // Enable next button
+    const nextBtn = document.getElementById('q'+qNum+'next');
+    if(nextBtn) nextBtn.disabled = false;
+
+    // If q1 changed, re-render q2
+    if(qNum === 1){
+      delete this.answers.q2;
+      this.renderQuestion(2);
+      const q2next = document.getElementById('q2next');
+      if(q2next) q2next.disabled = true;
+    }
+
+    // Auto-advance after short delay for UX
+    if(qNum < 8){
+      setTimeout(() => this.next(), 350);
+    }
+  },
+
+  showQuestion(n){
+    document.querySelectorAll('.question-card').forEach(c => c.classList.remove('active'));
+    const q = document.getElementById('q'+n);
+    if(q){
+      q.classList.add('active');
+      q.style.animation = 'none';
+      q.offsetHeight; // trigger reflow
+      q.style.animation = 'slideIn .5s ease';
+    }
+    // Back button state
+    const backBtn = q ? q.querySelector('.btn-back') : null;
+    if(backBtn) backBtn.disabled = (n <= 1);
+  },
+
+  next(){
+    if(!this.answers['q'+this.currentQ]) return;
+    if(this.currentQ < 8){
+      this.currentQ++;
+      this.renderQuestion(this.currentQ);
+      this.showQuestion(this.currentQ);
+      this.updateProgress();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  },
+
+  prev(){
+    if(this.currentQ > 1){
+      this.currentQ--;
+      this.renderQuestion(this.currentQ);
+      this.showQuestion(this.currentQ);
+      this.updateProgress();
+    }
+  },
+
+  updateProgress(){
+    const pct = Math.round((this.currentQ / 8) * 100);
+    document.getElementById('progressFill').style.width = pct+'%';
+    document.getElementById('progressLabel').textContent = 'Question '+this.currentQ+' sur 8';
+    document.getElementById('progressStep').textContent = pct+'%';
+  },
+
+  /* ==========================================================
+     SCORING ALGORITHM
+     ========================================================== */
+  calculateScores(){
+    const scores = {};
+    const domain = this.answers.q1;
+    const goal = this.answers.q2;
+    const level = this.answers.q3;
+    const budget = this.answers.q4;
+    const team = this.answers.q5;
+    const priority = this.answers.q6;
+    const approach = this.answers.q7;
+    const privacy = this.answers.q8;
+
+    // 1. Primary tools from profile match
+    const profileTools = TOOL_PROFILES[domain] && TOOL_PROFILES[domain][goal] ? TOOL_PROFILES[domain][goal] : [];
+    profileTools.forEach((id, i) => {
+      if(TOOLS_DB[id]){
+        scores[id] = (scores[id] || 0) + (50 - i * 5); // Primary match: 50, 45, 40, 35, 30...
+      }
+    });
+
+    // 2. Score all tools based on attributes
+    Object.entries(TOOLS_DB).forEach(([id, tool]) => {
+      if(!scores[id]) scores[id] = 0;
+
+      // Budget filter
+      if(budget === 'free'){
+        if(tool.pricing === 'gratuit') scores[id] += 20;
+        else if(tool.pricing === 'freemium') scores[id] += 10;
+        else scores[id] -= 25;
+      } else if(budget === 'low'){
+        if(tool.pricing === 'gratuit' || tool.pricing === 'freemium') scores[id] += 10;
+        else scores[id] -= 5;
+      }
+
+      // Level filter
+      if(level === 'beginner'){
+        scores[id] += tool.ease * 3; // Heavy weight on ease
+      } else if(level === 'intermediate'){
+        scores[id] += tool.ease + tool.quality;
+      } else { // expert
+        scores[id] += tool.quality * 2; // Quality matters more
+      }
+
+      // Team filter
+      if((team === 'small-team' || team === 'enterprise') && tool.collab){
+        scores[id] += 10;
+      }
+      if(team === 'enterprise' && tool.collab){
+        scores[id] += 5;
+      }
+
+      // Priority filter
+      if(priority === 'ease') scores[id] += tool.ease * 2;
+      else if(priority === 'quality') scores[id] += tool.quality * 2;
+      else if(priority === 'speed') scores[id] += tool.speed * 2;
+      else if(priority === 'price'){
+        if(tool.pricing === 'gratuit') scores[id] += 15;
+        else if(tool.pricing === 'freemium') scores[id] += 8;
+      }
+      else if(priority === 'integrations' && tool.collab) scores[id] += 8;
+
+      // Approach
+      if(approach === 'all-in-one' && tool.tags.includes('all-in-one')) scores[id] += 15;
+
+      // Privacy
+      if(privacy === 'sensitive'){
+        scores[id] += tool.privacy * 3;
+        if(tool.tags.includes('open-source')) scores[id] += 8;
+      }
+    });
+
+    // Sort and return top results
+    const sorted = Object.entries(scores)
+      .filter(([id]) => TOOLS_DB[id])
+      .sort((a, b) => b[1] - a[1]);
+
+    const maxScore = sorted[0] ? sorted[0][1] : 1;
+    return sorted.slice(0, 5).map(([id, score], i) => ({
+      id,
+      ...TOOLS_DB[id],
+      score: Math.min(99, Math.max(70, Math.round((score / maxScore) * 100))),
+      rank: i + 1
+    }));
+  },
+
+  getBudgetAlternative(results){
+    const budget = this.answers.q4;
+    if(budget === 'free') return null;
+    const domain = this.answers.q1;
+    const goal = this.answers.q2;
+    const profileTools = TOOL_PROFILES[domain] && TOOL_PROFILES[domain][goal] ? TOOL_PROFILES[domain][goal] : [];
+    const resultIds = results.map(r => r.id);
+    // Find a free tool not in top 5
+    for(const id of Object.keys(TOOLS_DB)){
+      const t = TOOLS_DB[id];
+      if(!resultIds.includes(id) && (t.pricing === 'gratuit' || t.pricing === 'freemium')){
+        if(profileTools.includes(id) || t.tags.some(tag => goal.includes(tag))){
+          return {id, ...t};
+        }
+      }
+    }
+    // Fallback: any free tool relevant to domain
+    for(const id of Object.keys(TOOLS_DB)){
+      const t = TOOLS_DB[id];
+      if(!resultIds.includes(id) && t.pricing === 'gratuit'){
+        return {id, ...t};
+      }
+    }
+    return null;
+  },
+
+  /* ==========================================================
+     RESULTS RENDERING
+     ========================================================== */
+  showResults(){
+    if(!this.answers.q8) return;
+    // Track completion
+    if(typeof gtag==='function') gtag('event','quiz_complete',{event_category:'quiz',event_label:this.answers.q1+'_'+this.answers.q2});
+
+    const results = this.calculateScores();
+    const budgetAlt = this.getBudgetAlternative(results);
+
+    // Hide quiz, show results
+    document.getElementById('quizContainer').style.display='none';
+    document.getElementById('progressContainer').style.display='none';
+    const rc = document.getElementById('resultsContainer');
+    rc.classList.add('active');
+
+    // Build profile summary
+    const domainLabel = PROFILE_LABELS.domain[this.answers.q1] || this.answers.q1;
+    const goalLabel = PROFILE_LABELS.goal[this.answers.q2] || this.answers.q2;
+    const levelLabel = PROFILE_LABELS.level[this.answers.q3] || this.answers.q3;
+    const budgetLabel = PROFILE_LABELS.budget[this.answers.q4] || this.answers.q4;
+    const teamLabel = PROFILE_LABELS.team[this.answers.q5] || this.answers.q5;
+    const priorityLabel = PROFILE_LABELS.priority[this.answers.q6] || this.answers.q6;
+    const domainIcon = PROFILE_ICONS[this.answers.q1] || '\uD83E\uDDE0';
+
+    let html = `
+      <div class="results-profile">
+        <div class="results-profile-icon">${domainIcon}</div>
+        <div class="results-profile-title">Votre profil IA</div>
+        <div style="font-family:var(--font-ui);font-size:1.05rem;color:var(--ink-secondary);margin-top:.3rem">
+          ${domainLabel} ${goalLabel} &mdash; ${budgetLabel} &mdash; ${teamLabel}
+        </div>
+        <div class="results-profile-tags">
+          <span class="profile-tag">${domainLabel}</span>
+          <span class="profile-tag">${goalLabel}</span>
+          <span class="profile-tag">${levelLabel}</span>
+          <span class="profile-tag">${budgetLabel}</span>
+          <span class="profile-tag">${teamLabel}</span>
+          <span class="profile-tag">${priorityLabel}</span>
+        </div>
+      </div>
+
+      <div class="results-heading">\uD83C\uDFC6 Vos 5 outils IA recommandes</div>
+    `;
+
+    results.forEach((tool, i) => {
+      const reason = getToolReason(tool.id, this.answers);
+      const toolSlug = tool.id.replace(/-/g,'').replace('_','');
+      html += `
+        <div class="result-card" style="animation:fadeUp .6s ${i*0.12}s both">
+          <div class="result-card-rank">#${tool.rank}</div>
+          <div class="result-card-header">
+            <span class="result-card-icon">${tool.icon}</span>
+            <div class="result-card-info">
+              <div class="result-card-name">${tool.name}</div>
+              <div class="result-card-match">${tool.score}% compatible</div>
+              <div class="result-card-score-bar"><div class="result-card-score-fill" style="width:0" data-width="${tool.score}%"></div></div>
+            </div>
+          </div>
+          <div class="result-card-reason">${reason}</div>
+          <div class="result-card-actions">
+            <a href="/fr/${toolSlug}/" class="result-btn primary">Voir la fiche \u2192</a>
+            <a href="${tool.url}" target="_blank" rel="noopener" class="result-btn">Visiter le site \u2197</a>
+          </div>
+        </div>
+      `;
+    });
+
+    // Budget alternative
+    if(budgetAlt){
+      html += `
+        <div class="budget-box">
+          <div class="budget-box-icon">\uD83D\uDCA1</div>
+          <div class="budget-box-text">
+            <strong>Alternative budget-friendly :</strong> ${budgetAlt.icon} ${budgetAlt.name}
+            (${budgetAlt.pricing === 'gratuit' ? 'Gratuit' : 'Freemium'}) &mdash;
+            <a href="/fr/${budgetAlt.id.replace(/-/g,'').replace('_','')}/">Voir la fiche</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // Actions
+    html += `
+      <div class="results-actions">
+        <button class="results-action-btn outline" onclick="QUIZ.shareResults()">
+          \uD83D\uDD17 Partager mon resultat
+        </button>
+        <button class="results-action-btn outline" onclick="QUIZ.restart()">
+          \uD83D\uDD04 Refaire le quiz
+        </button>
+        <a href="/fr/" class="results-action-btn gold">
+          \uD83D\uDD0D Explorez les 400+ outils
+        </a>
+      </div>
+    `;
+
+    rc.innerHTML = html;
+    window.scrollTo({top:0,behavior:'smooth'});
+
+    // Animate score bars
+    setTimeout(() => {
+      rc.querySelectorAll('.result-card-score-fill').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    }, 300);
+  },
+
+  shareResults(){
+    const domainLabel = PROFILE_LABELS.domain[this.answers.q1] || this.answers.q1;
+    const results = this.calculateScores();
+    let text = `Mon profil IA : ${domainLabel}\nMes outils recommandes :\n`;
+    results.forEach((t, i) => text += `${i+1}. ${t.name} (${t.score}%)\n`);
+    text += `\nFaites le quiz : https://labibledelia.com/fr/quiz/`;
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('Resultat copie dans le presse-papier !');
+    }).catch(() => {
+      prompt('Copiez ce texte :', text);
+    });
+  },
+
+  restart(){
+    this.currentQ = 0;
+    this.answers = {};
+    document.getElementById('resultsContainer').classList.remove('active');
+    document.getElementById('resultsContainer').innerHTML = '';
+    document.getElementById('quizContainer').style.display='block';
+    // Reset all questions
+    for(let i=1;i<=8;i++){
+      const el = document.getElementById('q'+i+'options');
+      if(el) el.innerHTML='';
+      const btn = document.getElementById('q'+i+'next');
+      if(btn) btn.disabled=true;
+    }
+    document.querySelectorAll('.question-card').forEach(c=>c.classList.remove('active'));
+    document.getElementById('startScreen').classList.add('active');
+    document.getElementById('progressContainer').style.display='none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+};
+
+// Initialize Q1 options on load
+document.addEventListener('DOMContentLoaded', () => {
+  QUIZ.renderQuestion(1);
+});
+</script>
+</body>
+</html>
