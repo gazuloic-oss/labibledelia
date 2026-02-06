@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+
+# Redirect root to French by default (JS handles language detection)
+# Clean URLs
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static HTML for 1 hour, CDN for 1 day
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=86400"
+
+# Redirects for clean URLs
+[[redirects]]
+  from = "/fr"
+  to = "/fr/"
+  status = 301
+
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
