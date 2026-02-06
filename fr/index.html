@@ -231,7 +231,7 @@ a:hover{color:var(--link-hover)}
 .section{padding:4rem 4vw;position:relative}
 .section-dark{background:var(--bg-dark);color:var(--ink-inverse)}
 .section-cream{background:var(--bg-elevated)}
-.section-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.4em;
+.section-label{font-family:var(--font-mono);font-size:.85rem;letter-spacing:.4em;
   text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;text-align:center}
 .section-title{margin-bottom:.5rem;text-align:center}
 .section-desc{font-size:1rem;color:var(--ink-secondary);max-width:600px;margin-bottom:2.5rem;text-align:center;margin-inline:auto}
@@ -331,7 +331,7 @@ a:hover{color:var(--link-hover)}
 
 /* Tool card */
 .tool-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);
-  padding:1.4rem;cursor:pointer;transition:all .3s;position:relative;display:flex;flex-direction:column}
+  padding:1.4rem;cursor:pointer;transition:all .3s;position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit}
 .tool-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-2px)}
 .tool-card-header{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.8rem}
 .tool-card-icon{font-size:2.2rem;line-height:1}
@@ -424,7 +424,7 @@ a:hover{color:var(--link-hover)}
 /* See also */
 .modal-seealso{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
 .modal-seealso-chip{font-family:var(--font-ui);font-size:.8rem;padding:.4rem .8rem;border-radius:20px;
-  border:1px solid var(--border-light);cursor:pointer;transition:all .2s;background:var(--bg-surface);color:var(--ink)}
+  border:1px solid var(--border-light);cursor:pointer;transition:all .2s;background:var(--bg-surface);color:var(--ink);text-decoration:none}
 .modal-seealso-chip:hover{border-color:var(--gold);background:var(--gold-glow)}
 
 /* Infobox */
@@ -650,7 +650,7 @@ a:hover{color:var(--link-hover)}
 <section class="hero" id="hero">
   <div class="hero-ornament">Encyclopédie de référence</div>
   <h1>La Bible de <em>l'IA</em></h1>
-  <p class="hero-sub">Le répertoire définitif des outils d'intelligence artificielle. Analysés, comparés, classés pour vous guider dans l'univers de l'IA.</p>
+  <p class="hero-sub">Le répertoire des outils d'intelligence artificielle. Analysés, comparés, classés pour vous guider dans l'univers de l'IA.</p>
   <div class="hero-search">
     <svg class="hero-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
     <input type="text" id="heroSearchInput" placeholder="Rechercher un outil IA… (ex: ChatGPT, Midjourney, génération vidéo)" autocomplete="off">
@@ -1326,8 +1326,8 @@ const APP = {
   renderToolCard(t){
     const cat=this.getCatById(t.category);
     const inCompare=this.state.compareList.includes(t.id);
-    return`<div class="tool-card" onclick="APP.openTool('${t.id}')">
-      <button class="tool-card-compare ${inCompare?'added':''}" onclick="event.stopPropagation();APP.toggleCompare('${t.id}')" title="${inCompare?'Retirer':'Ajouter au comparateur'}">${inCompare?'✓ Ajouté':'+ Comparer'}</button>
+    return`<a class="tool-card" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
+      <button class="tool-card-compare ${inCompare?'added':''}" onclick="event.stopPropagation();event.preventDefault();APP.toggleCompare('${t.id}')" title="${inCompare?'Retirer':'Ajouter au comparateur'}">${inCompare?'✓ Ajouté':'+ Comparer'}</button>
       <div class="tool-card-header">
         <div class="tool-card-icon">${t.icon}</div>
         <div class="tool-card-info">
@@ -1346,7 +1346,7 @@ const APP = {
         </div>
         <span class="pricing-badge ${t.pricing}">${t.pricing==='gratuit'?'Gratuit':t.pricing==='freemium'?'Freemium':t.pricing==='payant'?'Payant':'Essai gratuit'}</span>
       </div>
-    </div>`;
+    </a>`;
   },
 
   // --- Render active filters ---
@@ -1425,7 +1425,7 @@ const APP = {
     const list=document.getElementById('tocList');
     list.innerHTML=CATEGORIES.map(c=>{
       const count=TOOLS.filter(t=>t.category===c.id).length;
-      return`<li><a class="toc-item" href="#catalogue" onclick="APP.filterByCategory('${c.id}')">
+      return`<li><a class="toc-item" href="/fr/categorie/${c.id}/" onclick="event.preventDefault();APP.filterByCategory('${c.id}')">
         <span class="toc-roman">${c.roman}</span>
         <span class="toc-icon">${c.icon}</span>
         <span class="toc-info"><span class="toc-cat-name">${c.name}</span><span class="toc-cat-count">${count} outils</span></span>
@@ -1434,7 +1434,7 @@ const APP = {
   },
   renderFeatured(){
     const grid=document.getElementById('featuredGrid');
-    grid.innerHTML=TOOLS.filter(t=>t.featured).map(t=>`<a class="featured-card" onclick="APP.openTool('${t.id}')">
+    grid.innerHTML=TOOLS.filter(t=>t.featured).map(t=>`<a class="featured-card" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
       <div class="featured-card-header">
         <span class="featured-card-icon">${t.icon}</span>
         <div><div class="featured-card-name">${t.name}</div><div class="featured-card-company">${t.company}</div></div>
@@ -1467,7 +1467,7 @@ const APP = {
   openTool(id){
     const t=this.getToolById(id);if(!t)return;
     const cat=this.getCatById(t.category);
-    const alts=t.alternatives.map(aid=>{const a=this.getToolById(aid);return a?`<span class="modal-seealso-chip" onclick="APP.openTool('${a.id}')">${a.icon} ${a.name}</span>`:''}).join('');
+    const alts=t.alternatives.map(aid=>{const a=this.getToolById(aid);return a?`<a class="modal-seealso-chip" href="/fr/${a.id}/" onclick="event.preventDefault();APP.openTool('${a.id}')">${a.icon} ${a.name}</a>`:''}).join('');
     document.getElementById('modalContent').innerHTML=`
       <button class="modal-close" onclick="APP.closeTool()">✕</button>
       <div class="modal-breadcrumb"><a href="#" onclick="APP.closeTool();return false">Accueil</a> › <a href="#" onclick="APP.closeTool();APP.filterByCategory('${t.category}');return false">${cat?cat.name:''}</a> › ${t.name}</div>
@@ -1597,11 +1597,11 @@ const APP = {
     if(!results.length){container.innerHTML='<div class="search-empty">Aucun résultat pour "'+query+'"</div>';return}
     container.innerHTML=results.map(t=>{
       const cat=this.getCatById(t.category);
-      return`<div class="search-result-item" onclick="APP.closeSearch();APP.openTool('${t.id}')">
+      return`<a class="search-result-item" href="/fr/${t.id}/" onclick="event.preventDefault();APP.closeSearch();APP.openTool('${t.id}')" style="text-decoration:none;color:inherit">
         <span class="search-result-icon">${t.icon}</span>
         <div><div class="search-result-name">${t.name}</div><div class="search-result-cat">${cat?cat.name:''}</div></div>
         <div class="search-result-meta"><span class="pricing-badge ${t.pricing}" style="font-size:.6rem">${t.pricing}</span></div>
-      </div>`;
+      </a>`;
     }).join('');
   },
 
