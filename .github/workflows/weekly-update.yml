@@ -1,0 +1,110 @@
+name: Auto-Update La Bible de l'IA
+
+# ================================================================
+# FRÉQUENCES :
+#   - Chaque LUNDI 8h UTC : compteurs + dates + régénération pages
+#   - Semaines PAIRES      : + tendances IA / choix de la rédaction
+#                            (géré automatiquement par le script Python)
+# ================================================================
+
+on:
+  schedule:
+    # Chaque lundi à 8h00 UTC (9h-10h heure française)
+    - cron: '0 8 * * 1'
+
+  # Permet de lancer manuellement depuis GitHub > Actions > Run workflow
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode de mise à jour'
+        required: true
+        default: 'auto'
+        type: choice
+        options:
+          - auto            # Détecte automatiquement (semaine paire/impaire)
+          - trends          # Force la mise à jour des tendances
+          - counters-only   # Juste les compteurs
+          - dry-run         # Aperçu sans modifier
+
+permissions:
+  contents: write
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "Bible IA Bot"
+          git config user.email "bot@labibledelia.com"
+
+      - name: Determine update mode
+        id: mode
+        run: |
+          MODE="${{ github.event.inputs.mode || 'auto' }}"
+          echo "mode=$MODE" >> $GITHUB_OUTPUT
+          echo "Update mode: $MODE"
+
+      - name: Run auto-update script
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          MODE="${{ steps.mode.outputs.mode }}"
+
+          case "$MODE" in
+            dry-run)
+              python weekly_auto_update.py --dry
+              ;;
+            trends)
+              python weekly_auto_update.py --trends --no-push
+              ;;
+            counters-only)
+              python weekly_auto_update.py --counters-only --no-push
+              ;;
+            *)
+              python weekly_auto_update.py --no-push
+              ;;
+          esac
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED=$(git diff --cached --stat | tail -1)
+            echo "Changes: $CHANGED"
+          fi
+
+      - name: Commit and Push
+        if: steps.changes.outputs.has_changes == 'true' && steps.mode.outputs.mode != 'dry-run'
+        run: |
+          WEEK=$(date +%W)
+          TODAY=$(date +%Y-%m-%d)
+
+          # Déterminer le type de mise à jour pour le commit message
+          if [ $(( WEEK % 2 )) -eq 0 ] || [ "${{ steps.mode.outputs.mode }}" = "trends" ]; then
+            TYPE="trends + counters + pages"
+          else
+            TYPE="counters + pages"
+          fi
+
+          git commit -m "Auto-update ${TODAY} (W${WEEK}): ${TYPE}"
+          git push origin main
+          echo "✅ Pushed successfully"
