@@ -39,6 +39,24 @@
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=86400"
 
+# Cache OG/social images (long-lived)
+[[headers]]
+  for = "/og-image-*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, s-maxage=2592000"
+
+[[headers]]
+  for = "/twitter-image-*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, s-maxage=2592000"
+
+# Web manifest
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=86400"
+
 # ============================================================
 # REDIRECTS
 # ============================================================

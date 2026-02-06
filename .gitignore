@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+package-lock.json
+package.json
+
+# Debug/dev scripts
+debug-*.py
+do-inject.py
+extract-data.py
+inject-tools.py
+logo-board.py
+logo-philosophy.md
+logo-proposals.png
+nul
+
+# Temporary data files
+new-tools-fr*.json
+tools-fr.json
+tools-en.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -223,6 +223,7 @@ def generate_blog_page(article, all_articles, lang):
 <meta name="twitter:description" content="{html.escape(desc)}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",

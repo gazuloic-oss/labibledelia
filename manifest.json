@@ -1,0 +1,22 @@
+{
+  "name": "La Bible de l'IA — Encyclopédie des Outils IA",
+  "short_name": "Bible IA",
+  "description": "L'encyclopédie de référence des outils d'intelligence artificielle. 200 outils analysés et comparés.",
+  "start_url": "/fr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "any",
+  "categories": ["education", "reference", "productivity"],
+  "lang": "fr",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

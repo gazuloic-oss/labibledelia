@@ -576,6 +576,7 @@ def generate_tool_page(tool, all_tools, categories, lang):
 {breadcrumb_schema}
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <style>{get_shared_css()}</style>
 </head>
