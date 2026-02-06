@@ -730,6 +730,65 @@ a:hover{color:var(--link-hover)}
 .btn-load-more:hover{background:var(--gold);color:#1a1a2e;transform:translateY(-1px);box-shadow:0 4px 15px rgba(201,168,76,.3)}
 
 /* ============================================================
+   DARK MODE
+   ============================================================ */
+[data-theme="dark"]{
+  --bg-page:#141425;--bg-surface:#1e1e38;--bg-elevated:#252547;
+  --bg-infobox:#1e1e38;
+  --ink:#e8e6e1;--ink-secondary:#b0aec0;--ink-tertiary:#8886a0;
+  --border-light:rgba(255,255,255,.08);--border-medium:rgba(255,255,255,.12);
+  --shadow-sm:0 2px 8px rgba(0,0,0,.3);--shadow-md:0 4px 16px rgba(0,0,0,.4);
+}
+[data-theme="dark"] body{background:var(--bg-page);color:var(--ink)}
+[data-theme="dark"] .tool-card{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .tool-card:hover{border-color:var(--gold)}
+[data-theme="dark"] .section-title,[data-theme="dark"] h2,[data-theme="dark"] h3{color:var(--ink)}
+[data-theme="dark"] .filter-panel{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .filter-option{color:var(--ink-secondary)}
+[data-theme="dark"] .page-modal{background:var(--bg-surface);color:var(--ink)}
+[data-theme="dark"] .modal{background:var(--bg-surface);color:var(--ink)}
+[data-theme="dark"] .infobox{background:var(--bg-elevated);border-color:var(--border-light)}
+[data-theme="dark"] .contact-form input,[data-theme="dark"] .contact-form textarea,[data-theme="dark"] .contact-form select{background:var(--bg-elevated);border-color:var(--border-light);color:var(--ink)}
+[data-theme="dark"] .search-modal-content{background:var(--bg-surface)}
+[data-theme="dark"] .search-modal-content input{background:var(--bg-elevated);color:var(--ink)}
+[data-theme="dark"] .toc-item{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .featured-card{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .blog-card{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .versus-card{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .trends-card{background:var(--bg-surface);border-color:var(--border-light)}
+[data-theme="dark"] .info-card{background:var(--bg-elevated);border-color:var(--border-light)}
+[data-theme="dark"] .footer{background:var(--bg-dark)}
+
+.theme-toggle{background:none;border:1px solid rgba(244,241,235,.2);border-radius:20px;padding:.35rem .7rem;
+  cursor:pointer;font-size:.8rem;color:rgba(244,241,235,.5);font-family:var(--font-ui);transition:all .3s;display:flex;align-items:center;gap:.3rem}
+.theme-toggle:hover{border-color:var(--gold);color:var(--gold)}
+[data-theme="dark"] .nav{background:rgba(20,20,37,.95)}
+
+/* ============================================================
+   FAVORITES
+   ============================================================ */
+.tool-card-fav{position:absolute;top:.8rem;right:3.5rem;background:var(--bg-elevated);border:1px solid var(--border-light);
+  border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:.85rem;opacity:0;transition:all .2s;z-index:2;padding:0;line-height:1}
+.tool-card:hover .tool-card-fav{opacity:1}
+.tool-card-fav:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3)}
+.tool-card-fav.active{opacity:1;color:#ef4444;background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3)}
+.fav-section{margin-bottom:2rem;padding:1.5rem;background:var(--bg-elevated);border-radius:var(--radius-md);border:1px solid var(--border-light)}
+.fav-section-title{font-family:var(--font-display);font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.fav-empty{color:var(--ink-tertiary);font-size:.85rem;font-family:var(--font-ui)}
+.nav-fav-count{background:#ef4444;color:white;font-size:.6rem;font-weight:700;padding:.1rem .35rem;border-radius:10px;margin-left:.2rem}
+
+/* ============================================================
+   SHARE BUTTONS
+   ============================================================ */
+.share-buttons{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:20px;font-size:.75rem;
+  font-family:var(--font-ui);font-weight:500;border:1px solid var(--border-light);background:transparent;
+  color:var(--ink-secondary);cursor:pointer;transition:all .2s;text-decoration:none}
+.share-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
+.share-btn-copied{background:var(--gold)!important;color:var(--bg-dark)!important;border-color:var(--gold)!important}
+
+/* ============================================================
    BLOG / GUIDES
    ============================================================ */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
@@ -776,6 +835,8 @@ a:hover{color:var(--link-hover)}
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
       Rechercher <kbd>⌘K</kbd>
     </button>
+    <a href="#" onclick="APP.showFavorites();return false">❤️ Favoris <span class="nav-fav-count" id="navFavCount" style="display:none">0</span></a>
+    <button class="theme-toggle" id="themeToggle" onclick="APP.toggleTheme()">🌙</button>
     <a href="#newsletter" class="nav-cta">Newsletter</a>
   </div>
   <button class="nav-hamburger" onclick="this.classList.toggle('active')">
@@ -794,9 +855,9 @@ a:hover{color:var(--link-hover)}
   </div>
   <div class="hero-cats" id="heroCats"></div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num" id="statTools">200</div><div class="lbl">Outils analysés</div></div>
-    <div class="hero-stat"><div class="num">16</div><div class="lbl">Catégories</div></div>
-    <div class="hero-stat"><div class="num">Fév. 2026</div><div class="lbl">Dernière MAJ</div></div>
+    <div class="hero-stat"><div class="num" data-count="200">0</div><div class="lbl">Outils analysés</div></div>
+    <div class="hero-stat"><div class="num" data-count="16">0</div><div class="lbl">Catégories</div></div>
+    <div class="hero-stat"><div class="num" data-count="71">0</div><div class="lbl">Comparatifs</div></div>
   </div>
 </section>
 
@@ -1486,7 +1547,7 @@ const APP = {
   state: {
     search:'',
     filters:{categories:[],pricing:[],platforms:[],minRating:0},
-    sort:'popularity',view:'grid',compareList:[],selectedTool:null,
+    sort:'popularity',view:'grid',compareList:[],favorites:[],selectedTool:null,
     showComparator:false,currentPage:1,perPage:24
   },
 
@@ -1565,7 +1626,9 @@ const APP = {
   renderToolCard(t){
     const cat=this.getCatById(t.category);
     const inCompare=this.state.compareList.includes(t.id);
+    const isFav=this.state.favorites.includes(t.id);
     return`<a class="tool-card" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
+      <button class="tool-card-fav ${isFav?'active':''}" onclick="event.stopPropagation();event.preventDefault();APP.toggleFav('${t.id}')" title="${isFav?'Retirer des favoris':'Ajouter aux favoris'}">${isFav?'♥':'♡'}</button>
       <button class="tool-card-compare ${inCompare?'added':''}" onclick="event.stopPropagation();event.preventDefault();APP.toggleCompare('${t.id}')" title="${inCompare?'Retirer':'Ajouter au comparateur'}">${inCompare?'✓ Ajouté':'+ Comparer'}</button>
       <div class="tool-card-header">
         <div class="tool-card-icon">${t.icon}</div>
@@ -1831,6 +1894,13 @@ const APP = {
           <ul class="modal-usecases">${t.useCases.map(u=>'<li>'+u+'</li>').join('')}</ul>
           <div class="modal-verdict">"${t.verdict}"</div>
           ${alts?'<div class="modal-section-title">Voir aussi</div><div class="modal-seealso">'+alts+'</div>':''}
+          <div class="modal-section-title">Partager</div>
+          <div class="share-buttons">
+            <button class="share-btn" onclick="APP.shareUrl('twitter','${t.id}','${t.name.replace(/'/g,"\\'")}')">𝕏 Twitter</button>
+            <button class="share-btn" onclick="APP.shareUrl('linkedin','${t.id}','${t.name.replace(/'/g,"\\'")}')">in LinkedIn</button>
+            <button class="share-btn" onclick="APP.shareUrl('facebook','${t.id}','${t.name.replace(/'/g,"\\'")}')">f Facebook</button>
+            <button class="share-btn" onclick="APP.copyLink('${t.id}',this)">🔗 Copier le lien</button>
+          </div>
         </div>
         <aside class="infobox">
           <div class="infobox-icon">${t.icon}</div>
@@ -1986,6 +2056,89 @@ const APP = {
   // --- Scroll helpers ---
   scrollTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})},
 
+  // --- Animated Counters ---
+  animateCounters(){
+    document.querySelectorAll('.hero-stat .num[data-count]').forEach(el=>{
+      const target=parseInt(el.dataset.count,10);
+      const duration=1800;
+      const start=performance.now();
+      const step=(now)=>{
+        const elapsed=now-start;
+        const progress=Math.min(elapsed/duration,1);
+        const ease=1-Math.pow(1-progress,3);
+        el.textContent=Math.round(target*ease);
+        if(progress<1)requestAnimationFrame(step);
+        else el.textContent=target;
+      };
+      requestAnimationFrame(step);
+    });
+  },
+
+  // --- Dark/Light Theme ---
+  toggleTheme(){
+    const html=document.documentElement;
+    const current=html.getAttribute('data-theme');
+    const next=current==='dark'?'light':'dark';
+    html.setAttribute('data-theme',next);
+    document.getElementById('themeToggle').textContent=next==='dark'?'☀️':'🌙';
+    try{localStorage.setItem('bible-theme',next)}catch(e){}
+  },
+  restoreTheme(){
+    try{
+      const t=localStorage.getItem('bible-theme');
+      if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('themeToggle').textContent=t==='dark'?'☀️':'🌙'}
+    }catch(e){}
+  },
+
+  // --- Favorites ---
+  toggleFav(id){
+    const idx=this.state.favorites.indexOf(id);
+    if(idx>-1)this.state.favorites.splice(idx,1);
+    else this.state.favorites.push(id);
+    this.renderCatalog();this.updateFavCount();
+    try{localStorage.setItem('bible-favs',JSON.stringify(this.state.favorites))}catch(e){}
+  },
+  updateFavCount(){
+    const badge=document.getElementById('navFavCount');
+    if(!badge)return;
+    const n=this.state.favorites.length;
+    badge.textContent=n;badge.style.display=n>0?'inline-block':'none';
+  },
+  showFavorites(){
+    if(this.state.favorites.length===0){
+      alert('Aucun favori pour le moment. Cliquez sur ♡ pour ajouter un outil.');return;
+    }
+    this.state.filters={categories:[],pricing:[],platforms:[],minRating:0};
+    this.state.search='';this.state.currentPage=1;
+    const filtered=TOOLS.filter(t=>this.state.favorites.includes(t.id));
+    const grid=document.getElementById('toolGrid');
+    const count=document.getElementById('resultCount');
+    grid.innerHTML=filtered.map(t=>this.renderToolCard(t)).join('');
+    count.textContent=filtered.length+' favori'+(filtered.length>1?'s':'');
+    document.getElementById('loadMoreBtn').style.display='none';
+    document.getElementById('catalogue').scrollIntoView({behavior:'smooth'});
+  },
+
+  // --- Share/Export ---
+  shareUrl(platform,toolId,toolName){
+    const url=encodeURIComponent(window.location.origin+'/fr/'+toolId+'/');
+    const text=encodeURIComponent(toolName+' — Découvrez cet outil IA sur La Bible de l\'IA');
+    let shareLink='';
+    switch(platform){
+      case 'twitter':shareLink='https://twitter.com/intent/tweet?url='+url+'&text='+text;break;
+      case 'linkedin':shareLink='https://www.linkedin.com/sharing/share-offsite/?url='+url;break;
+      case 'facebook':shareLink='https://www.facebook.com/sharer/sharer.php?u='+url;break;
+    }
+    if(shareLink)window.open(shareLink,'_blank','noopener,width=600,height=400');
+  },
+  copyLink(toolId,btn){
+    const url=window.location.origin+'/fr/'+toolId+'/';
+    navigator.clipboard.writeText(url).then(()=>{
+      const orig=btn.textContent;btn.textContent='✓ Copié !';btn.classList.add('share-btn-copied');
+      setTimeout(()=>{btn.textContent=orig;btn.classList.remove('share-btn-copied')},2000);
+    }).catch(()=>{prompt('Copiez ce lien :',url)});
+  },
+
   // --- Route handling ---
   handleRoute(){
     const hash=location.hash.slice(1);
@@ -2002,7 +2155,10 @@ const APP = {
     try{
       const v=localStorage.getItem('bible-view');if(v)this.state.view=v;
       const c=localStorage.getItem('bible-compare');if(c)this.state.compareList=JSON.parse(c);
+      const f=localStorage.getItem('bible-favs');if(f)this.state.favorites=JSON.parse(f);
     }catch(e){}
+    // Restore theme
+    this.restoreTheme();
     this.renderHeroCats();
     this.renderTOC();
     this.renderFeatured();
@@ -2014,8 +2170,15 @@ const APP = {
     this.renderBlog();
     this.renderFooterCats();
     this.handleRoute();
+    this.updateFavCount();
     // View toggle
     if(this.state.view==='list')this.setView('list');
+    // Animate hero counters on scroll
+    const heroObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){this.animateCounters();heroObs.disconnect()}});
+    },{threshold:.3});
+    const heroStats=document.querySelector('.hero-stats');
+    if(heroStats)heroObs.observe(heroStats);
     // Init scroll-reveal observer after all dynamic content is rendered
     const observer=new IntersectionObserver(entries=>{
       entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
