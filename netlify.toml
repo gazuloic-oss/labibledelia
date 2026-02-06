@@ -1,22 +1,55 @@
 [build]
   publish = "."
 
-# Redirect root to French by default (JS handles language detection)
-# Clean URLs
+# ============================================================
+# SECURITY & SEO HEADERS
+# ============================================================
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
-# Cache static HTML for 1 hour, CDN for 1 day
+# Cache HTML pages: 1 hour browser, 1 day CDN
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600, s-maxage=86400"
 
-# Redirects for clean URLs
+# Cache static assets aggressively (SVG, fonts, etc)
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=86400, s-maxage=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
+
+# ============================================================
+# REDIRECTS
+# ============================================================
+
+# Root to French
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+
+# Clean URL redirects
 [[redirects]]
   from = "/fr"
   to = "/fr/"
@@ -26,3 +59,25 @@
   from = "/en"
   to = "/en/"
   status = 301
+
+# SEO: trailing slash enforcement for deep pages
+[[redirects]]
+  from = "/fr/:slug"
+  to = "/fr/:slug/"
+  status = 301
+  conditions = {Path = ["/fr/:slug"]}
+  force = false
+
+[[redirects]]
+  from = "/en/:slug"
+  to = "/en/:slug/"
+  status = 301
+  conditions = {Path = ["/en/:slug"]}
+  force = false
+
+# www redirect (if custom domain)
+[[redirects]]
+  from = "https://www.labibledelia.com/*"
+  to = "https://labibledelia.com/:splat"
+  status = 301
+  force = true

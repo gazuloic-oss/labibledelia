@@ -218,6 +218,36 @@ def generate_blog_page(article, all_articles, lang):
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2026-02-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(seo_title)}">
+<meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{html.escape(title)}",
+  "description": "{html.escape(desc)}",
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-02-06",
+  "author": {{"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"}},
+  "publisher": {{"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"}},
+  "mainEntityOfPage": "{page_url}",
+  "inLanguage": "{lang}"
+}}
+</script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{"@type": "ListItem", "position": 1, "name": "{breadcrumb_home}", "item": "https://labibledelia.com/{lang}/"}},
+    {{"@type": "ListItem", "position": 2, "name": "{breadcrumb_blog}", "item": "https://labibledelia.com/{lang}/#blog"}},
+    {{"@type": "ListItem", "position": 3, "name": "{html.escape(title)}", "item": "{page_url}"}}
+  ]
+}}
+</script>
 <style>{get_shared_css()}</style>
 </head>
 <body>

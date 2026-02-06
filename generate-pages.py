@@ -538,6 +538,17 @@ def generate_tool_page(tool, all_tools, categories, lang):
         ]
     }, ensure_ascii=False, indent=2)
 
+    # BreadcrumbList Schema
+    breadcrumb_schema = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": L['breadcrumb_home'], "item": f"{DOMAIN}/{lang}/"},
+            {"@type": "ListItem", "position": 2, "name": cat_name, "item": f"{DOMAIN}/{lang}/categorie/{category}/"},
+            {"@type": "ListItem", "position": 3, "name": name, "item": page_url}
+        ]
+    }, ensure_ascii=False, indent=2)
+
     page_html = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -561,6 +572,11 @@ def generate_tool_page(tool, all_tools, categories, lang):
 <script type="application/ld+json">
 {faq_schema}
 </script>
+<script type="application/ld+json">
+{breadcrumb_schema}
+</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <style>{get_shared_css()}</style>
 </head>
 <body>
