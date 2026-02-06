@@ -952,7 +952,7 @@ a:hover{color:var(--link-hover)}
     <div class="section-label">The AI Gazette</div>
     <h2 style="color:var(--ink-inverse)">Stay Ahead in AI</h2>
     <p class="newsletter-desc">Get the best AI tools, latest releases, and our exclusive analyses delivered weekly. Free, no spam.</p>
-    <form class="newsletter-form" id="newsletterForm" name="newsletter-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitNewsletter(event)">
+    <form class="newsletter-form" id="newsletterForm" name="newsletter-en" method="POST" onsubmit="APP.submitNewsletter(event)">
       <input type="hidden" name="form-name" value="newsletter-en">
       <p style="display:none"><input name="bot-field"></p>
       <input class="newsletter-input" type="email" name="email" placeholder="your@email.com" required>
@@ -1011,7 +1011,7 @@ a:hover{color:var(--link-hover)}
       <p>We read every message and will get back to you as soon as possible.</p>
     </div>
 
-    <form class="contact-form" id="contactForm" name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'contactForm','Send message →')">
+    <form class="contact-form" id="contactForm" name="contact-en" method="POST" onsubmit="APP.submitForm(event,'contactForm','Send message →')">
       <input type="hidden" name="form-name" value="contact-en">
       <p style="display:none"><input name="bot-field"></p>
       <div class="form-row">
@@ -1131,7 +1131,7 @@ a:hover{color:var(--link-hover)}
       <p>Each submitted tool is evaluated using our methodology: features, value for money, user interface, support, and reliability. Only relevant, high-quality tools are added.</p>
     </div>
 
-    <form class="contact-form submit-tool-form" id="submitToolForm" name="submit-tool-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'submitToolForm','Submit tool →')">
+    <form class="contact-form submit-tool-form" id="submitToolForm" name="submit-tool-en" method="POST" onsubmit="APP.submitForm(event,'submitToolForm','Submit tool →')">
       <input type="hidden" name="form-name" value="submit-tool-en">
       <p style="display:none"><input name="bot-field"></p>
       <h3 style="margin-top:.5rem;border:none;padding:0">Tool Information</h3>
@@ -1951,7 +1951,7 @@ const APP = {
     const form=document.getElementById('newsletterForm');
     const btn=form.querySelector('button');
     btn.disabled=true;btn.textContent='Sending...';
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    fetch('/api/submit.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body:new URLSearchParams(new FormData(form)).toString()
     }).then(r=>{
       if(r.ok){form.style.display='none';document.getElementById('newsletterSuccess').style.display='block';}
@@ -1967,7 +1967,7 @@ const APP = {
     const btn=form.querySelector('button[type=submit]');
     const origLabel=btnLabel||btn.textContent;
     btn.disabled=true;btn.textContent='Sending...';
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    fetch('/api/submit.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body:new URLSearchParams(new FormData(form)).toString()
     }).then(r=>{
       if(r.ok){
