@@ -1091,6 +1091,20 @@ def get_top_comparisons(tools):
         ("quizizz", "khanmigo"),
         ("wixai", "framer"),
         ("hostinger", "durable"),
+        # Batch 2 (new tools)
+        ("sora", "runway-gen3"),
+        ("sora", "kling"),
+        ("runway-gen3", "kling"),
+        ("ollama", "jan"),
+        ("groq", "together"),
+        ("llama", "qwen"),
+        ("phind", "perplexity"),
+        ("chatpdf", "notebooklm"),
+        ("codeium", "supermaven"),
+        ("dify", "flowise"),
+        ("crew-ai", "langchain"),
+        ("jasper-campaigns", "typeface"),
+        ("surfer", "frase"),
     ]
 
     tool_ids = {t['id'] for t in tools}

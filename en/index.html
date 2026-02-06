@@ -887,7 +887,7 @@ a:hover{color:var(--link-hover)}
   <div class="hero-stats">
     <div class="hero-stat"><div class="num" data-count="400">0</div><div class="lbl">Tools analyzed</div></div>
     <div class="hero-stat"><div class="num" data-count="16">0</div><div class="lbl">Categories</div></div>
-    <div class="hero-stat"><div class="num" data-count="71">0</div><div class="lbl">Comparisons</div></div>
+    <div class="hero-stat"><div class="num" data-count="84">0</div><div class="lbl">Comparisons</div></div>
   </div>
 </section>
 
@@ -1036,7 +1036,7 @@ a:hover{color:var(--link-hover)}
     <p class="section-desc">Practical guides, tutorials and analysis to get the most out of artificial intelligence tools.</p>
   </div>
   <div class="blog-grid reveal" id="blogGrid"></div>
-  <div class="blog-coming reveal">🚧 More articles coming soon — Stay connected via our newsletter!</div>
+  <div style="text-align:center;margin-top:1.5rem" id="blogLoadMore" class="reveal"></div>
 </section>
 
 <!-- NEWSLETTER -->
@@ -1966,7 +1966,11 @@ const APP = {
   },
   renderFeatured(){
     const grid=document.getElementById('featuredGrid');
-    grid.innerHTML=TOOLS.filter(t=>t.featured).map(t=>`<a class="featured-card" href="/en/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
+    const scored=[...TOOLS].map(t=>({...t,score:t.rating*(t.popularity/20)})).sort((a,b)=>b.score-a.score);
+    const selected=[];const usedCats=new Set();
+    for(const t of scored){if(selected.length>=8)break;if(!usedCats.has(t.category)){selected.push(t);usedCats.add(t.category);}}
+    for(const t of scored){if(selected.length>=8)break;if(!selected.find(s=>s.id===t.id)){selected.push(t);}}
+    grid.innerHTML=selected.map(t=>`<a class="featured-card" href="/en/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
       <div class="featured-card-header">
         <span class="featured-card-icon">${t.icon}</span>
         <div><div class="featured-card-name">${t.name}</div><div class="featured-card-company">${t.company}</div></div>
@@ -2034,7 +2038,12 @@ const APP = {
       ['manychat','hubspotai'],['phantombuster','instantly'],
       ['manus','genspark'],['botpress','lindy'],
       ['photomath','socratic'],['quizizz','khanmigo'],
-      ['wixai','framer'],['hostinger','durable']
+      ['wixai','framer'],['hostinger','durable'],
+      ['sora','runway-gen3'],['sora','kling'],['runway-gen3','kling'],
+      ['ollama','jan'],['groq','together'],['llama','qwen'],
+      ['phind','perplexity'],['chatpdf','notebooklm'],
+      ['codeium','supermaven'],['dify','flowise'],['crew-ai','langchain'],
+      ['jasper-campaigns','typeface'],['surfer','frase']
     ];
     this._versusPairs=pairs;
     this._versusShown=12;
@@ -2069,13 +2078,34 @@ const APP = {
   renderBlog(){
     const articles=[
       {slug:'chatgpt-guide-complet',emoji:'🤖',tag:'Guide',title:'ChatGPT: The Complete Beginner\'s Guide for 2026',desc:'Master ChatGPT from A to Z: prompt techniques, real-world use cases, and tips to get the most out of the world\'s most popular AI.',time:'12 min'},
+      {slug:'claude-guide-complet',emoji:'🤖',tag:'Guide',title:'Claude by Anthropic: The Complete Guide to the Most Reliable AI',desc:'Discover Claude 3.5/4, its unique capabilities, Artifacts, Projects, and why it rivals ChatGPT.',time:'11 min'},
       {slug:'chatgpt-vs-claude-vs-gemini',emoji:'🆚',tag:'Comparison',title:'ChatGPT vs Claude vs Gemini: Which Chatbot to Choose?',desc:'Detailed analysis of the three AI conversation giants. Strengths, weaknesses and use cases.',time:'10 min'},
+      {slug:'midjourney-vs-dalle-vs-stable-diffusion',emoji:'🎨',tag:'Comparison',title:'Midjourney vs DALL-E 3 vs Stable Diffusion: The Definitive Comparison',desc:'Side-by-side comparison of the 3 major AI image generators. Style, quality, pricing.',time:'10 min'},
+      {slug:'deepseek-revolution-ia-open-source',emoji:'🔓',tag:'Analysis',title:'DeepSeek: The Open-Source Revolution Shaking Up AI',desc:'How DeepSeek-R1 changed the game against GPT-4 and Claude. Industry implications.',time:'10 min'},
       {slug:'meilleurs-generateurs-images-ia',emoji:'🎨',tag:'Creative',title:'The 10 Best AI Image Generators in 2026',desc:'From Midjourney to Flux, discover the tools to create stunning visuals with AI.',time:'11 min'},
+      {slug:'generer-videos-ia-guide',emoji:'🎬',tag:'Creative',title:'Generating Videos with AI: The Complete 2026 Guide',desc:'Runway, Pika, Kling, Luma: compare the best AI video generation tools.',time:'10 min'},
+      {slug:'creer-musique-ia-suno-udio',emoji:'🎵',tag:'Creative',title:'Creating Music with AI: Guide to Suno, Udio and Alternatives',desc:'Compose full tracks with AI. Musical prompting, copyright, use cases.',time:'9 min'},
+      {slug:'elevenlabs-clonage-voix-ia',emoji:'🎙️',tag:'Audio',title:'ElevenLabs: The Complete Guide to AI Voice Cloning',desc:'Clone your voice, create podcasts and dubbing. Everything about AI voice synthesis.',time:'10 min'},
       {slug:'cursor-vs-github-copilot',emoji:'💻',tag:'Dev',title:'Cursor vs GitHub Copilot: The AI Code Assistant Duel',desc:'Complete comparison of AI-powered IDEs for developers.',time:'9 min'},
+      {slug:'construire-agent-ia-guide',emoji:'🤖',tag:'Dev',title:'Build Your Own AI Agent in 2026: A Practical Guide',desc:'LangChain, CrewAI, AutoGPT, n8n: choose your framework and deploy your agents.',time:'11 min'},
+      {slug:'ia-design-web-2026',emoji:'🎨',tag:'Design',title:'AI is Revolutionizing Web Design: v0, Bolt.new, Framer AI',desc:'Build complete websites with AI. Comparison of tools changing web development.',time:'10 min'},
+      {slug:'ia-productivite-personnelle',emoji:'⚡',tag:'Productivity',title:'10x Your Productivity with AI: The 2026 Practical Guide',desc:'Notion AI, Otter, Gamma, Zapier: save hours every week with AI.',time:'10 min'},
+      {slug:'automatiser-workflow-ia',emoji:'🚀',tag:'Productivity',title:'How to Automate Your Workflow with AI',desc:'Zapier, Make, n8n: create smart automations without coding.',time:'11 min'},
+      {slug:'ia-marketing-digital-guide',emoji:'📈',tag:'Marketing',title:'AI for Digital Marketing: Tools and Strategies for 2026',desc:'SEO, ads, social media, email: transform your marketing with the best AI tools.',time:'10 min'},
+      {slug:'meilleurs-outils-ia-redaction',emoji:'✍️',tag:'Writing',title:'The Best AI Writing Tools in 2026',desc:'Jasper, Copy.ai, Writesonic, Grammarly: which tool for which writing need?',time:'10 min'},
+      {slug:'ia-education-revolutionne-apprentissage',emoji:'🎓',tag:'Education',title:'How AI Is Revolutionizing Education in 2026',desc:'Khanmigo, Duolingo Max, NotebookLM: personalized learning powered by AI.',time:'10 min'},
+      {slug:'perplexity-ia-moteur-recherche-futur',emoji:'🔍',tag:'Analysis',title:'Perplexity AI: Has the Search Engine of the Future Arrived?',desc:'How Perplexity is changing online search. Comparison with Google and ChatGPT.',time:'9 min'},
       {slug:'meilleurs-outils-ia-gratuits',emoji:'🆓',tag:'Budget',title:'The Best 100% Free AI Tools',desc:'No need to pay to use AI. Here are the most powerful free tools available.',time:'10 min'},
-      {slug:'automatiser-workflow-ia',emoji:'🚀',tag:'Productivity',title:'How to Automate Your Workflow with AI',desc:'Zapier, Make, n8n: create smart automations without coding.',time:'11 min'}
+      {slug:'securite-confidentialite-outils-ia',emoji:'🔒',tag:'Guide',title:'AI Tools Security and Privacy: What You Need to Know',desc:'Data, GDPR, self-hosting: protect yourself when using AI daily.',time:'9 min'}
     ];
-    document.getElementById('blogGrid').innerHTML=articles.map(a=>
+    this._blogArticles=articles;
+    this._blogShown=6;
+    this._renderBlogCards();
+  },
+  _renderBlogCards(){
+    const articles=this._blogArticles;
+    const shown=articles.slice(0,this._blogShown);
+    document.getElementById('blogGrid').innerHTML=shown.map(a=>
       `<a href="/en/blog/${a.slug}/" class="blog-card">
         <div class="blog-card-emoji">${a.emoji}</div>
         <div class="blog-card-tag">${a.tag}</div>
@@ -2084,6 +2114,17 @@ const APP = {
         <div class="blog-card-meta"><span>📖 ${a.time} read</span><span>•</span><span>February 2026</span></div>
       </a>`
     ).join('');
+    const btn=document.getElementById('blogLoadMore');
+    if(btn){
+      if(this._blogShown<articles.length){
+        const remaining=articles.length-this._blogShown;
+        btn.innerHTML=`<button class="btn-load-more" onclick="APP.loadMoreBlog()">See more articles (${remaining} remaining)</button>`;
+      }else{btn.innerHTML='';}
+    }
+  },
+  loadMoreBlog(){
+    this._blogShown=this._blogArticles.length;
+    this._renderBlogCards();
   },
 
   renderFooterCats(){

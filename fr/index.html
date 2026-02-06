@@ -885,7 +885,7 @@ a:hover{color:var(--link-hover)}
   <div class="hero-stats">
     <div class="hero-stat"><div class="num" data-count="400">0</div><div class="lbl">Outils analysés</div></div>
     <div class="hero-stat"><div class="num" data-count="16">0</div><div class="lbl">Catégories</div></div>
-    <div class="hero-stat"><div class="num" data-count="71">0</div><div class="lbl">Comparatifs</div></div>
+    <div class="hero-stat"><div class="num" data-count="84">0</div><div class="lbl">Comparatifs</div></div>
   </div>
 </section>
 
@@ -1034,7 +1034,7 @@ a:hover{color:var(--link-hover)}
     <p class="section-desc">Guides pratiques, tutoriels et analyses pour tirer le meilleur parti des outils d'intelligence artificielle.</p>
   </div>
   <div class="blog-grid reveal" id="blogGrid"></div>
-  <div class="blog-coming reveal">🚧 Plus d'articles à venir — Restez connecté via notre newsletter !</div>
+  <div style="text-align:center;margin-top:1.5rem" id="blogLoadMore" class="reveal"></div>
 </section>
 
 <!-- NEWSLETTER -->
@@ -1964,7 +1964,14 @@ const APP = {
   },
   renderFeatured(){
     const grid=document.getElementById('featuredGrid');
-    grid.innerHTML=TOOLS.filter(t=>t.featured).map(t=>`<a class="featured-card" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
+    // Sélection automatique : top outils par score (rating × popularity), diversité de catégories
+    const scored=[...TOOLS].map(t=>({...t,score:t.rating*(t.popularity/20)})).sort((a,b)=>b.score-a.score);
+    const selected=[];const usedCats=new Set();
+    // D'abord, 1 outil par catégorie parmi les meilleurs
+    for(const t of scored){if(selected.length>=8)break;if(!usedCats.has(t.category)){selected.push(t);usedCats.add(t.category);}}
+    // Compléter avec les meilleurs restants si < 8
+    for(const t of scored){if(selected.length>=8)break;if(!selected.find(s=>s.id===t.id)){selected.push(t);}}
+    grid.innerHTML=selected.map(t=>`<a class="featured-card" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
       <div class="featured-card-header">
         <span class="featured-card-icon">${t.icon}</span>
         <div><div class="featured-card-name">${t.name}</div><div class="featured-card-company">${t.company}</div></div>
@@ -2032,7 +2039,12 @@ const APP = {
       ['manychat','hubspotai'],['phantombuster','instantly'],
       ['manus','genspark'],['botpress','lindy'],
       ['photomath','socratic'],['quizizz','khanmigo'],
-      ['wixai','framer'],['hostinger','durable']
+      ['wixai','framer'],['hostinger','durable'],
+      ['sora','runway-gen3'],['sora','kling'],['runway-gen3','kling'],
+      ['ollama','jan'],['groq','together'],['llama','qwen'],
+      ['phind','perplexity'],['chatpdf','notebooklm'],
+      ['codeium','supermaven'],['dify','flowise'],['crew-ai','langchain'],
+      ['jasper-campaigns','typeface'],['surfer','frase']
     ];
     this._versusPairs=pairs;
     this._versusShown=12;
@@ -2067,13 +2079,34 @@ const APP = {
   renderBlog(){
     const articles=[
       {slug:'chatgpt-guide-complet',emoji:'🤖',tag:'Guide',title:'ChatGPT : Le guide complet pour bien débuter en 2026',desc:'Maîtrisez ChatGPT de A à Z : techniques de prompt, cas d\'usage concrets et astuces pour tirer le meilleur de l\'IA conversationnelle.',time:'12 min'},
+      {slug:'claude-guide-complet',emoji:'🤖',tag:'Guide',title:'Claude par Anthropic : le guide complet de l\'IA la plus fiable',desc:'Découvrez Claude 3.5/4, ses capacités uniques, Artifacts, Projects et pourquoi il rivalise avec ChatGPT.',time:'11 min'},
       {slug:'chatgpt-vs-claude-vs-gemini',emoji:'🆚',tag:'Comparatif',title:'ChatGPT vs Claude vs Gemini : Quel chatbot choisir ?',desc:'Analyse détaillée des trois géants de l\'IA conversationnelle. Forces, faiblesses et cas d\'usage.',time:'10 min'},
+      {slug:'midjourney-vs-dalle-vs-stable-diffusion',emoji:'🎨',tag:'Comparatif',title:'Midjourney vs DALL-E 3 vs Stable Diffusion : le comparatif définitif',desc:'Comparaison côte à côte des 3 générateurs d\'images IA majeurs. Style, qualité, prix.',time:'10 min'},
+      {slug:'deepseek-revolution-ia-open-source',emoji:'🔓',tag:'Analyse',title:'DeepSeek : La révolution open-source qui bouleverse l\'IA',desc:'Comment DeepSeek-R1 a changé la donne face à GPT-4 et Claude. Implications pour l\'industrie.',time:'10 min'},
       {slug:'meilleurs-generateurs-images-ia',emoji:'🎨',tag:'Créatif',title:'Les 10 meilleurs générateurs d\'images IA en 2026',desc:'De Midjourney à Flux, découvrez les outils pour créer des visuels époustouflants avec l\'IA.',time:'11 min'},
-      {slug:'cursor-vs-github-copilot',emoji:'💻',tag:'Dev',title:'Cursor vs GitHub Copilot : Le duel des assistants code',desc:'Comparaison complète des IDE augmentés par l\'IA pour les développeurs.',time:'9 min'},
+      {slug:'generer-videos-ia-guide',emoji:'🎬',tag:'Créatif',title:'Générer des vidéos avec l\'IA : le guide complet 2026',desc:'Runway, Pika, Kling, Luma : comparez les meilleurs outils de génération vidéo IA.',time:'10 min'},
+      {slug:'creer-musique-ia-suno-udio',emoji:'🎵',tag:'Créatif',title:'Créer de la musique avec l\'IA : guide Suno, Udio et alternatives',desc:'Composez des morceaux entiers avec l\'IA. Prompting musical, droits d\'auteur, cas d\'usage.',time:'9 min'},
+      {slug:'elevenlabs-clonage-voix-ia',emoji:'🎙️',tag:'Audio',title:'ElevenLabs : le guide complet du clonage vocal par IA',desc:'Clonez votre voix, créez des podcasts et doublages. Tout sur la synthèse vocale IA.',time:'10 min'},
+      {slug:'cursor-vs-github-copilot',emoji:'💻',tag:'Dev',title:'Cursor vs GitHub Copilot : le duel des assistants code',desc:'Comparaison complète des IDE augmentés par l\'IA pour les développeurs.',time:'9 min'},
+      {slug:'construire-agent-ia-guide',emoji:'🤖',tag:'Dev',title:'Construire son propre agent IA en 2026 : le guide pratique',desc:'LangChain, CrewAI, AutoGPT, n8n : choisissez votre framework et déployez vos agents.',time:'11 min'},
+      {slug:'ia-design-web-2026',emoji:'🎨',tag:'Design',title:'L\'IA révolutionne le design web : v0, Bolt.new, Framer AI',desc:'Créez des sites web complets avec l\'IA. Comparatif des outils qui changent le développement.',time:'10 min'},
+      {slug:'ia-productivite-personnelle',emoji:'⚡',tag:'Productivité',title:'Décupler sa productivité avec l\'IA : guide pratique 2026',desc:'Notion AI, Otter, Gamma, Zapier : gagnez des heures chaque semaine grâce à l\'IA.',time:'10 min'},
+      {slug:'automatiser-workflow-ia',emoji:'🚀',tag:'Productivité',title:'Comment automatiser son workflow avec l\'IA',desc:'Zapier, Make, n8n : créez des automatisations intelligentes sans coder.',time:'11 min'},
+      {slug:'ia-marketing-digital-guide',emoji:'📈',tag:'Marketing',title:'L\'IA au service du marketing digital : outils et stratégies 2026',desc:'SEO, pub, social media, email : transformez votre marketing avec les meilleurs outils IA.',time:'10 min'},
+      {slug:'meilleurs-outils-ia-redaction',emoji:'✍️',tag:'Rédaction',title:'Les meilleurs outils IA de rédaction en 2026',desc:'Jasper, Copy.ai, Writesonic, Grammarly : quel outil pour quel besoin rédactionnel ?',time:'10 min'},
+      {slug:'ia-education-revolutionne-apprentissage',emoji:'🎓',tag:'Éducation',title:'Comment l\'IA révolutionne l\'éducation en 2026',desc:'Khanmigo, Duolingo Max, NotebookLM : l\'apprentissage personnalisé par l\'IA.',time:'10 min'},
+      {slug:'perplexity-ia-moteur-recherche-futur',emoji:'🔍',tag:'Analyse',title:'Perplexity AI : le moteur de recherche du futur est-il arrivé ?',desc:'Comment Perplexity change la recherche en ligne. Comparaison avec Google et ChatGPT.',time:'9 min'},
       {slug:'meilleurs-outils-ia-gratuits',emoji:'🆓',tag:'Budget',title:'Les meilleurs outils IA 100% gratuits',desc:'Pas besoin de payer pour utiliser l\'IA. Voici les outils gratuits les plus puissants disponibles.',time:'10 min'},
-      {slug:'automatiser-workflow-ia',emoji:'🚀',tag:'Productivité',title:'Comment automatiser son workflow avec l\'IA',desc:'Zapier, Make, n8n : créez des automatisations intelligentes sans coder.',time:'11 min'}
+      {slug:'securite-confidentialite-outils-ia',emoji:'🔒',tag:'Guide',title:'Sécurité et confidentialité des outils IA : ce qu\'il faut savoir',desc:'Données, RGPD, self-hosting : protégez-vous en utilisant l\'IA au quotidien.',time:'9 min'}
     ];
-    document.getElementById('blogGrid').innerHTML=articles.map(a=>
+    this._blogArticles=articles;
+    this._blogShown=6;
+    this._renderBlogCards();
+  },
+  _renderBlogCards(){
+    const articles=this._blogArticles;
+    const shown=articles.slice(0,this._blogShown);
+    document.getElementById('blogGrid').innerHTML=shown.map(a=>
       `<a href="/fr/blog/${a.slug}/" class="blog-card">
         <div class="blog-card-emoji">${a.emoji}</div>
         <div class="blog-card-tag">${a.tag}</div>
@@ -2082,6 +2115,17 @@ const APP = {
         <div class="blog-card-meta"><span>📖 ${a.time} de lecture</span><span>•</span><span>Février 2026</span></div>
       </a>`
     ).join('');
+    const btn=document.getElementById('blogLoadMore');
+    if(btn){
+      if(this._blogShown<articles.length){
+        const remaining=articles.length-this._blogShown;
+        btn.innerHTML=`<button class="btn-load-more" onclick="APP.loadMoreBlog()">Voir plus d'articles (${remaining} restants)</button>`;
+      }else{btn.innerHTML='';}
+    }
+  },
+  loadMoreBlog(){
+    this._blogShown=this._blogArticles.length;
+    this._renderBlogCards();
   },
 
   renderFooterCats(){
