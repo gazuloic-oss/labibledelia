@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT vs Claude vs Gemini: Which AI Chatbot to Choose in 2026? | The AI Bible</title>
+<meta name="description" content="Detailed comparison of the three conversational AI giants: features, pricing, strengths and weaknesses to help you choose.">
+<link rel="canonical" href="https://labibledelia.com/en/blog/chatgpt-vs-claude-vs-gemini/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/blog/chatgpt-vs-claude-vs-gemini/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/blog/chatgpt-vs-claude-vs-gemini/">
+<meta property="og:title" content="ChatGPT vs Claude vs Gemini: Which AI Chatbot to Choose in 2026? | The AI Bible">
+<meta property="og:description" content="Detailed comparison of the three conversational AI giants: features, pricing, strengths and weaknesses to help you choose.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-02-01">
+<style>
+:root{
+  --bg-page:#0e0e1a;--bg-card:#181830;--bg-card-hover:#1e1e3a;
+  --text-main:#e8e8f0;--text-muted:#9898b0;--text-heading:#f8f8ff;
+  --gold:#c9a84c;--gold-hover:#e0c068;
+  --accent:#6366f1;--accent-hover:#818cf8;
+  --radius-md:12px;--radius-lg:18px;
+  --shadow-md:0 4px 20px rgba(0,0,0,.3);--shadow-lg:0 8px 40px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold-hover)}
+
+/* NAV */
+.top-nav{position:sticky;top:0;z-index:1000;background:rgba(14,14,26,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.12);padding:.7rem 2rem;display:flex;align-items:center;gap:.8rem}
+.nav-logo svg{width:26px;height:26px}
+.nav-title{font-family:Georgia,serif;font-size:1rem;color:var(--gold);font-weight:600;letter-spacing:.5px}
+.nav-links{margin-left:auto;display:flex;gap:1.2rem;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:.85rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.lang-btn{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;opacity:.7;transition:opacity .2s}
+.lang-btn:hover,.lang-btn.active{opacity:1;background:rgba(255,255,255,.08)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+
+/* BREADCRUMB */
+.breadcrumb{padding:1rem 0;font-size:.85rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{margin:0 .5rem;opacity:.5}
+
+/* ARTICLE */
+.article-container{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.article-header{text-align:center;padding:2rem 0 2.5rem;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:2.5rem}
+.article-emoji{font-size:3rem;margin-bottom:1rem}
+.article-tag{display:inline-block;font-family:'Courier New',monospace;font-size:.7rem;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.15em;padding:.3rem .8rem;border:1px solid rgba(201,168,76,.3);
+  border-radius:20px;margin-bottom:1rem}
+.article-title{font-family:Georgia,serif;font-size:2.2rem;color:var(--text-heading);line-height:1.3;margin-bottom:.8rem}
+.article-meta{display:flex;justify-content:center;gap:1.5rem;font-size:.8rem;color:var(--text-muted);font-family:'Courier New',monospace}
+.article-desc{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-top:1rem;line-height:1.6}
+
+/* ARTICLE CONTENT */
+.article-content{font-size:1.05rem;line-height:1.85;color:var(--text-main)}
+.article-content h2{font-family:Georgia,serif;font-size:1.5rem;color:var(--gold);margin:2.5rem 0 1rem;
+  padding-bottom:.5rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.article-content h3{font-family:Georgia,serif;font-size:1.15rem;color:var(--text-heading);margin:1.8rem 0 .8rem}
+.article-content p{margin-bottom:1.2rem}
+.article-content ul,.article-content ol{margin:1rem 0 1.5rem 1.5rem}
+.article-content li{margin-bottom:.5rem;line-height:1.7}
+.article-content strong{color:var(--text-heading)}
+.article-content blockquote{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1.5rem 0;
+  background:rgba(201,168,76,.05);border-radius:0 var(--radius-md) var(--radius-md) 0;font-style:italic}
+.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.article-content th,.article-content td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.article-content th{color:var(--text-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* CTA */
+.article-cta{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));
+  border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:2rem;margin:3rem 0;text-align:center}
+.article-cta h3{font-family:Georgia,serif;color:var(--text-heading);font-size:1.2rem;margin-bottom:.5rem}
+.article-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:1rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;background:var(--gold);
+  color:#0e0e1a;font-weight:700;border-radius:8px;font-size:.95rem;transition:all .2s}
+.btn-primary:hover{background:var(--gold-hover);color:#0e0e1a;transform:translateY(-1px)}
+
+/* RELATED ARTICLES */
+.related-section{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.15)}
+.related-title{font-family:Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:1.5rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.related-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);
+  padding:1rem;transition:all .3s;display:block;color:var(--text-main);text-decoration:none}
+.related-card:hover{background:var(--bg-card-hover);border-color:rgba(201,168,76,.3);transform:translateY(-2px)}
+.related-card .rc-emoji{font-size:1.5rem;margin-bottom:.4rem}
+.related-card .rc-tag{font-family:'Courier New',monospace;font-size:.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.related-card .rc-title{font-weight:700;font-size:.9rem;color:var(--text-heading);margin-top:.3rem;line-height:1.3}
+
+/* FOOTER */
+.site-footer{background:rgba(0,0,0,.3);border-top:1px solid rgba(201,168,76,.1);padding:2rem;text-align:center;margin-top:4rem}
+.footer-logo{font-family:Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.8rem 0}
+.footer-links a{color:var(--text-muted);font-size:.8rem}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:var(--text-muted);font-size:.75rem;margin-top:.8rem}
+
+@media(max-width:768px){
+  .top-nav{padding:.5rem 1rem;gap:.5rem}
+  .article-container{padding:1.5rem 1rem}
+  .article-title{font-size:1.6rem}
+  .article-content{font-size:.95rem}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/en/" class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></a>
+  <a href="/en/" class="nav-title">The AI Bible</a>
+  <div class="nav-links">
+    <a href="/en/#catalogue">Catalog</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/fr/" class="lang-btn"><img src="https://flagcdn.com/w40/fr.png" alt="FR"></a>
+  </div>
+</nav>
+
+<div class="article-container">
+
+<div class="breadcrumb">
+  <a href="/en/">Home</a>
+  <span class="sep">&rsaquo;</span>
+  <a href="/en/#blog">Blog</a>
+  <span class="sep">&rsaquo;</span>
+  <span>Comparison</span>
+</div>
+
+<header class="article-header">
+  <div class="article-emoji">⚖️</div>
+  <span class="article-tag">Comparison</span>
+  <h1 class="article-title">ChatGPT vs Claude vs Gemini: Which AI Chatbot to Choose in 2026?</h1>
+  <div class="article-meta">
+    <span>&#128214; 10 min read</span>
+    <span>&bull;</span>
+    <span>February 2026</span>
+  </div>
+  <p class="article-desc">Detailed comparison of the three conversational AI giants: features, pricing, strengths and weaknesses to help you choose.</p>
+</header>
+
+<article class="article-content">
+<h2>The Dominant Trio of Conversational AI</h2>
+<p>In 2026, three AI chatbots dominate the market: <strong>ChatGPT</strong> by OpenAI, <strong>Claude</strong> by Anthropic, and <strong>Gemini</strong> by Google. Each has its own strengths and unique features. This comparison will help you identify which one best fits your needs.</p>
+
+<h2>Overview of the Three Models</h2>
+
+<h3>ChatGPT (OpenAI)</h3>
+<p>ChatGPT is powered by GPT-4o and o1 models. It’s the world’s most popular AI assistant with a rich ecosystem: custom GPTs, DALL-E for image generation, Advanced Data Analysis, web browsing, and advanced voice mode. Its interface is intuitive and well-polished.</p>
+
+<h3>Claude (Anthropic)</h3>
+<p>Claude, developed by Anthropic, stands out with its <strong>massive 200,000-token context window</strong>—among the largest available. The Claude Opus 4 model is recognized for its writing quality, nuanced reasoning, and ability to process very long documents. Anthropic also emphasizes AI safety.</p>
+
+<h3>Gemini (Google)</h3>
+<p>Gemini, Google’s AI chatbot, benefits from deep integration with the Google ecosystem: Gmail, Google Docs, Drive, Maps, YouTube. The Gemini 2.0 model offers excellent multimodal capabilities, and Gemini 1.5 Pro provides a 1-million-token context window.</p>
+
+<h2>Detailed Comparison</h2>
+
+<h3>Writing Quality</h3>
+<p><strong>Winner: Claude</strong>. Claude generally produces the most natural, nuanced, and well-structured text. Its responses are detailed without being verbose. ChatGPT also offers excellent writing quality, while Gemini can sometimes be more generic in style.</p>
+
+<h3>Reasoning and Logic</h3>
+<p><strong>Winner: ChatGPT with o1</strong>. OpenAI’s o1 model was specifically designed for complex reasoning. It excels in mathematics, coding, and logic problems. Claude Opus 4 and Gemini 2.0 are also highly capable, but o1 maintains a measurable edge on advanced reasoning benchmarks.</p>
+
+<h3>Programming</h3>
+<p><strong>Winner: Claude</strong>. Claude is particularly valued by developers for its code quality, understanding of complex architectures, and ability to work with large codebases thanks to its generous context window. ChatGPT remains very competitive, especially with its Canvas tool for code.</p>
+
+<h3>Long Document Analysis</h3>
+<p><strong>Winner: Gemini</strong>. With a context window reaching 1 million tokens, Gemini 1.5 Pro can ingest entire books, multi-hour videos, or massive codebases. Claude follows closely with 200K tokens, while ChatGPT is more limited.</p>
+
+<h3>Integrations and Ecosystem</h3>
+<p><strong>Winner: ChatGPT</strong>. ChatGPT’s ecosystem is the richest: GPT Store with thousands of specialized GPTs, built-in DALL-E, Advanced Data Analysis, plugins, and web browsing. Gemini benefits from Google Workspace integration, while Claude focuses more on the pure conversation experience.</p>
+
+<h2>Pricing Comparison</h2>
+<ul>
+<li><strong>ChatGPT</strong>: Free (GPT-4o mini) | Plus at $20/month | Pro at $200/month</li>
+<li><strong>Claude</strong>: Free (strict limits) | Pro at $20/month | Team at $30/month/user</li>
+<li><strong>Gemini</strong>: Free (Gemini 1.5 Flash) | Advanced at $20/month (included in Google One AI Premium)</li>
+</ul>
+
+<h2>Which Tool to Choose Based on Your Profile?</h2>
+<ul>
+<li><strong>Writer or content creator</strong>: Go with <strong>Claude</strong>—its writing quality is superior.</li>
+<li><strong>Developer</strong>: <strong>Claude</strong> for code and large codebases, or <strong>ChatGPT</strong> for its tools ecosystem.</li>
+<li><strong>Heavy Google Workspace user</strong>: <strong>Gemini</strong> for its native integration with Gmail, Docs, and Drive.</li>
+<li><strong>Looking for versatility</strong>: <strong>ChatGPT</strong> for its rich ecosystem and wide range of features.</li>
+<li><strong>Working with long documents</strong>: <strong>Gemini</strong> for its 1M-token window, or <strong>Claude</strong> for 200K tokens with better comprehension.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>There is no single "best" AI chatbot in 2026—it all depends on your specific needs. The good news is that all three offer a free tier: test them on your usual tasks and judge for yourself. Many professionals actually use all three in parallel, choosing the best tool for each situation. Check out our detailed profiles of ChatGPT, Claude, and Gemini in our encyclopedia to learn more.</p>
+</article>
+
+<div class="article-cta">
+  <h3>Explore our catalog of 200 AI tools</h3>
+  <p>Discover, compare and choose the best artificial intelligence tools.</p>
+  <a href="/en/#catalogue" class="btn-primary">&#128218; View catalog</a>
+</div>
+
+<div class="related-section">
+  <h2 class="related-title">Recommended articles</h2>
+  <div class="related-grid">
+    <a href="/en/blog/chatgpt-guide-complet/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">ChatGPT: The Complete Beginner’s Guide in 2026</div>
+    </a>
+<a href="/en/blog/meilleurs-generateurs-images-ia/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Creative</div>
+      <div class="rc-title">The 10 Best AI Image Generators in 2026</div>
+    </a>
+<a href="/en/blog/cursor-vs-github-copilot/" class="related-card">
+      <div class="rc-emoji">💻</div>
+      <div class="rc-tag">Dev</div>
+      <div class="rc-title">Cursor vs GitHub Copilot: Which AI Coding Assistant Should You Choose?</div>
+    </a>
+<a href="/en/blog/meilleurs-outils-ia-gratuits/" class="related-card">
+      <div class="rc-emoji">🆓</div>
+      <div class="rc-tag">Budget</div>
+      <div class="rc-title">The Best Free AI Tools in 2026: The Ultimate Guide</div>
+    </a>
+<a href="/en/blog/automatiser-workflow-ia/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivity</div>
+      <div class="rc-title">Automate Your Workflow with AI: Zapier, Make, and n8n</div>
+    </a>
+
+  </div>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">The AI Bible</div>
+  <div class="footer-links">
+    <a href="/en/">Home</a>
+    <a href="/en/#catalogue">Catalog</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/en/#newsletter">Newsletter</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 The AI Bible. All rights reserved.</div>
+</footer>
+</body>
+</html>

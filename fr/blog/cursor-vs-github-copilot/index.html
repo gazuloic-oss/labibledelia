@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor vs GitHub Copilot : quel assistant de code IA choisir ? | La Bible de l&#x27;IA</title>
+<meta name="description" content="Comparaison approfondie des deux assistants de programmation IA les plus populaires. Fonctionnalités, prix et cas d’usage décryptés.">
+<link rel="canonical" href="https://labibledelia.com/fr/blog/cursor-vs-github-copilot/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/blog/cursor-vs-github-copilot/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/blog/cursor-vs-github-copilot/">
+<meta property="og:title" content="Cursor vs GitHub Copilot : quel assistant de code IA choisir ? | La Bible de l&#x27;IA">
+<meta property="og:description" content="Comparaison approfondie des deux assistants de programmation IA les plus populaires. Fonctionnalités, prix et cas d’usage décryptés.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-02-01">
+<style>
+:root{
+  --bg-page:#0e0e1a;--bg-card:#181830;--bg-card-hover:#1e1e3a;
+  --text-main:#e8e8f0;--text-muted:#9898b0;--text-heading:#f8f8ff;
+  --gold:#c9a84c;--gold-hover:#e0c068;
+  --accent:#6366f1;--accent-hover:#818cf8;
+  --radius-md:12px;--radius-lg:18px;
+  --shadow-md:0 4px 20px rgba(0,0,0,.3);--shadow-lg:0 8px 40px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold-hover)}
+
+/* NAV */
+.top-nav{position:sticky;top:0;z-index:1000;background:rgba(14,14,26,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.12);padding:.7rem 2rem;display:flex;align-items:center;gap:.8rem}
+.nav-logo svg{width:26px;height:26px}
+.nav-title{font-family:Georgia,serif;font-size:1rem;color:var(--gold);font-weight:600;letter-spacing:.5px}
+.nav-links{margin-left:auto;display:flex;gap:1.2rem;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:.85rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.lang-btn{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;opacity:.7;transition:opacity .2s}
+.lang-btn:hover,.lang-btn.active{opacity:1;background:rgba(255,255,255,.08)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+
+/* BREADCRUMB */
+.breadcrumb{padding:1rem 0;font-size:.85rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{margin:0 .5rem;opacity:.5}
+
+/* ARTICLE */
+.article-container{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.article-header{text-align:center;padding:2rem 0 2.5rem;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:2.5rem}
+.article-emoji{font-size:3rem;margin-bottom:1rem}
+.article-tag{display:inline-block;font-family:'Courier New',monospace;font-size:.7rem;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.15em;padding:.3rem .8rem;border:1px solid rgba(201,168,76,.3);
+  border-radius:20px;margin-bottom:1rem}
+.article-title{font-family:Georgia,serif;font-size:2.2rem;color:var(--text-heading);line-height:1.3;margin-bottom:.8rem}
+.article-meta{display:flex;justify-content:center;gap:1.5rem;font-size:.8rem;color:var(--text-muted);font-family:'Courier New',monospace}
+.article-desc{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-top:1rem;line-height:1.6}
+
+/* ARTICLE CONTENT */
+.article-content{font-size:1.05rem;line-height:1.85;color:var(--text-main)}
+.article-content h2{font-family:Georgia,serif;font-size:1.5rem;color:var(--gold);margin:2.5rem 0 1rem;
+  padding-bottom:.5rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.article-content h3{font-family:Georgia,serif;font-size:1.15rem;color:var(--text-heading);margin:1.8rem 0 .8rem}
+.article-content p{margin-bottom:1.2rem}
+.article-content ul,.article-content ol{margin:1rem 0 1.5rem 1.5rem}
+.article-content li{margin-bottom:.5rem;line-height:1.7}
+.article-content strong{color:var(--text-heading)}
+.article-content blockquote{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1.5rem 0;
+  background:rgba(201,168,76,.05);border-radius:0 var(--radius-md) var(--radius-md) 0;font-style:italic}
+.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.article-content th,.article-content td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.article-content th{color:var(--text-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* CTA */
+.article-cta{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));
+  border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:2rem;margin:3rem 0;text-align:center}
+.article-cta h3{font-family:Georgia,serif;color:var(--text-heading);font-size:1.2rem;margin-bottom:.5rem}
+.article-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:1rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;background:var(--gold);
+  color:#0e0e1a;font-weight:700;border-radius:8px;font-size:.95rem;transition:all .2s}
+.btn-primary:hover{background:var(--gold-hover);color:#0e0e1a;transform:translateY(-1px)}
+
+/* RELATED ARTICLES */
+.related-section{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.15)}
+.related-title{font-family:Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:1.5rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.related-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);
+  padding:1rem;transition:all .3s;display:block;color:var(--text-main);text-decoration:none}
+.related-card:hover{background:var(--bg-card-hover);border-color:rgba(201,168,76,.3);transform:translateY(-2px)}
+.related-card .rc-emoji{font-size:1.5rem;margin-bottom:.4rem}
+.related-card .rc-tag{font-family:'Courier New',monospace;font-size:.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.related-card .rc-title{font-weight:700;font-size:.9rem;color:var(--text-heading);margin-top:.3rem;line-height:1.3}
+
+/* FOOTER */
+.site-footer{background:rgba(0,0,0,.3);border-top:1px solid rgba(201,168,76,.1);padding:2rem;text-align:center;margin-top:4rem}
+.footer-logo{font-family:Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.8rem 0}
+.footer-links a{color:var(--text-muted);font-size:.8rem}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:var(--text-muted);font-size:.75rem;margin-top:.8rem}
+
+@media(max-width:768px){
+  .top-nav{padding:.5rem 1rem;gap:.5rem}
+  .article-container{padding:1.5rem 1rem}
+  .article-title{font-size:1.6rem}
+  .article-content{font-size:.95rem}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/fr/" class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></a>
+  <a href="/fr/" class="nav-title">La Bible de l'IA</a>
+  <div class="nav-links">
+    <a href="/fr/#catalogue">Catalogue</a>
+    <a href="/fr/#blog">Blog</a>
+    <a href="/en/" class="lang-btn"><img src="https://flagcdn.com/w40/gb.png" alt="EN"></a>
+  </div>
+</nav>
+
+<div class="article-container">
+
+<div class="breadcrumb">
+  <a href="/fr/">Accueil</a>
+  <span class="sep">&rsaquo;</span>
+  <a href="/fr/#blog">Blog</a>
+  <span class="sep">&rsaquo;</span>
+  <span>Dev</span>
+</div>
+
+<header class="article-header">
+  <div class="article-emoji">💻</div>
+  <span class="article-tag">Dev</span>
+  <h1 class="article-title">Cursor vs GitHub Copilot : quel assistant de code IA choisir ?</h1>
+  <div class="article-meta">
+    <span>&#128214; 9 min de lecture</span>
+    <span>&bull;</span>
+    <span>F&eacute;vrier 2026</span>
+  </div>
+  <p class="article-desc">Comparaison approfondie des deux assistants de programmation IA les plus populaires. Fonctionnalités, prix et cas d’usage décryptés.</p>
+</header>
+
+<article class="article-content">
+<h2>L’ère des assistants de code IA</h2>
+<p>Les assistants de code IA ont transformé le quotidien des développeurs. Deux outils se détachent nettement du lot en 2026 : <strong>GitHub Copilot</strong>, l’assistant intégré à VS Code soutenu par Microsoft et OpenAI, et <strong>Cursor</strong>, l’éditeur de code entièrement repensé autour de l’IA. Ce comparatif détaillé vous aidera à faire votre choix.</p>
+
+<h2>GitHub Copilot : l’assistant universel</h2>
+<p>GitHub Copilot est une extension pour VS Code, JetBrains, Neovim et d’autres éditeurs. Lancé en 2022, il est devenu l’assistant de code le plus utilisé au monde avec plus de 15 millions de développeurs.</p>
+
+<h3>Fonctionnalités clés</h3>
+<ul>
+<li><strong>Autocomplétion intelligente</strong> : Suggestions de code en temps réel basées sur le contexte de votre fichier et de votre projet.</li>
+<li><strong>Copilot Chat</strong> : Chat intégré pour poser des questions sur votre code, demander des refactorings ou des explications.</li>
+<li><strong>Copilot Workspace</strong> : Environnement qui permet de passer d’une issue GitHub à un plan d’implémentation, puis au code, de façon assistée.</li>
+<li><strong>Multi-modèles</strong> : Accès à GPT-4o, Claude Sonnet et Gemini selon vos préférences.</li>
+<li><strong>Copilot Edits</strong> : Modification multi-fichiers assistée par l’IA directement dans l’éditeur.</li>
+</ul>
+
+<h3>Tarifs</h3>
+<ul>
+<li><strong>Free</strong> : Accès limité à l’autocomplétion et au chat (2000 complétions/mois)</li>
+<li><strong>Pro</strong> : 10$/mois — Accès complet aux fonctionnalités de base</li>
+<li><strong>Business</strong> : 19$/mois/utilisateur — Gestion d’équipe et politiques de sécurité</li>
+<li><strong>Enterprise</strong> : 39$/mois/utilisateur — Modèles finetunés sur votre base de code</li>
+</ul>
+
+<h2>Cursor : l’éditeur IA natif</h2>
+<p>Cursor est un éditeur de code complet (fork de VS Code) conçu dès le départ pour l’IA. Plutôt qu’un plugin ajouté à un éditeur existant, c’est l’éditeur lui-même qui est bâti autour de l’intelligence artificielle.</p>
+
+<h3>Fonctionnalités clés</h3>
+<ul>
+<li><strong>Cmd+K (inline editing)</strong> : Sélectionnez du code et demandez une modification en langage naturel. L’IA réécrit la sélection en tenant compte du contexte global du projet.</li>
+<li><strong>Composer</strong> : Un agent capable de créer et modifier plusieurs fichiers simultanément pour implémenter des fonctionnalités complètes.</li>
+<li><strong>Codebase-aware</strong> : Cursor indexe l’ensemble de votre projet et comprend les relations entre fichiers, les imports, les types et l’architecture.</li>
+<li><strong>Multi-modèles</strong> : Choix entre Claude Sonnet, GPT-4o, et même des modèles locaux via Ollama.</li>
+<li><strong>Tab prediction</strong> : Autocomplétion prédictive qui anticipe vos prochaines modifications multi-lignes.</li>
+</ul>
+
+<h3>Tarifs</h3>
+<ul>
+<li><strong>Hobby</strong> : Gratuit — 2000 complétions, 50 requêtes premium/mois</li>
+<li><strong>Pro</strong> : 20$/mois — 500 requêtes premium, complétions illimitées</li>
+<li><strong>Business</strong> : 40$/mois/utilisateur — Administration centralisée et SAML SSO</li>
+</ul>
+
+<h2>Comparaison face à face</h2>
+
+<h3>Autocomplétion</h3>
+<p>Les deux outils offrent une autocomplétion de qualité. <strong>Cursor</strong> a un léger avantage grâce à sa compréhension de l’ensemble du projet (codebase indexing) et ses prédictions multi-lignes plus agressives. Copilot reste excellent pour les complétions classiques ligne par ligne.</p>
+
+<h3>Édition assistée</h3>
+<p><strong>Cursor l’emporte nettement</strong>. Le Cmd+K pour l’édition inline et le Composer pour les modifications multi-fichiers sont des fonctionnalités qui changent véritablement la façon de coder. Copilot Edits est une réponse récente mais encore moins mature.</p>
+
+<h3>Compréhension du projet</h3>
+<p><strong>Cursor</strong> indexe automatiquement votre base de code complète, permettant des réponses contextuellement pertinentes même pour des questions portant sur l’architecture globale. Copilot utilise principalement les fichiers ouverts et les fichiers adjacents pour son contexte.</p>
+
+<h3>Intégration et compatibilité</h3>
+<p><strong>Copilot l’emporte</strong>. Il fonctionne dans VS Code, tous les IDE JetBrains, Neovim, Visual Studio et même dans le terminal. Cursor est un éditeur autonome — si vous êtes attaché à un IDE JetBrains, Copilot est votre seule option.</p>
+
+<h2>Quel outil choisir ?</h2>
+<ul>
+<li><strong>Choisissez Cursor si</strong> : Vous voulez l’expérience IA la plus avancée, vous travaillez principalement en VS Code, vous aimez les éditions multi-fichiers assistées, et vous êtes prêt à changer d’éditeur.</li>
+<li><strong>Choisissez Copilot si</strong> : Vous utilisez un IDE JetBrains ou Neovim, vous préférez garder votre environnement actuel, ou vous voulez un bon assistant à prix très compétitif (10$/mois).</li>
+<li><strong>Utilisez les deux</strong> : Beaucoup de développeurs utilisent Cursor comme éditeur principal et gardent Copilot pour leurs contributions sur d’autres machines ou IDE.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Cursor et GitHub Copilot représentent deux philosophies différentes : <strong>Cursor</strong> réinvente l’éditeur autour de l’IA, tandis que <strong>Copilot</strong> ajoute l’IA à vos outils existants. En termes de capacités pures, Cursor a actuellement une longueur d’avance pour l’édition assistée. Mais Copilot reste imbattable pour sa compatibilité et son prix. Consultez nos fiches détaillées de Cursor et GitHub Copilot dans l’encyclopédie pour plus d’informations.</p>
+</article>
+
+<div class="article-cta">
+  <h3>Explorez notre catalogue de 200 outils IA</h3>
+  <p>D&eacute;couvrez, comparez et choisissez les meilleurs outils d'intelligence artificielle.</p>
+  <a href="/fr/#catalogue" class="btn-primary">&#128218; Voir le catalogue</a>
+</div>
+
+<div class="related-section">
+  <h2 class="related-title">Articles recommand&eacute;s</h2>
+  <div class="related-grid">
+    <a href="/fr/blog/chatgpt-guide-complet/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">ChatGPT : Le guide complet pour bien débuter en 2026</div>
+    </a>
+<a href="/fr/blog/chatgpt-vs-claude-vs-gemini/" class="related-card">
+      <div class="rc-emoji">⚖️</div>
+      <div class="rc-tag">Comparatif</div>
+      <div class="rc-title">ChatGPT vs Claude vs Gemini : quel chatbot IA choisir en 2026 ?</div>
+    </a>
+<a href="/fr/blog/meilleurs-generateurs-images-ia/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Créatif</div>
+      <div class="rc-title">Les 10 meilleurs générateurs d’images IA en 2026</div>
+    </a>
+<a href="/fr/blog/meilleurs-outils-ia-gratuits/" class="related-card">
+      <div class="rc-emoji">🆓</div>
+      <div class="rc-tag">Budget</div>
+      <div class="rc-title">Les meilleurs outils IA gratuits en 2026 : le guide ultime</div>
+    </a>
+<a href="/fr/blog/automatiser-workflow-ia/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivité</div>
+      <div class="rc-title">Automatiser son workflow avec l’IA : Zapier, Make et n8n</div>
+    </a>
+
+  </div>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">La Bible de l'IA</div>
+  <div class="footer-links">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/#catalogue">Catalogue</a>
+    <a href="/fr/#blog">Blog</a>
+    <a href="/fr/#newsletter">Newsletter</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 La Bible de l'IA. Tous droits r&eacute;serv&eacute;s.</div>
+</footer>
+</body>
+</html>

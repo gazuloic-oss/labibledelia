@@ -956,6 +956,19 @@ def generate_sitemap(tools, categories, comparisons):
         urls.append((f"/fr/comparer/{id1}-vs-{id2}/", '0.7', 'monthly'))
         urls.append((f"/en/comparer/{id1}-vs-{id2}/", '0.7', 'monthly'))
 
+    # Blog articles
+    blog_slugs = [
+        "chatgpt-guide-complet",
+        "chatgpt-vs-claude-vs-gemini",
+        "meilleurs-generateurs-images-ia",
+        "cursor-vs-github-copilot",
+        "meilleurs-outils-ia-gratuits",
+        "automatiser-workflow-ia",
+    ]
+    for slug in blog_slugs:
+        urls.append((f"/fr/blog/{slug}/", '0.8', 'monthly'))
+        urls.append((f"/en/blog/{slug}/", '0.8', 'monthly'))
+
     xml_parts = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml_parts.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
     xml_parts.append('        xmlns:xhtml="http://www.w3.org/1999/xhtml">')
@@ -1034,6 +1047,33 @@ def get_top_comparisons(tools):
         ("superhuman", "shortwave"),
         ("teal", "kickresume"),
         ("notionai", "notionai-prod"),
+        # New pairs (2026 update)
+        ("capcut", "filmora"),
+        ("capcut", "descript"),
+        ("capcut", "veed"),
+        ("cursor", "zed"),
+        ("lovable", "replit"),
+        ("claude-code", "aider"),
+        ("coderabbit", "copilot-gh"),
+        ("chatgpt", "meta-ai"),
+        ("deepseek", "kimi"),
+        ("claude", "cohere"),
+        ("leonardo", "midjourney"),
+        ("topaz", "magnific"),
+        ("pixlr", "canvaai"),
+        ("meshy", "tripo"),
+        ("meshy", "kaedim"),
+        ("motion", "reclaim"),
+        ("clickupai", "notionai-prod"),
+        ("beautifulai", "gamma"),
+        ("manychat", "hubspotai"),
+        ("phantombuster", "instantly"),
+        ("manus", "genspark"),
+        ("botpress", "lindy"),
+        ("photomath", "socratic"),
+        ("quizizz", "khanmigo"),
+        ("wixai", "framer"),
+        ("hostinger", "durable"),
     ]
 
     tool_ids = {t['id'] for t in tools}
