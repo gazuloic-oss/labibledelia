@@ -3,7 +3,7 @@
 # Deploy script for La Bible de l'IA on Hostinger VPS
 #
 # FIRST TIME SETUP:
-#   1. SSH into your VPS: ssh root@YOUR_VPS_IP
+#   1. SSH into your VPS: ssh root@62.72.16.174
 #   2. Install Nginx + PHP:
 #      apt update && apt install -y nginx php-fpm php-cli git
 #   3. Create web directory:
@@ -23,7 +23,7 @@
 #      If your socket path differs, update nginx.conf fastcgi_pass line
 #
 # SUBSEQUENT DEPLOYS (run this script):
-#   ssh root@YOUR_VPS_IP 'bash -s' < deploy.sh
+#   ssh root@62.72.16.174 'bash -s' < deploy.sh
 #   OR run directly on the VPS
 # =============================================================
 

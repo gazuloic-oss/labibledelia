@@ -18,10 +18,24 @@ logo-philosophy.md
 logo-proposals.png
 nul
 
+# Tool generation scripts (one-time use)
+generate_new_tools.py
+new_tools_batch*
+inject_tools.py
+inject_final.py
+inject-tools.py
+
+# Blog batch generation scripts (one-time use)
+blog_articles_batch*.py
+integrate_blog_articles.py
+
 # Temporary data files
 new-tools-fr*.json
 tools-fr.json
 tools-en.json
+
+# Netlify (migrated to Hostinger VPS)
+netlify.toml
 
 # OS
 .DS_Store
