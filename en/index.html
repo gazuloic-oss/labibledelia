@@ -228,6 +228,41 @@ a:hover{color:var(--link-hover)}
   letter-spacing:.03em;transition:all .3s;text-decoration:none}
 .nav-cta:hover{background:var(--gold-light);color:var(--bg-dark)}
 
+/* Nav dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:.3rem}
+.nav-dropdown>a::after{content:'▾';font-size:.6rem;opacity:.5;transition:transform .3s}
+.nav-dropdown:hover>a::after{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(5px);
+  min-width:180px;background:rgba(26,26,46,.96);backdrop-filter:blur(20px);
+  border:1px solid rgba(244,241,235,.08);border-radius:10px;padding:.5rem 0;
+  opacity:0;visibility:hidden;transition:all .25s ease;z-index:1001;
+  box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:.6rem;padding:.55rem 1.2rem;
+  color:rgba(244,241,235,.5)!important;font-size:.78rem!important;transition:all .2s}
+.nav-dropdown-menu a:hover{color:var(--gold)!important;background:rgba(201,168,76,.06)}
+.nav-dropdown-menu a svg{width:14px;height:14px;opacity:.4;flex-shrink:0}
+
+/* Tool of the day banner */
+.tool-of-day{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.03));
+  border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:.8rem 1.5rem;
+  display:flex;align-items:center;gap:1rem;margin:0 4vw 1.5rem;
+  animation:fadeUp .6s .3s both}
+.tool-of-day-badge{background:var(--gold);color:var(--bg-dark);font-family:var(--font-ui);
+  font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:6px;white-space:nowrap;
+  letter-spacing:.03em}
+.tool-of-day-content{flex:1;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.tool-of-day-icon{font-size:1.2rem}
+.tool-of-day-name{font-family:var(--font-display);font-weight:700;font-size:.9rem;color:var(--ink-primary)}
+.tool-of-day-tagline{font-family:var(--font-ui);font-size:.8rem;color:var(--ink-secondary);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:400px}
+.tool-of-day-link{color:var(--gold);font-family:var(--font-ui);font-size:.78rem;font-weight:600;
+  text-decoration:none;white-space:nowrap;transition:opacity .3s}
+.tool-of-day-link:hover{opacity:.7}
+@media(max-width:768px){.tool-of-day{flex-direction:column;text-align:center;gap:.5rem}
+  .tool-of-day-tagline{max-width:100%;white-space:normal}}
+
 /* Mobile nav */
 .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
 .nav-hamburger span{display:block;width:20px;height:2px;background:var(--ink-inverse);margin:4px 0;transition:all .3s}
@@ -855,19 +890,25 @@ a:hover{color:var(--link-hover)}
     </a>
   </div>
   <div class="nav-links">
-    <a href="#catalogue" onclick="APP.scrollTo('catalogue')">Catalog</a>
-    <a href="#categories" onclick="APP.scrollTo('categories')">Categories</a>
-    <a href="#tendances" onclick="APP.scrollTo('tendances')">Trends</a>
-    <a href="#versus" onclick="APP.scrollTo('versus')">Versus</a>
-    <a href="#blog" onclick="APP.scrollTo('blog')">Guides</a>
-    <a href="/en/quiz/">AI Quiz</a>
-    <a href="/en/radar/">Radar</a>
-    <a href="#" onclick="APP.openComparator();return false">Compare <span class="nav-compare-badge" id="navCompareBadge">0</span></a>
-    <a href="#" onclick="APP.showFavorites();return false">❤️ Favorites <span class="nav-fav-count" id="navFavCount" style="display:none">0</span></a>
+    <div class="nav-dropdown">
+      <a href="#catalogue" onclick="APP.scrollTo('catalogue')">Explore ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="#catalogue" onclick="APP.scrollTo('catalogue')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Catalog</a>
+        <a href="#categories" onclick="APP.scrollTo('categories')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Categories</a>
+        <a href="#tendances" onclick="APP.scrollTo('tendances')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Trends</a>
+        <a href="#versus" onclick="APP.scrollTo('versus')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>Versus</a>
+      </div>
+    </div>
+    <a href="/en/quiz/" style="color:var(--gold)">AI Quiz</a>
+    <a href="/en/packs/">Packs</a>
+    <a href="/en/radar/">News</a>
+    <a href="#blog" onclick="APP.scrollTo('blog')">Blog</a>
+    <a href="#" onclick="APP.openComparator();return false" title="Compare"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span class="nav-compare-badge" id="navCompareBadge">0</span></a>
     <button class="nav-search-btn" onclick="APP.openSearch()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      Search <kbd>⌘K</kbd>
+      <kbd>⌘K</kbd>
     </button>
+    <a href="#" onclick="APP.showFavorites();return false" title="Favorites">❤️<span class="nav-fav-count" id="navFavCount" style="display:none">0</span></a>
     <button class="theme-toggle" id="themeToggle" onclick="APP.toggleTheme()">🌙</button>
     <a href="#newsletter" class="nav-cta">Newsletter</a>
   </div>
@@ -921,6 +962,9 @@ a:hover{color:var(--link-hover)}
 <div class="divider">
   <svg viewBox="0 0 24 24"><path d="M12 2L9.2 8.6 2 9.2l5.5 4.8L6 21.6 12 18l6 3.6-1.5-7.6L22 9.2l-7.2-.6z"/></svg>
 </div>
+
+<!-- TOOL OF THE DAY -->
+<div class="tool-of-day" id="toolOfDay"></div>
 
 <!-- CATALOG -->
 <section class="section" id="catalogue">
@@ -1073,9 +1117,10 @@ a:hover{color:var(--link-hover)}
       <h4>Resources</h4>
       <a href="#catalogue">Full Catalog</a>
       <a href="/en/quiz/">AI Quiz</a>
-      <a href="/en/radar/">AI Radar</a>
+      <a href="/en/packs/">AI Packs</a>
+      <a href="/en/radar/">News</a>
+      <a href="#blog">Blog</a>
       <a href="#" onclick="APP.openComparator();return false">Comparator</a>
-      <a href="#newsletter">Newsletter</a>
     </div>
     <div class="footer-col">
       <h4>About</h4>
@@ -1967,6 +2012,14 @@ const APP = {
       </a></li>`;
     }).join('');
   },
+  renderToolOfDay(){
+    const topTools=TOOLS.filter(t=>t.rating>=4.3&&t.popularity>=40);
+    const day=Math.floor(Date.now()/86400000);
+    const tool=topTools[day%topTools.length];
+    const el=document.getElementById('toolOfDay');
+    if(!el||!tool)return;
+    el.innerHTML=`<span class="tool-of-day-badge">TOOL OF THE DAY</span><div class="tool-of-day-content"><span class="tool-of-day-icon">${tool.icon}</span><span class="tool-of-day-name">${tool.name}</span><span class="tool-of-day-tagline">${tool.tagline}</span></div><a class="tool-of-day-link" href="/en/${tool.id}/">Discover →</a>`;
+  },
   renderFeatured(){
     const grid=document.getElementById('featuredGrid');
     const scored=[...TOOLS].map(t=>({...t,score:t.rating*(t.popularity/20)})).sort((a,b)=>b.score-a.score);
@@ -2453,6 +2506,7 @@ const APP = {
     this.restoreTheme();
     this.renderHeroCats();
     this.renderTOC();
+    this.renderToolOfDay();
     this.renderFeatured();
     this.renderFilters();
     this.renderCatalog();
