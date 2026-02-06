@@ -557,6 +557,53 @@ a:hover{color:var(--link-hover)}
   font-family:var(--font-mono);font-size:.7rem;color:rgba(244,241,235,.2);letter-spacing:.05em}
 
 /* ============================================================
+   LEGAL/INFO PAGES MODAL
+   ============================================================ */
+.page-overlay{position:fixed;inset:0;z-index:2500;background:rgba(10,10,20,.6);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;padding:2rem 4vw;overflow-y:auto}
+.page-overlay.open{display:flex}
+.page-modal{background:var(--bg-page);border-radius:var(--radius-lg);max-width:780px;width:100%;
+  position:relative;box-shadow:var(--shadow-lg);animation:modalIn .4s ease;padding:2.5rem 3rem 3rem}
+@media(max-width:600px){.page-modal{padding:1.5rem 1.2rem 2rem}}
+.page-modal-close{position:absolute;top:1rem;right:1rem;background:var(--bg-elevated);border:1px solid var(--border-light);
+  border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;color:var(--ink-tertiary);transition:all .2s;z-index:1}
+.page-modal-close:hover{background:var(--ink);color:var(--ink-inverse)}
+.page-modal-icon{font-size:2.5rem;margin-bottom:.8rem}
+.page-modal h2{font-family:var(--font-display);font-size:1.8rem;font-weight:900;margin-bottom:.3rem}
+.page-modal .page-subtitle{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-tertiary);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem}
+.page-modal h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:1.8rem 0 .6rem;
+  padding-bottom:.4rem;border-bottom:1px solid var(--border-light)}
+.page-modal p,.page-modal li{font-size:.9rem;line-height:1.8;color:var(--ink-secondary);margin-bottom:.8rem}
+.page-modal ul{list-style:none;padding:0}
+.page-modal ul li{padding-left:1.3rem;position:relative}
+.page-modal ul li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.7rem}
+.page-modal a{color:var(--gold)}
+.page-modal a:hover{text-decoration:underline}
+.page-modal .info-card{background:var(--bg-infobox);border:1px solid var(--border-medium);
+  border-radius:var(--radius-md);padding:1.2rem 1.5rem;margin:1rem 0}
+.page-modal .info-card-label{font-family:var(--font-mono);font-size:.65rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem}
+.page-modal .info-card p{margin-bottom:.3rem}
+.contact-form{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+.contact-form label{font-family:var(--font-ui);font-size:.8rem;font-weight:600;color:var(--ink-secondary)}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:.7rem 1rem;
+  border:1px solid var(--border-light);border-radius:var(--radius-sm);font-family:var(--font-ui);
+  font-size:.9rem;outline:none;background:var(--bg-surface);color:var(--ink);transition:border-color .3s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold)}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.contact-form .form-row{grid-template-columns:1fr}}
+.contact-form button{align-self:flex-start;padding:.7rem 2rem;background:var(--gold);color:var(--bg-dark);
+  font-family:var(--font-ui);font-weight:700;font-size:.85rem;border:none;border-radius:var(--radius-sm);
+  cursor:pointer;transition:all .3s}
+.contact-form button:hover{background:var(--gold-light)}
+.contact-form .form-success{color:var(--prix-gratuit);font-family:var(--font-ui);font-size:.9rem;display:none}
+.submit-tool-form .form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media(max-width:600px){.submit-tool-form .form-row-3{grid-template-columns:1fr}}
+
+/* ============================================================
    ANIMATIONS
    ============================================================ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -737,16 +784,232 @@ a:hover{color:var(--link-hover)}
     </div>
     <div class="footer-col">
       <h4>About</h4>
-      <a href="#">Contact</a>
-      <a href="#">Legal</a>
-      <a href="#">Privacy</a>
-      <a href="#">Submit a Tool</a>
+      <a href="#" onclick="APP.openPage('contact');return false">Contact</a>
+      <a href="#" onclick="APP.openPage('legal');return false">Legal Notice</a>
+      <a href="#" onclick="APP.openPage('privacy');return false">Privacy</a>
+      <a href="#" onclick="APP.openPage('submit');return false">Submit a Tool</a>
     </div>
   </div>
   <div class="footer-bottom">
     The AI Lexicon · Last updated: February 2026 · 137 tools listed
   </div>
 </footer>
+
+<!-- ============================================================
+     PAGE MODALS (Contact, Legal, Privacy, Submit)
+     ============================================================ -->
+
+<!-- CONTACT -->
+<div class="page-overlay" id="pageContact" onclick="if(event.target===this)APP.closePage('contact')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('contact')">✕</button>
+    <div class="page-modal-icon">📬</div>
+    <h2>Contact</h2>
+    <p class="page-subtitle">Got a question? A suggestion? Write to us</p>
+
+    <div class="info-card">
+      <div class="info-card-label">Response within 48h</div>
+      <p>We read every message and will get back to you as soon as possible.</p>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button').style.display='none'">
+      <div class="form-row">
+        <div>
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div>
+        <label>Subject</label>
+        <select>
+          <option value="">— Choose a subject —</option>
+          <option>Report an error</option>
+          <option>Suggest a tool</option>
+          <option>Partnership / Press</option>
+          <option>Feature request</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label>Message</label>
+        <textarea placeholder="Describe your request..." required></textarea>
+      </div>
+      <button type="submit">Send message →</button>
+      <p class="form-success">✓ Message sent! We'll get back to you within 48h.</p>
+    </form>
+  </div>
+</div>
+
+<!-- LEGAL NOTICE -->
+<div class="page-overlay" id="pageLegal" onclick="if(event.target===this)APP.closePage('legal')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('legal')">✕</button>
+    <div class="page-modal-icon">⚖️</div>
+    <h2>Legal Notice</h2>
+    <p class="page-subtitle">Required legal information</p>
+
+    <h3>Website Publisher</h3>
+    <div class="info-card">
+      <p><strong>The AI Lexicon</strong> — labibledelia.com</p>
+      <p>Editorial information website about artificial intelligence tools.</p>
+      <p>Publication Director: The AI Lexicon Team</p>
+      <p>Contact: <a href="#" onclick="APP.closePage('legal');APP.openPage('contact');return false">Contact form</a></p>
+    </div>
+
+    <h3>Hosting</h3>
+    <p>This website is hosted by <strong>Netlify, Inc.</strong><br>
+    44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
+    Website: <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a></p>
+
+    <h3>Intellectual Property</h3>
+    <p>All content on this website (text, analyses, ratings, design) is protected by copyright. Logos, names, and trademarks of the tools presented belong to their respective owners.</p>
+    <p>These elements are used for informational purposes within the scope of fair use and editorial analysis.</p>
+
+    <h3>Editorial Independence</h3>
+    <p>The AI Lexicon is an independent editorial project. All analyses, ratings, and reviews reflect our objective evaluation. No ranking or rating is influenced by any commercial relationship.</p>
+
+    <h3>Limitation of Liability</h3>
+    <p>Information provided on this website is for informational purposes only. We strive to keep data up to date but cannot guarantee the permanent accuracy of pricing, features, or availability of listed tools.</p>
+
+    <h3>External Links</h3>
+    <p>This website contains links to third-party sites. The AI Lexicon cannot be held responsible for the content of these external websites.</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="page-overlay" id="pagePrivacy" onclick="if(event.target===this)APP.closePage('privacy')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('privacy')">✕</button>
+    <div class="page-modal-icon">🔒</div>
+    <h2>Privacy Policy</h2>
+    <p class="page-subtitle">How we protect your personal data</p>
+
+    <div class="info-card">
+      <div class="info-card-label">In a nutshell</div>
+      <p>We collect virtually no personal data. No third-party cookies, no advertising trackers, no data resale.</p>
+    </div>
+
+    <h3>Data Collected</h3>
+    <p>The AI Lexicon is a static website. We collect <strong>no personal data</strong> during your browsing, except in the following cases:</p>
+    <ul>
+      <li><strong>Newsletter:</strong> If you voluntarily subscribe, we only collect your email address to send our weekly newsletter.</li>
+      <li><strong>Contact form:</strong> If you contact us, we collect your name, email, and message in order to respond.</li>
+    </ul>
+
+    <h3>Cookies</h3>
+    <p>This website uses <strong>no tracking, marketing, or advertising cookies</strong>. No third-party cookies (Google Analytics, Facebook Pixel, etc.) are placed.</p>
+    <p>The only local data used is your browser's <strong>localStorage</strong> to remember your display preferences (view mode, filters). This data stays on your device and is never transmitted.</p>
+
+    <h3>Hosting & Logging</h3>
+    <p>Our host (Netlify) may collect technical connection data (IP address, browser type) as part of its server logs. This data is processed according to <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify's privacy policy</a>.</p>
+
+    <h3>Your Rights</h3>
+    <p>Under GDPR, you have the right to access, rectify, delete, and port your data. To exercise these rights, <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contact us</a>.</p>
+
+    <h3>Changes</h3>
+    <p>This policy may be updated. The last modification date is indicated below.</p>
+    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Last updated: February 2026</p>
+  </div>
+</div>
+
+<!-- SUBMIT A TOOL -->
+<div class="page-overlay" id="pageSubmit" onclick="if(event.target===this)APP.closePage('submit')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('submit')">✕</button>
+    <div class="page-modal-icon">🚀</div>
+    <h2>Submit a Tool</h2>
+    <p class="page-subtitle">Suggest an AI tool to add to the encyclopedia</p>
+
+    <div class="info-card">
+      <div class="info-card-label">Evaluation Criteria</div>
+      <p>Each submitted tool is evaluated using our methodology: features, value for money, user interface, support, and reliability. Only relevant, high-quality tools are added.</p>
+    </div>
+
+    <form class="contact-form submit-tool-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button[type=submit]').style.display='none'">
+      <h3 style="margin-top:.5rem;border:none;padding:0">Tool Information</h3>
+      <div class="form-row">
+        <div>
+          <label>Tool name *</label>
+          <input type="text" placeholder="E.g.: ChatGPT, Midjourney..." required>
+        </div>
+        <div>
+          <label>Website URL *</label>
+          <input type="url" placeholder="https://..." required>
+        </div>
+      </div>
+      <div class="form-row-3">
+        <div>
+          <label>Category</label>
+          <select>
+            <option value="">— Category —</option>
+            <option>Chatbots & AI Agents</option>
+            <option>Text & Writing</option>
+            <option>Image & Design</option>
+            <option>Video</option>
+            <option>Audio & Music</option>
+            <option>Code & Development</option>
+            <option>Marketing & Business</option>
+            <option>Productivity</option>
+            <option>Education</option>
+            <option>Automation</option>
+            <option>Research</option>
+            <option>Web Design</option>
+            <option>Meetings & Email</option>
+            <option>Career</option>
+            <option>Finance</option>
+          </select>
+        </div>
+        <div>
+          <label>Pricing</label>
+          <select>
+            <option value="">— Pricing —</option>
+            <option>Free</option>
+            <option>Freemium</option>
+            <option>Paid</option>
+            <option>Free trial</option>
+          </select>
+        </div>
+        <div>
+          <label>Launch year</label>
+          <input type="number" placeholder="2024" min="2015" max="2030">
+        </div>
+      </div>
+      <div>
+        <label>Short description</label>
+        <textarea placeholder="In 2-3 sentences, describe what this tool does and why it's remarkable..." rows="3"></textarea>
+      </div>
+
+      <h3>Your Details</h3>
+      <div class="form-row">
+        <div>
+          <label>Your name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div>
+          <label>Your email *</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div>
+        <label>Relationship with the tool</label>
+        <select>
+          <option value="">— Please specify —</option>
+          <option>User</option>
+          <option>Founder / Team member</option>
+          <option>Journalist / Reviewer</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit tool →</button>
+      <p class="form-success">✓ Thank you! Your submission has been received. We'll evaluate it within 7 days.</p>
+    </form>
+  </div>
+</div>
 
 <!-- TOOL DETAIL MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)APP.closeTool()">
@@ -1282,6 +1545,16 @@ const APP = {
     document.getElementById('comparatorOverlay').classList.remove('open');
     document.body.style.overflow='';
   },
+  openPage(id){
+    const map={contact:'pageContact',legal:'pageLegal',privacy:'pagePrivacy',submit:'pageSubmit'};
+    const el=document.getElementById(map[id]);
+    if(el){el.classList.add('open');document.body.style.overflow='hidden'}
+  },
+  closePage(id){
+    const map={contact:'pageContact',legal:'pageLegal',privacy:'pagePrivacy',submit:'pageSubmit'};
+    const el=document.getElementById(map[id]);
+    if(el){el.classList.remove('open');document.body.style.overflow=''}
+  },
   renderComparatorTable(){
     const tools=this.state.compareList.map(id=>this.getToolById(id)).filter(Boolean);
     const allFeatures=[...new Set(tools.flatMap(t=>t.features))];
@@ -1384,7 +1657,7 @@ window.addEventListener('scroll',()=>{
 /* observer is initialized inside APP.init() after dynamic rendering */
 document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();APP.openSearch()}
-  if(e.key==='Escape'){APP.closeSearch();APP.closeTool();APP.closeComparator()}
+  if(e.key==='Escape'){APP.closeSearch();APP.closeTool();APP.closeComparator();['contact','legal','privacy','submit'].forEach(p=>APP.closePage(p))}
 });
 document.getElementById('heroSearchInput').addEventListener('focus',function(){this.blur();APP.openSearch()});
 document.getElementById('searchModalInput').addEventListener('input',function(){APP.renderSearchResults(this.value)});

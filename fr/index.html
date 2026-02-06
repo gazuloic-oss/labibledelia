@@ -557,6 +557,55 @@ a:hover{color:var(--link-hover)}
   font-family:var(--font-mono);font-size:.7rem;color:rgba(244,241,235,.2);letter-spacing:.05em}
 
 /* ============================================================
+   LEGAL/INFO PAGES MODAL
+   ============================================================ */
+.page-overlay{position:fixed;inset:0;z-index:2500;background:rgba(10,10,20,.6);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;padding:2rem 4vw;overflow-y:auto}
+.page-overlay.open{display:flex}
+.page-modal{background:var(--bg-page);border-radius:var(--radius-lg);max-width:780px;width:100%;
+  position:relative;box-shadow:var(--shadow-lg);animation:modalIn .4s ease;padding:2.5rem 3rem 3rem}
+@media(max-width:600px){.page-modal{padding:1.5rem 1.2rem 2rem}}
+.page-modal-close{position:absolute;top:1rem;right:1rem;background:var(--bg-elevated);border:1px solid var(--border-light);
+  border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;color:var(--ink-tertiary);transition:all .2s;z-index:1}
+.page-modal-close:hover{background:var(--ink);color:var(--ink-inverse)}
+.page-modal-icon{font-size:2.5rem;margin-bottom:.8rem}
+.page-modal h2{font-family:var(--font-display);font-size:1.8rem;font-weight:900;margin-bottom:.3rem}
+.page-modal .page-subtitle{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-tertiary);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem}
+.page-modal h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:1.8rem 0 .6rem;
+  padding-bottom:.4rem;border-bottom:1px solid var(--border-light)}
+.page-modal p,.page-modal li{font-size:.9rem;line-height:1.8;color:var(--ink-secondary);margin-bottom:.8rem}
+.page-modal ul{list-style:none;padding:0}
+.page-modal ul li{padding-left:1.3rem;position:relative}
+.page-modal ul li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.7rem}
+.page-modal a{color:var(--gold)}
+.page-modal a:hover{text-decoration:underline}
+.page-modal .info-card{background:var(--bg-infobox);border:1px solid var(--border-medium);
+  border-radius:var(--radius-md);padding:1.2rem 1.5rem;margin:1rem 0}
+.page-modal .info-card-label{font-family:var(--font-mono);font-size:.65rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem}
+.page-modal .info-card p{margin-bottom:.3rem}
+/* Contact form */
+.contact-form{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+.contact-form label{font-family:var(--font-ui);font-size:.8rem;font-weight:600;color:var(--ink-secondary)}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:.7rem 1rem;
+  border:1px solid var(--border-light);border-radius:var(--radius-sm);font-family:var(--font-ui);
+  font-size:.9rem;outline:none;background:var(--bg-surface);color:var(--ink);transition:border-color .3s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold)}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.contact-form .form-row{grid-template-columns:1fr}}
+.contact-form button{align-self:flex-start;padding:.7rem 2rem;background:var(--gold);color:var(--bg-dark);
+  font-family:var(--font-ui);font-weight:700;font-size:.85rem;border:none;border-radius:var(--radius-sm);
+  cursor:pointer;transition:all .3s}
+.contact-form button:hover{background:var(--gold-light)}
+.contact-form .form-success{color:var(--prix-gratuit);font-family:var(--font-ui);font-size:.9rem;display:none}
+/* Submit tool form extras */
+.submit-tool-form .form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media(max-width:600px){.submit-tool-form .form-row-3{grid-template-columns:1fr}}
+
+/* ============================================================
    ANIMATIONS
    ============================================================ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -737,16 +786,232 @@ a:hover{color:var(--link-hover)}
     </div>
     <div class="footer-col">
       <h4>À propos</h4>
-      <a href="#">Contact</a>
-      <a href="#">Mentions légales</a>
-      <a href="#">Confidentialité</a>
-      <a href="#">Soumettre un outil</a>
+      <a href="#" onclick="APP.openPage('contact');return false">Contact</a>
+      <a href="#" onclick="APP.openPage('legal');return false">Mentions légales</a>
+      <a href="#" onclick="APP.openPage('privacy');return false">Confidentialité</a>
+      <a href="#" onclick="APP.openPage('submit');return false">Soumettre un outil</a>
     </div>
   </div>
   <div class="footer-bottom">
     La Bible de l'IA · Dernière mise à jour : Février 2026 · 137 outils recensés
   </div>
 </footer>
+
+<!-- ============================================================
+     PAGE MODALS (Contact, Legal, Privacy, Submit)
+     ============================================================ -->
+
+<!-- CONTACT -->
+<div class="page-overlay" id="pageContact" onclick="if(event.target===this)APP.closePage('contact')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('contact')">✕</button>
+    <div class="page-modal-icon">📬</div>
+    <h2>Contact</h2>
+    <p class="page-subtitle">Une question ? Une suggestion ? Écrivez-nous</p>
+
+    <div class="info-card">
+      <div class="info-card-label">Réponse sous 48h</div>
+      <p>Nous lisons chaque message et nous vous répondrons dans les meilleurs délais.</p>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button').style.display='none'">
+      <div class="form-row">
+        <div>
+          <label>Nom</label>
+          <input type="text" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com" required>
+        </div>
+      </div>
+      <div>
+        <label>Sujet</label>
+        <select>
+          <option value="">— Choisissez un sujet —</option>
+          <option>Signaler une erreur</option>
+          <option>Suggérer un outil</option>
+          <option>Partenariat / Presse</option>
+          <option>Demande de fonctionnalité</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div>
+        <label>Message</label>
+        <textarea placeholder="Décrivez votre demande..." required></textarea>
+      </div>
+      <button type="submit">Envoyer le message →</button>
+      <p class="form-success">✓ Message envoyé ! Nous vous répondrons sous 48h.</p>
+    </form>
+  </div>
+</div>
+
+<!-- MENTIONS LÉGALES -->
+<div class="page-overlay" id="pageLegal" onclick="if(event.target===this)APP.closePage('legal')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('legal')">✕</button>
+    <div class="page-modal-icon">⚖️</div>
+    <h2>Mentions légales</h2>
+    <p class="page-subtitle">Informations légales obligatoires</p>
+
+    <h3>Éditeur du site</h3>
+    <div class="info-card">
+      <p><strong>La Bible de l'IA</strong> — labibledelia.com</p>
+      <p>Site d'information éditoriale sur les outils d'intelligence artificielle.</p>
+      <p>Directeur de la publication : L'équipe La Bible de l'IA</p>
+      <p>Contact : <a href="#" onclick="APP.closePage('legal');APP.openPage('contact');return false">Formulaire de contact</a></p>
+    </div>
+
+    <h3>Hébergement</h3>
+    <p>Ce site est hébergé par <strong>Netlify, Inc.</strong><br>
+    44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
+    Site web : <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a></p>
+
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site (textes, analyses, notes, design) est protégé par le droit d'auteur. Les logos, noms et marques des outils présentés sont la propriété de leurs détenteurs respectifs.</p>
+    <p>L'utilisation de ces éléments se fait à titre informatif dans le cadre du droit de citation et d'analyse.</p>
+
+    <h3>Indépendance éditoriale</h3>
+    <p>La Bible de l'IA est un projet éditorial indépendant. Les analyses, notes et avis publiés reflètent notre évaluation objective. Aucun classement ni notation n'est influencé par une relation commerciale.</p>
+
+    <h3>Limitation de responsabilité</h3>
+    <p>Les informations fournies sur ce site le sont à titre indicatif. Nous nous efforçons de maintenir les données à jour, mais ne pouvons garantir l'exactitude permanente des tarifs, fonctionnalités ou disponibilités des outils référencés.</p>
+
+    <h3>Liens externes</h3>
+    <p>Ce site contient des liens vers des sites tiers. La Bible de l'IA ne saurait être tenue responsable du contenu de ces sites externes.</p>
+  </div>
+</div>
+
+<!-- CONFIDENTIALITÉ -->
+<div class="page-overlay" id="pagePrivacy" onclick="if(event.target===this)APP.closePage('privacy')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('privacy')">✕</button>
+    <div class="page-modal-icon">🔒</div>
+    <h2>Politique de confidentialité</h2>
+    <p class="page-subtitle">Protection de vos données personnelles</p>
+
+    <div class="info-card">
+      <div class="info-card-label">En résumé</div>
+      <p>Nous ne collectons quasiment aucune donnée personnelle. Pas de cookies tiers, pas de trackers publicitaires, pas de revente de données.</p>
+    </div>
+
+    <h3>Données collectées</h3>
+    <p>La Bible de l'IA est un site statique. Nous ne collectons <strong>aucune donnée personnelle</strong> lors de votre navigation, sauf dans les cas suivants :</p>
+    <ul>
+      <li><strong>Newsletter :</strong> Si vous vous inscrivez volontairement, nous collectons uniquement votre adresse email pour l'envoi de notre newsletter hebdomadaire.</li>
+      <li><strong>Formulaire de contact :</strong> Si vous nous contactez, nous collectons votre nom, email et message pour pouvoir vous répondre.</li>
+    </ul>
+
+    <h3>Cookies</h3>
+    <p>Ce site <strong>n'utilise aucun cookie</strong> de suivi, marketing ou publicitaire. Aucun cookie tiers (Google Analytics, Facebook Pixel, etc.) n'est déposé.</p>
+    <p>Les seules données locales utilisées sont le <strong>localStorage</strong> de votre navigateur pour mémoriser vos préférences d'affichage (mode de vue, filtres). Ces données restent sur votre appareil et ne sont jamais transmises.</p>
+
+    <h3>Hébergement & journalisation</h3>
+    <p>Notre hébergeur (Netlify) peut collecter des données techniques de connexion (adresse IP, type de navigateur) dans le cadre de ses journaux serveur. Ces données sont traitées selon la <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">politique de confidentialité de Netlify</a>.</p>
+
+    <h3>Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contactez-nous</a>.</p>
+
+    <h3>Modifications</h3>
+    <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous.</p>
+    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Dernière mise à jour : Février 2026</p>
+  </div>
+</div>
+
+<!-- SOUMETTRE UN OUTIL -->
+<div class="page-overlay" id="pageSubmit" onclick="if(event.target===this)APP.closePage('submit')">
+  <div class="page-modal">
+    <button class="page-modal-close" onclick="APP.closePage('submit')">✕</button>
+    <div class="page-modal-icon">🚀</div>
+    <h2>Soumettre un outil</h2>
+    <p class="page-subtitle">Proposez un outil IA à ajouter à l'encyclopédie</p>
+
+    <div class="info-card">
+      <div class="info-card-label">Critères d'évaluation</div>
+      <p>Chaque outil soumis est évalué selon notre méthodologie : fonctionnalités, rapport qualité/prix, interface utilisateur, support et fiabilité. Seuls les outils pertinents et de qualité sont ajoutés.</p>
+    </div>
+
+    <form class="contact-form submit-tool-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button[type=submit]').style.display='none'">
+      <h3 style="margin-top:.5rem;border:none;padding:0">Informations sur l'outil</h3>
+      <div class="form-row">
+        <div>
+          <label>Nom de l'outil *</label>
+          <input type="text" placeholder="Ex: ChatGPT, Midjourney..." required>
+        </div>
+        <div>
+          <label>URL du site *</label>
+          <input type="url" placeholder="https://..." required>
+        </div>
+      </div>
+      <div class="form-row-3">
+        <div>
+          <label>Catégorie</label>
+          <select>
+            <option value="">— Catégorie —</option>
+            <option>Chatbots & Agents IA</option>
+            <option>Texte & Rédaction</option>
+            <option>Image & Design</option>
+            <option>Vidéo</option>
+            <option>Audio & Musique</option>
+            <option>Code & Développement</option>
+            <option>Marketing & Business</option>
+            <option>Productivité</option>
+            <option>Éducation</option>
+            <option>Automatisation</option>
+            <option>Recherche</option>
+            <option>Design Web</option>
+            <option>Réunions & Email</option>
+            <option>Carrière</option>
+            <option>Finance</option>
+          </select>
+        </div>
+        <div>
+          <label>Tarification</label>
+          <select>
+            <option value="">— Tarification —</option>
+            <option>Gratuit</option>
+            <option>Freemium</option>
+            <option>Payant</option>
+            <option>Essai gratuit</option>
+          </select>
+        </div>
+        <div>
+          <label>Année de lancement</label>
+          <input type="number" placeholder="2024" min="2015" max="2030">
+        </div>
+      </div>
+      <div>
+        <label>Description courte</label>
+        <textarea placeholder="En 2-3 phrases, décrivez ce que fait cet outil et pourquoi il est remarquable..." rows="3"></textarea>
+      </div>
+
+      <h3>Vos coordonnées</h3>
+      <div class="form-row">
+        <div>
+          <label>Votre nom</label>
+          <input type="text" placeholder="Votre nom">
+        </div>
+        <div>
+          <label>Votre email *</label>
+          <input type="email" placeholder="votre@email.com" required>
+        </div>
+      </div>
+      <div>
+        <label>Relation avec l'outil</label>
+        <select>
+          <option value="">— Précisez —</option>
+          <option>Utilisateur</option>
+          <option>Fondateur / Équipe</option>
+          <option>Journaliste / Reviewer</option>
+          <option>Autre</option>
+        </select>
+      </div>
+
+      <button type="submit">Soumettre l'outil →</button>
+      <p class="form-success">✓ Merci ! Votre soumission a bien été reçue. Nous l'évaluerons sous 7 jours.</p>
+    </form>
+  </div>
+</div>
 
 <!-- TOOL DETAIL MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)APP.closeTool()">
@@ -1282,6 +1547,16 @@ const APP = {
     document.getElementById('comparatorOverlay').classList.remove('open');
     document.body.style.overflow='';
   },
+  openPage(id){
+    const map={contact:'pageContact',legal:'pageLegal',privacy:'pagePrivacy',submit:'pageSubmit'};
+    const el=document.getElementById(map[id]);
+    if(el){el.classList.add('open');document.body.style.overflow='hidden'}
+  },
+  closePage(id){
+    const map={contact:'pageContact',legal:'pageLegal',privacy:'pagePrivacy',submit:'pageSubmit'};
+    const el=document.getElementById(map[id]);
+    if(el){el.classList.remove('open');document.body.style.overflow=''}
+  },
   renderComparatorTable(){
     const tools=this.state.compareList.map(id=>this.getToolById(id)).filter(Boolean);
     const allFeatures=[...new Set(tools.flatMap(t=>t.features))];
@@ -1384,7 +1659,7 @@ window.addEventListener('scroll',()=>{
 /* observer is initialized inside APP.init() after dynamic rendering */
 document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();APP.openSearch()}
-  if(e.key==='Escape'){APP.closeSearch();APP.closeTool();APP.closeComparator()}
+  if(e.key==='Escape'){APP.closeSearch();APP.closeTool();APP.closeComparator();['contact','legal','privacy','submit'].forEach(p=>APP.closePage(p))}
 });
 document.getElementById('heroSearchInput').addEventListener('focus',function(){this.blur();APP.openSearch()});
 document.getElementById('searchModalInput').addEventListener('input',function(){APP.renderSearchResults(this.value)});
