@@ -240,35 +240,36 @@ a:hover{color:var(--link-hover)}
 /* ============================================================
    TABLE OF CONTENTS + FEATURED
    ============================================================ */
-.toc-grid{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:start}
-@media(max-width:900px){.toc-grid{grid-template-columns:1fr}}
+.toc-grid{display:flex;flex-direction:column;gap:2rem}
 
-/* TOC list */
-.toc-list{list-style:none}
-.toc-item{display:flex;align-items:center;gap:1rem;padding:.8rem 1rem;border-radius:var(--radius-md);
+/* TOC list — compact grid */
+.toc-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:.3rem;max-width:900px;margin:0 auto}
+@media(max-width:900px){.toc-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.toc-list{grid-template-columns:1fr}}
+.toc-item{display:flex;align-items:center;gap:.6rem;padding:.55rem .7rem;border-radius:var(--radius-md);
   cursor:pointer;transition:all .3s;text-decoration:none;color:var(--ink)}
 .toc-item:hover{background:var(--bg-surface);box-shadow:var(--shadow-sm);color:var(--ink)}
-.toc-roman{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--gold);min-width:35px}
-.toc-icon{font-size:1.3rem}
-.toc-info{flex:1;display:flex;flex-direction:column;gap:.15rem}
-.toc-cat-name{font-family:var(--font-ui);font-weight:600;font-size:.9rem;display:block}
-.toc-cat-count{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-tertiary);display:block}
+.toc-roman{font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gold);min-width:28px}
+.toc-icon{font-size:1.1rem}
+.toc-info{flex:1;display:flex;flex-direction:column;gap:.1rem}
+.toc-cat-name{font-family:var(--font-ui);font-weight:600;font-size:.8rem;display:block}
+.toc-cat-count{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-tertiary);display:block}
 
-/* Featured grid */
-.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-.featured-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);
-  padding:1.2rem;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--ink);display:block}
-.featured-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-2px);color:var(--ink)}
-.featured-card-header{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
-.featured-card-icon{font-size:1.8rem}
-.featured-card-name{font-family:var(--font-display);font-weight:700;font-size:1rem}
-.featured-card-company{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-tertiary)}
-.featured-card-tagline{font-size:.8rem;color:var(--ink-secondary);line-height:1.5;
+/* Featured grid — compact cards with tagline */
+.featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;max-width:1000px;margin:0 auto}
+@media(max-width:900px){.featured-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.featured-grid{grid-template-columns:1fr}}
+.featured-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-sm);
+  padding:.8rem;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--ink);display:block}
+.featured-card:hover{border-color:var(--gold);box-shadow:var(--shadow-sm);color:var(--ink)}
+.featured-card-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.featured-card-icon{font-size:1.3rem;flex-shrink:0}
+.featured-card-name{font-family:var(--font-display);font-weight:700;font-size:.85rem}
+.featured-card-company{display:none}
+.featured-card-tagline{font-size:.7rem;color:var(--ink-secondary);line-height:1.4;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.featured-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.8rem}
-.featured-card-rating{font-family:var(--font-mono);font-size:.75rem;color:var(--star-filled)}
-.editor-badge{font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;
-  letter-spacing:.1em;color:var(--gold);background:var(--gold-glow);padding:.2rem .5rem;border-radius:4px}
+.featured-card-footer{display:none}
+.editor-badge{display:none}
 
 /* ============================================================
    CATALOG
@@ -612,6 +613,67 @@ a:hover{color:var(--link-hover)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ============================================================
+   TENDANCES IA
+   ============================================================ */
+.trends-tabs{display:flex;gap:.5rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.trends-tab{font-family:var(--font-ui);font-size:.8rem;font-weight:600;padding:.5rem 1.2rem;border-radius:20px;
+  border:1px solid var(--border-light);background:transparent;color:var(--ink-secondary);cursor:pointer;transition:all .3s}
+.trends-tab.active{background:var(--gold);color:#1a1a2e;border-color:var(--gold)}
+.trends-tab:hover:not(.active){border-color:var(--gold);color:var(--ink)}
+.trends-list{max-width:800px;margin:0 auto}
+.trends-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--border-light);
+  cursor:pointer;transition:all .2s;text-decoration:none;color:var(--ink)}
+.trends-item:hover{background:var(--bg-surface);border-radius:var(--radius-sm)}
+.trends-rank{font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:var(--gold);min-width:28px;text-align:center}
+.trends-rank.top3{font-size:1.3rem}
+.trends-icon{font-size:1.5rem}
+.trends-info{flex:1}
+.trends-name{font-family:var(--font-display);font-weight:700;font-size:.95rem}
+.trends-tagline{font-size:.72rem;color:var(--ink-secondary);margin-top:.15rem}
+.trends-meta{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.trends-rating{font-family:var(--font-mono);font-size:.75rem;color:var(--star-filled)}
+.trends-pop{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-tertiary);background:var(--bg-surface);
+  padding:.2rem .5rem;border-radius:10px}
+.trends-badge{font-family:var(--font-mono);font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:.2rem .5rem;border-radius:4px}
+.trends-badge.new{color:#10b981;background:rgba(16,185,129,.12)}
+.trends-badge.rising{color:#f59e0b;background:rgba(245,158,11,.12)}
+.trends-badge.hot{color:#ef4444;background:rgba(239,68,68,.12)}
+
+/* ============================================================
+   VERSUS
+   ============================================================ */
+.versus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1000px;margin:0 auto}
+@media(max-width:900px){.versus-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.versus-grid{grid-template-columns:1fr}}
+.versus-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);
+  padding:1.2rem;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--ink);display:block}
+.versus-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.versus-icons{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.6rem;font-size:1.4rem}
+.versus-vs{font-family:var(--font-display);font-weight:800;font-size:.75rem;color:var(--gold);
+  background:var(--gold-glow);padding:.15rem .4rem;border-radius:4px}
+.versus-names{font-family:var(--font-display);font-weight:700;font-size:.82rem;margin-bottom:.3rem}
+.versus-cat{font-family:var(--font-mono);font-size:.6rem;color:var(--ink-tertiary);text-transform:uppercase;letter-spacing:.08em}
+
+/* ============================================================
+   BLOG / GUIDES
+   ============================================================ */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);
+  padding:1.5rem;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--ink);display:block}
+.blog-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.blog-card-emoji{font-size:2rem;margin-bottom:.6rem}
+.blog-card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--gold);text-transform:uppercase;
+  letter-spacing:.1em;margin-bottom:.4rem}
+.blog-card-title{font-family:var(--font-display);font-weight:700;font-size:1rem;line-height:1.4;margin-bottom:.4rem}
+.blog-card-desc{font-size:.78rem;color:var(--ink-secondary);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{display:flex;align-items:center;gap:.8rem;margin-top:.8rem;font-family:var(--font-mono);font-size:.6rem;color:var(--ink-tertiary)}
+.blog-coming{text-align:center;padding:2rem;font-family:var(--font-ui);color:var(--ink-tertiary);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -634,6 +696,9 @@ a:hover{color:var(--link-hover)}
   <div class="nav-links">
     <a href="#catalogue" onclick="APP.scrollTo('catalogue')">Catalogue</a>
     <a href="#categories" onclick="APP.scrollTo('categories')">Catégories</a>
+    <a href="#tendances" onclick="APP.scrollTo('tendances')">Tendances</a>
+    <a href="#versus" onclick="APP.scrollTo('versus')">Versus</a>
+    <a href="#blog" onclick="APP.scrollTo('blog')">Guides</a>
     <a href="#" onclick="APP.openComparator();return false">Comparer <span class="nav-compare-badge" id="navCompareBadge">0</span></a>
     <button class="nav-search-btn" onclick="APP.openSearch()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -676,10 +741,13 @@ a:hover{color:var(--link-hover)}
     <p class="section-desc">15 catégories pour naviguer dans l'univers de l'intelligence artificielle, des chatbots aux outils de finance.</p>
   </div>
   <div class="toc-grid reveal">
-    <ul class="toc-list" id="tocList"></ul>
     <div>
-      <div class="section-label" style="margin-bottom:1rem">✦ Choix de la rédaction</div>
+      <div class="section-label" style="margin-bottom:1rem;text-align:center">✦ Choix de la rédaction</div>
       <div class="featured-grid" id="featuredGrid"></div>
+    </div>
+    <div>
+      <div class="section-label" style="margin-bottom:.8rem;text-align:center">📖 Table des matières</div>
+      <ul class="toc-list" id="tocList"></ul>
     </div>
   </div>
 </section>
@@ -751,6 +819,60 @@ a:hover{color:var(--link-hover)}
       <button class="load-more" id="loadMoreBtn" onclick="APP.loadMore()">Charger plus d'outils</button>
     </div>
   </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <svg viewBox="0 0 24 24"><path d="M12 2L9.2 8.6 2 9.2l5.5 4.8L6 21.6 12 18l6 3.6-1.5-7.6L22 9.2l-7.2-.6z"/></svg>
+</div>
+
+<!-- TENDANCES IA -->
+<section class="section" id="tendances">
+  <div class="reveal">
+    <div class="section-label">📊 Tendances IA</div>
+    <div class="section-title">Les outils qui font l'actualité</div>
+    <p class="section-desc">Classement en temps réel des outils IA les plus populaires, les nouveautés et les étoiles montantes.</p>
+  </div>
+  <div class="reveal">
+    <div class="trends-tabs">
+      <button class="trends-tab active" onclick="APP.showTrends('popular',event)">🔥 Les plus populaires</button>
+      <button class="trends-tab" onclick="APP.showTrends('newest',event)">🆕 Nouveautés 2024-2025</button>
+      <button class="trends-tab" onclick="APP.showTrends('rising',event)">🚀 Étoiles montantes</button>
+      <button class="trends-tab" onclick="APP.showTrends('toprated',event)">⭐ Mieux notés</button>
+    </div>
+    <div class="trends-list" id="trendsList"></div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <svg viewBox="0 0 24 24"><path d="M12 2L9.2 8.6 2 9.2l5.5 4.8L6 21.6 12 18l6 3.6-1.5-7.6L22 9.2l-7.2-.6z"/></svg>
+</div>
+
+<!-- VERSUS -->
+<section class="section" id="versus">
+  <div class="reveal">
+    <div class="section-label">🆚 Versus</div>
+    <div class="section-title">Comparaisons face à face</div>
+    <p class="section-desc">Les duels les plus recherchés. Comparez les outils IA côte à côte pour faire le meilleur choix.</p>
+  </div>
+  <div class="versus-grid reveal" id="versusGrid"></div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <svg viewBox="0 0 24 24"><path d="M12 2L9.2 8.6 2 9.2l5.5 4.8L6 21.6 12 18l6 3.6-1.5-7.6L22 9.2l-7.2-.6z"/></svg>
+</div>
+
+<!-- BLOG / GUIDES -->
+<section class="section" id="blog">
+  <div class="reveal">
+    <div class="section-label">📰 Guides & Articles</div>
+    <div class="section-title">Apprenez à maîtriser l'IA</div>
+    <p class="section-desc">Guides pratiques, tutoriels et analyses pour tirer le meilleur parti des outils d'intelligence artificielle.</p>
+  </div>
+  <div class="blog-grid reveal" id="blogGrid"></div>
+  <div class="blog-coming reveal">🚧 Plus d'articles à venir — Restez connecté via notre newsletter !</div>
 </section>
 
 <!-- NEWSLETTER -->
@@ -1451,6 +1573,83 @@ const APP = {
       `<a class="hero-cat-pill" onclick="APP.filterByCategory('${c.id}')">${c.icon} ${c.name}</a>`
     ).join('');
   },
+  // --- TENDANCES ---
+  showTrends(mode,e){
+    document.querySelectorAll('.trends-tab').forEach(t=>t.classList.remove('active'));
+    if(e)e.target.classList.add('active');
+    else document.querySelector(`.trends-tab`)?.classList.add('active');
+    let sorted=[];
+    if(mode==='popular') sorted=[...TOOLS].sort((a,b)=>b.popularity-a.popularity).slice(0,15);
+    else if(mode==='newest') sorted=[...TOOLS].filter(t=>t.launchYear>=2024).sort((a,b)=>b.launchYear-a.launchYear||b.popularity-a.popularity).slice(0,15);
+    else if(mode==='rising') sorted=[...TOOLS].filter(t=>t.launchYear>=2024).sort((a,b)=>b.rating-a.rating||b.popularity-a.popularity).slice(0,15);
+    else if(mode==='toprated') sorted=[...TOOLS].sort((a,b)=>b.rating-a.rating||b.popularity-a.popularity).slice(0,15);
+    const list=document.getElementById('trendsList');
+    list.innerHTML=sorted.map((t,i)=>{
+      const badge=t.launchYear>=2025?'<span class="trends-badge new">Nouveau</span>':t.launchYear>=2024?'<span class="trends-badge rising">2024</span>':t.popularity>=85?'<span class="trends-badge hot">Populaire</span>':'';
+      return`<a class="trends-item" href="/fr/${t.id}/" onclick="event.preventDefault();APP.openTool('${t.id}')">
+        <span class="trends-rank ${i<3?'top3':''}">${i+1}</span>
+        <span class="trends-icon">${t.icon}</span>
+        <div class="trends-info"><div class="trends-name">${t.name}</div><div class="trends-tagline">${t.tagline}</div></div>
+        <div class="trends-meta">
+          ${badge}
+          <span class="trends-rating">${this.stars(t.rating)} ${t.rating}</span>
+          <span class="trends-pop">Pop. ${t.popularity}</span>
+        </div>
+      </a>`;
+    }).join('');
+  },
+  renderTrends(){this.showTrends('popular');},
+
+  // --- VERSUS ---
+  renderVersus(){
+    const pairs=[
+      ['chatgpt','claude'],['chatgpt','gemini'],['chatgpt','perplexity'],['chatgpt','deepseek'],['chatgpt','grok'],
+      ['claude','gemini'],['claude','perplexity'],['claude','deepseek'],['chatgpt','lechat'],
+      ['midjourney','dalle3'],['midjourney','stablediffusion'],['midjourney','flux'],['dalle3','stablediffusion'],['dalle3','flux'],
+      ['cursor','copilot-gh'],['cursor','windsurf'],['cursor','bolt'],['copilot-gh','windsurf'],['bolt','lovable'],['v0','bolt'],
+      ['runway','pika'],['runway','kling'],['pika','kling'],['synthesia','heygen'],
+      ['elevenlabs','murf'],['suno','udio'],
+      ['jasper','copyai'],['jasper','writesonic'],['grammarly','deepl'],['grammarly','languagetool'],
+      ['zapier','make'],['zapier','n8n'],['make','n8n'],
+      ['gamma','tome'],['otter','fireflies'],['otter','fathom'],['fathom','tldv'],
+      ['notebooklm','elicit'],['canvaai','firefly'],['removebg','clipdrop'],
+      ['bolt','replit'],['framer','durable'],['superhuman','shortwave'],['teal','kickresume'],
+      ['notionai','notionai-prod']
+    ];
+    const grid=document.getElementById('versusGrid');
+    grid.innerHTML=pairs.map(([a,b])=>{
+      const tA=this.getToolById(a),tB=this.getToolById(b);
+      if(!tA||!tB) return '';
+      const slug=a+'-vs-'+b;
+      return`<a class="versus-card" href="/fr/comparer/${slug}/" onclick="event.preventDefault();window.location.href='/fr/comparer/${slug}/'">
+        <div class="versus-icons">${tA.icon} <span class="versus-vs">VS</span> ${tB.icon}</div>
+        <div class="versus-names">${tA.name} vs ${tB.name}</div>
+        <div class="versus-cat">${this.getCatById(tA.category)?.name||''}</div>
+      </a>`;
+    }).join('');
+  },
+
+  // --- BLOG / GUIDES ---
+  renderBlog(){
+    const articles=[
+      {emoji:'🤖',tag:'Guide',title:'ChatGPT : Le guide complet pour bien débuter en 2026',desc:'Tout ce que vous devez savoir pour maîtriser ChatGPT, de la rédaction de prompts aux plugins avancés.',time:'12 min'},
+      {emoji:'🆚',tag:'Comparatif',title:'ChatGPT vs Claude vs Gemini : Quel chatbot choisir ?',desc:'Analyse détaillée des trois géants de l\'IA conversationnelle. Forces, faiblesses et cas d\'usage.',time:'15 min'},
+      {emoji:'🎨',tag:'Créatif',title:'Les 10 meilleurs générateurs d\'images IA en 2026',desc:'De Midjourney à Flux, découvrez les outils pour créer des visuels époustouflants avec l\'IA.',time:'10 min'},
+      {emoji:'💻',tag:'Dev',title:'Cursor vs GitHub Copilot : Le duel des assistants code',desc:'Comparaison complète des IDE augmentés par l\'IA pour les développeurs.',time:'8 min'},
+      {emoji:'🆓',tag:'Budget',title:'Les meilleurs outils IA 100% gratuits',desc:'Pas besoin de payer pour utiliser l\'IA. Voici les outils gratuits les plus puissants disponibles.',time:'7 min'},
+      {emoji:'🚀',tag:'Productivité',title:'Comment automatiser son workflow avec l\'IA',desc:'Zapier, Make, n8n : créez des automatisations intelligentes sans coder.',time:'11 min'}
+    ];
+    document.getElementById('blogGrid').innerHTML=articles.map(a=>
+      `<div class="blog-card">
+        <div class="blog-card-emoji">${a.emoji}</div>
+        <div class="blog-card-tag">${a.tag}</div>
+        <div class="blog-card-title">${a.title}</div>
+        <div class="blog-card-desc">${a.desc}</div>
+        <div class="blog-card-meta"><span>📖 ${a.time} de lecture</span><span>•</span><span>Février 2026</span></div>
+      </div>`
+    ).join('');
+  },
+
   renderFooterCats(){
     const col=document.getElementById('footerCategories');
     col.innerHTML='<h4>Catégories</h4>'+CATEGORIES.map(c=>
@@ -1638,6 +1837,9 @@ const APP = {
     this.renderFilters();
     this.renderCatalog();
     this.renderCompareTray();
+    this.renderTrends();
+    this.renderVersus();
+    this.renderBlog();
     this.renderFooterCats();
     this.handleRoute();
     // View toggle
