@@ -1011,20 +1011,22 @@ a:hover{color:var(--link-hover)}
       <p>We read every message and will get back to you as soon as possible.</p>
     </div>
 
-    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button').style.display='none'">
+    <form class="contact-form" id="contactForm" name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'contactForm','Send message →')">
+      <input type="hidden" name="form-name" value="contact-en">
+      <p style="display:none"><input name="bot-field"></p>
       <div class="form-row">
         <div>
           <label>Name</label>
-          <input type="text" placeholder="Your name" required>
+          <input type="text" name="name" placeholder="Your name" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="your@email.com" required>
+          <input type="email" name="email" placeholder="your@email.com" required>
         </div>
       </div>
       <div>
         <label>Subject</label>
-        <select>
+        <select name="subject">
           <option value="">— Choose a subject —</option>
           <option>Report an error</option>
           <option>Suggest a tool</option>
@@ -1035,10 +1037,11 @@ a:hover{color:var(--link-hover)}
       </div>
       <div>
         <label>Message</label>
-        <textarea placeholder="Describe your request..." required></textarea>
+        <textarea name="message" placeholder="Describe your request..." required></textarea>
       </div>
       <button type="submit">Send message →</button>
       <p class="form-success">✓ Message sent! We'll get back to you within 48h.</p>
+      <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
     </form>
   </div>
 </div>
@@ -1128,22 +1131,24 @@ a:hover{color:var(--link-hover)}
       <p>Each submitted tool is evaluated using our methodology: features, value for money, user interface, support, and reliability. Only relevant, high-quality tools are added.</p>
     </div>
 
-    <form class="contact-form submit-tool-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button[type=submit]').style.display='none'">
+    <form class="contact-form submit-tool-form" id="submitToolForm" name="submit-tool-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'submitToolForm','Submit tool →')">
+      <input type="hidden" name="form-name" value="submit-tool-en">
+      <p style="display:none"><input name="bot-field"></p>
       <h3 style="margin-top:.5rem;border:none;padding:0">Tool Information</h3>
       <div class="form-row">
         <div>
           <label>Tool name *</label>
-          <input type="text" placeholder="E.g.: ChatGPT, Midjourney..." required>
+          <input type="text" name="tool-name" placeholder="E.g.: ChatGPT, Midjourney..." required>
         </div>
         <div>
           <label>Website URL *</label>
-          <input type="url" placeholder="https://..." required>
+          <input type="url" name="tool-url" placeholder="https://..." required>
         </div>
       </div>
       <div class="form-row-3">
         <div>
           <label>Category</label>
-          <select>
+          <select name="category">
             <option value="">— Category —</option>
             <option>Chatbots & AI Agents</option>
             <option>Text & Writing</option>
@@ -1164,7 +1169,7 @@ a:hover{color:var(--link-hover)}
         </div>
         <div>
           <label>Pricing</label>
-          <select>
+          <select name="pricing">
             <option value="">— Pricing —</option>
             <option>Free</option>
             <option>Freemium</option>
@@ -1174,28 +1179,28 @@ a:hover{color:var(--link-hover)}
         </div>
         <div>
           <label>Launch year</label>
-          <input type="number" placeholder="2024" min="2015" max="2030">
+          <input type="number" name="launch-year" placeholder="2024" min="2015" max="2030">
         </div>
       </div>
       <div>
         <label>Short description</label>
-        <textarea placeholder="In 2-3 sentences, describe what this tool does and why it's remarkable..." rows="3"></textarea>
+        <textarea name="description" placeholder="In 2-3 sentences, describe what this tool does and why it's remarkable..." rows="3"></textarea>
       </div>
 
       <h3>Your Details</h3>
       <div class="form-row">
         <div>
           <label>Your name</label>
-          <input type="text" placeholder="Your name">
+          <input type="text" name="submitter-name" placeholder="Your name">
         </div>
         <div>
           <label>Your email *</label>
-          <input type="email" placeholder="your@email.com" required>
+          <input type="email" name="submitter-email" placeholder="your@email.com" required>
         </div>
       </div>
       <div>
         <label>Relationship with the tool</label>
-        <select>
+        <select name="relation">
           <option value="">— Please specify —</option>
           <option>User</option>
           <option>Founder / Team member</option>
@@ -1206,6 +1211,7 @@ a:hover{color:var(--link-hover)}
 
       <button type="submit">Submit tool →</button>
       <p class="form-success">✓ Thank you! Your submission has been received. We'll evaluate it within 7 days.</p>
+      <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
     </form>
   </div>
 </div>
@@ -1953,6 +1959,25 @@ const APP = {
     }).catch(()=>{
       document.getElementById('newsletterError').style.display='block';
       btn.disabled=false;btn.textContent='Subscribe';
+    });
+  },
+  submitForm(e,formId,btnLabel){
+    e.preventDefault();
+    const form=document.getElementById(formId);
+    const btn=form.querySelector('button[type=submit]');
+    const origLabel=btnLabel||btn.textContent;
+    btn.disabled=true;btn.textContent='Sending...';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form)).toString()
+    }).then(r=>{
+      if(r.ok){
+        form.querySelector('.form-success').style.display='block';
+        btn.style.display='none';
+        Array.from(form.querySelectorAll('input:not([type=hidden]),textarea,select')).forEach(el=>el.disabled=true);
+      } else{throw new Error('err');}
+    }).catch(()=>{
+      const err=form.querySelector('.form-error');if(err)err.style.display='block';
+      btn.disabled=false;btn.textContent=origLabel;
     });
   },
 

@@ -1013,20 +1013,22 @@ a:hover{color:var(--link-hover)}
       <p>Nous lisons chaque message et nous vous répondrons dans les meilleurs délais.</p>
     </div>
 
-    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button').style.display='none'">
+    <form class="contact-form" id="contactForm" name="contact-fr" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'contactForm','Envoyer le message →')">
+      <input type="hidden" name="form-name" value="contact-fr">
+      <p style="display:none"><input name="bot-field"></p>
       <div class="form-row">
         <div>
           <label>Nom</label>
-          <input type="text" placeholder="Votre nom" required>
+          <input type="text" name="nom" placeholder="Votre nom" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="votre@email.com" required>
+          <input type="email" name="email" placeholder="votre@email.com" required>
         </div>
       </div>
       <div>
         <label>Sujet</label>
-        <select>
+        <select name="sujet">
           <option value="">— Choisissez un sujet —</option>
           <option>Signaler une erreur</option>
           <option>Suggérer un outil</option>
@@ -1037,10 +1039,11 @@ a:hover{color:var(--link-hover)}
       </div>
       <div>
         <label>Message</label>
-        <textarea placeholder="Décrivez votre demande..." required></textarea>
+        <textarea name="message" placeholder="Décrivez votre demande..." required></textarea>
       </div>
       <button type="submit">Envoyer le message →</button>
       <p class="form-success">✓ Message envoyé ! Nous vous répondrons sous 48h.</p>
+      <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Erreur, veuillez réessayer.</p>
     </form>
   </div>
 </div>
@@ -1130,22 +1133,24 @@ a:hover{color:var(--link-hover)}
       <p>Chaque outil soumis est évalué selon notre méthodologie : fonctionnalités, rapport qualité/prix, interface utilisateur, support et fiabilité. Seuls les outils pertinents et de qualité sont ajoutés.</p>
     </div>
 
-    <form class="contact-form submit-tool-form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('button[type=submit]').style.display='none'">
+    <form class="contact-form submit-tool-form" id="submitToolForm" name="submit-tool-fr" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="APP.submitForm(event,'submitToolForm','Soumettre l\'outil →')">
+      <input type="hidden" name="form-name" value="submit-tool-fr">
+      <p style="display:none"><input name="bot-field"></p>
       <h3 style="margin-top:.5rem;border:none;padding:0">Informations sur l'outil</h3>
       <div class="form-row">
         <div>
           <label>Nom de l'outil *</label>
-          <input type="text" placeholder="Ex: ChatGPT, Midjourney..." required>
+          <input type="text" name="tool-name" placeholder="Ex: ChatGPT, Midjourney..." required>
         </div>
         <div>
           <label>URL du site *</label>
-          <input type="url" placeholder="https://..." required>
+          <input type="url" name="tool-url" placeholder="https://..." required>
         </div>
       </div>
       <div class="form-row-3">
         <div>
           <label>Catégorie</label>
-          <select>
+          <select name="category">
             <option value="">— Catégorie —</option>
             <option>Chatbots & Agents IA</option>
             <option>Texte & Rédaction</option>
@@ -1166,7 +1171,7 @@ a:hover{color:var(--link-hover)}
         </div>
         <div>
           <label>Tarification</label>
-          <select>
+          <select name="pricing">
             <option value="">— Tarification —</option>
             <option>Gratuit</option>
             <option>Freemium</option>
@@ -1176,28 +1181,28 @@ a:hover{color:var(--link-hover)}
         </div>
         <div>
           <label>Année de lancement</label>
-          <input type="number" placeholder="2024" min="2015" max="2030">
+          <input type="number" name="launch-year" placeholder="2024" min="2015" max="2030">
         </div>
       </div>
       <div>
         <label>Description courte</label>
-        <textarea placeholder="En 2-3 phrases, décrivez ce que fait cet outil et pourquoi il est remarquable..." rows="3"></textarea>
+        <textarea name="description" placeholder="En 2-3 phrases, décrivez ce que fait cet outil et pourquoi il est remarquable..." rows="3"></textarea>
       </div>
 
       <h3>Vos coordonnées</h3>
       <div class="form-row">
         <div>
           <label>Votre nom</label>
-          <input type="text" placeholder="Votre nom">
+          <input type="text" name="submitter-name" placeholder="Votre nom">
         </div>
         <div>
           <label>Votre email *</label>
-          <input type="email" placeholder="votre@email.com" required>
+          <input type="email" name="submitter-email" placeholder="votre@email.com" required>
         </div>
       </div>
       <div>
         <label>Relation avec l'outil</label>
-        <select>
+        <select name="relation">
           <option value="">— Précisez —</option>
           <option>Utilisateur</option>
           <option>Fondateur / Équipe</option>
@@ -1208,6 +1213,7 @@ a:hover{color:var(--link-hover)}
 
       <button type="submit">Soumettre l'outil →</button>
       <p class="form-success">✓ Merci ! Votre soumission a bien été reçue. Nous l'évaluerons sous 7 jours.</p>
+      <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Erreur, veuillez réessayer.</p>
     </form>
   </div>
 </div>
@@ -1955,6 +1961,25 @@ const APP = {
     }).catch(()=>{
       document.getElementById('newsletterError').style.display='block';
       btn.disabled=false;btn.textContent="S'abonner";
+    });
+  },
+  submitForm(e,formId,btnLabel){
+    e.preventDefault();
+    const form=document.getElementById(formId);
+    const btn=form.querySelector('button[type=submit]');
+    const origLabel=btnLabel||btn.textContent;
+    btn.disabled=true;btn.textContent='Envoi...';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form)).toString()
+    }).then(r=>{
+      if(r.ok){
+        form.querySelector('.form-success').style.display='block';
+        btn.style.display='none';
+        Array.from(form.querySelectorAll('input:not([type=hidden]),textarea,select')).forEach(el=>el.disabled=true);
+      } else{throw new Error('err');}
+    }).catch(()=>{
+      const err=form.querySelector('.form-error');if(err)err.style.display='block';
+      btn.disabled=false;btn.textContent=origLabel;
     });
   },
 

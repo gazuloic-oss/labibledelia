@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page introuvable | La Bible de l'IA</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#1a1a2e;color:#faf8f3;font-family:'Inter',sans-serif;text-align:center;padding:2rem}
+.container{max-width:520px}
+.diamond{width:60px;height:60px;margin:0 auto 2rem;position:relative}
+.diamond::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#e4c76b,#c9a84c);clip-path:polygon(50% 0%,100% 40%,50% 100%,0% 40%);animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.code{font-family:'Playfair Display',serif;font-size:6rem;font-weight:700;color:#c9a84c;line-height:1;margin-bottom:.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:1rem;color:#faf8f3}
+p{color:rgba(250,248,243,.5);font-size:.95rem;line-height:1.6;margin-bottom:2rem}
+.links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+a{display:inline-block;padding:.7rem 1.5rem;border-radius:25px;font-size:.85rem;font-weight:600;text-decoration:none;transition:all .3s}
+.btn-primary{background:#c9a84c;color:#1a1a2e}
+.btn-primary:hover{background:#e4c76b;transform:translateY(-1px)}
+.btn-secondary{border:1px solid rgba(201,168,76,.4);color:#c9a84c;background:transparent}
+.btn-secondary:hover{border-color:#c9a84c;background:rgba(201,168,76,.1)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="diamond"></div>
+  <div class="code">404</div>
+  <h1>Page introuvable</h1>
+  <p>La page que vous cherchez n'existe pas ou a été déplacée.<br>Pas de panique, l'encyclopédie de l'IA vous attend !</p>
+  <div class="links">
+    <a href="/fr/" class="btn-primary">Explorer les outils IA</a>
+    <a href="/en/" class="btn-secondary">English version</a>
+  </div>
+</div>
+</body>
+</html>
