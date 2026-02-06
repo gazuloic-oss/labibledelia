@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude par Anthropic : le guide complet de l&#x27;IA la plus fiable | La Bible de l&#x27;IA</title>
+<meta name="description" content="Tout savoir sur Claude d&#x27;Anthropic : modèles, capacités, prompt engineering, Artifacts, Projects, comparaison avec ChatGPT et cas d&#x27;usage professionnels.">
+<link rel="canonical" href="https://labibledelia.com/fr/blog/claude-guide-complet/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/blog/claude-guide-complet/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/blog/claude-guide-complet/">
+<meta property="og:title" content="Claude par Anthropic : le guide complet de l&#x27;IA la plus fiable | La Bible de l&#x27;IA">
+<meta property="og:description" content="Tout savoir sur Claude d&#x27;Anthropic : modèles, capacités, prompt engineering, Artifacts, Projects, comparaison avec ChatGPT et cas d&#x27;usage professionnels.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-02-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude par Anthropic : le guide complet de l&#x27;IA la plus fiable | La Bible de l&#x27;IA">
+<meta name="twitter:description" content="Tout savoir sur Claude d&#x27;Anthropic : modèles, capacités, prompt engineering, Artifacts, Projects, comparaison avec ChatGPT et cas d&#x27;usage professionnels.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude par Anthropic : le guide complet de l&#x27;IA la plus fiable",
+  "description": "Tout savoir sur Claude d&#x27;Anthropic : modèles, capacités, prompt engineering, Artifacts, Projects, comparaison avec ChatGPT et cas d&#x27;usage professionnels.",
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-02-06",
+  "author": {"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"},
+  "publisher": {"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"},
+  "mainEntityOfPage": "https://labibledelia.com/fr/blog/claude-guide-complet/",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://labibledelia.com/fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://labibledelia.com/fr/#blog"},
+    {"@type": "ListItem", "position": 3, "name": "Claude par Anthropic : le guide complet de l&#x27;IA la plus fiable", "item": "https://labibledelia.com/fr/blog/claude-guide-complet/"}
+  ]
+}
+</script>
+<style>
+:root{
+  --bg-page:#0e0e1a;--bg-card:#181830;--bg-card-hover:#1e1e3a;
+  --text-main:#e8e8f0;--text-muted:#9898b0;--text-heading:#f8f8ff;
+  --gold:#c9a84c;--gold-hover:#e0c068;
+  --accent:#6366f1;--accent-hover:#818cf8;
+  --radius-md:12px;--radius-lg:18px;
+  --shadow-md:0 4px 20px rgba(0,0,0,.3);--shadow-lg:0 8px 40px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold-hover)}
+
+/* NAV */
+.top-nav{position:sticky;top:0;z-index:1000;background:rgba(14,14,26,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.12);padding:.7rem 2rem;display:flex;align-items:center;gap:.8rem}
+.nav-logo svg{width:26px;height:26px}
+.nav-title{font-family:Georgia,serif;font-size:1rem;color:var(--gold);font-weight:600;letter-spacing:.5px}
+.nav-links{margin-left:auto;display:flex;gap:1.2rem;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:.85rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.lang-btn{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;opacity:.7;transition:opacity .2s}
+.lang-btn:hover,.lang-btn.active{opacity:1;background:rgba(255,255,255,.08)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+
+/* BREADCRUMB */
+.breadcrumb{padding:1rem 0;font-size:.85rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{margin:0 .5rem;opacity:.5}
+
+/* ARTICLE */
+.article-container{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.article-header{text-align:center;padding:2rem 0 2.5rem;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:2.5rem}
+.article-emoji{font-size:3rem;margin-bottom:1rem}
+.article-tag{display:inline-block;font-family:'Courier New',monospace;font-size:.7rem;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.15em;padding:.3rem .8rem;border:1px solid rgba(201,168,76,.3);
+  border-radius:20px;margin-bottom:1rem}
+.article-title{font-family:Georgia,serif;font-size:2.2rem;color:var(--text-heading);line-height:1.3;margin-bottom:.8rem}
+.article-meta{display:flex;justify-content:center;gap:1.5rem;font-size:.8rem;color:var(--text-muted);font-family:'Courier New',monospace}
+.article-desc{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-top:1rem;line-height:1.6}
+
+/* ARTICLE CONTENT */
+.article-content{font-size:1.05rem;line-height:1.85;color:var(--text-main)}
+.article-content h2{font-family:Georgia,serif;font-size:1.5rem;color:var(--gold);margin:2.5rem 0 1rem;
+  padding-bottom:.5rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.article-content h3{font-family:Georgia,serif;font-size:1.15rem;color:var(--text-heading);margin:1.8rem 0 .8rem}
+.article-content p{margin-bottom:1.2rem}
+.article-content ul,.article-content ol{margin:1rem 0 1.5rem 1.5rem}
+.article-content li{margin-bottom:.5rem;line-height:1.7}
+.article-content strong{color:var(--text-heading)}
+.article-content blockquote{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1.5rem 0;
+  background:rgba(201,168,76,.05);border-radius:0 var(--radius-md) var(--radius-md) 0;font-style:italic}
+.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.article-content th,.article-content td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.article-content th{color:var(--text-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* CTA */
+.article-cta{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));
+  border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:2rem;margin:3rem 0;text-align:center}
+.article-cta h3{font-family:Georgia,serif;color:var(--text-heading);font-size:1.2rem;margin-bottom:.5rem}
+.article-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:1rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;background:var(--gold);
+  color:#0e0e1a;font-weight:700;border-radius:8px;font-size:.95rem;transition:all .2s}
+.btn-primary:hover{background:var(--gold-hover);color:#0e0e1a;transform:translateY(-1px)}
+
+/* RELATED ARTICLES */
+.related-section{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.15)}
+.related-title{font-family:Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:1.5rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.related-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);
+  padding:1rem;transition:all .3s;display:block;color:var(--text-main);text-decoration:none}
+.related-card:hover{background:var(--bg-card-hover);border-color:rgba(201,168,76,.3);transform:translateY(-2px)}
+.related-card .rc-emoji{font-size:1.5rem;margin-bottom:.4rem}
+.related-card .rc-tag{font-family:'Courier New',monospace;font-size:.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.related-card .rc-title{font-weight:700;font-size:.9rem;color:var(--text-heading);margin-top:.3rem;line-height:1.3}
+
+/* FOOTER */
+.site-footer{background:rgba(0,0,0,.3);border-top:1px solid rgba(201,168,76,.1);padding:2rem;text-align:center;margin-top:4rem}
+.footer-logo{font-family:Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.8rem 0}
+.footer-links a{color:var(--text-muted);font-size:.8rem}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:var(--text-muted);font-size:.75rem;margin-top:.8rem}
+
+@media(max-width:768px){
+  .top-nav{padding:.5rem 1rem;gap:.5rem}
+  .article-container{padding:1.5rem 1rem}
+  .article-title{font-size:1.6rem}
+  .article-content{font-size:.95rem}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/fr/" class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></a>
+  <a href="/fr/" class="nav-title">La Bible de l'IA</a>
+  <div class="nav-links">
+    <a href="/fr/#catalogue">Catalogue</a>
+    <a href="/fr/#blog">Blog</a>
+    <a href="/en/" class="lang-btn"><img src="https://flagcdn.com/w40/gb.png" alt="EN"></a>
+  </div>
+</nav>
+
+<div class="article-container">
+
+<div class="breadcrumb">
+  <a href="/fr/">Accueil</a>
+  <span class="sep">&rsaquo;</span>
+  <a href="/fr/#blog">Blog</a>
+  <span class="sep">&rsaquo;</span>
+  <span>Guide</span>
+</div>
+
+<header class="article-header">
+  <div class="article-emoji">🤖</div>
+  <span class="article-tag">Guide</span>
+  <h1 class="article-title">Claude par Anthropic : le guide complet de l'IA la plus fiable</h1>
+  <div class="article-meta">
+    <span>&#128214; 11 min de lecture</span>
+    <span>&bull;</span>
+    <span>F&eacute;vrier 2026</span>
+  </div>
+  <p class="article-desc">Tout savoir sur Claude d'Anthropic : modèles, capacités, prompt engineering, Artifacts, Projects, comparaison avec ChatGPT et cas d'usage professionnels.</p>
+</header>
+
+<article class="article-content">
+<h2>Qu'est-ce que Claude et pourquoi est-il différent ?</h2>
+<p><strong>Claude</strong> est l'assistant IA développé par <strong>Anthropic</strong>, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI, dont Dario et Daniela Amodei. Ce qui distingue Claude des autres IA, c'est la priorité donnée à la <strong>sécurité, la fiabilité et l'honnêteté</strong>. Anthropic a développé une approche unique appelée "Constitutional AI" qui guide le comportement de Claude selon des principes éthiques explicites.</p>
+<p>En 2026, Claude s'est imposé comme l'alternative de référence à ChatGPT, particulièrement apprécié des professionnels pour la qualité de son raisonnement et sa capacité à reconnaître ses propres limites.</p>
+
+<h2>Les modèles Claude en 2026</h2>
+<p>Anthropic propose plusieurs modèles adaptés à différents besoins :</p>
+<h3>Claude Opus 4</h3>
+<p>Le modèle le plus puissant d'Anthropic. <strong>Claude Opus 4</strong> excelle dans les tâches de raisonnement complexe, l'analyse de documents longs, la programmation avancée et la rédaction nuancée. C'est le choix idéal pour :</p>
+<ul>
+<li>L'analyse de contrats juridiques et documents complexes</li>
+<li>La programmation et le débogage de code sophistiqué</li>
+<li>La rédaction académique et professionnelle de haut niveau</li>
+<li>Les tâches nécessitant un raisonnement en plusieurs étapes</li>
+</ul>
+<h3>Claude Sonnet 4</h3>
+<p>Le modèle équilibré, offrant un excellent rapport performance/coût. <strong>Sonnet 4</strong> est le choix par défaut pour la plupart des utilisateurs et convient parfaitement aux tâches quotidiennes : rédaction, résumé, brainstorming, code standard.</p>
+<h3>Claude Haiku</h3>
+<p>Le modèle le plus rapide et le plus économique. Idéal pour les réponses instantanées, le tri de données, les chatbots et les intégrations nécessitant une faible latence.</p>
+
+<h2>Les fonctionnalités clés de Claude</h2>
+<h3>Artifacts : la fonctionnalité révolutionnaire</h3>
+<p><strong>Artifacts</strong> est la fonctionnalité qui a véritablement différencié Claude de la concurrence. Quand vous demandez à Claude de créer du contenu structuré — code, documents, diagrammes, applications web — il le génère dans un panneau séparé et interactif. Vous pouvez :</p>
+<ul>
+<li>Voir le rendu en temps réel d'une page web ou d'une application React</li>
+<li>Exécuter et tester du code directement dans l'interface</li>
+<li>Itérer sur un document en conservant les versions précédentes</li>
+<li>Exporter le résultat final en un clic</li>
+</ul>
+<h3>Projects : organiser vos conversations</h3>
+<p><strong>Projects</strong> permet de créer des espaces de travail thématiques avec des instructions personnalisées et des documents de référence. Par exemple, vous pouvez créer un projet "Marketing Q1 2026" avec votre charte éditoriale, vos personas et vos objectifs. Claude utilisera ces informations comme contexte dans toutes les conversations du projet.</p>
+<h3>Fenêtre de contexte étendue</h3>
+<p>Claude peut traiter jusqu'à <strong>200 000 tokens</strong> de contexte, soit l'équivalent d'un livre entier de 500 pages. Cette capacité est cruciale pour l'analyse de documents longs, la revue de code de projets entiers ou l'étude de rapports détaillés.</p>
+
+<h2>Claude vs ChatGPT : comparaison honnête</h2>
+<p>La question la plus fréquente. Voici une comparaison objective :</p>
+<h3>Où Claude excelle</h3>
+<ul>
+<li><strong>Raisonnement et analyse</strong> : Claude est généralement plus rigoureux dans son raisonnement logique et plus transparent sur ses incertitudes</li>
+<li><strong>Rédaction longue</strong> : Claude produit des textes plus nuancés, mieux structurés et avec un style plus naturel pour les contenus longs</li>
+<li><strong>Honnêteté</strong> : Claude refuse plus clairement les tâches qu'il ne peut pas accomplir correctement, plutôt que d'inventer des réponses</li>
+<li><strong>Code</strong> : Claude Opus est considéré par beaucoup de développeurs comme le meilleur assistant de programmation disponible</li>
+<li><strong>Artifacts</strong> : aucun concurrent n'offre une fonctionnalité équivalente aussi aboutie</li>
+</ul>
+<h3>Où ChatGPT excelle</h3>
+<ul>
+<li><strong>Écosystème de plugins et GPTs</strong> : ChatGPT offre un écosystème tiers plus vaste avec des milliers d'applications personnalisées</li>
+<li><strong>Génération d'images</strong> : avec DALL-E 3 intégré, ChatGPT peut générer des images directement dans la conversation</li>
+<li><strong>Multimodalité</strong> : ChatGPT a été le premier à offrir la voix, la vision et la génération d'images dans une interface unifiée</li>
+<li><strong>Recherche web</strong> : l'intégration de la recherche en temps réel est plus mature chez ChatGPT</li>
+</ul>
+
+<h2>Prompt engineering pour Claude : les meilleures pratiques</h2>
+<p>Claude répond particulièrement bien à certaines techniques de prompting :</p>
+<ul>
+<li><strong>Soyez spécifique sur le format</strong> : Claude excelle quand vous précisez exactement le format souhaité (longueur, structure, ton, audience)</li>
+<li><strong>Utilisez des exemples</strong> : donnez un ou deux exemples de ce que vous attendez. Claude comprend remarquablement bien le "few-shot learning"</li>
+<li><strong>Décomposez les tâches complexes</strong> : plutôt qu'une seule requête massive, guidez Claude étape par étape pour les tâches complexes</li>
+<li><strong>Donnez du contexte métier</strong> : Claude utilise le contexte professionnel pour adapter son ton et ses recommandations. Précisez votre secteur, votre rôle et vos objectifs.</li>
+<li><strong>Demandez-lui de réfléchir</strong> : la phrase "Réfléchis étape par étape" améliore significativement la qualité du raisonnement de Claude</li>
+</ul>
+
+<h2>Cas d'usage professionnels concrets</h2>
+<h3>Pour les développeurs</h3>
+<p>Claude est devenu un outil incontournable pour les développeurs. <strong>Claude Code</strong>, l'outil en ligne de commande d'Anthropic, permet à Claude de naviguer dans votre codebase, d'écrire du code, de corriger des bugs et de lancer des commandes de build directement dans votre terminal. La combinaison d'Opus 4 pour le raisonnement architectural et de Sonnet 4 pour le code quotidien est redoutablement efficace.</p>
+<h3>Pour les analystes</h3>
+<p>Chargez un rapport de 200 pages dans Claude et posez vos questions. Il extraira les données clés, identifiera les tendances et produira des synthèses exécutives en quelques minutes. Les Artifacts permettent de générer des tableaux et graphiques interactifs directement.</p>
+<h3>Pour les rédacteurs et créatifs</h3>
+<p>Claude excelle dans la rédaction de contenus longs et structurés : articles de blog, livres blancs, scripts vidéo, newsletters. Sa capacité à maintenir un ton cohérent sur des milliers de mots est supérieure à la concurrence.</p>
+
+<h2>L'avenir de Claude et d'Anthropic</h2>
+<p>Anthropic continue d'investir massivement dans la recherche en sécurité IA. Les prochaines évolutions attendues incluent :</p>
+<ul>
+<li>Des capacités multimodales étendues (voix, vision améliorée)</li>
+<li>Une mémoire conversationnelle à long terme</li>
+<li>Des agents autonomes capables d'accomplir des tâches complexes sur plusieurs outils</li>
+<li>Des intégrations plus profondes avec les outils professionnels</li>
+</ul>
+<p><em>Claude n'est pas seulement un chatbot — c'est un partenaire de réflexion fiable. Dans un monde où les IA sont de plus en plus puissantes, la fiabilité et l'honnêteté de Claude constituent un avantage fondamental pour les professionnels exigeants.</em></p>
+</article>
+
+<div class="article-cta">
+  <h3>Explorez notre catalogue de 200 outils IA</h3>
+  <p>D&eacute;couvrez, comparez et choisissez les meilleurs outils d'intelligence artificielle.</p>
+  <a href="/fr/#catalogue" class="btn-primary">&#128218; Voir le catalogue</a>
+</div>
+
+<div class="related-section">
+  <h2 class="related-title">Articles recommand&eacute;s</h2>
+  <div class="related-grid">
+    <a href="/fr/blog/chatgpt-guide-complet/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">ChatGPT : Le guide complet pour bien débuter en 2026</div>
+    </a>
+<a href="/fr/blog/chatgpt-vs-claude-vs-gemini/" class="related-card">
+      <div class="rc-emoji">⚖️</div>
+      <div class="rc-tag">Comparatif</div>
+      <div class="rc-title">ChatGPT vs Claude vs Gemini : quel chatbot IA choisir en 2026 ?</div>
+    </a>
+<a href="/fr/blog/meilleurs-generateurs-images-ia/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Créatif</div>
+      <div class="rc-title">Les 10 meilleurs générateurs d’images IA en 2026</div>
+    </a>
+<a href="/fr/blog/cursor-vs-github-copilot/" class="related-card">
+      <div class="rc-emoji">💻</div>
+      <div class="rc-tag">Dev</div>
+      <div class="rc-title">Cursor vs GitHub Copilot : quel assistant de code IA choisir ?</div>
+    </a>
+<a href="/fr/blog/meilleurs-outils-ia-gratuits/" class="related-card">
+      <div class="rc-emoji">🆓</div>
+      <div class="rc-tag">Budget</div>
+      <div class="rc-title">Les meilleurs outils IA gratuits en 2026 : le guide ultime</div>
+    </a>
+<a href="/fr/blog/automatiser-workflow-ia/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivité</div>
+      <div class="rc-title">Automatiser son workflow avec l’IA : Zapier, Make et n8n</div>
+    </a>
+<a href="/fr/blog/deepseek-revolution-ia-open-source/" class="related-card">
+      <div class="rc-emoji">🔓</div>
+      <div class="rc-tag">Analyse</div>
+      <div class="rc-title">DeepSeek : La Révolution Open-Source qui Bouleverse l'IA</div>
+    </a>
+<a href="/fr/blog/generer-videos-ia-guide/" class="related-card">
+      <div class="rc-emoji">🎬</div>
+      <div class="rc-tag">Créatif</div>
+      <div class="rc-title">Générer des Vidéos avec l'IA : Le Guide Complet 2026</div>
+    </a>
+<a href="/fr/blog/ia-productivite-personnelle/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivité</div>
+      <div class="rc-title">Décupler sa productivité avec l'IA : le guide pratique 2026</div>
+    </a>
+<a href="/fr/blog/midjourney-vs-dalle-vs-stable-diffusion/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Comparatif</div>
+      <div class="rc-title">Midjourney vs DALL-E 3 vs Stable Diffusion : le comparatif définitif</div>
+    </a>
+<a href="/fr/blog/creer-musique-ia-suno-udio/" class="related-card">
+      <div class="rc-emoji">🎵</div>
+      <div class="rc-tag">Créatif</div>
+      <div class="rc-title">Créer de la musique avec l'IA : guide Suno, Udio et alternatives</div>
+    </a>
+<a href="/fr/blog/ia-marketing-digital-guide/" class="related-card">
+      <div class="rc-emoji">📈</div>
+      <div class="rc-tag">Marketing</div>
+      <div class="rc-title">L'IA au service du marketing digital : outils et stratégies 2026</div>
+    </a>
+<a href="/fr/blog/elevenlabs-clonage-voix-ia/" class="related-card">
+      <div class="rc-emoji">🎙️</div>
+      <div class="rc-tag">Audio</div>
+      <div class="rc-title">ElevenLabs : Le Guide Complet du Clonage Vocal par IA en 2026</div>
+    </a>
+<a href="/fr/blog/ia-education-revolutionne-apprentissage/" class="related-card">
+      <div class="rc-emoji">🎓</div>
+      <div class="rc-tag">Éducation</div>
+      <div class="rc-title">Comment l'IA Révolutionne l'Éducation en 2026</div>
+    </a>
+<a href="/fr/blog/construire-agent-ia-guide/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Dev</div>
+      <div class="rc-title">Construire Son Propre Agent IA en 2026 : Le Guide Pratique</div>
+    </a>
+<a href="/fr/blog/meilleurs-outils-ia-redaction/" class="related-card">
+      <div class="rc-emoji">✍️</div>
+      <div class="rc-tag">Rédaction</div>
+      <div class="rc-title">Les meilleurs outils IA de rédaction en 2026 : comparatif complet</div>
+    </a>
+<a href="/fr/blog/ia-design-web-2026/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Design</div>
+      <div class="rc-title">L'IA révolutionne le design web : v0, Bolt.new, Framer AI et plus</div>
+    </a>
+<a href="/fr/blog/perplexity-ia-moteur-recherche-futur/" class="related-card">
+      <div class="rc-emoji">🔍</div>
+      <div class="rc-tag">Analyse</div>
+      <div class="rc-title">Perplexity AI : le moteur de recherche du futur est-il arrivé ?</div>
+    </a>
+<a href="/fr/blog/securite-confidentialite-outils-ia/" class="related-card">
+      <div class="rc-emoji">🔒</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">Sécurité et confidentialité des outils IA : ce qu'il faut savoir</div>
+    </a>
+
+  </div>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">La Bible de l'IA</div>
+  <div class="footer-links">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/#catalogue">Catalogue</a>
+    <a href="/fr/#blog">Blog</a>
+    <a href="/fr/#newsletter">Newsletter</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 La Bible de l'IA. Tous droits r&eacute;serv&eacute;s.</div>
+</footer>
+</body>
+</html>

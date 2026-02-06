@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools Security and Privacy: What You Need to Know | The AI Bible</title>
+<meta name="description" content="Personal data, GDPR, self-hosted options, training opt-out: a complete guide to using AI tools safely and securely.">
+<link rel="canonical" href="https://labibledelia.com/en/blog/securite-confidentialite-outils-ia/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/blog/securite-confidentialite-outils-ia/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/blog/securite-confidentialite-outils-ia/">
+<meta property="og:title" content="AI Tools Security and Privacy: What You Need to Know | The AI Bible">
+<meta property="og:description" content="Personal data, GDPR, self-hosted options, training opt-out: a complete guide to using AI tools safely and securely.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-02-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Tools Security and Privacy: What You Need to Know | The AI Bible">
+<meta name="twitter:description" content="Personal data, GDPR, self-hosted options, training opt-out: a complete guide to using AI tools safely and securely.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Tools Security and Privacy: What You Need to Know",
+  "description": "Personal data, GDPR, self-hosted options, training opt-out: a complete guide to using AI tools safely and securely.",
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-02-06",
+  "author": {"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"},
+  "publisher": {"@type": "Organization", "name": "La Bible de l'IA", "url": "https://labibledelia.com"},
+  "mainEntityOfPage": "https://labibledelia.com/en/blog/securite-confidentialite-outils-ia/",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://labibledelia.com/en/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://labibledelia.com/en/#blog"},
+    {"@type": "ListItem", "position": 3, "name": "AI Tools Security and Privacy: What You Need to Know", "item": "https://labibledelia.com/en/blog/securite-confidentialite-outils-ia/"}
+  ]
+}
+</script>
+<style>
+:root{
+  --bg-page:#0e0e1a;--bg-card:#181830;--bg-card-hover:#1e1e3a;
+  --text-main:#e8e8f0;--text-muted:#9898b0;--text-heading:#f8f8ff;
+  --gold:#c9a84c;--gold-hover:#e0c068;
+  --accent:#6366f1;--accent-hover:#818cf8;
+  --radius-md:12px;--radius-lg:18px;
+  --shadow-md:0 4px 20px rgba(0,0,0,.3);--shadow-lg:0 8px 40px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold-hover)}
+
+/* NAV */
+.top-nav{position:sticky;top:0;z-index:1000;background:rgba(14,14,26,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.12);padding:.7rem 2rem;display:flex;align-items:center;gap:.8rem}
+.nav-logo svg{width:26px;height:26px}
+.nav-title{font-family:Georgia,serif;font-size:1rem;color:var(--gold);font-weight:600;letter-spacing:.5px}
+.nav-links{margin-left:auto;display:flex;gap:1.2rem;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:.85rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.lang-btn{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;opacity:.7;transition:opacity .2s}
+.lang-btn:hover,.lang-btn.active{opacity:1;background:rgba(255,255,255,.08)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+
+/* BREADCRUMB */
+.breadcrumb{padding:1rem 0;font-size:.85rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{margin:0 .5rem;opacity:.5}
+
+/* ARTICLE */
+.article-container{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.article-header{text-align:center;padding:2rem 0 2.5rem;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:2.5rem}
+.article-emoji{font-size:3rem;margin-bottom:1rem}
+.article-tag{display:inline-block;font-family:'Courier New',monospace;font-size:.7rem;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.15em;padding:.3rem .8rem;border:1px solid rgba(201,168,76,.3);
+  border-radius:20px;margin-bottom:1rem}
+.article-title{font-family:Georgia,serif;font-size:2.2rem;color:var(--text-heading);line-height:1.3;margin-bottom:.8rem}
+.article-meta{display:flex;justify-content:center;gap:1.5rem;font-size:.8rem;color:var(--text-muted);font-family:'Courier New',monospace}
+.article-desc{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-top:1rem;line-height:1.6}
+
+/* ARTICLE CONTENT */
+.article-content{font-size:1.05rem;line-height:1.85;color:var(--text-main)}
+.article-content h2{font-family:Georgia,serif;font-size:1.5rem;color:var(--gold);margin:2.5rem 0 1rem;
+  padding-bottom:.5rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.article-content h3{font-family:Georgia,serif;font-size:1.15rem;color:var(--text-heading);margin:1.8rem 0 .8rem}
+.article-content p{margin-bottom:1.2rem}
+.article-content ul,.article-content ol{margin:1rem 0 1.5rem 1.5rem}
+.article-content li{margin-bottom:.5rem;line-height:1.7}
+.article-content strong{color:var(--text-heading)}
+.article-content blockquote{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1.5rem 0;
+  background:rgba(201,168,76,.05);border-radius:0 var(--radius-md) var(--radius-md) 0;font-style:italic}
+.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.article-content th,.article-content td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.article-content th{color:var(--text-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* CTA */
+.article-cta{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));
+  border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:2rem;margin:3rem 0;text-align:center}
+.article-cta h3{font-family:Georgia,serif;color:var(--text-heading);font-size:1.2rem;margin-bottom:.5rem}
+.article-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:1rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;background:var(--gold);
+  color:#0e0e1a;font-weight:700;border-radius:8px;font-size:.95rem;transition:all .2s}
+.btn-primary:hover{background:var(--gold-hover);color:#0e0e1a;transform:translateY(-1px)}
+
+/* RELATED ARTICLES */
+.related-section{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.15)}
+.related-title{font-family:Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:1.5rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.related-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);
+  padding:1rem;transition:all .3s;display:block;color:var(--text-main);text-decoration:none}
+.related-card:hover{background:var(--bg-card-hover);border-color:rgba(201,168,76,.3);transform:translateY(-2px)}
+.related-card .rc-emoji{font-size:1.5rem;margin-bottom:.4rem}
+.related-card .rc-tag{font-family:'Courier New',monospace;font-size:.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.related-card .rc-title{font-weight:700;font-size:.9rem;color:var(--text-heading);margin-top:.3rem;line-height:1.3}
+
+/* FOOTER */
+.site-footer{background:rgba(0,0,0,.3);border-top:1px solid rgba(201,168,76,.1);padding:2rem;text-align:center;margin-top:4rem}
+.footer-logo{font-family:Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.8rem 0}
+.footer-links a{color:var(--text-muted);font-size:.8rem}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:var(--text-muted);font-size:.75rem;margin-top:.8rem}
+
+@media(max-width:768px){
+  .top-nav{padding:.5rem 1rem;gap:.5rem}
+  .article-container{padding:1.5rem 1rem}
+  .article-title{font-size:1.6rem}
+  .article-content{font-size:.95rem}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/en/" class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></a>
+  <a href="/en/" class="nav-title">The AI Bible</a>
+  <div class="nav-links">
+    <a href="/en/#catalogue">Catalog</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/fr/" class="lang-btn"><img src="https://flagcdn.com/w40/fr.png" alt="FR"></a>
+  </div>
+</nav>
+
+<div class="article-container">
+
+<div class="breadcrumb">
+  <a href="/en/">Home</a>
+  <span class="sep">&rsaquo;</span>
+  <a href="/en/#blog">Blog</a>
+  <span class="sep">&rsaquo;</span>
+  <span>Guide</span>
+</div>
+
+<header class="article-header">
+  <div class="article-emoji">🔒</div>
+  <span class="article-tag">Guide</span>
+  <h1 class="article-title">AI Tools Security and Privacy: What You Need to Know</h1>
+  <div class="article-meta">
+    <span>&#128214; 10 min read</span>
+    <span>&bull;</span>
+    <span>February 2026</span>
+  </div>
+  <p class="article-desc">Personal data, GDPR, self-hosted options, training opt-out: a complete guide to using AI tools safely and securely.</p>
+</header>
+
+<article class="article-content">
+<h2>Why AI Tool Security Is a Major Concern</h2>
+<p>Every time you use an artificial intelligence tool, you transmit data to it. A prompt in ChatGPT, a document analyzed by Claude, an image generated by Midjourney: all these interactions involve a <strong>transfer of information to remote servers</strong>. For personal use, the risk is moderate. But for a company handling customer data, trade secrets, or medical information, the question of confidentiality becomes <strong>critical</strong>. This guide helps you navigate this complex issue.</p>
+
+<h2>Which Tools Keep Your Data Private?</h2>
+
+<h3>Major Provider Policies</h3>
+<p>Practices vary considerably from one provider to another:</p>
+<ul>
+<li><strong>OpenAI (ChatGPT)</strong>: by default, your conversations can be used to train models. You can disable this option in settings (Settings → Data controls → Improve the model for everyone). ChatGPT Team and Enterprise accounts are <em>never</em> used for training.</li>
+<li><strong>Anthropic (Claude)</strong>: conversations via the API are not used for training. On claude.ai (free and Pro), data may be used unless you activate the opt-out in privacy settings.</li>
+<li><strong>Google (Gemini)</strong>: conversations with free Gemini may be used for training. Google Workspace AI (Gemini for Business) offers guarantees of non-use of data.</li>
+<li><strong>Microsoft (Copilot)</strong>: Copilot for Microsoft 365 benefits from Azure security guarantees. Data stays within your Microsoft tenant and is not used to train models.</li>
+</ul>
+
+<h3>The Case of Specialized Tools</h3>
+<p>Tools like Jasper, Copy.ai, or Notion AI generally have stricter policies because they target businesses. Always check the terms of service and look for these key elements: <strong>non-use for training</strong>, <strong>encryption of data at rest and in transit</strong>, and <strong>SOC 2 certifications</strong>.</p>
+
+<h2>Self-Hosted Options: Keeping Total Control</h2>
+
+<h3>Ollama: LLMs on Your Machine</h3>
+<p><strong>Ollama</strong> has become the reference for running language models locally. How it works is simple: you download a model (Llama 3, Mistral, Phi-3, Gemma) and it runs entirely on your computer. <strong>No data ever leaves your machine.</strong></p>
+<ul>
+<li><strong>Simple installation</strong>: one command to install, one command to launch a model</li>
+<li><strong>Rich catalog</strong>: dozens of available models, from lightweight (1.5B parameters) to powerful (70B+)</li>
+<li><strong>Compatible with many interfaces</strong>: Open WebUI, Jan, LM Studio for a ChatGPT-like local experience</li>
+<li><strong>Local API</strong>: integrate the model into your own applications</li>
+</ul>
+
+<h3>n8n: Self-Hosted AI Automation</h3>
+<p><strong>n8n</strong> is an open-source automation platform that can be hosted on your own servers. With its built-in AI nodes, you can build workflows that use LLMs (local via Ollama or remote) without ever exposing your data to a third-party service. It is the ideal solution for companies that want to automate processes involving sensitive data.</p>
+
+<h3>Other Self-Hosted Solutions</h3>
+<ul>
+<li><strong>LocalAI</strong>: open-source alternative to OpenAI with API compatibility, runs locally</li>
+<li><strong>PrivateGPT</strong>: ask questions about your documents in complete confidentiality</li>
+<li><strong>LibreChat</strong>: self-hosted ChatGPT-like interface, compatible with multiple models</li>
+</ul>
+
+<h2>GDPR Compliance and AI Tools</h2>
+<p>The <strong>General Data Protection Regulation</strong> (GDPR) imposes strict obligations for any organization processing personal data of European residents. Here are the essential points to verify:</p>
+<ul>
+<li><strong>Legal basis for processing</strong>: do you have consent or a legitimate interest to process this data through an AI tool?</li>
+<li><strong>Transfers outside the EU</strong>: most American AI tools involve a data transfer to the United States. Verify that the provider adheres to the EU-US Data Privacy Framework</li>
+<li><strong>Right to erasure</strong>: can you request deletion of your data from the provider?</li>
+<li><strong>Impact assessment</strong>: for large-scale processing, a DPIA (Data Protection Impact Assessment) may be mandatory</li>
+<li><strong>Processing register</strong>: the use of AI tools must appear in your GDPR register</li>
+</ul>
+
+<h2>Best Practices to Protect Your Data</h2>
+<p>Whatever your situation, here are the <strong>golden rules</strong> to follow:</p>
+<ul>
+<li><strong>Never paste sensitive data into a public AI chat</strong>: no credit card numbers, passwords, medical data, or trade secrets</li>
+<li><strong>Enable training opt-out</strong>: on every tool you use, check and disable data sharing for training</li>
+<li><strong>Use enterprise plans</strong>: ChatGPT Team/Enterprise, Claude for Business, Gemini for Workspace offer contractual guarantees</li>
+<li><strong>Anonymize your data</strong>: before submitting a document to an AI, replace names, addresses, and identifiers with pseudonyms</li>
+<li><strong>Prefer self-hosted for critical data</strong>: if your data is truly sensitive, use Ollama or a local solution</li>
+<li><strong>Train your teams</strong>: the most common security breach remains human error. Establish an AI usage policy in your organization</li>
+<li><strong>Audit regularly</strong>: review the AI tools in use, their access levels, and the data flowing through them</li>
+</ul>
+
+<h2>Enterprise Security Features</h2>
+<p>Enterprise offerings from major providers generally include:</p>
+<ul>
+<li><strong>SSO (Single Sign-On)</strong>: login via your existing identity provider (Okta, Azure AD)</li>
+<li><strong>SCIM provisioning</strong>: automatic user account management</li>
+<li><strong>Audit logs</strong>: complete traceability of who uses what and when</li>
+<li><strong>DLP (Data Loss Prevention)</strong>: automatic detection of sensitive data before sending</li>
+<li><strong>Enhanced encryption</strong>: customer-managed encryption keys (BYOK)</li>
+</ul>
+
+<p>Security and privacy in the use of AI tools are not optional: they are a <strong>responsibility</strong>. Take the time to understand each tool's policies, activate available protections, and do not hesitate to opt for local solutions when data sensitivity demands it. Prevention is always better than cure.</p>
+</article>
+
+<div class="article-cta">
+  <h3>Explore our catalog of 200 AI tools</h3>
+  <p>Discover, compare and choose the best artificial intelligence tools.</p>
+  <a href="/en/#catalogue" class="btn-primary">&#128218; View catalog</a>
+</div>
+
+<div class="related-section">
+  <h2 class="related-title">Recommended articles</h2>
+  <div class="related-grid">
+    <a href="/en/blog/chatgpt-guide-complet/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">ChatGPT: The Complete Beginner’s Guide in 2026</div>
+    </a>
+<a href="/en/blog/chatgpt-vs-claude-vs-gemini/" class="related-card">
+      <div class="rc-emoji">⚖️</div>
+      <div class="rc-tag">Comparison</div>
+      <div class="rc-title">ChatGPT vs Claude vs Gemini: Which AI Chatbot to Choose in 2026?</div>
+    </a>
+<a href="/en/blog/meilleurs-generateurs-images-ia/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Creative</div>
+      <div class="rc-title">The 10 Best AI Image Generators in 2026</div>
+    </a>
+<a href="/en/blog/cursor-vs-github-copilot/" class="related-card">
+      <div class="rc-emoji">💻</div>
+      <div class="rc-tag">Dev</div>
+      <div class="rc-title">Cursor vs GitHub Copilot: Which AI Coding Assistant Should You Choose?</div>
+    </a>
+<a href="/en/blog/meilleurs-outils-ia-gratuits/" class="related-card">
+      <div class="rc-emoji">🆓</div>
+      <div class="rc-tag">Budget</div>
+      <div class="rc-title">The Best Free AI Tools in 2026: The Ultimate Guide</div>
+    </a>
+<a href="/en/blog/automatiser-workflow-ia/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivity</div>
+      <div class="rc-title">Automate Your Workflow with AI: Zapier, Make, and n8n</div>
+    </a>
+<a href="/en/blog/deepseek-revolution-ia-open-source/" class="related-card">
+      <div class="rc-emoji">🔓</div>
+      <div class="rc-tag">Analysis</div>
+      <div class="rc-title">DeepSeek: The Open-Source Revolution Shaking Up AI</div>
+    </a>
+<a href="/en/blog/generer-videos-ia-guide/" class="related-card">
+      <div class="rc-emoji">🎬</div>
+      <div class="rc-tag">Creative</div>
+      <div class="rc-title">Generating Videos with AI: The Complete 2026 Guide</div>
+    </a>
+<a href="/en/blog/ia-productivite-personnelle/" class="related-card">
+      <div class="rc-emoji">⚡</div>
+      <div class="rc-tag">Productivity</div>
+      <div class="rc-title">10x Your Productivity with AI: The 2026 Practical Guide</div>
+    </a>
+<a href="/en/blog/midjourney-vs-dalle-vs-stable-diffusion/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Comparison</div>
+      <div class="rc-title">Midjourney vs DALL-E 3 vs Stable Diffusion: The Definitive Comparison</div>
+    </a>
+<a href="/en/blog/creer-musique-ia-suno-udio/" class="related-card">
+      <div class="rc-emoji">🎵</div>
+      <div class="rc-tag">Creative</div>
+      <div class="rc-title">Creating Music with AI: Guide to Suno, Udio, and Alternatives</div>
+    </a>
+<a href="/en/blog/ia-marketing-digital-guide/" class="related-card">
+      <div class="rc-emoji">📈</div>
+      <div class="rc-tag">Marketing</div>
+      <div class="rc-title">AI for Digital Marketing: Tools and Strategies for 2026</div>
+    </a>
+<a href="/en/blog/claude-guide-complet/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Guide</div>
+      <div class="rc-title">Claude by Anthropic: The Complete Guide to the Most Reliable AI</div>
+    </a>
+<a href="/en/blog/elevenlabs-clonage-voix-ia/" class="related-card">
+      <div class="rc-emoji">🎙️</div>
+      <div class="rc-tag">Audio</div>
+      <div class="rc-title">ElevenLabs: The Complete Guide to AI Voice Cloning in 2026</div>
+    </a>
+<a href="/en/blog/ia-education-revolutionne-apprentissage/" class="related-card">
+      <div class="rc-emoji">🎓</div>
+      <div class="rc-tag">Education</div>
+      <div class="rc-title">How AI Is Revolutionizing Education in 2026</div>
+    </a>
+<a href="/en/blog/construire-agent-ia-guide/" class="related-card">
+      <div class="rc-emoji">🤖</div>
+      <div class="rc-tag">Dev</div>
+      <div class="rc-title">Build Your Own AI Agent in 2026: A Practical Guide</div>
+    </a>
+<a href="/en/blog/meilleurs-outils-ia-redaction/" class="related-card">
+      <div class="rc-emoji">✍️</div>
+      <div class="rc-tag">Writing</div>
+      <div class="rc-title">The Best AI Writing Tools in 2026: Complete Comparison</div>
+    </a>
+<a href="/en/blog/ia-design-web-2026/" class="related-card">
+      <div class="rc-emoji">🎨</div>
+      <div class="rc-tag">Design</div>
+      <div class="rc-title">AI is Revolutionizing Web Design: v0, Bolt.new, Framer AI and More</div>
+    </a>
+<a href="/en/blog/perplexity-ia-moteur-recherche-futur/" class="related-card">
+      <div class="rc-emoji">🔍</div>
+      <div class="rc-tag">Analysis</div>
+      <div class="rc-title">Perplexity AI: Has the Search Engine of the Future Arrived?</div>
+    </a>
+
+  </div>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">The AI Bible</div>
+  <div class="footer-links">
+    <a href="/en/">Home</a>
+    <a href="/en/#catalogue">Catalog</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/en/#newsletter">Newsletter</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 The AI Bible. All rights reserved.</div>
+</footer>
+</body>
+</html>

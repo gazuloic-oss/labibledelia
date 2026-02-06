@@ -1111,12 +1111,12 @@ def main():
     en_file = os.path.join(BASE_DIR, "en", "index.html")
 
     # Extract data from both files
-    print("\n📖 Extracting data from FR file...")
+    print("\n[*] Extracting data from FR file...")
     fr_categories = extract_js_array(fr_file, "CATEGORIES")
     fr_tools = extract_js_array(fr_file, "TOOLS")
     print(f"   Found {len(fr_categories)} categories, {len(fr_tools)} tools")
 
-    print("\n📖 Extracting data from EN file...")
+    print("\n[*] Extracting data from EN file...")
     en_categories = extract_js_array(en_file, "CATEGORIES")
     en_tools = extract_js_array(en_file, "TOOLS")
     print(f"   Found {len(en_categories)} categories, {len(en_tools)} tools")
@@ -1126,7 +1126,7 @@ def main():
     print(f"\n🔄 {len(comparisons)} comparison pairs to generate")
 
     total_pages = (len(fr_tools) + len(en_tools)) + (len(fr_categories) + len(en_categories)) + (len(comparisons) * 2) + 2
-    print(f"\n📊 Total pages to generate: {total_pages}")
+    print(f"\n[*] Total pages to generate: {total_pages}")
 
     generated = 0
 
@@ -1139,7 +1139,7 @@ def main():
         with open(os.path.join(dir_path, "index.html"), 'w', encoding='utf-8') as f:
             f.write(page)
         generated += 1
-    print(f"   ✅ {len(fr_tools)} FR tool pages generated")
+    print(f"   [OK] {len(fr_tools)} FR tool pages generated")
 
     # --- Generate EN tool pages ---
     print("\n🇬🇧 Generating EN tool pages...")
@@ -1150,7 +1150,7 @@ def main():
         with open(os.path.join(dir_path, "index.html"), 'w', encoding='utf-8') as f:
             f.write(page)
         generated += 1
-    print(f"   ✅ {len(en_tools)} EN tool pages generated")
+    print(f"   [OK] {len(en_tools)} EN tool pages generated")
 
     # --- Generate FR category pages ---
     print("\n🇫🇷 Generating FR category pages...")
@@ -1161,7 +1161,7 @@ def main():
         with open(os.path.join(dir_path, "index.html"), 'w', encoding='utf-8') as f:
             f.write(page)
         generated += 1
-    print(f"   ✅ {len(fr_categories)} FR category pages generated")
+    print(f"   [OK] {len(fr_categories)} FR category pages generated")
 
     # --- Generate EN category pages ---
     print("\n🇬🇧 Generating EN category pages...")
@@ -1172,7 +1172,7 @@ def main():
         with open(os.path.join(dir_path, "index.html"), 'w', encoding='utf-8') as f:
             f.write(page)
         generated += 1
-    print(f"   ✅ {len(en_categories)} EN category pages generated")
+    print(f"   [OK] {len(en_categories)} EN category pages generated")
 
     # --- Generate comparison pages ---
     print("\n⚔️ Generating comparison pages...")
@@ -1197,21 +1197,21 @@ def main():
             with open(os.path.join(dir_path, "index.html"), 'w', encoding='utf-8') as f:
                 f.write(page)
             generated += 1
-    print(f"   ✅ {len(comparisons) * 2} comparison pages generated")
+    print(f"   [OK] {len(comparisons) * 2} comparison pages generated")
 
     # --- Generate sitemap.xml ---
     print("\n🗺️ Generating sitemap.xml...")
     sitemap = generate_sitemap(fr_tools, fr_categories, comparisons)
     with open(os.path.join(BASE_DIR, "sitemap.xml"), 'w', encoding='utf-8') as f:
         f.write(sitemap)
-    print("   ✅ sitemap.xml generated")
+    print("   [OK]sitemap.xml generated")
 
     # --- Generate robots.txt ---
     print("\n🤖 Generating robots.txt...")
     robots = generate_robots()
     with open(os.path.join(BASE_DIR, "robots.txt"), 'w', encoding='utf-8') as f:
         f.write(robots)
-    print("   ✅ robots.txt generated")
+    print("   [OK]robots.txt generated")
 
     print(f"\n{'=' * 60}")
     print(f"  🎉 DONE! {generated} pages generated")
