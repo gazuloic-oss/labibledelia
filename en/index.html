@@ -11,9 +11,14 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="manifest" href="/manifest.json">
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X4YE8TLX0E');</script>
+<!-- Google Analytics 4 — loaded only after cookie consent -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+function loadGA4(){if(window._ga4Loaded)return;window._ga4Loaded=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-X4YE8TLX0E',{anonymize_ip:true});}
+function getCookieConsent(){try{return JSON.parse(localStorage.getItem('cookie_consent'))}catch(e){return null}}
+function setCookieConsent(v){localStorage.setItem('cookie_consent',JSON.stringify({accepted:v,date:new Date().toISOString()}));if(v)loadGA4();document.getElementById('cookieBanner').style.display='none';}
+(function(){var c=getCookieConsent();if(c&&c.accepted)loadGA4();})();
+</script>
 <title>The AI Lexicon — Encyclopedia of Artificial Intelligence Tools</title>
 <meta name="description" content="The AI Lexicon — The definitive encyclopedia of AI tools. 465 tools analyzed, compared, and rated across 20 categories. Find the perfect AI tool.">
 <link rel="canonical" href="https://labibledelia.com/en/">
@@ -369,6 +374,10 @@
       <input class="newsletter-input" type="email" name="email" placeholder="your@email.com" required>
       <button class="newsletter-btn" type="submit">Subscribe</button>
     </form>
+    <label style="display:flex;align-items:flex-start;gap:.5rem;margin:.7rem auto 0;max-width:480px;cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4">
+      <input type="checkbox" id="newsletterConsent" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0" form="newsletterForm">
+      I agree to receive the weekly newsletter and the <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">privacy policy</a>. Unsubscribe in 1 click.
+    </label>
     <p class="newsletter-note">Join our community · Free · 1-click unsubscribe</p>
     <p class="newsletter-success" id="newsletterSuccess">✓ Thank you! You'll receive your first newsletter soon.</p>
     <p class="newsletter-error" id="newsletterError" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
@@ -452,6 +461,7 @@
         <label>Message</label>
         <textarea name="message" placeholder="Describe your request..." required></textarea>
       </div>
+      <p style="font-size:.75rem;color:var(--ink-tertiary);margin:.5rem 0;line-height:1.4">Data submitted is processed to respond to your inquiry (legal basis: legitimate interest) and retained for 12 months. <a href="#" onclick="APP.closePage('contact');APP.openPage('privacy');return false" style="color:var(--gold);text-decoration:underline">Privacy policy</a>.</p>
       <button type="submit">Send message →</button>
       <p class="form-success">✓ Message sent! We'll get back to you within 48h.</p>
       <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
@@ -471,8 +481,10 @@
     <div class="info-card">
       <p><strong>The AI Lexicon</strong> — labibledelia.com</p>
       <p>Editorial information website about artificial intelligence tools.</p>
-      <p>Publication Director: The AI Lexicon Team</p>
-      <p>Contact: <a href="#" onclick="APP.closePage('legal');APP.openPage('contact');return false">Contact form</a></p>
+      <p>Publisher: Loïc Music, sole proprietor</p>
+      <p>Address: Paris, France</p>
+      <p>Email: <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a></p>
+      <p>Publication Director: Loïc Music</p>
     </div>
 
     <h3>Hosting</h3>
@@ -492,6 +504,9 @@
 
     <h3>External Links</h3>
     <p>This website contains links to third-party sites. The AI Lexicon cannot be held responsible for the content of these external websites.</p>
+
+    <h3>Governing Law</h3>
+    <p>This website is governed by French law. Any disputes shall be subject to the exclusive jurisdiction of French courts.</p>
   </div>
 </div>
 
@@ -505,30 +520,58 @@
 
     <div class="info-card">
       <div class="info-card-label">In a nutshell</div>
-      <p>We use Google Analytics 4 for audience measurement. No advertising trackers, no data resale.</p>
+      <p>We use Google Analytics 4 (after your consent) for audience measurement. No advertising trackers, no data resale.</p>
     </div>
 
-    <h3>Data Collected</h3>
-    <p>The AI Lexicon is a static website. We collect minimal data:</p>
+    <h3>Data Controller</h3>
+    <p><strong>Loïc Music</strong>, sole proprietor, Paris, France.<br>
+    Email: <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a></p>
+
+    <h3>Data Collected & Legal Basis</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0">
+      <thead><tr style="border-bottom:1px solid rgba(255,255,255,.1)">
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Data</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Purpose</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Legal Basis</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Retention</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">GA4 cookies (<code>_ga</code>, <code>_gid</code>)</td><td style="padding:.5rem">Audience measurement</td><td style="padding:.5rem">Consent (Art. 6.1.a GDPR)</td><td style="padding:.5rem">13 months max</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Email (newsletter)</td><td style="padding:.5rem">Weekly newsletter</td><td style="padding:.5rem">Consent (Art. 6.1.a GDPR)</td><td style="padding:.5rem">Until unsubscribe</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Name, email, message (contact)</td><td style="padding:.5rem">Responding to inquiries</td><td style="padding:.5rem">Legitimate interest (Art. 6.1.f GDPR)</td><td style="padding:.5rem">12 months</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Server logs (IP, user-agent)</td><td style="padding:.5rem">Security & diagnostics</td><td style="padding:.5rem">Legitimate interest (Art. 6.1.f GDPR)</td><td style="padding:.5rem">12 months</td></tr>
+        <tr><td style="padding:.5rem">localStorage (theme, favorites)</td><td style="padding:.5rem">Display preferences</td><td style="padding:.5rem">N/A (local data only)</td><td style="padding:.5rem">Until manual deletion</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Cookies & Consent</h3>
+    <p>This website uses <strong>Google Analytics 4</strong> which only places cookies (<code>_ga</code>, <code>_gid</code>) <strong>after your explicit consent</strong> via our consent banner. You can change your choice at any time by clicking <a href="#" onclick="localStorage.removeItem('cookie_consent');location.reload();return false" style="text-decoration:underline">Manage my cookies</a>.</p>
+    <p><strong>No advertising, marketing, or targeting cookies</strong> are placed. No data is shared with advertising networks.</p>
+
+    <h3>International Data Transfers</h3>
+    <p>Google Analytics (Google LLC, USA) and our host Netlify (Netlify Inc., USA) may process data in the United States. These transfers are governed by <strong>Standard Contractual Clauses (SCCs)</strong> from the European Commission and the <strong>EU-US Data Privacy Framework</strong>.</p>
+
+    <h3>Hosting</h3>
+    <p>This site is hosted by <strong>Netlify, Inc.</strong>, 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA. Server logs may contain technical connection data (IP address, browser type), retained for 30 days.</p>
+
+    <h3>Your Rights (GDPR)</h3>
+    <p>Under the General Data Protection Regulation (EU 2016/679), you have the following rights:</p>
     <ul>
-      <li><strong>Audience measurement:</strong> We use Google Analytics 4 (GA4) to measure site traffic (page views, session duration, country of origin). GA4 may place cookies (<code>_ga</code>, <code>_gid</code>) on your browser. This data is anonymized and used solely for statistical purposes. <a href="https://policies.google.com/privacy" target="_blank" rel="nofollow noopener">Google Privacy Policy</a>.</li>
-      <li><strong>Newsletter:</strong> If you voluntarily subscribe, we only collect your email address to send our weekly newsletter.</li>
-      <li><strong>Contact form:</strong> If you contact us, we collect your name, email, and message in order to respond.</li>
+      <li><strong>Access:</strong> obtain a copy of your personal data</li>
+      <li><strong>Rectification:</strong> correct inaccurate data</li>
+      <li><strong>Erasure:</strong> request deletion of your data</li>
+      <li><strong>Portability:</strong> receive your data in a structured format</li>
+      <li><strong>Objection:</strong> object to the processing of your data</li>
+      <li><strong>Withdrawal of consent:</strong> withdraw your consent at any time</li>
     </ul>
+    <p>To exercise these rights: <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a> or via our <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contact form</a>.</p>
 
-    <h3>Cookies</h3>
-    <p>This website uses <strong>Google Analytics 4</strong> which may place audience measurement cookies (<code>_ga</code>, <code>_gid</code>). These cookies are used solely to understand how the site is used. <strong>No advertising, marketing, or targeting cookies</strong> are placed. No data is shared with advertising networks.</p>
-    <p>Local data also includes your browser's <strong>localStorage</strong> to remember your display preferences (view mode, theme, favorites). This data stays on your device and is never transmitted.</p>
-
-    <h3>Hosting & Logging</h3>
-    <p>This site is hosted on a VPS server. Server logs may contain technical connection data (IP address, browser type). This data is retained for security and diagnostic purposes.</p>
-
-    <h3>Your Rights</h3>
-    <p>Under GDPR, you have the right to access, rectify, delete, and port your data. To exercise these rights, <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contact us</a>.</p>
+    <h3>Supervisory Authority</h3>
+    <p>If you believe your rights are not being respected, you may file a complaint with the <strong>CNIL</strong> (French Data Protection Authority): <a href="https://www.cnil.fr/en/complaints" target="_blank" rel="nofollow noopener">www.cnil.fr</a></p>
 
     <h3>Changes</h3>
     <p>This policy may be updated. The last modification date is indicated below.</p>
-    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Last updated: February 2026</p>
+    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Last updated: February 7, 2026</p>
   </div>
 </div>
 
@@ -623,6 +666,7 @@
         </select>
       </div>
 
+      <p style="font-size:.75rem;color:var(--ink-tertiary);margin:.5rem 0;line-height:1.4">Data submitted is processed to evaluate the proposed tool (legal basis: legitimate interest) and retained for 12 months. <a href="#" onclick="APP.closePage('submit');APP.openPage('privacy');return false" style="color:var(--gold);text-decoration:underline">Privacy policy</a>.</p>
       <button type="submit">Submit tool →</button>
       <p class="form-success">✓ Thank you! Your submission has been received. We'll evaluate it within 7 days.</p>
       <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Error, please try again.</p>
@@ -662,6 +706,26 @@
     <div class="search-footer"><span>↑↓ navigate</span><span>↵ open</span><span>esc close</span></div>
   </div>
 </div>
+
+<!-- COOKIE BANNER GDPR -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:var(--bg-dark,#1a1a2e);border-top:1px solid rgba(201,168,76,.3);padding:1rem 2rem;font-family:var(--font-body,'DM Sans',sans-serif);box-shadow:0 -4px 20px rgba(0,0,0,.3)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+    <div style="flex:1;min-width:280px">
+      <strong style="color:#c9a84c;font-size:.95rem">🍪 Cookies & Privacy</strong>
+      <p style="color:#b0b0c0;font-size:.85rem;margin:.3rem 0 0;line-height:1.5">
+        We use Google Analytics to understand how the site is used. No advertising cookies.
+        <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">Learn more</a>
+      </p>
+    </div>
+    <div style="display:flex;gap:.6rem;flex-shrink:0">
+      <button onclick="setCookieConsent(false)" style="padding:.5rem 1.2rem;border:1px solid rgba(255,255,255,.2);background:transparent;color:#b0b0c0;border-radius:6px;cursor:pointer;font-size:.85rem;font-family:inherit">Decline</button>
+      <button onclick="setCookieConsent(true)" style="padding:.5rem 1.2rem;border:none;background:#c9a84c;color:#1a1a2e;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem;font-family:inherit">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var c=getCookieConsent();if(!c)document.getElementById('cookieBanner').style.display='block';})();
+</script>
 
 <script src="/tools-en.js"></script>
 <script src="/app-en.js"></script>

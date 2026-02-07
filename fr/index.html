@@ -11,9 +11,14 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="manifest" href="/manifest.json">
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X4YE8TLX0E');</script>
+<!-- Google Analytics 4 — chargé uniquement après consentement cookies -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+function loadGA4(){if(window._ga4Loaded)return;window._ga4Loaded=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-X4YE8TLX0E',{anonymize_ip:true});}
+function getCookieConsent(){try{return JSON.parse(localStorage.getItem('cookie_consent'))}catch(e){return null}}
+function setCookieConsent(v){localStorage.setItem('cookie_consent',JSON.stringify({accepted:v,date:new Date().toISOString()}));if(v)loadGA4();document.getElementById('cookieBanner').style.display='none';}
+(function(){var c=getCookieConsent();if(c&&c.accepted)loadGA4();})();
+</script>
 <title>La Bible de l'IA — Encyclopédie des Outils d'Intelligence Artificielle</title>
 <meta name="description" content="La Bible de l'IA — L'encyclopédie de référence des outils d'intelligence artificielle. 465 outils analysés, comparés et notés dans 20 catégories. Trouvez l'outil IA parfait.">
 <link rel="canonical" href="https://labibledelia.com/fr/">
@@ -369,6 +374,10 @@
       <input class="newsletter-input" type="email" name="email" placeholder="votre@email.com" required>
       <button class="newsletter-btn" type="submit">S'abonner</button>
     </form>
+    <label style="display:flex;align-items:flex-start;gap:.5rem;margin:.7rem auto 0;max-width:480px;cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4">
+      <input type="checkbox" id="newsletterConsent" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0" form="newsletterForm">
+      J'accepte de recevoir la newsletter hebdomadaire et la <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">politique de confidentialité</a>. Désabonnement en 1 clic.
+    </label>
     <p class="newsletter-note">Rejoignez notre communauté · Gratuit · Désabonnement en 1 clic</p>
     <p class="newsletter-success" id="newsletterSuccess">✓ Merci ! Vous recevrez bientôt votre première newsletter.</p>
     <p class="newsletter-error" id="newsletterError" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Erreur, veuillez réessayer.</p>
@@ -452,6 +461,7 @@
         <label>Message</label>
         <textarea name="message" placeholder="Décrivez votre demande..." required></textarea>
       </div>
+      <p style="font-size:.75rem;color:var(--ink-tertiary);margin:.5rem 0;line-height:1.4">Les données transmises sont traitées pour répondre à votre demande (base légale : intérêt légitime) et conservées 12 mois. <a href="#" onclick="APP.closePage('contact');APP.openPage('privacy');return false" style="color:var(--gold);text-decoration:underline">Politique de confidentialité</a>.</p>
       <button type="submit">Envoyer le message →</button>
       <p class="form-success">✓ Message envoyé ! Nous vous répondrons sous 48h.</p>
       <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Erreur, veuillez réessayer.</p>
@@ -471,8 +481,10 @@
     <div class="info-card">
       <p><strong>La Bible de l'IA</strong> — labibledelia.com</p>
       <p>Site d'information éditoriale sur les outils d'intelligence artificielle.</p>
-      <p>Directeur de la publication : L'équipe La Bible de l'IA</p>
-      <p>Contact : <a href="#" onclick="APP.closePage('legal');APP.openPage('contact');return false">Formulaire de contact</a></p>
+      <p>Éditeur : Loïc Music, entrepreneur individuel</p>
+      <p>Adresse : Paris, France</p>
+      <p>Email : <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a></p>
+      <p>Directeur de la publication : Loïc Music</p>
     </div>
 
     <h3>Hébergement</h3>
@@ -492,6 +504,9 @@
 
     <h3>Liens externes</h3>
     <p>Ce site contient des liens vers des sites tiers. La Bible de l'IA ne saurait être tenue responsable du contenu de ces sites externes.</p>
+
+    <h3>Droit applicable</h3>
+    <p>Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
   </div>
 </div>
 
@@ -505,30 +520,58 @@
 
     <div class="info-card">
       <div class="info-card-label">En résumé</div>
-      <p>Nous utilisons Google Analytics 4 pour comprendre l'audience du site. Aucun tracker publicitaire, aucune revente de données.</p>
+      <p>Nous utilisons Google Analytics 4 (après votre consentement) pour comprendre l'audience du site. Aucun tracker publicitaire, aucune revente de données.</p>
     </div>
 
-    <h3>Données collectées</h3>
-    <p>La Bible de l'IA est un site statique. Nous collectons un minimum de données :</p>
+    <h3>Responsable du traitement</h3>
+    <p><strong>Loïc Music</strong>, entrepreneur individuel, Paris, France.<br>
+    Email : <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a></p>
+
+    <h3>Données collectées & bases légales</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0">
+      <thead><tr style="border-bottom:1px solid rgba(255,255,255,.1)">
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Donnée</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Finalité</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Base légale</th>
+        <th style="text-align:left;padding:.5rem;color:var(--ink-tertiary)">Durée</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Cookies GA4 (<code>_ga</code>, <code>_gid</code>)</td><td style="padding:.5rem">Mesure d'audience</td><td style="padding:.5rem">Consentement (Art. 6.1.a RGPD)</td><td style="padding:.5rem">13 mois max</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Email (newsletter)</td><td style="padding:.5rem">Envoi newsletter hebdomadaire</td><td style="padding:.5rem">Consentement (Art. 6.1.a RGPD)</td><td style="padding:.5rem">Jusqu'au désabonnement</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Nom, email, message (contact)</td><td style="padding:.5rem">Répondre à votre demande</td><td style="padding:.5rem">Intérêt légitime (Art. 6.1.f RGPD)</td><td style="padding:.5rem">12 mois</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.5rem">Logs serveur (IP, user-agent)</td><td style="padding:.5rem">Sécurité & diagnostic</td><td style="padding:.5rem">Intérêt légitime (Art. 6.1.f RGPD)</td><td style="padding:.5rem">12 mois</td></tr>
+        <tr><td style="padding:.5rem">localStorage (thème, favoris)</td><td style="padding:.5rem">Préférences d'affichage</td><td style="padding:.5rem">Non concerné (données locales)</td><td style="padding:.5rem">Jusqu'à suppression manuelle</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Cookies & consentement</h3>
+    <p>Ce site utilise <strong>Google Analytics 4</strong> qui ne dépose des cookies (<code>_ga</code>, <code>_gid</code>) <strong>qu'après votre consentement explicite</strong> via notre bandeau de consentement. Vous pouvez modifier votre choix à tout moment en cliquant sur <a href="#" onclick="localStorage.removeItem('cookie_consent');location.reload();return false" style="text-decoration:underline">Gérer mes cookies</a>.</p>
+    <p><strong>Aucun cookie publicitaire, marketing ou de ciblage</strong> n'est déposé. Aucune donnée n'est partagée avec des régies publicitaires.</p>
+
+    <h3>Transferts de données hors UE</h3>
+    <p>Google Analytics (Google LLC, USA) et notre hébergeur Netlify (Netlify Inc., USA) peuvent traiter des données aux États-Unis. Ces transferts sont encadrés par les <strong>Clauses Contractuelles Types (CCT)</strong> de la Commission européenne et le <strong>EU-US Data Privacy Framework</strong>.</p>
+
+    <h3>Hébergement</h3>
+    <p>Ce site est hébergé par <strong>Netlify, Inc.</strong>, 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA. Les journaux serveur peuvent contenir des données techniques de connexion (adresse IP, type de navigateur), conservées 30 jours.</p>
+
+    <h3>Vos droits (RGPD)</h3>
+    <p>Conformément au Règlement Général sur la Protection des Données (UE 2016/679), vous disposez des droits suivants :</p>
     <ul>
-      <li><strong>Mesure d'audience :</strong> Nous utilisons Google Analytics 4 (GA4) pour mesurer la fréquentation du site (pages vues, durée de session, pays d'origine). GA4 peut déposer des cookies (<code>_ga</code>, <code>_gid</code>) sur votre navigateur. Ces données sont anonymisées et utilisées uniquement à des fins statistiques. <a href="https://policies.google.com/privacy" target="_blank" rel="nofollow noopener">Politique de confidentialité Google</a>.</li>
-      <li><strong>Newsletter :</strong> Si vous vous inscrivez volontairement, nous collectons uniquement votre adresse email pour l'envoi de notre newsletter hebdomadaire.</li>
-      <li><strong>Formulaire de contact :</strong> Si vous nous contactez, nous collectons votre nom, email et message pour pouvoir vous répondre.</li>
+      <li><strong>Accès :</strong> obtenir une copie de vos données personnelles</li>
+      <li><strong>Rectification :</strong> corriger des données inexactes</li>
+      <li><strong>Suppression :</strong> demander l'effacement de vos données</li>
+      <li><strong>Portabilité :</strong> recevoir vos données dans un format structuré</li>
+      <li><strong>Opposition :</strong> vous opposer au traitement de vos données</li>
+      <li><strong>Retrait du consentement :</strong> retirer votre consentement à tout moment</li>
     </ul>
+    <p>Pour exercer ces droits : <a href="mailto:contact@labibledelia.com">contact@labibledelia.com</a> ou via notre <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">formulaire de contact</a>.</p>
 
-    <h3>Cookies</h3>
-    <p>Ce site utilise <strong>Google Analytics 4</strong> qui peut déposer des cookies de mesure d'audience (<code>_ga</code>, <code>_gid</code>). Ces cookies servent exclusivement à comprendre comment le site est utilisé. <strong>Aucun cookie publicitaire, marketing ou de ciblage</strong> n'est déposé. Aucune donnée n'est partagée avec des régies publicitaires.</p>
-    <p>Les données locales incluent également le <strong>localStorage</strong> de votre navigateur pour mémoriser vos préférences d'affichage (mode de vue, thème, favoris). Ces données restent sur votre appareil et ne sont jamais transmises.</p>
-
-    <h3>Hébergement & journalisation</h3>
-    <p>Ce site est hébergé sur un serveur VPS. Les journaux serveur peuvent contenir des données techniques de connexion (adresse IP, type de navigateur). Ces données sont conservées à des fins de sécurité et de diagnostic.</p>
-
-    <h3>Vos droits</h3>
-    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contactez-nous</a>.</p>
+    <h3>Autorité de contrôle</h3>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="nofollow noopener">www.cnil.fr</a></p>
 
     <h3>Modifications</h3>
     <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous.</p>
-    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Dernière mise à jour : Février 2026</p>
+    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary)">Dernière mise à jour : 7 février 2026</p>
   </div>
 </div>
 
@@ -623,6 +666,7 @@
         </select>
       </div>
 
+      <p style="font-size:.75rem;color:var(--ink-tertiary);margin:.5rem 0;line-height:1.4">Les données transmises sont traitées pour évaluer l'outil proposé (base légale : intérêt légitime) et conservées 12 mois. <a href="#" onclick="APP.closePage('submit');APP.openPage('privacy');return false" style="color:var(--gold);text-decoration:underline">Politique de confidentialité</a>.</p>
       <button type="submit">Soumettre l'outil →</button>
       <p class="form-success">✓ Merci ! Votre soumission a bien été reçue. Nous l'évaluerons sous 7 jours.</p>
       <p class="form-error" style="display:none;color:#e74c3c;font-family:var(--font-ui);font-size:.9rem">⚠ Erreur, veuillez réessayer.</p>
@@ -662,6 +706,26 @@
     <div class="search-footer"><span>↑↓ naviguer</span><span>↵ ouvrir</span><span>esc fermer</span></div>
   </div>
 </div>
+
+<!-- COOKIE BANNER RGPD -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:var(--bg-dark,#1a1a2e);border-top:1px solid rgba(201,168,76,.3);padding:1rem 2rem;font-family:var(--font-body,'DM Sans',sans-serif);box-shadow:0 -4px 20px rgba(0,0,0,.3)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+    <div style="flex:1;min-width:280px">
+      <strong style="color:#c9a84c;font-size:.95rem">🍪 Cookies & Confidentialité</strong>
+      <p style="color:#b0b0c0;font-size:.85rem;margin:.3rem 0 0;line-height:1.5">
+        Nous utilisons Google Analytics pour comprendre comment le site est utilisé. Aucun cookie publicitaire.
+        <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">En savoir plus</a>
+      </p>
+    </div>
+    <div style="display:flex;gap:.6rem;flex-shrink:0">
+      <button onclick="setCookieConsent(false)" style="padding:.5rem 1.2rem;border:1px solid rgba(255,255,255,.2);background:transparent;color:#b0b0c0;border-radius:6px;cursor:pointer;font-size:.85rem;font-family:inherit">Refuser</button>
+      <button onclick="setCookieConsent(true)" style="padding:.5rem 1.2rem;border:none;background:#c9a84c;color:#1a1a2e;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem;font-family:inherit">Accepter</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var c=getCookieConsent();if(!c)document.getElementById('cookieBanner').style.display='block';})();
+</script>
 
 <script src="/tools-fr.js"></script>
 <script src="/app-fr.js"></script>

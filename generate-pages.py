@@ -137,6 +137,7 @@ def get_shared_css():
   --cat-marketing:#f97316;--cat-productivite:#06b6d4;--cat-education:#14b8a6;
   --cat-automation:#3b82f6;--cat-recherche:#6d28d9;--cat-design-web:#d946ef;
   --cat-reunions-email:#0ea5e9;--cat-carriere:#84cc16;--cat-finance:#f43f5e;
+  --cat-3d:#f472b6;--cat-sante:#22c55e;--cat-juridique:#a855f7;--cat-service-client:#f43f5e;--cat-data:#0891b2;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.7;min-height:100vh}
@@ -499,11 +500,13 @@ def generate_tool_page(tool, all_tools, categories, lang):
         "review": {
             "@type": "Review",
             "reviewBody": verdict,
+            "datePublished": TODAY,
             "author": {
                 "@type": "Organization",
                 "name": "La Bible de l'IA"
             }
-        }
+        },
+        "dateModified": TODAY
     }, ensure_ascii=False, indent=2)
 
     # FAQ Schema
@@ -549,6 +552,9 @@ def generate_tool_page(tool, all_tools, categories, lang):
         ]
     }, ensure_ascii=False, indent=2)
 
+    og_site_name = "La Bible de l'IA" if lang == "fr" else "The AI Bible"
+    og_image_url = f"{DOMAIN}/og-image-{lang}.png"
+
     page_html = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -559,13 +565,19 @@ def generate_tool_page(tool, all_tools, categories, lang):
 <link rel="canonical" href="{page_url}">
 <link rel="alternate" hreflang="{lang}" href="{page_url}">
 <link rel="alternate" hreflang="{alt_lang}" href="{alt_url}">
+<link rel="alternate" hreflang="x-default" href="{DOMAIN}/fr/{tool_id}/">
 <meta property="og:title" content="{name} {L['title_suffix']}">
 <meta property="og:description" content="{html.escape(L['meta_desc'])}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{page_url}">
-<meta property="og:site_name" content="La Bible de l'IA">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="{og_site_name}">
+<meta property="og:image" content="{og_image_url}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{name} {L['title_suffix']}">
+<meta name="twitter:image" content="{og_image_url}">
+<meta name="article:modified_time" content="{TODAY}T00:00:00+01:00">
 <script type="application/ld+json">
 {schema_json}
 </script>
@@ -705,7 +717,9 @@ def _cat_rgb(cat_id):
         'video': '239,68,68', 'audio': '139,92,246', 'code': '16,185,129',
         'marketing': '249,115,22', 'productivite': '6,182,212', 'education': '20,184,166',
         'automation': '59,130,246', 'recherche': '109,40,217', 'design-web': '217,70,239',
-        'reunions-email': '14,165,233', 'carriere': '132,204,22', 'finance': '244,63,94'
+        'reunions-email': '14,165,233', 'carriere': '132,204,22', 'finance': '244,63,94',
+        '3d': '244,114,182', 'sante': '34,197,94', 'juridique': '168,85,247',
+        'service-client': '244,63,94', 'data': '8,145,178'
     }
     return colors.get(cat_id, '136,136,136')
 
@@ -762,6 +776,9 @@ def generate_category_page(cat, tools, categories, lang):
   </div>
 </a>''')
 
+    cat_og_site = "La Bible de l'IA" if lang == "fr" else "The AI Bible"
+    cat_og_image = f"{DOMAIN}/og-image-{lang}.png"
+
     page_html = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -772,10 +789,16 @@ def generate_category_page(cat, tools, categories, lang):
 <link rel="canonical" href="{page_url}">
 <link rel="alternate" hreflang="{lang}" href="{page_url}">
 <link rel="alternate" hreflang="{alt_lang}" href="{alt_url}">
+<link rel="alternate" hreflang="x-default" href="{DOMAIN}/fr/categorie/{cat_id}/">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{html.escape(meta_desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{page_url}">
+<meta property="og:site_name" content="{cat_og_site}">
+<meta property="og:image" content="{cat_og_image}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:image" content="{cat_og_image}">
 <style>{get_shared_css()}</style>
 </head>
 <body>
@@ -861,6 +884,9 @@ def generate_comparison_page(tool1, tool2, all_tools, categories, lang):
         f2 = features2[i] if i < len(features2) else "—"
         features_rows += f"<tr><td>{f1}</td><td>{f2}</td></tr>\n"
 
+    cmp_og_site = "La Bible de l'IA" if lang == "fr" else "The AI Bible"
+    cmp_og_image = f"{DOMAIN}/og-image-{lang}.png"
+
     page_html = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -871,8 +897,16 @@ def generate_comparison_page(tool1, tool2, all_tools, categories, lang):
 <link rel="canonical" href="{page_url}">
 <link rel="alternate" hreflang="{lang}" href="{page_url}">
 <link rel="alternate" hreflang="{alt_lang}" href="{alt_url}">
+<link rel="alternate" hreflang="x-default" href="{DOMAIN}/fr/comparer/{slug}/">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{html.escape(meta_desc)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{page_url}">
+<meta property="og:site_name" content="{cmp_og_site}">
+<meta property="og:image" content="{cmp_og_image}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:image" content="{cmp_og_image}">
 <style>{get_shared_css()}</style>
 </head>
 <body>

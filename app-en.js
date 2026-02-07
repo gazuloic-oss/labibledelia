@@ -431,6 +431,8 @@ const APP = {
             <button class="share-btn" onclick="APP.shareUrl('twitter','${t.id}','${t.name.replace(/'/g,"\\'")}')">𝕏 Twitter</button>
             <button class="share-btn" onclick="APP.shareUrl('linkedin','${t.id}','${t.name.replace(/'/g,"\\'")}')">in LinkedIn</button>
             <button class="share-btn" onclick="APP.shareUrl('facebook','${t.id}','${t.name.replace(/'/g,"\\'")}')">f Facebook</button>
+            <button class="share-btn" onclick="APP.shareUrl('whatsapp','${t.id}','${t.name.replace(/'/g,"\\'")}')">📱 WhatsApp</button>
+            <button class="share-btn" onclick="APP.shareUrl('telegram','${t.id}','${t.name.replace(/'/g,"\\'")}')">✈️ Telegram</button>
             <button class="share-btn" onclick="APP.copyLink('${t.id}',this)">🔗 Copy link</button>
           </div>
         </div>
@@ -682,6 +684,8 @@ const APP = {
       case 'twitter':shareLink='https://twitter.com/intent/tweet?url='+url+'&text='+text;break;
       case 'linkedin':shareLink='https://www.linkedin.com/sharing/share-offsite/?url='+url;break;
       case 'facebook':shareLink='https://www.facebook.com/sharer/sharer.php?u='+url;break;
+      case 'whatsapp':shareLink='https://wa.me/?text='+text+'%20'+url;break;
+      case 'telegram':shareLink='https://t.me/share/url?url='+url+'&text='+text;break;
     }
     if(shareLink)window.open(shareLink,'_blank','noopener,width=600,height=400');
   },
