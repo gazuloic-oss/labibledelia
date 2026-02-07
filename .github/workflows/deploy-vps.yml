@@ -28,8 +28,12 @@ jobs:
 
             SITE_DIR="/var/www/labibledelia"
 
-            # Pull latest changes
+            # Ensure git trusts this directory
+            git config --global --add safe.directory "$SITE_DIR"
+
+            # Discard any local changes and pull latest
             cd "$SITE_DIR"
+            git checkout -- .
             git pull origin main
 
             # Set correct permissions
