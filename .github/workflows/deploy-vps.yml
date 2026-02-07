@@ -26,7 +26,7 @@ jobs:
           script: |
             echo "🔄 Deploying La Bible de l'IA..."
 
-            SITE_DIR="/var/www/labibledelia.com"
+            SITE_DIR="/var/www/labibledelia"
 
             # Pull latest changes
             cd "$SITE_DIR"
