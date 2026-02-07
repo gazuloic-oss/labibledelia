@@ -374,9 +374,9 @@ function setCookieConsent(v){localStorage.setItem('cookie_consent',JSON.stringif
       <input class="newsletter-input" type="email" name="email" placeholder="votre@email.com" required>
       <button class="newsletter-btn" type="submit">S'abonner</button>
     </form>
-    <label style="display:flex;align-items:flex-start;gap:.5rem;margin:.7rem auto 0;max-width:480px;cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4">
-      <input type="checkbox" id="newsletterConsent" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0" form="newsletterForm">
-      J'accepte de recevoir la newsletter hebdomadaire et la <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">politique de confidentialité</a>. Désabonnement en 1 clic.
+    <label style="display:flex;align-items:center;gap:.4rem;margin:.7rem auto 0;max-width:600px;cursor:pointer;font-size:.75rem;color:rgba(255,255,255,.55);line-height:1;white-space:nowrap;justify-content:center">
+      <input type="checkbox" id="newsletterConsent" required style="accent-color:#c9a84c;flex-shrink:0" form="newsletterForm">
+      J'accepte de recevoir la newsletter hebdomadaire · <a href="#" onclick="APP.openPage('privacy');return false" style="color:#c9a84c;text-decoration:underline">Politique de confidentialité</a> · Désabonnement en 1 clic
     </label>
     <p class="newsletter-note">Rejoignez notre communauté · Gratuit · Désabonnement en 1 clic</p>
     <p class="newsletter-success" id="newsletterSuccess">✓ Merci ! Vous recevrez bientôt votre première newsletter.</p>
