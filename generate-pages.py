@@ -188,7 +188,7 @@ a:hover{color:var(--gold-hover)}
 .use-case-list,.pros-list,.cons-list{list-style:none;padding:0;margin:1rem 0}
 .use-case-list li,.pros-list li,.cons-list li{padding:.4rem 0 .4rem 1.5rem;position:relative;font-size:.95rem}
 .use-case-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}
-.pros-list li::before{content:"✅";position:absolute;left:0}
+.pros-list li::before{content:"[OK]";position:absolute;left:0}
 .cons-list li::before{content:"⚠️";position:absolute;left:0}
 
 .verdict-box{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;font-size:1.05rem;font-style:italic;color:var(--text-heading)}
@@ -388,14 +388,14 @@ def generate_tool_page(tool, all_tools, categories, lang):
         L = {
             'title_suffix': f"— Avis, Prix & Alternatives | La Bible de l'IA",
             'breadcrumb_home': 'Accueil',
-            'features': '✨ Fonctionnalités',
+            'features': '[*] Fonctionnalités',
             'use_cases': '🎯 Cas d\'usage',
             'pricing_title': '💰 Tarification',
             'pros_cons': '⚖️ Avantages & Inconvénients',
             'pros': 'Avantages',
             'cons': 'Inconvénients',
             'verdict': '🏆 Verdict',
-            'alternatives_title': '🔄 Alternatives',
+            'alternatives_title': '[SYNC] Alternatives',
             'info': 'ℹ️ Informations',
             'company_label': 'Entreprise',
             'launch_label': 'Lancement',
@@ -416,14 +416,14 @@ def generate_tool_page(tool, all_tools, categories, lang):
         L = {
             'title_suffix': f"— Review, Pricing & Alternatives | The AI Bible",
             'breadcrumb_home': 'Home',
-            'features': '✨ Features',
+            'features': '[*] Features',
             'use_cases': '🎯 Use Cases',
             'pricing_title': '💰 Pricing',
             'pros_cons': '⚖️ Pros & Cons',
             'pros': 'Pros',
             'cons': 'Cons',
             'verdict': '🏆 Verdict',
-            'alternatives_title': '🔄 Alternatives',
+            'alternatives_title': '[SYNC] Alternatives',
             'info': 'ℹ️ Information',
             'company_label': 'Company',
             'launch_label': 'Launched',
@@ -903,7 +903,7 @@ def generate_comparison_page(tool1, tool2, all_tools, categories, lang):
 </tbody>
 </table>
 
-<h2 class="section-title">✨ Features</h2>
+<h2 class="section-title">[*] Features</h2>
 <table class="compare-table">
 <thead><tr><th>{name1}</th><th>{name2}</th></tr></thead>
 <tbody>
@@ -1121,23 +1121,26 @@ def main():
     print("  La Bible de l'IA — Multi-page Generator")
     print("=" * 60)
 
-    fr_file = os.path.join(BASE_DIR, "fr", "index.html")
-    en_file = os.path.join(BASE_DIR, "en", "index.html")
+    # After refactoring, data is in separate JS files
+    fr_tools_file = os.path.join(BASE_DIR, "tools-fr.js")
+    en_tools_file = os.path.join(BASE_DIR, "tools-en.js")
+    fr_app_file = os.path.join(BASE_DIR, "app-fr.js")
+    en_app_file = os.path.join(BASE_DIR, "app-en.js")
 
-    # Extract data from both files
-    print("\n[*] Extracting data from FR file...")
-    fr_categories = extract_js_array(fr_file, "CATEGORIES")
-    fr_tools = extract_js_array(fr_file, "TOOLS")
+    # Extract data from separate files
+    print("\n[*] Extracting data from FR files...")
+    fr_categories = extract_js_array(fr_app_file, "CATEGORIES")
+    fr_tools = extract_js_array(fr_tools_file, "TOOLS")
     print(f"   Found {len(fr_categories)} categories, {len(fr_tools)} tools")
 
-    print("\n[*] Extracting data from EN file...")
-    en_categories = extract_js_array(en_file, "CATEGORIES")
-    en_tools = extract_js_array(en_file, "TOOLS")
+    print("\n[*] Extracting data from EN files...")
+    en_categories = extract_js_array(en_app_file, "CATEGORIES")
+    en_tools = extract_js_array(en_tools_file, "TOOLS")
     print(f"   Found {len(en_categories)} categories, {len(en_tools)} tools")
 
     # Get comparison pairs
     comparisons = get_top_comparisons(fr_tools)
-    print(f"\n🔄 {len(comparisons)} comparison pairs to generate")
+    print(f"\n[SYNC] {len(comparisons)} comparison pairs to generate")
 
     total_pages = (len(fr_tools) + len(en_tools)) + (len(fr_categories) + len(en_categories)) + (len(comparisons) * 2) + 2
     print(f"\n[*] Total pages to generate: {total_pages}")
@@ -1145,7 +1148,7 @@ def main():
     generated = 0
 
     # --- Generate FR tool pages ---
-    print("\n🇫🇷 Generating FR tool pages...")
+    print("\n[FR] Generating FR tool pages...")
     for tool in fr_tools:
         dir_path = os.path.join(BASE_DIR, "fr", tool['id'])
         os.makedirs(dir_path, exist_ok=True)
@@ -1156,7 +1159,7 @@ def main():
     print(f"   [OK] {len(fr_tools)} FR tool pages generated")
 
     # --- Generate EN tool pages ---
-    print("\n🇬🇧 Generating EN tool pages...")
+    print("\n[EN] Generating EN tool pages...")
     for tool in en_tools:
         dir_path = os.path.join(BASE_DIR, "en", tool['id'])
         os.makedirs(dir_path, exist_ok=True)
@@ -1167,7 +1170,7 @@ def main():
     print(f"   [OK] {len(en_tools)} EN tool pages generated")
 
     # --- Generate FR category pages ---
-    print("\n🇫🇷 Generating FR category pages...")
+    print("\n[FR] Generating FR category pages...")
     for cat in fr_categories:
         dir_path = os.path.join(BASE_DIR, "fr", "categorie", cat['id'])
         os.makedirs(dir_path, exist_ok=True)
@@ -1178,7 +1181,7 @@ def main():
     print(f"   [OK] {len(fr_categories)} FR category pages generated")
 
     # --- Generate EN category pages ---
-    print("\n🇬🇧 Generating EN category pages...")
+    print("\n[EN] Generating EN category pages...")
     for cat in en_categories:
         dir_path = os.path.join(BASE_DIR, "en", "categorie", cat['id'])
         os.makedirs(dir_path, exist_ok=True)
@@ -1189,7 +1192,7 @@ def main():
     print(f"   [OK] {len(en_categories)} EN category pages generated")
 
     # --- Generate comparison pages ---
-    print("\n⚔️ Generating comparison pages...")
+    print("\n[VS] Generating comparison pages...")
     fr_tool_map = {t['id']: t for t in fr_tools}
     en_tool_map = {t['id']: t for t in en_tools}
 
@@ -1214,38 +1217,38 @@ def main():
     print(f"   [OK] {len(comparisons) * 2} comparison pages generated")
 
     # --- Generate sitemap.xml ---
-    print("\n🗺️ Generating sitemap.xml...")
+    print("\n[MAP] Generating sitemap.xml...")
     sitemap = generate_sitemap(fr_tools, fr_categories, comparisons)
     with open(os.path.join(BASE_DIR, "sitemap.xml"), 'w', encoding='utf-8') as f:
         f.write(sitemap)
     print("   [OK]sitemap.xml generated")
 
     # --- Generate robots.txt ---
-    print("\n🤖 Generating robots.txt...")
+    print("\n[BOT] Generating robots.txt...")
     robots = generate_robots()
     with open(os.path.join(BASE_DIR, "robots.txt"), 'w', encoding='utf-8') as f:
         f.write(robots)
     print("   [OK]robots.txt generated")
 
     print(f"\n{'=' * 60}")
-    print(f"  🎉 DONE! {generated} pages generated")
+    print(f"  [DONE] DONE! {generated} pages generated")
     print(f"{'=' * 60}")
     print(f"\nFile structure:")
     print(f"  {BASE_DIR}/")
-    print(f"  ├── fr/")
-    print(f"  │   ├── index.html (existing homepage)")
-    print(f"  │   ├── chatgpt/index.html")
-    print(f"  │   ├── claude/index.html")
-    print(f"  │   ├── ... ({len(fr_tools)} tool pages)")
-    print(f"  │   ├── categorie/chatbots/index.html")
-    print(f"  │   ├── ... ({len(fr_categories)} category pages)")
-    print(f"  │   └── comparer/chatgpt-vs-claude/index.html")
-    print(f"  │       ... ({len(comparisons)} comparison pages)")
-    print(f"  ├── en/")
-    print(f"  │   └── (same structure)")
-    print(f"  ├── sitemap.xml")
-    print(f"  ├── robots.txt")
-    print(f"  └── netlify.toml")
+    print(f"  +-- fr/")
+    print(f"  |   +-- index.html (existing homepage)")
+    print(f"  |   +-- chatgpt/index.html")
+    print(f"  |   +-- claude/index.html")
+    print(f"  |   +-- ... ({len(fr_tools)} tool pages)")
+    print(f"  |   +-- categorie/chatbots/index.html")
+    print(f"  |   +-- ... ({len(fr_categories)} category pages)")
+    print(f"  |   +-- comparer/chatgpt-vs-claude/index.html")
+    print(f"  |       ... ({len(comparisons)} comparison pages)")
+    print(f"  +-- en/")
+    print(f"  |   +-- (same structure)")
+    print(f"  +-- sitemap.xml")
+    print(f"  +-- robots.txt")
+    print(f"  +-- netlify.toml")
 
 
 if __name__ == "__main__":

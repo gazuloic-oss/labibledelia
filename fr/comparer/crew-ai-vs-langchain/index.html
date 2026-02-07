@@ -74,7 +74,7 @@ a:hover{color:var(--gold-hover)}
 .use-case-list,.pros-list,.cons-list{list-style:none;padding:0;margin:1rem 0}
 .use-case-list li,.pros-list li,.cons-list li{padding:.4rem 0 .4rem 1.5rem;position:relative;font-size:.95rem}
 .use-case-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}
-.pros-list li::before{content:"✅";position:absolute;left:0}
+.pros-list li::before{content:"[OK]";position:absolute;left:0}
 .cons-list li::before{content:"⚠️";position:absolute;left:0}
 
 .verdict-box{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(99,102,241,.1));border:1px solid rgba(201,168,76,.25);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;font-size:1.05rem;font-style:italic;color:var(--text-heading)}
@@ -181,33 +181,33 @@ a:hover{color:var(--gold-hover)}
 </div>
 
 <div class="vs-header">
-  <div style="font-size:2.5rem;margin-bottom:1rem">👥 ⚔️ 🔗</div>
+  <div style="font-size:2.5rem;margin-bottom:1rem">👥 ⚔️ 🦜</div>
   <h1 class="vs-title">CrewAI vs LangChain</h1>
   <p class="vs-subtitle">Comparaison</p>
 </div>
 
 <table class="compare-table">
-<thead><tr><th></th><th>👥 CrewAI</th><th>🔗 LangChain</th></tr></thead>
+<thead><tr><th></th><th>👥 CrewAI</th><th>🦜 LangChain</th></tr></thead>
 <tbody>
-<tr><td>Note</td><td><span class="stars">★★★★☆</span> 4.2</td><td><span class="stars">★★★★☆</span> 4.4</td></tr>
+<tr><td>Note</td><td><span class="stars">★★★★☆</span> 4.2</td><td><span class="stars">★★★★☆</span> 4.3</td></tr>
 <tr><td>Tarification</td><td>Freemium</td><td>Gratuit</td></tr>
-<tr><td>Détail prix</td><td style="font-size:.8rem">Open-source gratuit · Enterprise : sur devis</td><td style="font-size:.8rem">Open-source gratuit · LangSmith : 39$/mois</td></tr>
+<tr><td>Détail prix</td><td style="font-size:.8rem">Open-source gratuit · Enterprise : sur devis</td><td style="font-size:.8rem">Open-source gratuit · LangSmith : freemium</td></tr>
 <tr><td>Entreprise</td><td>CrewAI</td><td>LangChain</td></tr>
 <tr><td>Lancement</td><td>2024</td><td>2022</td></tr>
 <tr><td>Plateformes</td><td>api</td><td>api</td></tr>
 </tbody>
 </table>
 
-<h2 class="section-title">✨ Features</h2>
+<h2 class="section-title">[*] Features</h2>
 <table class="compare-table">
 <thead><tr><th>CrewAI</th><th>LangChain</th></tr></thead>
 <tbody>
 <tr><td>Agents multi-rôles</td><td>Chaînes de prompts</td></tr>
 <tr><td>Collaboration entre agents</td><td>Agents autonomes</td></tr>
-<tr><td>Outils custom</td><td>RAG framework</td></tr>
-<tr><td>Mémoire partagée</td><td>LangSmith (monitoring)</td></tr>
-<tr><td>Process orchestration</td><td>LangGraph (workflows)</td></tr>
-<tr><td>Open-source</td><td>100+ intégrations</td></tr>
+<tr><td>Outils custom</td><td>RAG (Retrieval-Augmented)</td></tr>
+<tr><td>Mémoire partagée</td><td>Multi-modèles</td></tr>
+<tr><td>Process orchestration</td><td>LangSmith (monitoring)</td></tr>
+<tr><td>Open-source</td><td>LangGraph (workflows)</td></tr>
 
 </tbody>
 </table>
@@ -221,20 +221,20 @@ a:hover{color:var(--gold-hover)}
 </div>
 <div>
 <h3 style="color:var(--gold);font-size:.95rem;margin-bottom:.5rem">LangChain</h3>
-<ul class="pros-list"><li>Standard de l'industrie</li><li>Open-source</li><li>Communauté massive</li></ul>
-<ul class="cons-list"><li>Complexe pour débutants</li><li>Abstractions lourdes</li><li>Changements fréquents</li></ul>
+<ul class="pros-list"><li>Standard de l'industrie</li><li>Communauté massive</li><li>Multi-modèles</li></ul>
+<ul class="cons-list"><li>Complexe pour débutants</li><li>API-only</li><li>Abstractions parfois lourdes</li></ul>
 </div>
 </div>
 
 <h2 class="section-title">🏆 Verdict</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
 <div class="verdict-box">L'avenir des agents IA : des équipes qui collaborent. Prometteur mais encore en maturation.</div>
-<div class="verdict-box">Le framework LLM de référence. Incontournable pour les développeurs qui construisent avec l'IA.</div>
+<div class="verdict-box">Le framework qui a défini comment on construit des apps LLM. Standard de facto.</div>
 </div>
 
 <div class="cta-row" style="justify-content:center;margin-top:2rem">
   <a href="/fr/crew-ai/" class="btn-primary">👥 CrewAI</a>
-  <a href="/fr/langchain/" class="btn-primary">🔗 LangChain</a>
+  <a href="/fr/langchain/" class="btn-primary">🦜 LangChain</a>
 </div>
 
 </div>
