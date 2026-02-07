@@ -187,7 +187,7 @@ a:hover{color:var(--link-hover)}
 /* ============================================================
    ORNAMENTAL DIVIDER
    ============================================================ */
-.divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:2rem 0;color:var(--border-medium)}
+.divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.5rem 0;color:var(--border-medium)}
 .divider::before,.divider::after{content:'';flex:1;max-width:200px;height:1px;background:var(--border-light)}
 .divider svg{width:20px;height:20px;fill:var(--gold);opacity:.5}
 
