@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="La Bible de l'IA">
+<meta name="publisher" content="La Bible de l'IA">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X4YE8TLX0E');</script>
+<title>Glossaire IA &#8212; Tous les termes de l'intelligence artificielle expliqu&#233;s | La Bible de l'IA</title>
+<meta name="description" content="Glossaire complet de l'intelligence artificielle : plus de 100 d&#233;finitions claires et accessibles. De Agent IA &#224; Zero-shot learning, ma&#238;trisez le vocabulaire de l'IA.">
+<meta name="keywords" content="glossaire IA, vocabulaire intelligence artificielle, d&#233;finitions IA, termes IA, lexique IA, dictionnaire IA, LLM, deep learning, machine learning, prompt, transformer">
+<link rel="canonical" href="https://labibledelia.com/fr/glossaire/">
+<link rel="alternate" hreflang="fr" href="https://labibledelia.com/fr/glossaire/">
+<link rel="alternate" hreflang="en" href="https://labibledelia.com/en/glossary/">
+<link rel="alternate" hreflang="x-default" href="https://labibledelia.com/fr/glossaire/">
+<!-- Open Graph -->
+<meta property="og:site_name" content="La Bible de l'IA">
+<meta property="og:title" content="Glossaire IA &#8212; 100+ termes de l'intelligence artificielle expliqu&#233;s">
+<meta property="og:description" content="Plus de 100 d&#233;finitions claires et accessibles pour ma&#238;triser le vocabulaire de l'IA. De A &#224; Z, tous les termes essentiels.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://labibledelia.com/fr/glossaire/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://labibledelia.com/og-image-fr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Glossaire IA &#8212; La Bible de l'IA">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Glossaire IA &#8212; 100+ d&#233;finitions de l'intelligence artificielle">
+<meta name="twitter:description" content="Plus de 100 d&#233;finitions claires pour ma&#238;triser le vocabulaire de l'IA.">
+<meta name="twitter:image" content="https://labibledelia.com/twitter-image-fr.png">
+<meta name="twitter:image:alt" content="Glossaire IA &#8212; La Bible de l'IA">
+<!-- Schema.org DefinedTermSet -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Glossaire de l'Intelligence Artificielle",
+  "description": "Plus de 100 d\u00e9finitions claires et accessibles pour ma\u00eettriser le vocabulaire de l'IA",
+  "url": "https://labibledelia.com/fr/glossaire/",
+  "inLanguage": "fr",
+  "publisher": {
+    "@type": "Organization",
+    "name": "La Bible de l'IA",
+    "url": "https://labibledelia.com"
+  }
+}
+</script>
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://labibledelia.com/fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Glossaire IA", "item": "https://labibledelia.com/fr/glossaire/"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Lora:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Lora:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LA BIBLE DE L'IA — GLOSSAIRE — DESIGN SYSTEM
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg-page:#faf8f3;--bg-surface:#ffffff;--bg-elevated:#f5f0e8;
+  --bg-infobox:#f8f4eb;--bg-dark:#1a1a2e;--bg-dark-surface:#24243e;
+  --ink:#1a1a2e;--ink-secondary:#4a4a5a;--ink-tertiary:#7a7a8a;--ink-inverse:#faf8f3;
+  --gold:#c9a84c;--gold-light:#e4c76b;--gold-glow:rgba(201,168,76,.15);
+  --link:#2563eb;--link-hover:#1d4ed8;
+  --border-light:#e8e0d0;--border-medium:#d4c9b8;
+  --shadow-sm:0 1px 3px rgba(26,26,46,.06);--shadow-md:0 4px 12px rgba(26,26,46,.08);
+  --shadow-lg:0 12px 32px rgba(26,26,46,.12);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Lora',Georgia,serif;
+  --font-ui:'DM Sans','Helvetica Neue',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg-page);color:var(--ink);font-family:var(--font-body);line-height:1.7;overflow-x:hidden}
+
+/* Paper texture */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:256px}
+
+/* Scroll progress */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:10001;width:0;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1,h2,h3{font-family:var(--font-display);line-height:1.2}
+h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900}
+h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900}
+h3{font-size:1.3rem;font-weight:700}
+a{color:var(--link);text-decoration:none;transition:color .2s}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--gold-glow);color:var(--ink)}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4vw;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(26,26,46,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(244,241,235,.06);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.lang-switcher{display:flex;gap:.3rem;margin-right:.6rem}
+.lang-btn{background:none;border:1px solid rgba(244,241,235,.12);border-radius:4px;padding:.2rem .35rem;
+  cursor:pointer;line-height:1;transition:all .3s;text-decoration:none;display:flex;align-items:center}
+.lang-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.1)}
+.lang-btn.active{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.lang-btn img{width:22px;height:16px;border-radius:2px;display:block}
+.nav-left{display:flex;align-items:center;gap:.4rem}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo svg{width:26px;height:26px}
+.nav-logo span{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--ink-inverse)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:rgba(244,241,235,.5);font-family:var(--font-ui);font-size:.8rem;font-weight:500;
+  letter-spacing:.05em;transition:color .3s;text-decoration:none}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a.active-link{color:var(--gold)!important}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:.3rem}
+.nav-dropdown>a::after{content:'\25BE';font-size:.6rem;opacity:.5;transition:transform .3s}
+.nav-dropdown:hover>a::after{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(5px);
+  min-width:180px;background:rgba(26,26,46,.96);backdrop-filter:blur(20px);
+  border:1px solid rgba(244,241,235,.08);border-radius:10px;padding:.5rem 0;
+  opacity:0;visibility:hidden;transition:all .25s ease;z-index:1001;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:.6rem;padding:.55rem 1.2rem;
+  color:rgba(244,241,235,.5)!important;font-size:.78rem!important;transition:all .2s}
+.nav-dropdown-menu a:hover{color:var(--gold)!important;background:rgba(201,168,76,.06)}
+.nav-dropdown-menu a svg{width:14px;height:14px;opacity:.4;flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--ink-inverse);margin:4px 0;transition:all .3s}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(26,26,46,.98);
+    flex-direction:column;padding:1rem 2rem;gap:1rem;border-bottom:1px solid rgba(244,241,235,.06)}
+  .nav-links.open{display:flex}
+  .nav-hamburger{display:block}
+  .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;
+    border:none;background:transparent;padding-left:1rem}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 4vw 4rem;position:relative;overflow:hidden;
+  background:linear-gradient(170deg,#0d0d1a 0%,var(--bg-dark) 40%,#1e1e3a 100%)}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:150px;
+  background:linear-gradient(to top,var(--bg-page),transparent)}
+.hero-ornament{font-family:var(--font-display);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:1.5rem;
+  opacity:0;animation:fadeUp .8s .2s forwards}
+.hero-ornament::before,.hero-ornament::after{content:'';width:60px;height:1px;background:var(--gold);opacity:.4}
+.hero h1{color:var(--ink-inverse);max-width:850px;opacity:0;animation:fadeUp .8s .4s forwards}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-family:var(--font-body);font-size:1.1rem;color:rgba(244,241,235,.45);
+  max-width:600px;margin-top:1.2rem;font-weight:400;opacity:0;animation:fadeUp .8s .6s forwards}
+
+/* Hero search */
+.hero-search{margin-top:2.5rem;width:100%;max-width:600px;position:relative;opacity:0;animation:fadeUp .8s .8s forwards}
+.hero-search input{width:100%;padding:1rem 1.5rem 1rem 3.2rem;border:2px solid rgba(244,241,235,.1);
+  border-radius:12px;background:rgba(244,241,235,.06);color:var(--ink-inverse);font-family:var(--font-ui);
+  font-size:1rem;outline:none;transition:all .3s}
+.hero-search input::placeholder{color:rgba(244,241,235,.3)}
+.hero-search input:focus{border-color:var(--gold);background:rgba(244,241,235,.1);box-shadow:0 0 30px rgba(201,168,76,.15)}
+.hero-search-icon{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;stroke:rgba(244,241,235,.3);fill:none;stroke-width:2}
+
+/* Hero stats */
+.hero-stats{display:flex;gap:3rem;margin-top:2.5rem;opacity:0;animation:fadeUp .8s 1s forwards}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)}
+.hero-stat .lbl{font-size:.7rem;font-family:var(--font-mono);color:rgba(244,241,235,.3);
+  text-transform:uppercase;letter-spacing:.15em;margin-top:.2rem}
+@media(max-width:600px){.hero-stats{gap:1.5rem;flex-wrap:wrap}.hero-stat .num{font-size:1.5rem}}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb{padding:1.5rem 4vw .5rem;font-family:var(--font-ui);font-size:.82rem;color:var(--ink-tertiary)}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 .4rem;opacity:.5}
+
+/* ============================================================
+   MAIN SECTION
+   ============================================================ */
+.section{padding:2rem 4vw 4rem;position:relative;max-width:1400px;margin:0 auto}
+
+/* ============================================================
+   CATEGORY FILTER PILLS
+   ============================================================ */
+.filter-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+.filter-pill{font-family:var(--font-ui);font-size:.78rem;font-weight:600;padding:.45rem 1rem;
+  border-radius:20px;border:1px solid var(--border-light);background:var(--bg-surface);
+  color:var(--ink-secondary);cursor:pointer;transition:all .3s}
+.filter-pill:hover{border-color:var(--gold);color:var(--gold)}
+.filter-pill.active{background:var(--gold);color:var(--bg-dark);border-color:var(--gold)}
+
+/* ============================================================
+   ALPHABET NAVIGATION BAR
+   ============================================================ */
+.alpha-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin:0 auto 1.5rem;max-width:900px;
+  position:sticky;top:60px;z-index:100;background:var(--bg-page);padding:.8rem 0;
+  border-bottom:1px solid var(--border-light)}
+.alpha-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;font-size:.9rem;
+  border:1px solid var(--border-light);border-radius:var(--radius-sm);
+  background:var(--bg-surface);color:var(--ink);cursor:pointer;transition:all .3s;text-decoration:none}
+.alpha-btn:hover:not(.disabled){border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
+.alpha-btn.active{background:var(--gold);color:var(--bg-dark);border-color:var(--gold)}
+.alpha-btn.disabled{opacity:.2;cursor:default;pointer-events:none}
+
+/* ============================================================
+   RESULTS COUNTER
+   ============================================================ */
+.results-counter{font-family:var(--font-mono);font-size:.82rem;color:var(--ink-tertiary);
+  text-align:center;margin-bottom:1.5rem}
+
+/* ============================================================
+   LETTER SECTIONS
+   ============================================================ */
+.letter-section{margin-bottom:2.5rem;scroll-margin-top:120px}
+.letter-heading{font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:var(--gold);
+  padding-bottom:.5rem;border-bottom:2px solid var(--gold-glow);margin-bottom:1.2rem;
+  display:flex;align-items:baseline;gap:.8rem}
+.letter-heading .count{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-tertiary);font-weight:400}
+
+/* ============================================================
+   TERM CARDS (GLASS-MORPHISM)
+   ============================================================ */
+.terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:1024px){.terms-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.terms-grid{grid-template-columns:1fr}}
+
+.term-card{background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);
+  padding:1.4rem;transition:all .4s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.term-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:opacity .3s}
+.term-card:hover{box-shadow:var(--shadow-lg);border-color:var(--gold);transform:translateY(-3px)}
+.term-card:hover::before{opacity:1}
+.term-card-tag{display:inline-block;font-family:var(--font-mono);font-size:.65rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;margin-bottom:.8rem}
+.tag-concept{background:rgba(59,130,246,.1);color:#3b82f6}
+.tag-technique{background:rgba(16,185,129,.1);color:#10b981}
+.tag-modele{background:rgba(168,85,247,.1);color:#a855f7}
+.tag-outil{background:rgba(245,158,11,.1);color:#f59e0b}
+.term-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--ink);
+  margin-bottom:.5rem;line-height:1.3}
+.term-card-def{font-family:var(--font-ui);font-size:.85rem;color:var(--ink-secondary);line-height:1.6;
+  margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.term-card-link{font-family:var(--font-ui);font-size:.8rem;font-weight:600;color:var(--gold);
+  text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;transition:gap .3s}
+.term-card-link:hover{gap:.6rem;color:var(--gold-light)}
+
+/* ============================================================
+   NO RESULTS
+   ============================================================ */
+.no-results{text-align:center;padding:4rem 2rem;display:none}
+.no-results-icon{font-size:3rem;margin-bottom:1rem}
+.no-results h3{font-family:var(--font-display);margin-bottom:.5rem}
+.no-results p{font-family:var(--font-ui);font-size:.9rem;color:var(--ink-secondary)}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section{background:linear-gradient(170deg,#0d0d1a 0%,var(--bg-dark) 40%,#1e1e3a 100%);
+  padding:5rem 4vw;text-align:center}
+.cta-section h2{color:var(--ink-inverse);margin-bottom:1rem}
+.cta-section p{color:rgba(244,241,235,.45);font-family:var(--font-ui);max-width:500px;margin:0 auto 2rem;font-size:1rem}
+.cta-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--bg-dark);
+  font-family:var(--font-ui);font-size:1rem;font-weight:700;padding:.9rem 2rem;border-radius:var(--radius-md);
+  text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,.3);color:var(--bg-dark)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--bg-dark);color:var(--ink-inverse);padding:3rem 4vw 1.5rem;text-align:center}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:1.5rem}
+.footer-links a{color:rgba(244,241,235,.4);font-family:var(--font-ui);font-size:.8rem;text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-family:var(--font-mono);font-size:.7rem;color:rgba(244,241,235,.2)}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;
+  background:var(--gold);color:var(--bg-dark);border:none;cursor:pointer;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+  transition:all .3s;z-index:500;box-shadow:var(--shadow-md)}
+.back-to-top.visible{opacity:1;visibility:visible}
+.back-to-top:hover{background:var(--gold-light);transform:translateY(-3px)}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav" style="transform:translateY(0)">
+  <div class="nav-left">
+    <div class="lang-switcher">
+      <a class="lang-btn active" href="/fr/glossaire/" title="Fran&#231;ais"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Crect width='300' height='600' fill='%23002395'/%3E%3Crect x='300' width='300' height='600' fill='%23fff'/%3E%3Crect x='600' width='300' height='600' fill='%23ED2939'/%3E%3C/svg%3E" alt="FR"></a>
+      <a class="lang-btn" href="/en/glossary/" title="English"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='s'%3E%3Cpath d='M0 0v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath id='t'%3E%3Cpath d='M30 15h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Cpath d='M0 0v30h60V0z' fill='%23012169'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E" alt="EN"></a>
+    </div>
+    <a class="nav-logo" href="/fr/">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="50,4 96,50 50,96 4,50" stroke="#c9a84c" stroke-width="3" fill="none"/><polygon points="50,14 86,50 50,86 14,50" stroke="#c9a84c" stroke-width="1.5" fill="none"/><text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="400" fill="#c9a84c" letter-spacing="2">BI</text></svg>
+      <span>La Bible de l'IA</span>
+    </a>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <div class="nav-dropdown">
+      <a href="/fr/#catalogue">Explorer &#9662;</a>
+      <div class="nav-dropdown-menu">
+        <a href="/fr/#catalogue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Catalogue</a>
+        <a href="/fr/#categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Cat&#233;gories</a>
+        <a href="/fr/#tendances"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Tendances</a>
+      </div>
+    </div>
+    <a href="/fr/quiz/" style="color:var(--gold)">Quiz IA</a>
+    <a href="/fr/packs/">Packs</a>
+    <a href="/fr/radar/">Actualit&#233;s</a>
+    <a href="/fr/#blog">Blog</a>
+    <a href="/fr/glossaire/" class="active-link">Glossaire</a>
+  </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-ornament">Glossaire IA</div>
+  <h1>Glossaire IA &mdash; Tous les termes de l'<em>intelligence artificielle</em> expliqu&#233;s</h1>
+  <p class="hero-sub">Plus de 100 d&#233;finitions claires et accessibles pour ma&#238;triser le vocabulaire de l'IA</p>
+  <div class="hero-search">
+    <svg class="hero-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" id="heroSearch" placeholder="Rechercher un terme IA..." autocomplete="off" aria-label="Rechercher un terme">
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">100+</div><div class="lbl">D&#233;finitions</div></div>
+    <div class="hero-stat"><div class="num">A-Z</div><div class="lbl">Alphab&#233;tique</div></div>
+    <div class="hero-stat"><div class="num">2026</div><div class="lbl">Mis &#224; jour</div></div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="/fr/">Accueil</a><span>&#8250;</span><strong>Glossaire IA</strong>
+</div>
+
+<!-- Main Content -->
+<main class="section">
+
+  <!-- Category Filters -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-pill active" data-cat="all">Tous</button>
+    <button class="filter-pill" data-cat="concept">Concept</button>
+    <button class="filter-pill" data-cat="technique">Technique</button>
+    <button class="filter-pill" data-cat="modele">Mod&#232;le</button>
+    <button class="filter-pill" data-cat="outil">Outil</button>
+  </div>
+
+  <!-- Alphabet Navigation Bar -->
+  <div class="alpha-bar" id="alphaBar"></div>
+
+  <!-- Results counter -->
+  <div class="results-counter" id="resultsCounter"></div>
+
+  <!-- Terms container (rendered by JS) -->
+  <div id="termsContainer"></div>
+
+  <!-- No results message -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">&#128269;</div>
+    <h3>Aucun terme trouv&#233;</h3>
+    <p>Essayez un autre mot-cl&#233; ou modifiez les filtres de cat&#233;gorie.</p>
+  </div>
+
+</main>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Explorez les 400+ outils IA</h2>
+  <p>D&#233;couvrez notre encyclop&#233;die compl&#232;te d'outils d'intelligence artificielle, analys&#233;s et compar&#233;s.</p>
+  <a href="/fr/" class="cta-btn">Explorer le catalogue &#8594;</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/quiz/">Quiz IA</a>
+    <a href="/fr/packs/">Packs</a>
+    <a href="/fr/radar/">Actualit&#233;s</a>
+    <a href="/fr/glossaire/">Glossaire</a>
+    <a href="/en/glossary/">English</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 La Bible de l'IA &mdash; Tous droits r&#233;serv&#233;s.</div>
+</footer>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8593;</button>
+
+<script>
+// ============================================================
+// GLOSSAIRE IA — DATA (100+ TERMS)
+// ============================================================
+const GLOSSARY=[
+{slug:"agent-ia",term:"Agent IA",termEn:"AI Agent",def:"Programme autonome utilisant l\u2019IA pour accomplir des t\u00e2ches complexes sans intervention humaine constante.",defEn:"Autonomous program using AI to accomplish complex tasks without constant human intervention.",cat:"concept",letter:"A"},
+{slug:"algorithme",term:"Algorithme",termEn:"Algorithm",def:"Ensemble de r\u00e8gles et d\u2019instructions structur\u00e9es pour r\u00e9soudre un probl\u00e8me ou accomplir une t\u00e2che.",defEn:"A set of structured rules and instructions to solve a problem or accomplish a task.",cat:"concept",letter:"A"},
+{slug:"apprentissage-automatique",term:"Apprentissage automatique",termEn:"Machine Learning",def:"Capacit\u00e9 d\u2019un syst\u00e8me informatique \u00e0 apprendre et s\u2019am\u00e9liorer \u00e0 partir de donn\u00e9es sans \u00eatre explicitement programm\u00e9.",defEn:"Ability of a computer system to learn and improve from data without being explicitly programmed.",cat:"concept",letter:"A"},
+{slug:"apprentissage-par-renforcement",term:"Apprentissage par renforcement",termEn:"Reinforcement Learning",def:"M\u00e9thode d\u2019apprentissage o\u00f9 un agent apprend par essais, erreurs et r\u00e9compenses dans un environnement.",defEn:"Learning method where an agent learns through trial, error, and rewards in an environment.",cat:"technique",letter:"A"},
+{slug:"apprentissage-profond",term:"Apprentissage profond",termEn:"Deep Learning",def:"Sous-domaine du machine learning utilisant des r\u00e9seaux de neurones \u00e0 plusieurs couches pour traiter des donn\u00e9es complexes.",defEn:"Subfield of machine learning using multi-layered neural networks to process complex data.",cat:"technique",letter:"A"},
+{slug:"attention-mecanisme",term:"Attention (m\u00e9canisme d\u2019)",termEn:"Attention Mechanism",def:"Technique permettant au mod\u00e8le de se concentrer sur les parties les plus pertinentes des donn\u00e9es d\u2019entr\u00e9e.",defEn:"Technique allowing a model to focus on the most relevant parts of input data.",cat:"technique",letter:"A"},
+{slug:"auto-encodeur",term:"Auto-encodeur",termEn:"Autoencoder",def:"R\u00e9seau de neurones qui apprend \u00e0 compresser puis reconstruire des donn\u00e9es, utile pour la r\u00e9duction de dimensionnalit\u00e9.",defEn:"Neural network that learns to compress then reconstruct data, useful for dimensionality reduction.",cat:"modele",letter:"A"},
+{slug:"api",term:"API (Interface de programmation)",termEn:"API (Application Programming Interface)",def:"Interface permettant \u00e0 des logiciels de communiquer entre eux et d\u2019\u00e9changer des donn\u00e9es de mani\u00e8re standardis\u00e9e.",defEn:"Interface allowing software applications to communicate and exchange data in a standardized way.",cat:"outil",letter:"A"},
+{slug:"biais-algorithmique",term:"Biais algorithmique",termEn:"Algorithmic Bias",def:"Pr\u00e9jug\u00e9 syst\u00e9matique dans les r\u00e9sultats d\u2019un algorithme, souvent li\u00e9 aux donn\u00e9es d\u2019entra\u00eenement biais\u00e9es.",defEn:"Systematic prejudice in an algorithm's results, often linked to biased training data.",cat:"concept",letter:"B"},
+{slug:"big-data",term:"Big Data",termEn:"Big Data",def:"Ensemble de donn\u00e9es massif n\u00e9cessitant des outils et m\u00e9thodes sp\u00e9ciaux pour \u00eatre stock\u00e9, trait\u00e9 et analys\u00e9.",defEn:"Massive data sets requiring special tools and methods for storage, processing, and analysis.",cat:"concept",letter:"B"},
+{slug:"benchmark",term:"Benchmark",termEn:"Benchmark",def:"Test standardis\u00e9 permettant d\u2019\u00e9valuer et comparer les performances de diff\u00e9rents mod\u00e8les ou syst\u00e8mes IA.",defEn:"Standardized test for evaluating and comparing the performance of different AI models or systems.",cat:"technique",letter:"B"},
+{slug:"chatbot",term:"Chatbot",termEn:"Chatbot",def:"Programme informatique simulant une conversation humaine par texte ou voix, souvent aliment\u00e9 par l\u2019IA.",defEn:"Computer program simulating human conversation via text or voice, often powered by AI.",cat:"outil",letter:"C"},
+{slug:"classification",term:"Classification",termEn:"Classification",def:"T\u00e2che d\u2019apprentissage automatique consistant \u00e0 attribuer une cat\u00e9gorie pr\u00e9d\u00e9termin\u00e9e \u00e0 une donn\u00e9e d\u2019entr\u00e9e.",defEn:"Machine learning task of assigning a predetermined category to an input data point.",cat:"technique",letter:"C"},
+{slug:"cloud-computing",term:"Cloud computing",termEn:"Cloud Computing",def:"Utilisation de serveurs distants h\u00e9berg\u00e9s sur internet pour le stockage, le traitement et le calcul de donn\u00e9es.",defEn:"Using remote internet-hosted servers for data storage, processing, and computation.",cat:"concept",letter:"C"},
+{slug:"clustering",term:"Clustering",termEn:"Clustering",def:"M\u00e9thode de regroupement automatique de donn\u00e9es similaires en groupes distincts sans \u00e9tiquettes pr\u00e9d\u00e9finies.",defEn:"Method of automatically grouping similar data into distinct clusters without predefined labels.",cat:"technique",letter:"C"},
+{slug:"computer-vision",term:"Computer Vision",termEn:"Computer Vision",def:"Domaine de l\u2019IA permettant aux machines d\u2019interpr\u00e9ter, comprendre et analyser les images et les vid\u00e9os.",defEn:"AI field enabling machines to interpret, understand, and analyze images and videos.",cat:"concept",letter:"C"},
+{slug:"contexte-fenetre",term:"Contexte (fen\u00eatre de)",termEn:"Context Window",def:"Quantit\u00e9 maximale de texte (en tokens) qu\u2019un mod\u00e8le de langage peut traiter en une seule interaction.",defEn:"Maximum amount of text (in tokens) a language model can process in a single interaction.",cat:"concept",letter:"C"},
+{slug:"corpus",term:"Corpus",termEn:"Corpus",def:"Ensemble structur\u00e9 de textes utilis\u00e9 pour entra\u00eener ou \u00e9valuer un mod\u00e8le de traitement du langage naturel.",defEn:"Structured collection of texts used to train or evaluate a natural language processing model.",cat:"concept",letter:"C"},
+{slug:"cuda",term:"CUDA",termEn:"CUDA",def:"Plateforme de calcul parall\u00e8le d\u00e9velopp\u00e9e par NVIDIA, largement utilis\u00e9e pour acc\u00e9l\u00e9rer l\u2019entra\u00eenement des mod\u00e8les IA.",defEn:"Parallel computing platform developed by NVIDIA, widely used to accelerate AI model training.",cat:"outil",letter:"C"},
+{slug:"data-augmentation",term:"Data augmentation",termEn:"Data Augmentation",def:"Technique pour augmenter artificiellement la taille d\u2019un jeu de donn\u00e9es en cr\u00e9ant des variations des donn\u00e9es existantes.",defEn:"Technique to artificially increase dataset size by creating variations of existing data.",cat:"technique",letter:"D"},
+{slug:"dataset",term:"Dataset / Jeu de donn\u00e9es",termEn:"Dataset",def:"Collection structur\u00e9e de donn\u00e9es utilis\u00e9e pour l\u2019entra\u00eenement, la validation ou le test de mod\u00e8les d\u2019IA.",defEn:"Structured collection of data used for training, validating, or testing AI models.",cat:"concept",letter:"D"},
+{slug:"diffusion-modele",term:"Diffusion (mod\u00e8le de)",termEn:"Diffusion Model",def:"Mod\u00e8le g\u00e9n\u00e9ratif qui cr\u00e9e des images en apprenant \u00e0 inverser progressivement un processus de bruit al\u00e9atoire.",defEn:"Generative model that creates images by learning to progressively reverse a random noise process.",cat:"modele",letter:"D"},
+{slug:"distillation",term:"Distillation",termEn:"Distillation",def:"Technique pour transf\u00e9rer les connaissances d\u2019un grand mod\u00e8le vers un mod\u00e8le plus petit et plus rapide.",defEn:"Technique to transfer knowledge from a large model to a smaller, faster model.",cat:"technique",letter:"D"},
+{slug:"embedding",term:"Embedding",termEn:"Embedding",def:"Repr\u00e9sentation num\u00e9rique d\u2019un mot, phrase ou concept sous forme de vecteur dans un espace multidimensionnel.",defEn:"Numerical representation of a word, phrase, or concept as a vector in a multidimensional space.",cat:"technique",letter:"E"},
+{slug:"entrainement",term:"Entra\u00eenement",termEn:"Training",def:"Processus par lequel un mod\u00e8le IA apprend \u00e0 partir de donn\u00e9es en ajustant ses param\u00e8tres internes.",defEn:"Process by which an AI model learns from data by adjusting its internal parameters.",cat:"concept",letter:"E"},
+{slug:"epoch",term:"Epoch",termEn:"Epoch",def:"Un passage complet \u00e0 travers l\u2019ensemble des donn\u00e9es d\u2019entra\u00eenement lors de l\u2019apprentissage d\u2019un mod\u00e8le.",defEn:"One complete pass through the entire training dataset during model learning.",cat:"concept",letter:"E"},
+{slug:"ethique-ia",term:"\u00c9thique de l\u2019IA",termEn:"AI Ethics",def:"Ensemble des principes moraux et r\u00e8gles guidant le d\u00e9veloppement responsable de l\u2019intelligence artificielle.",defEn:"Set of moral principles and rules guiding the responsible development of artificial intelligence.",cat:"concept",letter:"E"},
+{slug:"few-shot-learning",term:"Few-shot learning",termEn:"Few-shot Learning",def:"Capacit\u00e9 d\u2019un mod\u00e8le IA \u00e0 apprendre et g\u00e9n\u00e9raliser \u00e0 partir de tr\u00e8s peu d\u2019exemples d\u2019entra\u00eenement.",defEn:"AI model\u2019s ability to learn and generalize from very few training examples.",cat:"technique",letter:"F"},
+{slug:"fine-tuning",term:"Fine-tuning",termEn:"Fine-tuning",def:"Processus d\u2019ajustement d\u2019un mod\u00e8le pr\u00e9-entra\u00een\u00e9 sur de nouvelles donn\u00e9es pour l\u2019adapter \u00e0 une t\u00e2che sp\u00e9cifique.",defEn:"Process of adjusting a pre-trained model on new data to adapt it to a specific task.",cat:"technique",letter:"F"},
+{slug:"foundation-model",term:"Foundation Model / Mod\u00e8le de fondation",termEn:"Foundation Model",def:"Grand mod\u00e8le pr\u00e9-entra\u00een\u00e9 sur des donn\u00e9es massives, servant de base \u00e0 de nombreuses applications diverses.",defEn:"Large model pre-trained on massive data, serving as a base for many diverse applications.",cat:"modele",letter:"F"},
+{slug:"framework",term:"Framework",termEn:"Framework",def:"Environnement de d\u00e9veloppement fournissant des outils, biblioth\u00e8ques et conventions pour cr\u00e9er des applications IA.",defEn:"Development environment providing tools, libraries, and conventions for building AI applications.",cat:"outil",letter:"F"},
+{slug:"gan",term:"GAN (Generative Adversarial Network)",termEn:"GAN (Generative Adversarial Network)",def:"Architecture de r\u00e9seau g\u00e9n\u00e9ratif bas\u00e9e sur la comp\u00e9tition entre un g\u00e9n\u00e9rateur et un discriminateur.",defEn:"Generative network architecture based on competition between a generator and a discriminator.",cat:"modele",letter:"G"},
+{slug:"generation-augmentee-rag",term:"G\u00e9n\u00e9ration augment\u00e9e (RAG)",termEn:"RAG (Retrieval-Augmented Generation)",def:"Technique combinant la recherche de documents pertinents et la g\u00e9n\u00e9ration de texte pour des r\u00e9ponses plus pr\u00e9cises.",defEn:"Technique combining relevant document retrieval and text generation for more accurate responses.",cat:"technique",letter:"G"},
+{slug:"gpu",term:"GPU (Graphics Processing Unit)",termEn:"GPU (Graphics Processing Unit)",def:"Processeur graphique massivement parall\u00e8le, essentiel pour acc\u00e9l\u00e9rer les calculs d\u2019entra\u00eenement et d\u2019inf\u00e9rence IA.",defEn:"Massively parallel graphics processor, essential for accelerating AI training and inference computations.",cat:"outil",letter:"G"},
+{slug:"gradient-descent",term:"Gradient descent / Descente de gradient",termEn:"Gradient Descent",def:"M\u00e9thode d\u2019optimisation it\u00e9rative utilis\u00e9e pour minimiser la fonction d\u2019erreur lors de l\u2019entra\u00eenement d\u2019un mod\u00e8le.",defEn:"Iterative optimization method used to minimize the error function during model training.",cat:"technique",letter:"G"},
+{slug:"grounding",term:"Grounding",termEn:"Grounding",def:"Technique ancrant les r\u00e9ponses g\u00e9n\u00e9r\u00e9es par l\u2019IA dans des faits v\u00e9rifiables et des sources fiables.",defEn:"Technique anchoring AI-generated responses in verifiable facts and reliable sources.",cat:"technique",letter:"G"},
+{slug:"hallucination",term:"Hallucination",termEn:"Hallucination",def:"R\u00e9ponse fausse ou invent\u00e9e par un mod\u00e8le IA, pr\u00e9sent\u00e9e avec assurance comme si elle \u00e9tait factuelle.",defEn:"False or fabricated response by an AI model, presented confidently as if it were factual.",cat:"concept",letter:"H"},
+{slug:"hugging-face",term:"Hugging Face",termEn:"Hugging Face",def:"Plateforme collaborative open source de r\u00e9f\u00e9rence pour partager, d\u00e9couvrir et utiliser des mod\u00e8les et datasets IA.",defEn:"Leading open-source collaborative platform for sharing, discovering, and using AI models and datasets.",cat:"outil",letter:"H"},
+{slug:"hyperparametre",term:"Hyperparam\u00e8tre",termEn:"Hyperparameter",def:"Param\u00e8tre de configuration d\u00e9fini avant l\u2019entra\u00eenement qui contr\u00f4le le processus d\u2019apprentissage du mod\u00e8le.",defEn:"Configuration parameter set before training that controls the model\u2019s learning process.",cat:"concept",letter:"H"},
+{slug:"agi",term:"IA g\u00e9n\u00e9rale (AGI)",termEn:"Artificial General Intelligence (AGI)",def:"Intelligence artificielle hypoth\u00e9tique capable de comprendre et r\u00e9aliser n\u2019importe quelle t\u00e2che intellectuelle humaine.",defEn:"Hypothetical AI capable of understanding and performing any intellectual task a human can.",cat:"concept",letter:"I"},
+{slug:"ia-generative",term:"IA g\u00e9n\u00e9rative",termEn:"Generative AI",def:"Syst\u00e8mes d\u2019intelligence artificielle capables de cr\u00e9er du contenu nouveau : texte, images, audio, vid\u00e9o, code.",defEn:"AI systems capable of creating new content: text, images, audio, video, code.",cat:"concept",letter:"I"},
+{slug:"inference",term:"Inf\u00e9rence",termEn:"Inference",def:"Phase d\u2019utilisation d\u2019un mod\u00e8le IA d\u00e9j\u00e0 entra\u00een\u00e9 pour analyser de nouvelles donn\u00e9es et produire des pr\u00e9dictions.",defEn:"Phase of using an already trained AI model to analyze new data and produce predictions.",cat:"concept",letter:"I"},
+{slug:"intelligence-artificielle",term:"Intelligence artificielle",termEn:"Artificial Intelligence",def:"Science et ensemble de techniques visant \u00e0 cr\u00e9er des syst\u00e8mes capables de simuler l\u2019intelligence humaine.",defEn:"Science and set of techniques aimed at creating systems capable of simulating human intelligence.",cat:"concept",letter:"I"},
+{slug:"jailbreak",term:"Jailbreak",termEn:"Jailbreak",def:"Technique pour contourner les restrictions et garde-fous de s\u00e9curit\u00e9 impl\u00e9ment\u00e9s dans un mod\u00e8le IA.",defEn:"Technique to bypass safety restrictions and guardrails implemented in an AI model.",cat:"concept",letter:"J"},
+{slug:"knowledge-graph",term:"Knowledge Graph / Graphe de connaissances",termEn:"Knowledge Graph",def:"Structure de donn\u00e9es repr\u00e9sentant les entit\u00e9s et les relations entre elles sous forme de graphe.",defEn:"Data structure representing entities and relationships between them in graph form.",cat:"concept",letter:"K"},
+{slug:"langchain",term:"LangChain",termEn:"LangChain",def:"Framework open source populaire pour d\u00e9velopper des applications bas\u00e9es sur les grands mod\u00e8les de langage (LLM).",defEn:"Popular open-source framework for developing applications based on large language models (LLMs).",cat:"outil",letter:"L"},
+{slug:"llm",term:"Large Language Model (LLM)",termEn:"Large Language Model (LLM)",def:"Grand mod\u00e8le de langage entra\u00een\u00e9 sur d\u2019immenses corpus de texte, capable de comprendre et g\u00e9n\u00e9rer du langage naturel.",defEn:"Large language model trained on massive text corpora, capable of understanding and generating natural language.",cat:"modele",letter:"L"},
+{slug:"latent-space",term:"Latent space / Espace latent",termEn:"Latent Space",def:"Repr\u00e9sentation math\u00e9matique compress\u00e9e et abstraite des donn\u00e9es dans un mod\u00e8le g\u00e9n\u00e9ratif.",defEn:"Compressed and abstract mathematical representation of data within a generative model.",cat:"concept",letter:"L"},
+{slug:"lora",term:"LoRA (Low-Rank Adaptation)",termEn:"LoRA (Low-Rank Adaptation)",def:"Technique efficace de fine-tuning permettant d\u2019adapter un grand mod\u00e8le en ne modifiant qu\u2019une fraction des param\u00e8tres.",defEn:"Efficient fine-tuning technique allowing adaptation of a large model by modifying only a fraction of parameters.",cat:"technique",letter:"L"},
+{slug:"machine-learning",term:"Machine Learning (ML)",termEn:"Machine Learning (ML)",def:"Branche de l\u2019IA permettant aux syst\u00e8mes d\u2019apprendre automatiquement \u00e0 partir de donn\u00e9es sans programmation explicite.",defEn:"Branch of AI enabling systems to automatically learn from data without explicit programming.",cat:"concept",letter:"M"},
+{slug:"modele-de-langage",term:"Mod\u00e8le de langage",termEn:"Language Model",def:"Syst\u00e8me statistique qui mod\u00e9lise la probabilit\u00e9 des s\u00e9quences de mots pour pr\u00e9dire le mot suivant.",defEn:"Statistical system modeling the probability of word sequences to predict the next word.",cat:"modele",letter:"M"},
+{slug:"modele-multimodal",term:"Mod\u00e8le multimodal",termEn:"Multimodal Model",def:"Mod\u00e8le IA capable de traiter et g\u00e9n\u00e9rer plusieurs types de donn\u00e9es simultan\u00e9ment : texte, image, audio, vid\u00e9o.",defEn:"AI model capable of processing and generating multiple data types simultaneously: text, image, audio, video.",cat:"modele",letter:"M"},
+{slug:"modele-open-source",term:"Mod\u00e8le open source",termEn:"Open Source Model",def:"Mod\u00e8le d\u2019IA dont le code source et les poids sont publiquement accessibles et r\u00e9utilisables.",defEn:"AI model whose source code and weights are publicly accessible and reusable.",cat:"modele",letter:"M"},
+{slug:"moe",term:"MoE (Mixture of Experts)",termEn:"MoE (Mixture of Experts)",def:"Architecture o\u00f9 diff\u00e9rents sous-r\u00e9seaux sp\u00e9cialis\u00e9s (experts) sont activ\u00e9s s\u00e9lectivement selon la t\u00e2che.",defEn:"Architecture where different specialized sub-networks (experts) are selectively activated based on the task.",cat:"modele",letter:"M"},
+{slug:"nlp",term:"NLP (Natural Language Processing)",termEn:"NLP (Natural Language Processing)",def:"Domaine de l\u2019IA d\u00e9di\u00e9 au traitement, \u00e0 la compr\u00e9hension et \u00e0 la g\u00e9n\u00e9ration du langage humain par les machines.",defEn:"AI field dedicated to processing, understanding, and generating human language by machines.",cat:"concept",letter:"N"},
+{slug:"neural-network",term:"Neural network / R\u00e9seau de neurones",termEn:"Neural Network",def:"Syst\u00e8me informatique inspir\u00e9 de la structure du cerveau humain, compos\u00e9 de neurones artificiels interconnect\u00e9s.",defEn:"Computer system inspired by the human brain structure, composed of interconnected artificial neurons.",cat:"modele",letter:"N"},
+{slug:"no-code",term:"No-code / Low-code",termEn:"No-code / Low-code",def:"Outils et plateformes permettant de cr\u00e9er des applications sans ou avec tr\u00e8s peu de programmation manuelle.",defEn:"Tools and platforms enabling application creation without or with very little manual coding.",cat:"outil",letter:"N"},
+{slug:"ollama",term:"Ollama",termEn:"Ollama",def:"Outil open source permettant d\u2019ex\u00e9cuter facilement des grands mod\u00e8les de langage en local sur votre ordinateur.",defEn:"Open-source tool for easily running large language models locally on your computer.",cat:"outil",letter:"O"},
+{slug:"open-source",term:"Open source",termEn:"Open Source",def:"Logiciel dont le code source est librement accessible, modifiable et redistribuable par tous.",defEn:"Software whose source code is freely accessible, modifiable, and redistributable by anyone.",cat:"concept",letter:"O"},
+{slug:"overfitting",term:"Overfitting / Surapprentissage",termEn:"Overfitting",def:"Ph\u00e9nom\u00e8ne o\u00f9 un mod\u00e8le m\u00e9morise les donn\u00e9es d\u2019entra\u00eenement au lieu d\u2019apprendre des patterns g\u00e9n\u00e9ralisables.",defEn:"Phenomenon where a model memorizes training data instead of learning generalizable patterns.",cat:"concept",letter:"O"},
+{slug:"parametre",term:"Param\u00e8tre",termEn:"Parameter",def:"Valeur num\u00e9rique interne apprise et ajust\u00e9e par le mod\u00e8le pendant le processus d\u2019entra\u00eenement.",defEn:"Internal numerical value learned and adjusted by the model during the training process.",cat:"concept",letter:"P"},
+{slug:"pipeline",term:"Pipeline",termEn:"Pipeline",def:"S\u00e9quence d\u2019\u00e9tapes de traitement automatis\u00e9es, o\u00f9 la sortie de chaque \u00e9tape alimente la suivante.",defEn:"Sequence of automated processing steps, where each step\u2019s output feeds the next.",cat:"concept",letter:"P"},
+{slug:"prompt",term:"Prompt",termEn:"Prompt",def:"Instruction, question ou texte donn\u00e9 \u00e0 un mod\u00e8le IA pour guider et obtenir la r\u00e9ponse souhait\u00e9e.",defEn:"Instruction, question, or text given to an AI model to guide and obtain the desired response.",cat:"concept",letter:"P"},
+{slug:"prompt-engineering",term:"Prompt engineering",termEn:"Prompt Engineering",def:"Art et science de formuler des prompts optimaux pour obtenir les meilleurs r\u00e9sultats d\u2019un mod\u00e8le IA.",defEn:"Art and science of crafting optimal prompts to get the best results from an AI model.",cat:"technique",letter:"P"},
+{slug:"quantization",term:"Quantization / Quantification",termEn:"Quantization",def:"Technique de compression d\u2019un mod\u00e8le en r\u00e9duisant la pr\u00e9cision num\u00e9rique de ses poids pour acc\u00e9l\u00e9rer l\u2019inf\u00e9rence.",defEn:"Model compression technique reducing the numerical precision of weights to speed up inference.",cat:"technique",letter:"Q"},
+{slug:"query",term:"Query / Requ\u00eate",termEn:"Query",def:"Question, commande ou demande soumise \u00e0 un syst\u00e8me IA ou \u00e0 une base de donn\u00e9es pour obtenir des r\u00e9sultats.",defEn:"Question, command, or request submitted to an AI system or database to obtain results.",cat:"concept",letter:"Q"},
+{slug:"rag",term:"RAG (Retrieval-Augmented Generation)",termEn:"RAG (Retrieval-Augmented Generation)",def:"Technique combinant recherche d\u2019information dans des documents et g\u00e9n\u00e9ration de texte par un LLM.",defEn:"Technique combining information retrieval from documents and text generation by an LLM.",cat:"technique",letter:"R"},
+{slug:"cnn",term:"R\u00e9seau de neurones convolutif (CNN)",termEn:"Convolutional Neural Network (CNN)",def:"Architecture de r\u00e9seau de neurones sp\u00e9cialis\u00e9e dans le traitement et la reconnaissance d\u2019images.",defEn:"Neural network architecture specialized in image processing and recognition.",cat:"modele",letter:"R"},
+{slug:"rnn",term:"R\u00e9seau de neurones r\u00e9current (RNN)",termEn:"Recurrent Neural Network (RNN)",def:"Architecture de r\u00e9seau traitant les donn\u00e9es s\u00e9quentielles en conservant une m\u00e9moire des \u00e9tapes pr\u00e9c\u00e9dentes.",defEn:"Network architecture processing sequential data while maintaining memory of previous steps.",cat:"modele",letter:"R"},
+{slug:"rlhf",term:"RLHF (Reinforcement Learning from Human Feedback)",termEn:"RLHF",def:"M\u00e9thode d\u2019entra\u00eenement o\u00f9 les pr\u00e9f\u00e9rences humaines guident l\u2019am\u00e9lioration du comportement d\u2019un mod\u00e8le IA.",defEn:"Training method where human preferences guide the improvement of an AI model\u2019s behavior.",cat:"technique",letter:"R"},
+{slug:"saas",term:"SaaS (Software as a Service)",termEn:"SaaS (Software as a Service)",def:"Mod\u00e8le de distribution o\u00f9 un logiciel est accessible via internet sur abonnement, sans installation locale.",defEn:"Distribution model where software is accessible via the internet on subscription, without local installation.",cat:"concept",letter:"S"},
+{slug:"scaling-laws",term:"Scaling laws / Lois de mise \u00e0 l\u2019\u00e9chelle",termEn:"Scaling Laws",def:"R\u00e8gles empiriques pr\u00e9disant comment les performances d\u2019un mod\u00e8le s\u2019am\u00e9liorent selon sa taille et ses donn\u00e9es.",defEn:"Empirical rules predicting how model performance improves with size and data.",cat:"concept",letter:"S"},
+{slug:"semantic-search",term:"Semantic search / Recherche s\u00e9mantique",termEn:"Semantic Search",def:"M\u00e9thode de recherche qui comprend le sens et l\u2019intention derri\u00e8re une requ\u00eate, au-del\u00e0 des simples mots-cl\u00e9s.",defEn:"Search method that understands meaning and intent behind a query, beyond simple keywords.",cat:"technique",letter:"S"},
+{slug:"synthese-vocale",term:"Synth\u00e8se vocale",termEn:"Text-to-Speech (TTS)",def:"Technologie de conversion automatique de texte \u00e9crit en parole vocale naturelle et expressive.",defEn:"Technology for automatic conversion of written text into natural, expressive speech.",cat:"technique",letter:"S"},
+{slug:"systeme-recommandation",term:"Syst\u00e8me de recommandation",termEn:"Recommendation System",def:"Algorithme analysant les pr\u00e9f\u00e9rences et comportements pour sugg\u00e9rer du contenu pertinent \u00e0 l\u2019utilisateur.",defEn:"Algorithm analyzing preferences and behavior to suggest relevant content to the user.",cat:"technique",letter:"S"},
+{slug:"temperature",term:"Temp\u00e9rature",termEn:"Temperature",def:"Param\u00e8tre contr\u00f4lant le degr\u00e9 de cr\u00e9ativit\u00e9 et d\u2019al\u00e9atoire dans les r\u00e9ponses g\u00e9n\u00e9r\u00e9es par un LLM.",defEn:"Parameter controlling the degree of creativity and randomness in responses generated by an LLM.",cat:"concept",letter:"T"},
+{slug:"token",term:"Token",termEn:"Token",def:"Unit\u00e9 \u00e9l\u00e9mentaire de texte (mot, sous-mot ou caract\u00e8re) trait\u00e9e par un mod\u00e8le de langage.",defEn:"Elementary text unit (word, subword, or character) processed by a language model.",cat:"concept",letter:"T"},
+{slug:"transformer",term:"Transformer",termEn:"Transformer",def:"Architecture de r\u00e9seau de neurones r\u00e9volutionnaire bas\u00e9e sur l\u2019attention, \u00e0 la base de tous les LLM modernes.",defEn:"Revolutionary neural network architecture based on attention, underlying all modern LLMs.",cat:"modele",letter:"T"},
+{slug:"transfer-learning",term:"Transfer learning / Apprentissage par transfert",termEn:"Transfer Learning",def:"Technique de r\u00e9utilisation d\u2019un mod\u00e8le entra\u00een\u00e9 sur une t\u00e2che pour l\u2019adapter \u00e0 une nouvelle t\u00e2che diff\u00e9rente.",defEn:"Technique of reusing a model trained on one task to adapt it to a different new task.",cat:"technique",letter:"T"},
+{slug:"turing-test",term:"Turing (test de)",termEn:"Turing Test",def:"Test conceptuel \u00e9valuant si une machine peut converser de mani\u00e8re indiscernable d\u2019un \u00eatre humain.",defEn:"Conceptual test evaluating whether a machine can converse indistinguishably from a human being.",cat:"concept",letter:"T"},
+{slug:"vectorisation",term:"Vectorisation",termEn:"Vectorization",def:"Processus de conversion de donn\u00e9es (texte, images) en repr\u00e9sentations num\u00e9riques sous forme de vecteurs.",defEn:"Process of converting data (text, images) into numerical representations as vectors.",cat:"technique",letter:"V"},
+{slug:"vector-database",term:"Vector database / Base de donn\u00e9es vectorielle",termEn:"Vector Database",def:"Base de donn\u00e9es sp\u00e9cialis\u00e9e dans le stockage et la recherche rapide de vecteurs d\u2019embeddings.",defEn:"Database specialized in storing and quickly searching embedding vectors.",cat:"outil",letter:"V"},
+{slug:"vision-par-ordinateur",term:"Vision par ordinateur",termEn:"Computer Vision",def:"Domaine de l\u2019IA permettant aux machines d\u2019analyser et comprendre le contenu visuel des images et vid\u00e9os.",defEn:"AI field enabling machines to analyze and understand visual content in images and videos.",cat:"concept",letter:"V"},
+{slug:"weights",term:"Weights / Poids",termEn:"Weights",def:"Valeurs num\u00e9riques ajust\u00e9es pendant l\u2019entra\u00eenement qui d\u00e9terminent le comportement d\u2019un r\u00e9seau de neurones.",defEn:"Numerical values adjusted during training that determine a neural network\u2019s behavior.",cat:"concept",letter:"W"},
+{slug:"whisper",term:"Whisper",termEn:"Whisper",def:"Mod\u00e8le open source de reconnaissance vocale d\u00e9velopp\u00e9 par OpenAI, capable de transcrire et traduire la parole.",defEn:"Open-source speech recognition model by OpenAI, capable of transcribing and translating speech.",cat:"outil",letter:"W"},
+{slug:"zero-shot-learning",term:"Zero-shot learning",termEn:"Zero-shot Learning",def:"Capacit\u00e9 d\u2019un mod\u00e8le IA \u00e0 r\u00e9aliser correctement une t\u00e2che sans aucun exemple pr\u00e9alable sp\u00e9cifique.",defEn:"AI model\u2019s ability to correctly perform a task without any prior specific examples.",cat:"technique",letter:"Z"}
+];
+
+// ============================================================
+// APPLICATION LOGIC
+// ============================================================
+(function(){
+  'use strict';
+  var LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  var ACTIVE_LETTERS=[...new Set(GLOSSARY.map(function(t){return t.letter}))];
+  var catLabels={concept:'Concept',technique:'Technique',modele:'Mod\u00e8le',outil:'Outil'};
+  var catClasses={concept:'tag-concept',technique:'tag-technique',modele:'tag-modele',outil:'tag-outil'};
+  var currentFilter='all';
+  var currentSearch='';
+
+  // Build alphabet bar
+  var alphaBar=document.getElementById('alphaBar');
+  LETTERS.forEach(function(l){
+    var btn=document.createElement('a');
+    btn.className='alpha-btn'+(ACTIVE_LETTERS.includes(l)?'':' disabled');
+    btn.textContent=l;
+    btn.href='#letter-'+l;
+    btn.addEventListener('click',function(e){
+      if(!ACTIVE_LETTERS.includes(l)){e.preventDefault();return;}
+      document.querySelectorAll('.alpha-btn').forEach(function(b){b.classList.remove('active')});
+      btn.classList.add('active');
+    });
+    alphaBar.appendChild(btn);
+  });
+
+  // Filter pills
+  document.querySelectorAll('.filter-pill').forEach(function(pill){
+    pill.addEventListener('click',function(){
+      document.querySelectorAll('.filter-pill').forEach(function(p){p.classList.remove('active')});
+      pill.classList.add('active');
+      currentFilter=pill.dataset.cat;
+      render();
+    });
+  });
+
+  // Search input
+  var searchInput=document.getElementById('heroSearch');
+  searchInput.addEventListener('input',function(e){
+    currentSearch=e.target.value.toLowerCase().trim();
+    render();
+  });
+
+  function getFilteredTerms(){
+    return GLOSSARY.filter(function(t){
+      var matchCat=currentFilter==='all'||t.cat===currentFilter;
+      var q=currentSearch;
+      var matchSearch=!q||
+        t.term.toLowerCase().includes(q)||
+        t.termEn.toLowerCase().includes(q)||
+        t.def.toLowerCase().includes(q)||
+        t.slug.includes(q);
+      return matchCat&&matchSearch;
+    });
+  }
+
+  function render(){
+    var filtered=getFilteredTerms();
+    var container=document.getElementById('termsContainer');
+    var counter=document.getElementById('resultsCounter');
+    var noResults=document.getElementById('noResults');
+
+    if(filtered.length===0){
+      container.innerHTML='';
+      counter.textContent='';
+      noResults.style.display='block';
+      return;
+    }
+    noResults.style.display='none';
+    counter.textContent=filtered.length+' terme'+(filtered.length>1?'s':'')+' trouv\u00e9'+(filtered.length>1?'s':'');
+
+    // Group by letter
+    var grouped={};
+    filtered.forEach(function(t){
+      if(!grouped[t.letter])grouped[t.letter]=[];
+      grouped[t.letter].push(t);
+    });
+
+    var html='';
+    LETTERS.forEach(function(l){
+      if(!grouped[l])return;
+      html+='<div class="letter-section" id="letter-'+l+'">';
+      html+='<div class="letter-heading">'+l+' <span class="count">('+grouped[l].length+')</span></div>';
+      html+='<div class="terms-grid">';
+      grouped[l].forEach(function(t){
+        html+='<div class="term-card">';
+        html+='<div class="term-card-tag '+catClasses[t.cat]+'">'+catLabels[t.cat]+'</div>';
+        html+='<div class="term-card-title">'+t.term+'</div>';
+        html+='<div class="term-card-def">'+t.def+'</div>';
+        html+='<a class="term-card-link" href="/fr/glossaire/'+t.slug+'/">Lire la d\u00e9finition compl\u00e8te \u2192</a>';
+        html+='</div>';
+      });
+      html+='</div></div>';
+    });
+    container.innerHTML=html;
+
+    // Update alpha bar
+    document.querySelectorAll('.alpha-btn').forEach(function(btn){
+      var l=btn.textContent;
+      if(ACTIVE_LETTERS.includes(l)){
+        if(grouped[l]){btn.classList.remove('disabled')}
+        else{btn.classList.add('disabled')}
+      }
+    });
+  }
+
+  render();
+
+  // Scroll progress bar
+  window.addEventListener('scroll',function(){
+    var prog=document.getElementById('scrollProgress');
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0)prog.style.width=(window.scrollY/h*100)+'%';
+
+    var btt=document.getElementById('backToTop');
+    if(window.scrollY>600)btt.classList.add('visible');
+    else btt.classList.remove('visible');
+  });
+
+  // Back to top
+  document.getElementById('backToTop').addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // Hamburger menu
+  document.getElementById('navHamburger').addEventListener('click',function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>

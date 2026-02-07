@@ -64,7 +64,10 @@
   "url": "https://labibledelia.com",
   "logo": "https://labibledelia.com/og-image-fr.png",
   "description": "L'encyclopédie de référence des outils d'intelligence artificielle",
-  "sameAs": []
+  "sameAs": [
+    "https://github.com/gazuloic-oss/labibledelia",
+    "https://www.producthunt.com/posts/la-bible-de-l-ia"
+  ]
 }
 </script>
 <!-- Schema.org ItemList (for rich results) -->
@@ -901,16 +904,16 @@ a:hover{color:var(--link-hover)}
     <a href="/fr/packs/">Packs</a>
     <a href="/fr/radar/">Actualités</a>
     <a href="#blog" onclick="APP.scrollTo('blog')">Blog</a>
-    <a href="#" onclick="APP.openComparator();return false" title="Comparer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span class="nav-compare-badge" id="navCompareBadge">0</span></a>
-    <button class="nav-search-btn" onclick="APP.openSearch()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <a href="#" onclick="APP.openComparator();return false" title="Comparer" aria-label="Ouvrir le comparateur d'outils IA"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span class="nav-compare-badge" id="navCompareBadge" aria-live="polite">0</span></a>
+    <button class="nav-search-btn" onclick="APP.openSearch()" aria-label="Rechercher un outil IA">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
       <kbd>⌘K</kbd>
     </button>
-    <a href="#" onclick="APP.showFavorites();return false" title="Favoris">❤️<span class="nav-fav-count" id="navFavCount" style="display:none">0</span></a>
-    <button class="theme-toggle" id="themeToggle" onclick="APP.toggleTheme()">🌙</button>
-    <a href="#newsletter" class="nav-cta">Newsletter</a>
+    <a href="#" onclick="APP.showFavorites();return false" title="Favoris" aria-label="Voir mes outils favoris">❤️<span class="nav-fav-count" id="navFavCount" style="display:none" aria-live="polite">0</span></a>
+    <button class="theme-toggle" id="themeToggle" onclick="APP.toggleTheme()" aria-label="Changer le thème clair/sombre">🌙</button>
+    <a href="#newsletter" class="nav-cta" aria-label="S'inscrire à la newsletter">Newsletter</a>
   </div>
-  <button class="nav-hamburger" onclick="this.classList.toggle('active')">
+  <button class="nav-hamburger" onclick="this.classList.toggle('active')" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -1204,7 +1207,7 @@ a:hover{color:var(--link-hover)}
     <h3>Hébergement</h3>
     <p>Ce site est hébergé par <strong>Netlify, Inc.</strong><br>
     44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
-    Site web : <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a></p>
+    Site web : <a href="https://www.netlify.com" target="_blank" rel="nofollow noopener">netlify.com</a></p>
 
     <h3>Propriété intellectuelle</h3>
     <p>L'ensemble du contenu de ce site (textes, analyses, notes, design) est protégé par le droit d'auteur. Les logos, noms et marques des outils présentés sont la propriété de leurs détenteurs respectifs.</p>
@@ -1246,7 +1249,7 @@ a:hover{color:var(--link-hover)}
     <p>Les seules données locales utilisées sont le <strong>localStorage</strong> de votre navigateur pour mémoriser vos préférences d'affichage (mode de vue, filtres). Ces données restent sur votre appareil et ne sont jamais transmises.</p>
 
     <h3>Hébergement & journalisation</h3>
-    <p>Notre hébergeur (Netlify) peut collecter des données techniques de connexion (adresse IP, type de navigateur) dans le cadre de ses journaux serveur. Ces données sont traitées selon la <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">politique de confidentialité de Netlify</a>.</p>
+    <p>Notre hébergeur (Netlify) peut collecter des données techniques de connexion (adresse IP, type de navigateur) dans le cadre de ses journaux serveur. Ces données sont traitées selon la <a href="https://www.netlify.com/privacy/" target="_blank" rel="nofollow noopener">politique de confidentialité de Netlify</a>.</p>
 
     <h3>Vos droits</h3>
     <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, <a href="#" onclick="APP.closePage('privacy');APP.openPage('contact');return false">contactez-nous</a>.</p>
@@ -2239,7 +2242,7 @@ const APP = {
           <div class="infobox-row"><span class="infobox-key">Note</span><span class="infobox-val" style="color:var(--star-filled)">${this.stars(t.rating)} ${t.rating}/5</span></div>
           <div class="infobox-row"><span class="infobox-key">Catégorie</span><span class="infobox-val" style="color:${cat?cat.color:''}">${cat?cat.name:''}</span></div>
           <div class="infobox-row"><span class="infobox-key">Plateformes</span><div class="infobox-platforms">${t.platforms.map(p=>'<span class="infobox-platform">'+p+'</span>').join('')}</div></div>
-          <a class="infobox-cta" href="${t.url}" target="_blank" rel="noopener">Visiter ${t.name} →</a>
+          <a class="infobox-cta" href="${t.url}" target="_blank" rel="nofollow noopener">Visiter ${t.name} →</a>
           <button class="infobox-compare-btn" onclick="APP.toggleCompare('${t.id}');APP.closeTool()">${this.state.compareList.includes(t.id)?'✓ Dans le comparateur':'+ Ajouter au comparateur'}</button>
         </aside>
       </div>`;

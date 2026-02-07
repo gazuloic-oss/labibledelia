@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Glossary: 120+ Artificial Intelligence Definitions | La Bible de l'IA</title>
+    <meta name="description" content="The most comprehensive AI glossary on the web. Over 120 clearly defined terms covering Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Ethics and more.">
+    <meta name="keywords" content="AI glossary, artificial intelligence definitions, machine learning terms, deep learning vocabulary, NLP glossary, AI dictionary">
+    <meta name="author" content="La Bible de l'IA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://labibledelai.com/en/glossary/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Glossary: 120+ Artificial Intelligence Definitions">
+    <meta property="og:description" content="The most comprehensive AI glossary on the web. Over 120 clearly defined terms from Alignment to Zero-shot Learning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://labibledelai.com/en/glossary/">
+    <meta property="og:site_name" content="La Bible de l'IA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Glossary: 120+ AI Definitions">
+    <meta name="twitter:description" content="Over 120 clearly defined AI terms. Your encyclopedic reference for Artificial Intelligence.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4YE8TLX0E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X4YE8TLX0E');
+    </script>
+
+    <!-- Schema.org DefinedTermSet -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "name": "Artificial Intelligence Glossary",
+        "description": "A comprehensive glossary of over 120 terms related to Artificial Intelligence, Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Ethics and Infrastructure.",
+        "url": "https://labibledelai.com/en/glossary/",
+        "inLanguage": "en",
+        "publisher": {
+            "@type": "Organization",
+            "name": "La Bible de l'IA",
+            "url": "https://labibledelai.com"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://labibledelai.com/en/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://labibledelai.com/en/glossary/"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --parchment: #faf8f3;
+            --ink: #1a1a2e;
+            --gold: #c9a84c;
+            --gold-light: #e8d99a;
+            --gold-dark: #a8893a;
+            --link: #2563eb;
+            --link-hover: #1d4ed8;
+            --bg-card: #ffffff;
+            --bg-section: #f5f3ee;
+            --border: #e5e2d9;
+            --text-muted: #6b7280;
+            --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.06);
+            --shadow-md: 0 4px 16px rgba(26, 26, 46, 0.08);
+            --shadow-lg: 0 8px 32px rgba(26, 26, 46, 0.12);
+            --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.15);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Lora', Georgia, serif;
+            --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Category colors */
+            --cat-fundamentals: #6366f1;
+            --cat-ml: #2563eb;
+            --cat-dl: #7c3aed;
+            --cat-nlp: #059669;
+            --cat-cv: #dc2626;
+            --cat-genai: #c9a84c;
+            --cat-ethics: #0891b2;
+            --cat-infra: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--parchment);
+            color: var(--ink);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--link-hover);
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 243, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.3s ease;
+        }
+        .site-nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a,
+        .nav-dropdown-trigger {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink);
+            padding: 0.5rem 0.9rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .nav-links a:hover,
+        .nav-dropdown-trigger:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-dark);
+        }
+        .nav-links a.active {
+            background: var(--gold);
+            color: #fff;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--ink);
+        }
+        .nav-dropdown-menu a:hover {
+            background: var(--bg-section);
+        }
+
+        .nav-cta {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--gold);
+            color: #fff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+        .nav-cta:hover {
+            background: var(--gold-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .nav-mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           BREADCRUMB
+           ============================================ */
+        .breadcrumb {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem 0;
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a {
+            color: var(--text-muted);
+        }
+        .breadcrumb a:hover {
+            color: var(--gold-dark);
+        }
+        .breadcrumb .sep {
+            margin: 0 0.4rem;
+            opacity: 0.5;
+        }
+        .breadcrumb .current {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.06));
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            line-height: 1.2;
+        }
+        .hero-stat-label {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============================================
+           SEARCH BAR
+           ============================================ */
+        .search-container {
+            max-width: 680px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            font-family: var(--font-ui);
+            font-size: 1.05rem;
+            padding: 1rem 1.5rem 1rem 3.2rem;
+            border: 2px solid var(--border);
+            border-radius: 60px;
+            background: var(--bg-card);
+            color: var(--ink);
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .search-box:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.12), var(--shadow-md);
+        }
+        .search-box::placeholder {
+            color: #9ca3af;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-section);
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+        .search-clear:hover {
+            background: var(--border);
+            color: var(--ink);
+        }
+        .search-clear.visible {
+            display: flex;
+        }
+
+        .search-counter {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .search-counter strong {
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           A-Z NAVIGATION
+           ============================================ */
+        .az-nav-wrapper {
+            max-width: 1280px;
+            margin: 0 auto 1rem;
+            padding: 0 2rem;
+            position: sticky;
+            top: 68px;
+            z-index: 100;
+        }
+
+        .az-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.3rem;
+            background: var(--bg-card);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .az-nav a {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+        .az-nav a:hover {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--gold-dark);
+        }
+        .az-nav a.active-letter {
+            background: var(--gold);
+            color: #fff;
+        }
+        .az-nav a.disabled {
+            color: #d1d5db;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* ============================================
+           CATEGORY FILTERS
+           ============================================ */
+        .filters-wrapper {
+            max-width: 1280px;
+            margin: 0 auto 2.5rem;
+            padding: 0 2rem;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.45rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 50px;
+            background: var(--bg-card);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .filter-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold-dark);
+        }
+        .filter-btn.active {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.05));
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+        .filter-btn .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           GLOSSARY CONTENT
+           ============================================ */
+        .glossary-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .letter-section {
+            margin-bottom: 3rem;
+        }
+
+        .letter-heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-top: 0.5rem;
+        }
+
+        .letter-char {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1), rgba(201, 168, 76, 0.04));
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            flex-shrink: 0;
+        }
+
+        .letter-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--border), transparent);
+        }
+
+        .letter-count {
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg-section);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            flex-shrink: 0;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1rem;
+        }
+
+        .term-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.4rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .term-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .term-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .term-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .term-card:hover::before {
+            opacity: 1;
+        }
+        .term-card[data-category="Fundamentals"]::before { background: var(--cat-fundamentals); }
+        .term-card[data-category="Machine Learning"]::before { background: var(--cat-ml); }
+        .term-card[data-category="Deep Learning"]::before { background: var(--cat-dl); }
+        .term-card[data-category="NLP"]::before { background: var(--cat-nlp); }
+        .term-card[data-category="Computer Vision"]::before { background: var(--cat-cv); }
+        .term-card[data-category="Generative AI"]::before { background: var(--cat-genai); }
+        .term-card[data-category="Ethics"]::before { background: var(--cat-ethics); }
+        .term-card[data-category="Infrastructure"]::before { background: var(--cat-infra); }
+
+        .term-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .term-name {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+        .term-name a {
+            color: var(--ink);
+        }
+        .term-name a:hover {
+            color: var(--gold-dark);
+        }
+
+        .term-badge {
+            font-family: var(--font-ui);
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 50px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.02em;
+        }
+        .badge-fundamentals { background: rgba(99, 102, 241, 0.1); color: var(--cat-fundamentals); }
+        .badge-ml { background: rgba(37, 99, 235, 0.1); color: var(--cat-ml); }
+        .badge-dl { background: rgba(124, 58, 237, 0.1); color: var(--cat-dl); }
+        .badge-nlp { background: rgba(5, 150, 105, 0.1); color: var(--cat-nlp); }
+        .badge-cv { background: rgba(220, 38, 38, 0.1); color: var(--cat-cv); }
+        .badge-genai { background: rgba(201, 168, 76, 0.12); color: var(--gold-dark); }
+        .badge-ethics { background: rgba(8, 145, 178, 0.1); color: var(--cat-ethics); }
+        .badge-infra { background: rgba(100, 116, 139, 0.1); color: var(--cat-infra); }
+
+        .term-definition {
+            font-family: var(--font-body);
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+
+        .term-link {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--link);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: gap 0.2s ease;
+        }
+        .term-link:hover {
+            gap: 0.5rem;
+        }
+        .term-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+        }
+        .no-results.visible {
+            display: block;
+        }
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.4;
+        }
+        .no-results h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+        }
+        .no-results p {
+            font-family: var(--font-ui);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .site-footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .footer-brand span {
+            color: var(--gold);
+        }
+        .footer-desc {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-heading {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-links a {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copy {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .footer-legal a {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .footer-legal a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           BACK TO TOP
+           ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-gold);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 500;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-mobile-toggle {
+                display: block;
+            }
+            .nav-dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .az-nav a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.78rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a href="/en/" class="nav-logo">La Bible <span>de l'IA</span></a>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-trigger">
+                        Explore
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="/en/what-is-ai/">What is AI?</a>
+                        <a href="/en/history-of-ai/">History of AI</a>
+                        <a href="/en/ai-tools/">AI Tools</a>
+                        <a href="/en/ai-use-cases/">Use Cases</a>
+                    </div>
+                </li>
+                <li><a href="/en/quiz/">AI Quiz</a></li>
+                <li><a href="/en/packs/">Packs</a></li>
+                <li><a href="/en/news/">News</a></li>
+                <li><a href="/en/blog/">Blog</a></li>
+                <li><a href="/en/glossary/" class="active">Glossary</a></li>
+            </ul>
+
+            <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== BREADCRUMB ========== -->
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/en/">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Glossary</span>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Encyclopedic Reference
+        </div>
+        <h1>Artificial Intelligence <span class="gold">Glossary</span></h1>
+        <p class="hero-subtitle">
+            Your definitive reference for understanding AI. Over 120 terms clearly defined, from foundational concepts to cutting-edge techniques.
+        </p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number" id="termCountDisplay">120+</span>
+                <span class="hero-stat-label">Terms Defined</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">8</span>
+                <span class="hero-stat-label">Categories</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">A&ndash;Z</span>
+                <span class="hero-stat-label">Full Coverage</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEARCH ========== -->
+    <div class="search-container">
+        <span class="search-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </span>
+        <input type="text" class="search-box" id="searchBox" placeholder="Search terms... e.g. Transformer, GPT, Neural Network" autocomplete="off">
+        <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
+    </div>
+    <div class="search-counter" id="searchCounter">
+        Showing <strong id="visibleCount">120</strong> of <strong id="totalCount">120</strong> terms
+    </div>
+
+    <!-- ========== A-Z NAVIGATION ========== -->
+    <div class="az-nav-wrapper">
+        <div class="az-nav" id="azNav"></div>
+    </div>
+
+    <!-- ========== CATEGORY FILTERS ========== -->
+    <div class="filters-wrapper">
+        <div class="filters" id="categoryFilters">
+            <button class="filter-btn active" data-category="all">All Categories</button>
+            <button class="filter-btn" data-category="Fundamentals">
+                <span class="dot" style="background:var(--cat-fundamentals)"></span>Fundamentals
+            </button>
+            <button class="filter-btn" data-category="Machine Learning">
+                <span class="dot" style="background:var(--cat-ml)"></span>Machine Learning
+            </button>
+            <button class="filter-btn" data-category="Deep Learning">
+                <span class="dot" style="background:var(--cat-dl)"></span>Deep Learning
+            </button>
+            <button class="filter-btn" data-category="NLP">
+                <span class="dot" style="background:var(--cat-nlp)"></span>NLP
+            </button>
+            <button class="filter-btn" data-category="Computer Vision">
+                <span class="dot" style="background:var(--cat-cv)"></span>Computer Vision
+            </button>
+            <button class="filter-btn" data-category="Generative AI">
+                <span class="dot" style="background:var(--cat-genai)"></span>Generative AI
+            </button>
+            <button class="filter-btn" data-category="Ethics">
+                <span class="dot" style="background:var(--cat-ethics)"></span>Ethics
+            </button>
+            <button class="filter-btn" data-category="Infrastructure">
+                <span class="dot" style="background:var(--cat-infra)"></span>Infrastructure
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== GLOSSARY TERMS ========== -->
+    <main class="glossary-content" id="glossaryContent">
+        <!-- Terms injected by JS -->
+    </main>
+
+    <!-- ========== NO RESULTS ========== -->
+    <div class="no-results" id="noResults">
+        <div class="no-results-icon">&#128269;</div>
+        <h3>No terms found</h3>
+        <p>Try adjusting your search query or clearing the filters.</p>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">La Bible <span>de l'IA</span></div>
+                    <p class="footer-desc">The most comprehensive AI encyclopedia. Learn, understand and master Artificial Intelligence with expert-curated content.</p>
+                </div>
+                <div>
+                    <div class="footer-heading">Explore</div>
+                    <ul class="footer-links">
+                        <li><a href="/en/what-is-ai/">What is AI?</a></li>
+                        <li><a href="/en/history-of-ai/">History of AI</a></li>
+                        <li><a href="/en/ai-tools/">AI Tools</a></li>
+                        <li><a href="/en/glossary/">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Learn</div>
+                    <ul class="footer-links">
+                        <li><a href="/en/quiz/">AI Quiz</a></li>
+                        <li><a href="/en/packs/">Packs</a></li>
+                        <li><a href="/en/blog/">Blog</a></li>
+                        <li><a href="/en/news/">News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">About</div>
+                    <ul class="footer-links">
+                        <li><a href="/en/about/">About Us</a></li>
+                        <li><a href="/en/contact/">Contact</a></li>
+                        <li><a href="/en/contribute/">Contribute</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2025 La Bible de l'IA. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="/en/privacy/">Privacy</a>
+                    <a href="/en/terms/">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ==================================================
+           GLOSSARY DATA — 120+ terms
+           ================================================== */
+        const glossaryTerms = [
+            // ---- A ----
+            { term: "AI Agent", slug: "ai-agent", category: "Fundamentals", definition: "An autonomous software entity that perceives its environment, makes decisions, and takes actions to achieve specific goals without continuous human intervention." },
+            { term: "Algorithm", slug: "algorithm", category: "Fundamentals", definition: "A finite set of well-defined instructions or rules designed to solve a specific problem or perform a computation, forming the backbone of all AI systems." },
+            { term: "Alignment", slug: "alignment", category: "Ethics", definition: "The challenge of ensuring that AI systems act in accordance with human values, intentions, and ethical principles, particularly as models become more powerful." },
+            { term: "API", slug: "api", category: "Infrastructure", definition: "Application Programming Interface \u2014 a set of protocols enabling software applications to communicate, widely used to integrate AI models into products and services." },
+            { term: "Attention Mechanism", slug: "attention-mechanism", category: "Deep Learning", definition: "A neural network component that learns to focus on the most relevant parts of input data, enabling models like Transformers to capture long-range dependencies." },
+            { term: "Autoencoder", slug: "autoencoder", category: "Deep Learning", definition: "A neural network trained to compress input data into a compact latent representation and then reconstruct it, used for dimensionality reduction and anomaly detection." },
+            { term: "Autonomous AI", slug: "autonomous-ai", category: "Fundamentals", definition: "AI systems capable of operating and making decisions independently in complex, real-world environments with minimal or no human oversight." },
+
+            // ---- B ----
+            { term: "Backpropagation", slug: "backpropagation", category: "Deep Learning", definition: "The core algorithm for training neural networks, which computes gradients of the loss function by propagating errors backward through the layers to update weights." },
+            { term: "Benchmark", slug: "benchmark", category: "Machine Learning", definition: "A standardized test or dataset used to evaluate and compare the performance of different AI models, algorithms, or systems on specific tasks." },
+            { term: "Bias (Algorithmic)", slug: "bias-algorithmic", category: "Ethics", definition: "Systematic errors in AI outputs that arise from biased training data or flawed model design, potentially leading to unfair or discriminatory outcomes." },
+            { term: "Big Data", slug: "big-data", category: "Infrastructure", definition: "Extremely large and complex datasets that exceed the capacity of traditional tools, characterized by high volume, velocity, and variety, essential for training modern AI." },
+
+            // ---- C ----
+            { term: "Chatbot", slug: "chatbot", category: "NLP", definition: "An AI application that simulates human conversation through text or voice, powered by natural language processing and often backed by large language models." },
+            { term: "Classification", slug: "classification", category: "Machine Learning", definition: "A supervised learning task where the model assigns input data to predefined categories or classes, such as spam detection or image labeling." },
+            { term: "Clustering", slug: "clustering", category: "Machine Learning", definition: "An unsupervised learning technique that groups similar data points together without predefined labels, revealing hidden structures in data." },
+            { term: "CNN (Convolutional Neural Network)", slug: "cnn", category: "Deep Learning", definition: "A specialized neural network architecture designed for processing grid-like data such as images, using convolutional layers to detect spatial features." },
+            { term: "Computer Vision", slug: "computer-vision", category: "Computer Vision", definition: "A field of AI enabling machines to interpret and understand visual information from images, videos, and the physical world." },
+            { term: "Corpus", slug: "corpus", category: "NLP", definition: "A large, structured collection of text documents used for training and evaluating natural language processing models." },
+            { term: "CUDA", slug: "cuda", category: "Infrastructure", definition: "NVIDIA\u2019s parallel computing platform and API that enables developers to harness GPU power for accelerating AI computations and deep learning training." },
+
+            // ---- D ----
+            { term: "Data Augmentation", slug: "data-augmentation", category: "Machine Learning", definition: "Techniques for artificially expanding training datasets by applying transformations such as rotation, flipping, or noise injection to existing data." },
+            { term: "Data Mining", slug: "data-mining", category: "Machine Learning", definition: "The process of discovering patterns, correlations, and insights from large datasets using statistical methods, machine learning, and database systems." },
+            { term: "Dataset", slug: "dataset", category: "Fundamentals", definition: "A structured collection of data used for training, validating, or testing machine learning models, typically organized as rows of samples and columns of features." },
+            { term: "Deep Learning", slug: "deep-learning", category: "Deep Learning", definition: "A subset of machine learning based on artificial neural networks with many layers, capable of learning complex patterns from large amounts of data." },
+            { term: "Diffusion Model", slug: "diffusion-model", category: "Generative AI", definition: "A generative model that creates data by learning to reverse a gradual noise-adding process, powering state-of-the-art image and audio generation systems." },
+            { term: "Distillation", slug: "distillation", category: "Deep Learning", definition: "A model compression technique where a smaller student model is trained to replicate the behavior of a larger teacher model, preserving performance with fewer resources." },
+            { term: "Dropout", slug: "dropout", category: "Deep Learning", definition: "A regularization technique that randomly deactivates neurons during training to prevent overfitting and improve the model\u2019s generalization ability." },
+
+            // ---- E ----
+            { term: "Embedding", slug: "embedding", category: "NLP", definition: "A dense vector representation of data (words, images, or other entities) in a continuous space, capturing semantic relationships and enabling similarity computations." },
+            { term: "Epoch", slug: "epoch", category: "Machine Learning", definition: "One complete pass through the entire training dataset during the model training process. Multiple epochs are typically needed for convergence." },
+            { term: "Ethics in AI", slug: "ethics-in-ai", category: "Ethics", definition: "The study and application of moral principles to the design, development, and deployment of AI systems, addressing fairness, transparency, accountability, and safety." },
+            { term: "Explainability (XAI)", slug: "explainability-xai", category: "Ethics", definition: "The ability of an AI system to provide understandable explanations for its decisions and predictions, crucial for building trust and meeting regulatory requirements." },
+
+            // ---- F ----
+            { term: "Feature Engineering", slug: "feature-engineering", category: "Machine Learning", definition: "The process of selecting, transforming, and creating input variables from raw data to improve model performance and predictive accuracy." },
+            { term: "Few-shot Learning", slug: "few-shot-learning", category: "Machine Learning", definition: "A machine learning paradigm where models learn to perform tasks with only a handful of labeled examples, mimicking human ability to generalize quickly." },
+            { term: "Fine-tuning", slug: "fine-tuning", category: "Deep Learning", definition: "The process of taking a pre-trained model and further training it on a smaller, task-specific dataset to adapt it to a particular domain or application." },
+            { term: "Foundation Model", slug: "foundation-model", category: "Fundamentals", definition: "A large-scale AI model pre-trained on broad data that can be adapted to many downstream tasks, such as GPT, BERT, or DALL-E." },
+
+            // ---- G ----
+            { term: "GAN (Generative Adversarial Network)", slug: "gan", category: "Generative AI", definition: "A framework of two competing neural networks \u2014 a generator and a discriminator \u2014 that train together to produce realistic synthetic data such as images." },
+            { term: "Generative AI", slug: "generative-ai", category: "Generative AI", definition: "AI systems capable of creating new content including text, images, code, music, and video, often powered by large language models or diffusion architectures." },
+            { term: "GPT", slug: "gpt", category: "Generative AI", definition: "Generative Pre-trained Transformer \u2014 a family of large language models by OpenAI that generate human-like text using the Transformer architecture." },
+            { term: "GPU", slug: "gpu", category: "Infrastructure", definition: "Graphics Processing Unit \u2014 a specialized processor designed for parallel computation, essential for training and running deep learning models efficiently." },
+            { term: "Gradient", slug: "gradient", category: "Deep Learning", definition: "A vector of partial derivatives that indicates the direction and magnitude of steepest increase in a function, used to guide weight updates during training." },
+            { term: "Gradient Descent", slug: "gradient-descent", category: "Deep Learning", definition: "An iterative optimization algorithm that minimizes the loss function by updating model parameters in the direction of the steepest descent of the gradient." },
+            { term: "Graph Neural Network", slug: "graph-neural-network", category: "Deep Learning", definition: "A class of neural networks designed to operate on graph-structured data, capturing relationships between entities in social networks, molecules, and knowledge graphs." },
+
+            // ---- H ----
+            { term: "Hallucination", slug: "hallucination", category: "Generative AI", definition: "The phenomenon where AI models generate plausible-sounding but factually incorrect or fabricated information, a major challenge for large language models." },
+            { term: "Hugging Face", slug: "hugging-face", category: "Infrastructure", definition: "A leading open-source platform and community for sharing, discovering, and deploying machine learning models, datasets, and NLP tools." },
+            { term: "Hyperparameter", slug: "hyperparameter", category: "Machine Learning", definition: "Configuration settings external to the model that control the training process, such as learning rate, batch size, and number of layers, set before training begins." },
+
+            // ---- I ----
+            { term: "Image Generation", slug: "image-generation", category: "Generative AI", definition: "The use of AI models to create new images from text prompts, sketches, or other inputs, powered by architectures like diffusion models and GANs." },
+            { term: "Inference", slug: "inference", category: "Fundamentals", definition: "The phase where a trained model is applied to new, unseen data to generate predictions or outputs, as opposed to the training phase." },
+            { term: "Intelligence (Artificial)", slug: "intelligence-artificial", category: "Fundamentals", definition: "The simulation of human cognitive processes by computer systems, encompassing learning, reasoning, problem-solving, perception, and language understanding." },
+
+            // ---- K ----
+            { term: "K-means", slug: "k-means", category: "Machine Learning", definition: "A popular unsupervised clustering algorithm that partitions data into K groups by iteratively assigning points to the nearest centroid and updating centroids." },
+            { term: "Knowledge Graph", slug: "knowledge-graph", category: "NLP", definition: "A structured representation of real-world entities and their relationships, enabling machines to reason about interconnected information and power search engines." },
+            { term: "Knowledge Distillation", slug: "knowledge-distillation", category: "Deep Learning", definition: "A training strategy where a compact student model learns to approximate the outputs of a larger teacher model, enabling efficient deployment without significant loss of accuracy." },
+
+            // ---- L ----
+            { term: "Large Language Model (LLM)", slug: "large-language-model", category: "NLP", definition: "A neural network with billions of parameters trained on vast text corpora, capable of understanding and generating human language with remarkable fluency." },
+            { term: "Latent Space", slug: "latent-space", category: "Deep Learning", definition: "A compressed, abstract representation space where high-dimensional data is encoded into lower-dimensional vectors that capture essential features." },
+            { term: "LoRA", slug: "lora", category: "Deep Learning", definition: "Low-Rank Adaptation \u2014 a parameter-efficient fine-tuning technique that adds trainable low-rank matrices to frozen model weights, reducing memory and computation costs." },
+            { term: "Loss Function", slug: "loss-function", category: "Machine Learning", definition: "A mathematical function that measures how far a model\u2019s predictions deviate from the actual target values, guiding the optimization process during training." },
+
+            // ---- M ----
+            { term: "Machine Learning", slug: "machine-learning", category: "Machine Learning", definition: "A branch of AI where systems learn patterns from data and improve their performance over time without being explicitly programmed for each task." },
+            { term: "MLOps", slug: "mlops", category: "Infrastructure", definition: "Machine Learning Operations \u2014 a set of practices combining ML, DevOps, and data engineering to reliably deploy, monitor, and maintain ML models in production." },
+            { term: "Model", slug: "model", category: "Fundamentals", definition: "A mathematical representation learned from data that captures patterns and relationships, used to make predictions or decisions on new inputs." },
+            { term: "Multimodal AI", slug: "multimodal-ai", category: "Generative AI", definition: "AI systems that can process and generate content across multiple modalities such as text, images, audio, and video within a unified framework." },
+
+            // ---- N ----
+            { term: "Natural Language Processing (NLP)", slug: "natural-language-processing", category: "NLP", definition: "A field of AI focused on enabling computers to understand, interpret, and generate human language in both written and spoken forms." },
+            { term: "Neural Network", slug: "neural-network", category: "Deep Learning", definition: "A computing architecture inspired by biological neurons, consisting of interconnected layers of nodes that process data and learn patterns through training." },
+            { term: "Noise (in data)", slug: "noise-in-data", category: "Machine Learning", definition: "Random or irrelevant variations in data that do not represent the underlying signal, which can degrade model performance if not properly handled." },
+            { term: "Normalization", slug: "normalization", category: "Machine Learning", definition: "The process of scaling input features to a standard range, improving training stability and convergence speed in machine learning algorithms." },
+
+            // ---- O ----
+            { term: "Object Detection", slug: "object-detection", category: "Computer Vision", definition: "A computer vision task that identifies and localizes objects within images or video frames, drawing bounding boxes and assigning class labels." },
+            { term: "OCR", slug: "ocr", category: "Computer Vision", definition: "Optical Character Recognition \u2014 technology that converts text in images, scanned documents, or handwriting into machine-readable digital text." },
+            { term: "Open Source AI", slug: "open-source-ai", category: "Ethics", definition: "AI models, tools, and frameworks released with open licenses that allow anyone to use, modify, and distribute them, fostering transparency and collaboration." },
+            { term: "Optimization", slug: "optimization", category: "Machine Learning", definition: "The process of adjusting model parameters to minimize the loss function, finding the best set of weights that yields accurate predictions." },
+            { term: "Overfitting", slug: "overfitting", category: "Machine Learning", definition: "A condition where a model memorizes training data too closely, including its noise, leading to poor generalization and weak performance on unseen data." },
+
+            // ---- P ----
+            { term: "Parameter", slug: "parameter", category: "Deep Learning", definition: "A learnable weight or bias within a neural network that is adjusted during training. Large language models can contain billions or trillions of parameters." },
+            { term: "Perceptron", slug: "perceptron", category: "Deep Learning", definition: "The simplest form of a neural network, consisting of a single layer of weights that performs binary classification by computing a weighted sum of inputs." },
+            { term: "Pipeline (ML)", slug: "pipeline-ml", category: "Infrastructure", definition: "An automated sequence of data processing and modeling steps that streamline the machine learning workflow from data ingestion to model deployment." },
+            { term: "Pre-training", slug: "pre-training", category: "Deep Learning", definition: "The initial phase of training a model on a large, general-purpose dataset before fine-tuning it on a specific downstream task." },
+            { term: "Prompt", slug: "prompt", category: "Generative AI", definition: "The input text or instruction given to a generative AI model to guide its output, serving as the primary interface between users and language models." },
+            { term: "Prompt Engineering", slug: "prompt-engineering", category: "Generative AI", definition: "The practice of crafting and optimizing input prompts to elicit desired responses from AI models, a critical skill for working effectively with LLMs." },
+
+            // ---- Q ----
+            { term: "Quantization", slug: "quantization", category: "Infrastructure", definition: "A model compression technique that reduces numerical precision of weights and activations, enabling faster inference and lower memory usage with minimal accuracy loss." },
+            { term: "Question Answering", slug: "question-answering", category: "NLP", definition: "An NLP task where a model reads a context passage or knowledge base and produces accurate answers to natural language questions." },
+
+            // ---- R ----
+            { term: "RAG (Retrieval-Augmented Generation)", slug: "rag", category: "Generative AI", definition: "A technique that enhances language model outputs by retrieving relevant information from external knowledge sources before generating a response." },
+            { term: "Recurrent Neural Network (RNN)", slug: "rnn", category: "Deep Learning", definition: "A neural network architecture with feedback connections that maintains a hidden state, designed to process sequential data like time series and text." },
+            { term: "Regression", slug: "regression", category: "Machine Learning", definition: "A supervised learning task that predicts a continuous numerical value, such as price forecasting or temperature estimation, based on input features." },
+            { term: "Reinforcement Learning", slug: "reinforcement-learning", category: "Machine Learning", definition: "A learning paradigm where an agent learns to make optimal decisions by interacting with an environment and receiving reward or penalty signals." },
+            { term: "RLHF", slug: "rlhf", category: "Generative AI", definition: "Reinforcement Learning from Human Feedback \u2014 a technique for aligning language models with human preferences by training a reward model from human evaluations." },
+            { term: "Robotics AI", slug: "robotics-ai", category: "Fundamentals", definition: "The integration of artificial intelligence with robotic systems to enable autonomous perception, planning, manipulation, and navigation in the physical world." },
+
+            // ---- S ----
+            { term: "Segmentation", slug: "segmentation", category: "Computer Vision", definition: "A computer vision task that classifies each pixel in an image into a category, creating precise boundaries around objects or regions." },
+            { term: "Sentiment Analysis", slug: "sentiment-analysis", category: "NLP", definition: "An NLP technique that identifies and extracts subjective opinions and emotional tones from text, classifying content as positive, negative, or neutral." },
+            { term: "Speech-to-Text", slug: "speech-to-text", category: "NLP", definition: "Technology that converts spoken language into written text using acoustic and language models, enabling voice interfaces and transcription services." },
+            { term: "Stable Diffusion", slug: "stable-diffusion", category: "Generative AI", definition: "An open-source latent diffusion model for generating high-quality images from text descriptions, developed by Stability AI and widely used for creative applications." },
+            { term: "Supervised Learning", slug: "supervised-learning", category: "Machine Learning", definition: "A machine learning approach where models are trained on labeled data, learning to map inputs to known outputs for classification or regression tasks." },
+            { term: "Synthetic Data", slug: "synthetic-data", category: "Machine Learning", definition: "Artificially generated data that mimics real-world data properties, used to augment training datasets, protect privacy, and address data scarcity." },
+
+            // ---- T ----
+            { term: "Temperature", slug: "temperature", category: "Generative AI", definition: "A parameter controlling the randomness of AI model outputs \u2014 lower values produce more deterministic responses, while higher values increase creativity and diversity." },
+            { term: "Tensor", slug: "tensor", category: "Deep Learning", definition: "A multi-dimensional array of numbers that serves as the fundamental data structure in deep learning frameworks, generalizing scalars, vectors, and matrices." },
+            { term: "Text Generation", slug: "text-generation", category: "Generative AI", definition: "The process of producing coherent and contextually relevant text using AI models, powering applications from chatbots to content creation tools." },
+            { term: "Text-to-Image", slug: "text-to-image", category: "Generative AI", definition: "AI technology that generates images from textual descriptions, used in tools like DALL-E, Midjourney, and Stable Diffusion for creative and commercial purposes." },
+            { term: "Text-to-Speech", slug: "text-to-speech", category: "NLP", definition: "Technology that converts written text into natural-sounding spoken audio using neural synthesis models, enabling voice assistants and accessibility features." },
+            { term: "Token", slug: "token", category: "NLP", definition: "The basic unit of text that language models process, which can be a word, subword, or character depending on the tokenization strategy used." },
+            { term: "Tokenization", slug: "tokenization", category: "NLP", definition: "The process of breaking down text into smaller units called tokens before feeding it to a language model, a critical preprocessing step in NLP." },
+            { term: "Training", slug: "training", category: "Machine Learning", definition: "The iterative process of feeding data through a model and adjusting its parameters to minimize the loss function, enabling the model to learn patterns." },
+            { term: "Transfer Learning", slug: "transfer-learning", category: "Deep Learning", definition: "A technique where knowledge gained from training on one task is applied to a different but related task, dramatically reducing data and compute requirements." },
+            { term: "Transformer", slug: "transformer", category: "Deep Learning", definition: "A neural network architecture based on self-attention mechanisms that processes input data in parallel, revolutionizing NLP and forming the basis of GPT and BERT." },
+            { term: "Turing Test", slug: "turing-test", category: "Fundamentals", definition: "A benchmark proposed by Alan Turing in 1950 to evaluate a machine\u2019s ability to exhibit intelligent behavior indistinguishable from that of a human." },
+
+            // ---- U ----
+            { term: "Underfitting", slug: "underfitting", category: "Machine Learning", definition: "A condition where a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets." },
+            { term: "Unsupervised Learning", slug: "unsupervised-learning", category: "Machine Learning", definition: "A machine learning approach where models discover hidden patterns and structures in data without labeled examples, using techniques like clustering and dimensionality reduction." },
+
+            // ---- V ----
+            { term: "Validation (Cross)", slug: "cross-validation", category: "Machine Learning", definition: "A resampling technique that splits data into multiple folds to evaluate model performance, providing a robust estimate of how well a model generalizes." },
+            { term: "VAE (Variational Autoencoder)", slug: "vae", category: "Generative AI", definition: "A generative model that learns to encode data into a probabilistic latent space and sample from it to generate new, similar data points." },
+            { term: "Vision (Computer)", slug: "vision-computer", category: "Computer Vision", definition: "The interdisciplinary field concerned with enabling machines to gain high-level understanding from digital images or videos and automate visual tasks." },
+            { term: "Voice Cloning", slug: "voice-cloning", category: "Generative AI", definition: "AI technology that replicates a person\u2019s voice characteristics from audio samples, enabling synthetic speech that closely mimics the original speaker." },
+
+            // ---- W ----
+            { term: "Weight", slug: "weight", category: "Deep Learning", definition: "A numerical parameter within a neural network that determines the strength of the connection between neurons, adjusted during training to minimize prediction errors." },
+            { term: "Word Embedding", slug: "word-embedding", category: "NLP", definition: "A technique for representing words as dense numerical vectors in continuous space, capturing semantic meaning and enabling mathematical operations on language." },
+            { term: "Word2Vec", slug: "word2vec", category: "NLP", definition: "A pioneering neural network model by Google that learns word embeddings by predicting surrounding words, establishing that similar words occupy nearby vector positions." },
+
+            // ---- X ----
+            { term: "XAI (Explainable AI)", slug: "xai", category: "Ethics", definition: "Methods and techniques that make AI decision-making processes transparent and understandable to humans, essential for high-stakes applications in healthcare, finance, and law." },
+
+            // ---- Z ----
+            { term: "Zero-shot Learning", slug: "zero-shot-learning", category: "Machine Learning", definition: "A paradigm where a model performs tasks it was never explicitly trained on, leveraging its general knowledge to handle novel classes or instructions." }
+        ];
+
+        /* ==================================================
+           CATEGORY TO BADGE CLASS MAPPING
+           ================================================== */
+        const categoryBadgeMap = {
+            "Fundamentals": "badge-fundamentals",
+            "Machine Learning": "badge-ml",
+            "Deep Learning": "badge-dl",
+            "NLP": "badge-nlp",
+            "Computer Vision": "badge-cv",
+            "Generative AI": "badge-genai",
+            "Ethics": "badge-ethics",
+            "Infrastructure": "badge-infra"
+        };
+
+        /* ==================================================
+           RENDER FUNCTIONS
+           ================================================== */
+        const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        const usedLetters = new Set(glossaryTerms.map(t => t.term[0].toUpperCase()));
+
+        // Build A-Z navigation
+        function buildAZNav() {
+            const azNav = document.getElementById('azNav');
+            azNav.innerHTML = allLetters.map(letter => {
+                const isUsed = usedLetters.has(letter);
+                return `<a href="#letter-${letter}" class="${isUsed ? '' : 'disabled'}">${letter}</a>`;
+            }).join('');
+        }
+
+        // Render all terms grouped by letter
+        function renderGlossary(terms) {
+            const container = document.getElementById('glossaryContent');
+            const noResults = document.getElementById('noResults');
+
+            if (terms.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.add('visible');
+                return;
+            }
+
+            noResults.classList.remove('visible');
+
+            // Group by first letter
+            const grouped = {};
+            terms.forEach(t => {
+                const letter = t.term[0].toUpperCase();
+                if (!grouped[letter]) grouped[letter] = [];
+                grouped[letter].push(t);
+            });
+
+            // Sort letters
+            const sortedLetters = Object.keys(grouped).sort();
+
+            let html = '';
+            sortedLetters.forEach(letter => {
+                const letterTerms = grouped[letter];
+                html += `
+                    <section class="letter-section" id="letter-${letter}">
+                        <div class="letter-heading">
+                            <div class="letter-char">${letter}</div>
+                            <div class="letter-line"></div>
+                            <span class="letter-count">${letterTerms.length} term${letterTerms.length > 1 ? 's' : ''}</span>
+                        </div>
+                        <div class="terms-grid">
+                `;
+
+                letterTerms.forEach(t => {
+                    const badgeClass = categoryBadgeMap[t.category] || 'badge-fundamentals';
+                    html += `
+                        <article class="term-card animate-on-scroll" data-category="${t.category}" data-term="${t.term.toLowerCase()}">
+                            <div class="term-header">
+                                <h3 class="term-name">
+                                    <a href="/en/glossary/${t.slug}/">${t.term}</a>
+                                </h3>
+                                <span class="term-badge ${badgeClass}">${t.category}</span>
+                            </div>
+                            <p class="term-definition">${t.definition}</p>
+                            <a href="/en/glossary/${t.slug}/" class="term-link">
+                                Read full definition
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </article>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </section>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            // Trigger scroll animations
+            requestAnimationFrame(() => observeCards());
+
+            // Update A-Z active states
+            updateAZActive(sortedLetters);
+        }
+
+        // Update A-Z nav to show which letters have content
+        function updateAZActive(activeLetters) {
+            const azLinks = document.querySelectorAll('.az-nav a');
+            const activeSet = new Set(activeLetters);
+            azLinks.forEach(link => {
+                const letter = link.textContent;
+                if (activeSet.has(letter)) {
+                    link.classList.remove('disabled');
+                } else {
+                    link.classList.add('disabled');
+                }
+            });
+        }
+
+        /* ==================================================
+           SEARCH & FILTERS
+           ================================================== */
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        function filterTerms() {
+            let filtered = glossaryTerms;
+
+            // Category filter
+            if (activeCategory !== 'all') {
+                filtered = filtered.filter(t => t.category === activeCategory);
+            }
+
+            // Search filter
+            if (searchQuery.trim()) {
+                const q = searchQuery.toLowerCase().trim();
+                filtered = filtered.filter(t =>
+                    t.term.toLowerCase().includes(q) ||
+                    t.definition.toLowerCase().includes(q) ||
+                    t.category.toLowerCase().includes(q)
+                );
+            }
+
+            renderGlossary(filtered);
+            updateCounter(filtered.length);
+        }
+
+        function updateCounter(visible) {
+            document.getElementById('visibleCount').textContent = visible;
+            document.getElementById('totalCount').textContent = glossaryTerms.length;
+        }
+
+        // Search box
+        const searchBox = document.getElementById('searchBox');
+        const searchClear = document.getElementById('searchClear');
+
+        searchBox.addEventListener('input', function() {
+            searchQuery = this.value;
+            searchClear.classList.toggle('visible', this.value.length > 0);
+            filterTerms();
+        });
+
+        searchClear.addEventListener('click', function() {
+            searchBox.value = '';
+            searchQuery = '';
+            searchClear.classList.remove('visible');
+            searchBox.focus();
+            filterTerms();
+        });
+
+        // Category filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                activeCategory = this.dataset.category;
+                filterTerms();
+            });
+        });
+
+        /* ==================================================
+           SCROLL ANIMATIONS (Intersection Observer)
+           ================================================== */
+        function observeCards() {
+            const cards = document.querySelectorAll('.animate-on-scroll');
+            if (!('IntersectionObserver' in window)) {
+                cards.forEach(c => c.classList.add('visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Stagger animation
+                        const delay = Math.min(index * 40, 300);
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            cards.forEach(card => observer.observe(card));
+        }
+
+        /* ==================================================
+           NAV SCROLL EFFECT
+           ================================================== */
+        const siteNav = document.getElementById('siteNav');
+        window.addEventListener('scroll', function() {
+            siteNav.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        /* ==================================================
+           MOBILE NAV TOGGLE
+           ================================================== */
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+
+        /* ==================================================
+           BACK TO TOP
+           ================================================== */
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* ==================================================
+           A-Z SMOOTH SCROLL
+           ================================================== */
+        document.getElementById('azNav').addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && !e.target.classList.contains('disabled')) {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const offset = 140; // account for sticky nav + az bar
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            }
+        });
+
+        /* ==================================================
+           INITIALIZATION
+           ================================================== */
+        buildAZNav();
+        updateCounter(glossaryTerms.length);
+        renderGlossary(glossaryTerms);
+
+    })();
+    </script>
+
+</body>
+</html>
